@@ -1,0 +1,2508 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Website Design By: www.happyworm.com -->
+    <title>E Module</title>
+    <!-- fonticon -->
+    <link href="../common/css/font-awesome.css" rel="stylesheet" />
+    <!-- textillate -->
+    <link href="../common/css/animate.css" rel="stylesheet">
+    <link href="../common/css/style.css" rel="stylesheet">
+    <link href="../common/css/table.css" rel="stylesheet">
+    <link href="../common/css/bluetable.css" rel="stylesheet">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="../common/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../common/css/bootstrap-theme.min.css">
+    <link href="../common/css/sticky-footer.css" rel="stylesheet">
+    <!-- slide bar -->
+    <link href="../common/css/mbExtruder.css" media="all" rel="stylesheet" type="text/css">
+    <!-- custom styles -->
+    <link href="../common/css/common.css" media="all" rel="stylesheet" type="text/css">
+    <!-- jquery Slider -->
+    <link href="../common/css/simple-slider.css" rel="stylesheet" type="text/css" />
+    <link href="../common/css/simple-slider-volume.css" rel="stylesheet" type="text/css" />
+    <!-- tooltip -->
+    <link href="../common/css/tipsy.css" rel="stylesheet" type="text/css" />
+    <!-- image efect -->
+    <link rel="stylesheet" href="../common/css/hoverEx.css" />
+
+    <!-- jquery dropdown -->
+    <link type="text/css" rel="stylesheet" href="../common/css/jquery.dropdown.css" />
+    <!-- scripts-->
+    <!-- Latest compiled and minified JavaScript -->
+
+    <script type="text/javascript" src="../common/js/jquery-1.9.1.js"></script>
+
+    <script type="text/javascript" src="../common/js/jquery-ui.js"></script>
+
+    <script type="text/javascript" src="../common/js/jquery.dropdown.js"></script>
+
+    <!-- simple slider -->
+
+    <script src="../common/js/simple-slider.js"></script>
+
+    <!-- bootstrap -->
+
+    <script src="../common/js/bootstrap.min.js"></script>
+
+    <!-- slide bar -->
+
+    <script type="text/javascript" src="../common/js/jquery.hoverIntent.min.js"></script>
+
+    <script type="text/javascript" src="../common/js/jquery.mb.flipText.js"></script>
+
+    <script type="text/javascript" src="../common/js/mbExtruder.js"></script>
+
+    <!-- textillate -->
+
+    <script src="../common/js/jquery.fittext.js"></script>
+
+    <script src="../common/js/jquery.lettering.js"></script>
+
+    <script src="../common/js/jquery.textillate.js"></script>
+
+    <!-- tooltip -->
+
+    <script src="../common/js/jquery.tipsy.js"></script>
+
+    <!-- course player -->
+
+    <script src="../common/js/player/CoursePlayer.js"></script>
+    <script src="../common/js/player/TrackerService.js"></script>
+    <script src="../common/js/custom.js"></script>
+
+<script type="text/javascript">
+    $(function () {
+        $("#extruderLeft2").buildMbExtruder({
+            position: "left",
+            width: 200,
+            positionFixed: false,
+            top: 125,
+            extruderOpacity: .8,
+            onExtOpen: function () { },
+            onExtContentLoad: function () { },
+            onExtClose: function () { }
+        });
+    });
+
+    function PlayEvents() {
+    }
+    PlayEvents.prototype.onAudioFailed = function () {
+        alert("Failed to load audio.");
+    }
+
+    var coursePlayer = null;
+
+    function Init() {
+		document.getElementById('slideLabel').style.display = 'block';
+        coursePlayer = new CoursePlayer("moduleAudio", new PlayEvents());
+        coursePlayer.initialize("Adcetris_Module_4_WSB_Ver_4.01.xml");
+        coursePlayer.play();
+    }
+
+    function Next() {
+        if (disableAll)
+            return;
+        if (coursePlayer.nextSlide())
+            coursePlayer.play();
+    }
+    function Prev() {
+        if (disableAll)
+            return;
+        if (coursePlayer.prevSlide())
+            coursePlayer.play();
+    }
+
+    function play() {
+        if (disableAll)
+            return;
+
+        if (!coursePlayer.getPlayerStatus()) {
+            document.getElementById("toggelbutton").src = "../common/img/pauseBtn.png";
+            coursePlayer.play();
+        }
+        else {
+
+            document.getElementById("toggelbutton").src = "../common/img/playBtn.png";
+            coursePlayer.pause();
+        }
+    }
+
+
+
+
+    //]]>
+    </script>
+
+</head>
+<body style="overflow-x: hidden; font-family: Verdana" onload="createAttempt();">
+    <div id="wrap" style="width: 1024px;">
+        <div class="" style="height: 90px;">
+            <div class="header-top">
+            </div>
+            <div class="header-body">
+                <img src="../common/img/logo.png" class="logo" />
+                <div class="header-help">
+                    <h3 id="slideTitle" class="module-title" style="font-size:17px; max-width:64%;">
+                    </h3>
+                    <div style="float: right">
+                        <img class="effect" onmouseover="HideToolTip(this)" onclick="onclickPlaylistImg()"
+                            data-toggle="tooltip" data-placement="left" title="Playlist" style="float: left;
+                            opacity: 0.7; width: 36px; margin-top: 14px; margin-right: 8px;" src="../common/img/content.png" />
+                        <img class="effect" onmouseover="HideToolTip(this)" data-horizontal-offset="-10"
+                            data-dropdown="#dropdown-6" data-toggle="tooltip" data-placement="bottom" title="Reference"
+                            style="float: left;" src="../common/img/smallicon1.png" />
+                        <img class="effect" onmouseover="HideToolTip(this)" onclick="onclickGlossaryImg()" data-toggle="tooltip" data-placement="customTooltip"
+                            title="Glossary" style="float: left; margin-right: 40px;" src="../common/img/smallicon4.png" />
+                        <img class="headerleftbg" src="../common/img/headerCorBg.png" />
+                    </div>
+                </div>
+                <div id="dropdown-6" class="dropdown dropdown-tip dropdown-anchor-right has-icons">
+                    <div class="dropdown-panel">
+                    </div>
+                </div>
+            </div>
+            <audio id="moduleAudio"></audio>
+        </div>
+        <div style="position: relative; height: 600px;">
+            <!--<div id="extruderLeft2" class="a {title:'Slides\'s', url:'parts/extruderLeft.html'}">
+                <div class="playlist" style="height: 615px;">
+                    <div class="playlist-header"></div>
+                    <div id="playlist" class="playlist-item">
+                        <div class="list-items">title <span>0:00</span></div>
+                    </div>
+                    <div class="playlist-footer">
+                        <p>Total Duration : <span id="totalDuration">00:00</span></p>
+                    </div>
+                </div>
+
+            </div>-->
+            <div class="slidePlayer">
+                <div id="PlayListDiv" style="display: none;">
+                    <div class="coursecontent" style="height: 600px; width: 100%;">
+                        <div class="playlist-header">
+                            <button type="button" class="header-close" onclick="onclickClosePlaylist()" style="float: right;">
+                                Close</button>
+                        </div>
+                        <div id="playlist" class="playlist-item  style-5">
+                            <div class="list-items">
+                                title <span>0:00</span></div>
+                        </div>
+                        <div class="playlist-footer">
+                            <p>
+                                Total Duration : <span id="totalDuration">00:00</span></p>
+                        </div>
+                    </div>
+                </div>
+                  <div id="GlossaryDiv" style="display: none;">
+                    <div class="coursecontent" style="height: 600px; width: 100%;">
+                        <div class="playlist-header">
+                            <button type="button" class="header-close" onclick="onclickCloseglossary()" style="float: right;">Close</button>
+                        </div>
+                        <div id="Div2" class="playlist-item  style-5">
+                            <div id="GlossaryTitle" class="GlossaryTitle style-5">
+                                
+                            </div> 
+                             <div id="GlossaryData" class="GlossaryData style-5">
+                               
+                            </div>
+                        </div>
+                        <div class="playlist-footer">
+                            
+                        </div>
+                    </div>
+                </div>
+
+				 <div id="slide0a" style="display: none;">
+				
+                    <!-- <div class="topic-bar">
+                        <div id="topic-title">Title</div>
+                    </div>-->
+                    <!--Body -->
+                    <div style="height: 550px;width: 100%; float: left;border: 2px solid rgba(127, 145, 145, 0.12);border-radius: 10px;background-color: rgba(255, 255, 255, 0.2);">
+                        <div class="playBody">
+                            <div data-class="fadeInDown"  class="breakout" style="display: none;" id="s0abimg1">
+                                <p style="font-size:20px;">
+                                    Brentuximab Vedotin for Relapsed or Refractory Systemic Anaplastic Large-cell Lymphoma</p>
+                               
+                            </div>
+                             
+                        </div>
+                    </div>
+                    <!--Transcript -->
+                    <!--<div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none;
+                        position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#">
+                            <img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center>
+                            <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                                Hide Transcript</button></center>
+                        <div class="transcript">
+                           
+                        </div>
+                    </div>
+                    <div id="slide0aref" style="display: none;" class="slide0aref">
+                        <b>References:</b><br />
+                        <br />
+                       
+                    </div>-->
+                </div>
+
+                <div id="slide0" style="display: none;">
+                    <!--Body -->
+                    <!--<div class="topic-bar">
+                        <div id="topic-title">Learning objectives</div>
+                     </div>-->
+                    
+                    <div class="slidecontent" style="">
+                        <div class="playBody" style="text-align: center; margin-top: 60px;">
+                        <div data-class="fadeInDown" id="s0bimg1" style="display:none;">
+                            <img  src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                            <p style="text-align: left;">
+                                This module is a part of an e-learning program strictly for internal training purposes
+                                only</p>
+                        </div>
+                            <br />
+                            
+                        <div id="s0bimg2" style="display:none;"  data-class="fadeInDown" >
+                            <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                            <p  style="text-align: left;">
+                                At the end of this module you should
+                            </p>
+                            <br />
+                        </div>
+                            <div style="padding-left: 40px">
+                           
+                           
+                           <div data-class="fadeInDown" style="display:none;" id="s0bimg4">
+                                <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                <p style="padding-left: 30px; text-align: left;">
+                                     Be acclimatized with the pivotal phase II trial of brentuximab vedotin in individuals
+                                    with relapsed or refractory systemic anaplastic large-cell lymphoma
+                                   </p>
+                                <br />
+                           </div>
+                                 <div  data-class="fadeInDown" id="s0bimg3" style="display:none;">
+                                <img src="../common/img/bullet01.png" style="
+                                    width: 12px; height: 12px; float: left; margin: 10px;" />
+                                <p style="padding-left: 30px; text-align: left;">
+                                    Understand the mechanism of action of brentuximab vedotin and its role in management
+                                    of relapsed or refractory systemic anaplastic large-cell lymphoma
+                                </p>
+                                <br />
+                                </div>
+                           <div data-class="fadeInDown" id="s0bimg5" style="display:none;">
+                                <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                <p style="padding-left: 30px; text-align: left;">
+                                    Be aware of the key components of the trial including the materials and methods,
+                                    results and conclusions</p>
+                           </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!--Transcript -->
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none;position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#"><img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center>
+                            <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                                Hide Transcript</button></center>
+                        <div class="transcript" style="">
+                            <p>
+                               This module is a part of an e-learning program which focuses on the different aspects of brentuximab vedotin, pivotal clinical trials with brentuximab vedotin, role and approval for use in certain patient populations which include patients with relapsed or refractory Hodgkins lymphoma and patients with relapsed or refractory systemic anaplastic large-cell lymphoma. The material presented as part of this e-learning program is strictly for internal training purposes only. It shall neither be shared or used outside of Takeda nor be used as a tool to prepare and provide (non-) promotional material 
+                            </p>
+                            <p>
+                               The content is based on the state of knowledge as of June 2015.
+                            </p>
+                           <!-- <p>
+                                At the end of this module you should be acclimatized with the pivotal phase II trial
+                                of brentuximab vedotin in individuals with relapsed or refractory systemic anaplastic
+                                large-cell lymphoma.
+                            </p>
+                            <p>
+                                You should also be aware of the key components of the trial including the materials
+                                and methods, results and conclusions.
+                            </p>-->
+                        </div>
+                    </div>
+                </div>
+                <div id="slide1" style="display: none;">
+                <!--Body -->
+                <!--<div class="topic-bar">
+                        <div id="topic-title">HL: disease description</div>
+                     </div>-->
+                <div id="slide1ref" style="display: none;" class="slide1ref">
+                    <b>References:</b><br />
+                    <br />
+                    1.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Brentuximab vedotin (SGN-35) in patients with relapsed or refractory systemic anaplastic large-cell lymphoma: results of a phase II study. J Clin Oncol. 2012;30(18):2190-6.<br />
+                    <br />
+                    2.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Four-year survival results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 3095, American Society of Hematology, December, 2014, San Francisco, CA, USA.<br /><br />
+                    3.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Three-year survival results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 1809, American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+                    <br />
+                    4.	ADCETRIS®. Summary of Product Characteristics. 22 August 2014. Available at European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB/document_library/EPAR_-<br />_Product_Information/human/002455/WC500135055.pdf. Accessed on 26 June 2015.<br /><br />
+                    5.	FDA Approval for Brentuximab Vedotin. National Cancer Institute Web site. Available at: http://www.cancer.gov/cancertopics/druginfo/fda-brentuximabvedotin. Accessed on 17 January 2014.
+                </div>
+                <div class="slidecontent" style="">
+                    <div class="playBody">
+                        <div style="width: 50%; float: left; padding-left: 5%; padding-top: 10px; min-width: 50%;
+                            max-width: 50%; text-align: center;">
+                            <img data-class="fadeInDown" id="s1img1" src="img/HL/figure_1.png" style="display: none;
+                                width: 227px; height:236px; position:relative;border-radius:5px;" />
+                            <p style="display: none; font-family: Verdana; font-size: 11px;" id="s1txt1">
+                                Linking and internalisation
+                            </p>
+                        </div>
+                        <div style="width: 50%; float: left; padding-left: 5%; padding-top: 10px; min-width: 50%;
+                            max-width: 50%; text-align: center;">
+                            <img data-class="fadeInDown" id="s1img2" src="img/HL/figure_2.png" style="display: none; border-radius:5px;
+                                width: 227px; height:234px; position:relative;" />
+                            <p style="display: none; font-family: Verdana; font-size: 11px;" id="s1txt2">
+                                Disruption of microtubules
+                            </p>
+                        </div>
+                        <div style="width: 50%; float: left; padding-left: 31%; min-width: 75%; max-width: 100%;
+                            text-align: center;">
+                            <img data-class="fadeInDown" id="s1img3" src="img/HL/figure_3.png" style="display: none; border-radius:5px;
+                                width: 222px; height:230px; position:relative;" />
+                            <p style="display: none; font-family: Verdana; font-size: 11px;" id="s1txt3">
+                                Apoptosis
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!--Transcript -->
+                <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none;position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#"><img src="../common/img/showTrans.png" /></a>
+                    </div>
+                <div id="transcript-hide" style="display: none;">
+                    <center>
+                        <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                            Hide Transcript</button></center>
+                    <div class="transcript" style="">
+                        <p>
+                            Brentuximab vedotin (SGN-35) is an antibody drug conjugate (ADC) which consists
+                            of an anti-CD30 antibody linked to an antimicrotubule agent, monomethyl auristatin
+                            E (MMAE). The novel linker in brentuximab vedotin is highly stable but is susceptible
+                            to degradation by proteolytic enzymes in the lysosomes. This ensures that release
+                            of the antimicrotubule agent MMAE occurs only within the target malignant cells
+                            and results in programmed death of the malignant cells.<sup>1</sup>
+                        </p>
+                        <p>
+                            The efficacy of brentuximab vedotin in treating recurrent or relapsed systemic anaplastic
+                            large-cell lymphoma, which is an aggressive type of T-cell lymphoma, was studied
+                            in a phase II trial. The study included a total of 58 heavily pre-treated patients
+                            and the first report was made in 2011 when all patients were followed for a minimum
+                            of 6 months and had the disease reassessed after at least 2 cycles of treatment
+                            with brentuximab vedotin. This was followed by later reports which recorded the findings from a prolonged 3-year follow-up and 4-year follow-up of the same patients. These reports, which had several encouraging findings, were presented at the 55<sup>th</sup> and 56<sup>th</sup> annual meetings of the American Society of Haematology in December 2013 and December 2014 respectively.
+
+
+                        </p>
+                        <p>
+                            Let us now learn about systemic anaplastic large-cell lymphoma and about the care
+                            of patients in the event of recurrence or relapse.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--slide 2 starting-->
+            <div id="slide2" style="display: none;">
+                <!--Body -->
+                <!--<div class="topic-bar">
+                        <div id="topic-title">HL: morphological characteristics</div>
+                     </div>-->
+                <div class="slidecontent" style="">
+                    <br />
+                   <div data-class="fadeInDown" style="display:none;" id="s2bimg1">
+                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                    <p style="text-align: left;">
+                        ALCL represents 2% to 3% of all lymphoid neoplasms</p>
+                    <br />
+                   </div>
+                   <div data-class="fadeInDown" style="display:none;" id="s2bimg2">
+                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                    <p style="text-align: left;">
+                        Poor prognosis in all but low intermediate-risk ALK-positive patients</p>
+                    <br />
+                   </div>
+                   <div data-class="fadeInDown" style="display:none;" id="s2bimg3">
+                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                    <p style="text-align: left;">
+                        40% to 65% of patients with ALCL develop recurrent disease</p>
+                    <br />
+                   </div>
+                   <div data-class="fadeInDown" style="display:none;" id="s2bimg4">
+                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                    <p style="text-align: left;">
+                        Autologous SCT may be beneficial in only 30% to 40% of patients</p>
+                    <br />
+                   </div>
+                </div>
+                <!--Transcript -->
+                <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none;position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#"><img src="../common/img/showTrans.png" /></a>
+                    </div>
+                <div id="transcript-hide" style="display: none;">
+                    <center>
+                        <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                            Hide Transcript</button></center>
+                    <div class="transcript" style="">
+                        <p>
+                            Systemic anaplastic large-cell lymphoma (ALCL) is an aggressive subtype of T-cell
+                            lymphoma representing approximately 2% to 3% of all lymphoid neoplasms.<sup>1</sup></p>
+                        <p>
+                            With the exception of low intermediate-risk ALK-positive patients, patients with
+                            ALCL have a poor prognosis when treated with conventional anthracycline-based front-line
+                            chemotherapy.<sup>1</sup></p>
+                        <p>
+                            Approximately 40% to 65% of patients with ALCL develop recurrent disease after front-line
+                            therapy. After relapse, ALCL is historically resistant to conventional chemotherapy
+                            regimens.<sup>1</sup></p>
+                        <p>
+                            High-dose therapy and autologous hematopoietic stem-cell transplantation (SCT) may
+                            result in long-term remission in 30% to 40% of patients, but the benefit is limited
+                            to patients with chemotherapy-sensitive disease and patients without advanced age
+                            or co-morbidities.</p>
+                        <p>
+                            The subset of patients, who have relapsed or refractory ALCL lacks an established
+                            standard of care.</p>
+                        <p>
+                            Brentuximab vedotin was studied to assess efficacy in patients with relapsed or
+                            refractory ALCL.</p>
+                    </div>
+                </div>
+                <div id="slide2ref" style="display: none;" class="slide2ref">
+                    <b>References:</b><br />
+                    <br />
+                    1.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Brentuximab vedotin (SGN-35) in patients with relapsed or refractory systemic anaplastic large-cell lymphoma: results of a phase II study. J Clin Oncol. 2012;30(18):2190-6.<br />
+                    <br />
+                    2.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Four-year survival results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 3095, American Society of Hematology, December, 2014, San Francisco, CA, USA.<br /><br />
+                    3.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Three-year survival results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 1809, American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+                    <br />
+                    4.	ADCETRIS®. Summary of Product Characteristics. 22 August 2014. Available at European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB/document_library/EPAR_-<br />_Product_Information/human/002455/WC500135055.pdf. Accessed on 26 June 2015.<br /><br />
+                    5.	FDA Approval for Brentuximab Vedotin. National Cancer Institute Web site. Available at: http://www.cancer.gov/cancertopics/druginfo/fda-brentuximabvedotin. Accessed on 17 January 2014.
+                </div>
+            </div>
+            <!--slide 2 ending-->
+            <!--slide03 starting-->
+            <div id="slide3" style="display: none;">
+                <!--Body -->
+                <!--<div class="topic-bar">
+                        <div id="topic-title">HL: CHL</div>
+                    </div>-->
+                <div class="slidecontent" style="">
+                    <div class="playBody">
+                        <div style="padding-left: 20px; text-align:center;">
+                            <br />
+                            <p data-class="fadeInDown" style="display: none; font-family: Verdana;
+                                font-size: 14px" id="s3txt1">
+                                A Phase II Trial of brentuximab vedotin in patients with relapsed or refractory
+                                sALCL</p>
+                          
+                            <div style=" padding-top: 1%; text-align:center;">
+                                
+                                <img data-class="fadeInDown" id="s3img1" src="img/HL/Eligibility.png" style="width: 200px; display: none;" />
+								<img data-class="fadeInDown" id="s3img2" src="img/HL/Treatment.png" style="width: 200px; display: none;" />
+								<img data-class="fadeInDown" id="s3img3" src="img/HL/Follow-up.png" style="width:118px; display: none;" />
+                                <p style="display: none; font-family: Verdana; font-size: 11px;" id="s3text0">* Revised response criteria for malignant lymphoma (Cheson 2007)</p>                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            
+                <!--Transcript -->
+                <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none;position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#"><img src="../common/img/showTrans.png" /></a>
+                    </div>
+                <div id="transcript-hide" style="display: none;">
+                    <center>
+                        <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                            Hide Transcript</button></center>
+                    <div class="transcript" style="">
+                        <p>
+                            A phase II trial was conducted with patients with relapsed or refractory ALCL.</p>
+                        <p>
+                            The subjects included in the study were individuals with age of 12 years or more who had CD30 positive ALCL which had relapsed or was refractory to at least one prior therapy administered with a curative intent.<sup>1</sup></p>
+                        <p>
+                            These patients had measurable disease, which was defined as having a lesion of 1.5 cm or greater, when assessed by computed tomography and fluorodeoxyglucose-avid disease by positron emission tomography (PET).<sup>1</sup></p>
+                        <p>
+                            Only patients with an Eastern Cooperative Oncology Group performance status of 0 or 1 were included.<sup>1</sup></p>
+                        <p>
+                            The subjects were administered 1.8 mg/kg brentuximab vedotin intravenously over 30 minutes every 21 days for up to 16 cycles and were reassessed at 2, 4, 7, 10, 13, and 16 cycles by an independent reviewer facility (IRF). The patients were then followed-up every 12 weeks.<sup>1</sup></p>
+                    </div>
+                </div>
+                <div id="slide3ref" style="display: none;" class="slide3ref">
+                    <b>References:</b><br />
+                    <br />
+                     1.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Brentuximab vedotin (SGN-35) in patients with relapsed or refractory systemic anaplastic large-cell lymphoma: results of a phase II study. J Clin Oncol. 2012;30(18):2190-6.<br />
+                    <br />
+                    2.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Four-year survival results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 3095, American Society of Hematology, December, 2014, San Francisco, CA, USA.<br /><br />
+                    3.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Three-year survival results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 1809, American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+                    <br />
+                    4.	ADCETRIS®. Summary of Product Characteristics. 22 August 2014. Available at European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB/document_library/EPAR_-<br />_Product_Information/human/002455/WC500135055.pdf. Accessed on 26 June 2015.<br /><br />
+                    5.	FDA Approval for Brentuximab Vedotin. National Cancer Institute Web site. Available at: http://www.cancer.gov/cancertopics/druginfo/fda-brentuximabvedotin. Accessed on 17 January 2014.
+                </div>
+            </div>            
+            
+            <!--slide03 ending-->
+            <!--slide 4 starting-->
+            <div id="slide4" style="display: none;">
+                <!--<div class="topic-bar">
+                        <div id="topic-title">HL: epidemiology</div>
+                    </div>-->
+                <!--Body -->
+                <div class="slidecontent" style="">
+                    <div style="height:50%;">
+                        <p data-class="fadeInDown" style="display: none; font-size:15px; text-align:center;" id="s4txt1">
+                            Baseline characteristics: Study population heavily pre-treated</p>
+                        <center>
+                        <table class="leftbluetable" id="s4Table1" style=" display: none; border:1px solid #ccc; width:550px; background-color:rgba(179,221,230,.5);">
+                            <tr style="border-bottom: 1px solid #ccc;background-color:#d1e5f9;">
+                                <td style="width: 70%; text-align: left; color:Black; display:none;">
+                                  
+                                </td>
+                                <td style="background-color:#d1e5f9; display:none;">
+                                   
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ccc; border-top:2px solid black;">
+                                <td style="width: 70%; text-align: left; color:Black;">
+                                    Median age (range) 
+                                </td>
+                                <td style="">
+                                    52 yr (14-76)
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ccc;">
+                                <td class="" style="width: 20%; text-align: left;">
+                                    Gender</td>
+                                <td style=" ">
+                                    33 M / 25 F
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ccc;">
+                                <td class="" style="width: 40%; text-align:justify;">
+                                    ECOG performance status<br />0<br />1<br />2
+                                </td>
+                               
+                                <td style="">
+                                    
+                                        <br />33%<br />66%<br />2%
+                                   
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ccc;">
+                                <td class="" style="width: 20%; text-align: left; ">
+                                    ALCL confirmed by central pathology
+                                </td>
+                                <td style=" ">
+                                    97%
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="" style="width: 20%; text-align: left;">
+                                    ALK-negative</td>
+                                <td style=" ">
+                                    72%
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ccc;">
+                                <td class="" style="width: 20%; text-align: left;">
+                                    Refractory to frontline therapy
+                                </td>
+                               
+                                <td style="">
+                                    62%
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ccc;">
+                                <td style="width: 20%; text-align: left;">
+                                    Refractory to most recent treatment
+                                </td>
+                                <td style=" ">
+                                    50%
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ccc;">
+                                <td class="" style="width: 20%; text-align: left; ">
+                                    No response to any prior treatment
+                                </td>
+                               
+                                <td style=" ">
+                                    22%
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ccc;">
+                                <td style="width: 20%; text-align: left;">
+                                    Prior chemotherapy regimens
+
+                                </td>
+                                <td style="">
+                                    2 (1-6)
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ccc;">
+                                <td style="width: 20%; text-align: left;">
+                                    Prior radiation
+                                </td>
+                               
+                                <td style="">
+                                    45%
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 2px solid black;">
+                                <td  style="width: 40%; text-align: left;">
+                                    Prior ASCT
+                                </td>
+                               
+                                <td style="">
+                                    26%
+                                </td>
+                            </tr>
+                        </table>
+                        </center>
+                        </div>
+                      </div>  
+                <!--Transcript-->
+                <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none;position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#"><img src="../common/img/showTrans.png" /></a>
+                    </div>
+                <div id="transcript-hide" style="display: none;">
+                    <center>
+                        <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                            Hide Transcript</button></center>
+                    <div class="transcript" style="">
+                        <p>
+                           The median age of the subjects was 52 years. ALCL was confirmed in these patients by central pathology in 97 % and 72% were found to have ALK-negative disease.<sup>1</sup></p>
+                        <p>
+                            One crucial baseline feature of the patients included in this trial was the requirement for prior treatment. The individuals in the study were heavily pre-treated.<sup>1</sup></p>
+                        <p>
+                            Many patients received 2 prior chemotherapy regimens as evident from the median number of prior chemotherapy regimens. The number of prior chemotherapy regimens ranged from 1 to 6.<sup>1</sup></p>
+                        <p>
+                            45% of the patients had undergone prior radiation therapy and 26% had prior autologus stem-cell transplantation (ASCT).<sup>1</sup></p>
+                        <p>
+                            A majority (62%) were refractory to frontline therapy and half (50%) of the individuals had disease that was refractory to the most recent treatment. 22% had no discernible response to any prior treatment.<sup>1</sup></p>
+                        <p> Let us now examine the findings of this trial related to the efficacy of brentuximab vedotin in this patient population.</p>
+                    </div>
+                </div>
+                <div id="slide4ref" style="display: none" class="slide4ref">
+                   <b>References:</b><br /><br />
+                   1.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Brentuximab vedotin (SGN-35) in patients with relapsed or refractory systemic anaplastic large-cell lymphoma: results of a phase II study. J Clin Oncol. 2012;30(18):2190-6.<br />
+                    <br />
+                    2.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Four-year survival results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 3095, American Society of Hematology, December, 2014, San Francisco, CA, USA.<br /><br />
+                    3.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Three-year survival results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 1809, American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+                    <br />
+                    4.	ADCETRIS®. Summary of Product Characteristics. 22 August 2014. Available at European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB/document_library/EPAR_-<br />_Product_Information/human/002455/WC500135055.pdf. Accessed on 26 June 2015.<br /><br />
+                    5.	FDA Approval for Brentuximab Vedotin. National Cancer Institute Web site. Available at: http://www.cancer.gov/cancertopics/druginfo/fda-brentuximabvedotin. Accessed on 17 January 2014.
+                </div>
+            </div>
+            <!--slide 4 ending-->
+            <!--slide 5 starting-->
+            <div id="slide5" style="display: none;">
+                <!--<div class="topic-bar">
+                        <div id="topic-title">Knowledge Check</div>
+                    </div>
+                 <!--Body -->
+                <div class="slidecontent" style="">
+                    <div class="playBody">
+                      <div>
+                         <!--<div style="height:50%;">
+                        <p data-class="fadeInDown" style="display: none; text-align:center;" id="s5txt1">
+                            Response to treatment with brentuximab vedotin </p>
+                        <center>
+                        <table class="leftbluetable"  id="s5Table1" style=" display: none; font-size:12px; border:1px solid #ccc;">
+                            <tr style="border-bottom: 1px solid #ccc;">
+                                <td class="TableHeaderBackground" style="width: 70%; text-align: left;">
+                                  
+                                </td>
+                                <td style=" ">
+                                    IRF (N=58)
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ccc;">
+                                <td class="TableHeaderBackground" style="width: 20%; text-align: left; background-color:lightblue;">
+                                    ORR, % (95% CI)</td>
+                                <td style=" ">
+                                    86 (74.6, 93.9)
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ccc;">
+                                <td class="TableHeaderBackground" style="width: 40%; text-align:justify;">
+                                     CR, % (95% CI)
+                                </td>
+                               
+                                <td style=" ">
+                                    
+                                        57 (43.2, 69.8)
+                                   
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ccc;">
+                                <td class="TableHeaderBackground" style="width: 20%; text-align: left; background-color:lightblue;">
+                                     PR, %
+
+                                </td>
+                                <td style=" ">
+                                    29
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="TableHeaderBackground" style="width: 20%; text-align: left;">
+                                     SD, %</td>
+                                <td style=" ">
+                                    3
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ccc;">
+                                <td class="TableHeaderBackground" style="width: 20%; text-align: left; background-color:lightblue;">
+                                    PD, %
+                                </td>
+                               
+                                <td style=" ">
+                                    5
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ccc;">
+                                <td class="TableHeaderBackground" style="width: 20%; text-align: left;">
+                                    Histologically ineligible, %
+
+                                </td>
+                                <td style=" ">
+                                    3
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ccc;">
+                                <td class="TableHeaderBackground" style="width: 20%; text-align: left;">
+                                    NE, %
+
+                                </td>
+                                <td style=" ">
+                                    2
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ccc;">
+                                <td class="TableHeaderBackground" style="width: 20%; text-align: left;">
+                                    Median duration of OR, months (95% CI)
+                                </td>
+                                <td style=" ">
+                                    12.6 (5.7, NE)
+
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ccc;">
+                                <td class="TableHeaderBackground" style="width: 20%; text-align: left;">
+                                    Median duration of response in patients with CR, mo (95% CI)
+                                </td>
+                                <td style=" ">
+                                    13.2 (10.8, NE)
+
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ccc;">
+                                <td class="TableHeaderBackground" style="width: 20%; text-align: left;">
+                                    Median PFS, mo (95% CI)
+                                </td>
+                                <td style=" ">
+                                    13.3 (6.9, NE)
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ccc;">
+                                <td class="TableHeaderBackground" style="width: 20%; text-align: left;">
+                                    Median PFS, in patients with CR, mo
+                                </td>
+                                <td style=" ">
+                                    14.6
+                                </td>
+                            </tr>
+                        </table>
+                        </center>
+                     </div>-->
+                         <br />                 
+                        <p data-class="fadeInDown" style="display: none; text-align:center;" id="s5txt2">
+                            Response and outcomes from four-year follow-up of the ongoing Phase 2 study  </p>
+                            <br />
+                        <center>
+                        <table class="leftbluetable"  id="s5Table2" cellpadding="5" style="display: none; font-size:12px; border:1px solid #ccc; width:550px;  background-color: #d1e5f9;">
+                            
+                            <tr style="border-bottom: 1px solid #ccc; background:#00717f;">
+                                <td class="" style="width: 70%; height:25px; text-align: left; ">
+                                   
+ 
+                                </td>
+                                <td style="text-align: center; ">N=58
+                                  
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ccc;">
+                                <td class="" style="width: 70%; text-align: left;">
+                                    <strong>ORR<sup>a</sup>, % </strong>
+ 
+                                </td>
+                                <td style="text-align: center; ">
+                                    <strong>86</strong>
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ccc;">
+                                <td class="" style="width: 20%; text-align: left;  padding-left:20px;">
+                                   <strong> CR, % </strong></td>
+                                <td style="text-align: center; ">
+                                    <strong>59</strong>
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ccc;">
+                                <td class="" style="width: 40%; text-align:justify;">
+                                   Median PFS<sup>b</sup>, months (95% CI)
+                                </td>
+                               
+                                <td style="text-align: center; ">
+                                    
+                                       20.0 (9.4, --)                                 
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ccc;">
+                                <td class="" style="width: 20%; text-align: left;">
+                                   Median observation time from first dose, median months (range) 
+
+                                </td>
+                                <td style="text-align: center; ">
+                                   46.3 (0.8-57.7)
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="" style="width: 20%; text-align: left;">
+                                    Median OS</td>
+                                <td style="text-align: center; ">
+                                    55.1 months
+
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ccc;">
+                                <td class="" style="width: 20%; text-align: left; ">
+                                   Estimated 4-year survival rate, % 
+                                </td>
+                               
+                                <td style="text-align: center; ">
+                                  64
+
+                                </td>
+                            </tr>
+                          <!--  <tr style="border-bottom: 1px solid #ccc;">
+                                <td class="" style="width: 20%; text-align: left;">
+                                    Median OS
+                                </td>
+                                <td style=" ">
+                                    Not reached at 33.4 months
+                                </td>
+                            </tr>-->
+                            
+                        </table>
+                        </center>                                                                           
+                        </div>
+                         <div style="text-align:center;">
+                                <img data-class="fadeInDown" id="s5graph1" src="img/HL/overall survival.png" style="width: 500px; display:none;" />
+                            </div>
+                    </div>
+                </div>
+                <!--Transcript -->
+                <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none;position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#"><img src="../common/img/showTrans.png" /></a>
+                    </div>
+                <div id="transcript-hide" style="display: none;">
+                    <center>
+                        <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                            Hide Transcript</button></center>
+                    <div class="transcript" style="">
+                        <br />
+                        <p>
+                            The objective response rate (ORR), defined as the sum of complete responses and partial responses, after the 4-year follow up, per independent review was 86%. 59% individuals achieved complete remission and 28% achieved partial remission.<sup>2</sup></p>
+                            <p>
+                            The median progression free survival (PFS) for all patients was 20.0 months per investigator review.<sup>2</sup></p>
+                            <p>
+                          The 4-year follow up also revealed that the median overall survival was 55.1 months and the estimated 4-year survival rate was 64%. Patients who received brentuximab vedotin as part of the study were observed for a median duration of 46.3 months after administration of first cycle.<sup>2</sup></p>
+                           
+                            
+                    </div>
+                </div>
+                <div id="slide5ref" style="display: none" class="slide5ref">
+                    <b>References:</b><br />
+                    
+                    1.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Brentuximab vedotin (SGN-35) in patients with relapsed or refractory systemic anaplastic large-cell lymphoma: results of a phase II study. J Clin Oncol. 2012;30(18):2190-6.<br />
+                    <br />
+                    2.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Four-year survival results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 3095, American Society of Hematology, December, 2014, San Francisco, CA, USA.<br /><br />
+                    3.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Three-year survival results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 1809, American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+                    <br />
+                    4.	ADCETRIS®. Summary of Product Characteristics. 22 August 2014. Available at European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB/document_library/EPAR_-<br />_Product_Information/human/002455/WC500135055.pdf. Accessed on 26 June 2015.<br /><br />
+                    5.	FDA Approval for Brentuximab Vedotin. National Cancer Institute Web site. Available at: http://www.cancer.gov/cancertopics/druginfo/fda-brentuximabvedotin. Accessed on 17 January 2014.
+                </div>
+            </div>
+            <!--slide 5 ending-->
+            <!--slide 6 starting-->
+            <div id="slide6" style="display: none;">
+                <!-- <div class="topic-bar">
+                        <div id="topic-title">HL: survival rates</div>
+                    </div>-->
+                <!--Body -->
+                <div class="slidecontent" style="">
+                    <div class="playBody">
+                        <div style="padding-left: 20px">
+                            
+                            
+                            <p data-class="fadeInDown" style="display: none;padding-top:25px;" id="s6txt1">
+                                Results from three-year follow-up of the ongoing Phase 2 study</p>
+                            <br />
+                            <div data-class="fadeInDown" style="display: none;" id="s6bimg1">
+                               <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                               <p style="padding-left: 30px;">
+                                Median follow up since first dose of brentuximab vedotin: 33.4 mos (0.8 – 45.6 mos)</p>
+                            </div>
+                            <div data-class="fadeInDown" style="display: none;" id="s6bimg2">
+                                <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                               <p style="padding-left: 30px;">
+                                Estimated overall survival rate at 3 years: 63% (95% CI: 51%, 76%)</p>
+                            </div>
+                            
+                            <div style="text-align:center;">
+                                <img data-class="fadeInDown" id="s6img1" src="img/HL/overall survival.png" style="display: none;" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Transcript -->
+                <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none;position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#"><img src="../common/img/showTrans.png" /></a>
+                    </div>
+                <div id="transcript-hide" style="display: none;">
+                    <center>
+                        <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                            Hide Transcript</button></center>
+                    <div class="transcript">
+                        <br />
+                        <p>
+                            Median overall survival was not reached at 33.4 months and the estimated overall survival rate at 3 years was 63%.<sup>2</sup></p>
+                        
+                        
+                        
+                    </div>
+                </div>
+                <div id="slide6ref" style="display: none;" class="slide6ref">
+                    <b>References:</b><br />
+                    <br />
+                    1.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Brentuximab vedotin (SGN-35) in patients with relapsed or refractory systemic anaplastic large-cell lymphoma: results of a phase II study. J Clin Oncol. 2012;30(18):2190-6.<br />
+                    <br />
+                    2.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Four-year survival results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 3095, American Society of Hematology, December, 2014, San Francisco, CA, USA.<br /><br />
+                    3.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Three-year survival results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 1809, American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+                    <br />
+                    4.	ADCETRIS®. Summary of Product Characteristics. 22 August 2014. Available at European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB/document_library/EPAR_-<br />_Product_Information/human/002455/WC500135055.pdf. Accessed on 26 June 2015.<br /><br />
+                    5.	FDA Approval for Brentuximab Vedotin. National Cancer Institute Web site. Available at: http://www.cancer.gov/cancertopics/druginfo/fda-brentuximabvedotin. Accessed on 17 January 2014.
+                </div>
+            </div>
+            <!--slide 6 ending-->
+            <!--slide 7 starting-->
+            <div id="slide7" style="display: none;">
+                <!--<div class="topic-bar">
+                        <div id="topic-title">HL: predisposing factors</div>
+                    </div>-->
+                <div class="slidecontent" style="">
+                    <div class="playBody">
+                        <div style="padding-left: 20px">
+                            <br />
+                            <p data-class="fadeInDown" style="display: none;" id="s7txt1">
+                               Maximum tumor reduction with brentuximab vedotin: 97% of patients achieved tumour reduction</p>
+                            <div style="text-align:center;">
+                                <img data-class="fadeInDown" id="s7img1" src="img/HL/individual patients.png" style="display: none;" />
+                            </div>
+                           
+                            <div data-class="fadeInDown" style="display: none;" id="s7txt2" >
+                             <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                            <p style="padding-left: 30px;margin-top:90px;">Complete response was observed in 38 patients</p></div>
+                            <div data-class="fadeInDown" style="display: none;" id="s7txt3"> 
+                                  <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                            <p style="padding-left: 30px;">50% of patients with CR remain in long-term remission after an observation period of about 4 years</p></div>
+                        </div>
+                    </div>
+                </div>
+                <!--Transcript -->
+                <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none;position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#"><img src="../common/img/showTrans.png" /></a>
+                    </div>
+                <div id="transcript-hide" style="display: none;">
+                    <center>
+                        <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                            Hide Transcript</button></center>
+                    <div class="transcript">
+                        <br />
+                        <p>
+                            Tumour reductions were seen in 56 of 57 (97%) of the patients and one patient did not have a post-baseline assessment.<sup>1</sup></p>
+                        <p>
+                            Complete response was observed in 38 patients, 50% of who remain in long-term remission after an observation period of about 4 years.<sup>2</sup>
+                        </p>
+                        
+                    </div>
+                </div>
+                <div id="slide7ref" style="display: none;" class="slide7ref">
+                    <b>References:</b><br />
+                    <br />
+                    1.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Brentuximab vedotin (SGN-35) in patients with relapsed or refractory systemic anaplastic large-cell lymphoma: results of a phase II study. J Clin Oncol. 2012;30(18):2190-6.<br />
+                    <br />
+                    2.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Four-year survival results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 3095, American Society of Hematology, December, 2014, San Francisco, CA, USA.<br /><br />
+                    3.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Three-year survival results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 1809, American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+                    <br />
+                    4.	ADCETRIS®. Summary of Product Characteristics. 22 August 2014. Available at European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB/document_library/EPAR_-<br />_Product_Information/human/002455/WC500135055.pdf. Accessed on 26 June 2015.<br /><br />
+                    5.	FDA Approval for Brentuximab Vedotin. National Cancer Institute Web site. Available at: http://www.cancer.gov/cancertopics/druginfo/fda-brentuximabvedotin. Accessed on 17 January 2014.
+                </div>
+            </div>
+            <!--slide 7 ending-->
+            <!--slide 8 starting-->
+            <div id="slide8" style="display: none;">
+                <!--<div class="topic-bar">
+                        <div id="topic-title">HL: clinical presentation (1)</div>
+                    </div>-->
+                <div class="slidecontent" style="">
+                    <div class="playBody">
+                        <div style="padding-left: 20px">
+                            <br />
+                            <p data-class="fadeInDown" style="display: none; text-align:center; font-size:14px; margin-top:-15px;" id="s8txt1">
+                               Similar CR likelihood among subgroups based on baseline prognostic factors</p>
+                            <div style="text-align:center;">
+                                <img data-class="fadeInDown" id="s8img1" src="img/HL/similar CR.png" style="display: none;" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Transcript -->
+                <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none;position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#"><img src="../common/img/showTrans.png" /></a>
+                    </div>
+                <div id="transcript-hide" style="display: none;">
+                    <center>
+                        <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                            Hide Transcript</button></center>
+                    <div class="transcript">
+                        <br />
+                        <p>
+                            Differences in individual characteristics of patient subgroups did not affect the response to treatment with brentuximab vedotin.<sup>1</sup></p>
+                        <p>
+                            This was evident from the fact that an analysis of the complete response rate assessed by sub-groups based on baseline prognostic factors revealed that all sub-groups achieved clinically meaningful anti-tumour activity and that the likelihood of achieving CR was similar among the groups analyzed.<sup>1</sup></p>
+                        <p>
+                            Possible difference in efficacy of brentuximab was also assessed based on other baseline characteristics such as ALK status, B symptoms and cutaneous lesions. </p>
+                            <p>Let us now examine these findings.</p>
+                        
+                    </div>
+                </div>
+                <div id="slide8ref" style="display: none" class="slide8ref">
+                    <b>References:</b><br />
+                    <br />
+                    1.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Brentuximab vedotin (SGN-35) in patients with relapsed or refractory systemic anaplastic large-cell lymphoma: results of a phase II study. J Clin Oncol. 2012;30(18):2190-6.<br />
+                    <br />
+                    2.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Four-year survival results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 3095, American Society of Hematology, December, 2014, San Francisco, CA, USA.<br /><br />
+                    3.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Three-year survival results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 1809, American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+                    <br />
+                    4.	ADCETRIS®. Summary of Product Characteristics. 22 August 2014. Available at European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB/document_library/EPAR_-<br />_Product_Information/human/002455/WC500135055.pdf. Accessed on 26 June 2015.<br /><br />
+                    5.	FDA Approval for Brentuximab Vedotin. National Cancer Institute Web site. Available at: http://www.cancer.gov/cancertopics/druginfo/fda-brentuximabvedotin. Accessed on 17 January 2014.
+                </div>
+            </div>
+            <!--slide 8 ending-->
+            <!--slide 9 starting-->
+               <div id="slide9" style="display: none;">
+                <!--<div class="topic-bar">
+                        <div id="topic-title">HL: clinical presentation (2)</div>
+                    </div>-->
+                <div class="slidecontent" style="">
+                    <div class="playBody">
+                        <div style="padding-left: 20px">
+                            <br />
+                            <p data-class="fadeInDown" style="display: none; text-align:center;" id="s9txt1">PFS and OS by Cycle 4 PET and Baseline ALK Status (N=58)</p>
+                           <div style="text-align:center;margin-top: 10px;">
+                                <img data-class="fadeInDown" id="s9img1" src="img/HL/frame12_img.png" style="display: none;  width: 527px;" />
+                            </div>
+                      
+                              <center>
+                            <!--<table class="leftbluetable"  id="s9Table1" style=" display: none; border:1px solid #ccc; margin-bottom: 10px;
+margin-top: 10px; width:550px;">
+                            <tr style="border-bottom: 1px solid #ccc;">
+                                <td class="" style="width: 50%; text-align: left;">
+                                  
+                                </td>
+                                <td style="  width:100px;">
+                                    
+                                </td>
+                                <td style="  text-align:center;">
+                                   n 
+                                </td>
+                                <td style="  width:100px;">
+                                    
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ccc;">
+                                <td class="" style="width: 20%; text-align: left; ">
+                                    ALK - Negative (n= 42) ORR/ CR, %
+                                    </td>
+                                    <td style="  width:100px;">
+                                    
+                                </td>
+
+                                <td style="  text-align:center;">
+                                    88/ 52
+
+                                </td>
+                            </tr>
+                            <tr style="">
+                                <td class="" style="width: 40%; text-align:justify;">
+                                    ALK - Positive (n = 16) ORR/ CR, %
+                                </td>
+                                <td style="  width:100px;">
+                                    
+                                </td>
+                               
+                                <td style="  text-align:center;">
+                                    
+                                        81/ 69                                   
+                                </td>
+                            </tr>
+                        </table>-->
+                        </center>
+                         <div data-class="fadeInDown" style="display: none;" id="s9bimg1">
+                       <br />
+                        <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                        <p>Median PFS rate and OS rate were not different between patients with ALK-negative disease and ALK-positive disease<sup>2</sup>
+</p>
+                       </div>
+
+                       <div data-class="fadeInDown" style="display: none;" id="s9bimg2"> 
+                        <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                        <p>Of patients with B symptoms (n=17), 14 patients (82%) experienced resolution of all symptoms</p>
+                        </div>
+                       <div  data-class="fadeInDown" style="display: none;" id="s9bimg3"> 
+                        <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                        <p>Complete resolution of all malignant cutaneous lesions occurred in 14 of 15 patients (93%) who had cutaneous lesions at baseline</p>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Transcript -->
+                <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none;position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#"><img src="../common/img/showTrans.png" /></a>
+                    </div>
+                <div id="transcript-hide" style="display: none;">
+                    <center>
+                        <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                            Hide Transcript</button></center>
+                    <div class="transcript">
+                        </br><p>PFS rate and OS rate were assessed based on ALK status and no difference was found in median PFS and duration of response between patients with ALK-negative disease and ALK-positive disease.<sup>2</sup>.</p>
+                        <p>Other measures of activity such as resolution of B symptoms and malignant cutaneous lesions were assessed.<sup>1</sup></p>
+                        <p>A majority of patients with B symptoms had resolution of the symptoms. All B symptoms resolved after initiation of brentuximab vedotin in 14 (82%) of the 17 patients who had B symptoms at baseline.<sup>1</sup></p>
+                        <p>Similarly, complete resolution of all malignant cutaneous lesions occurred in all but one of the patients with baseline cutaneous lesions. 14 of 15 patients who had cutaneous lesions at baseline had complete resolution after use of brentuximab vedotin.<sup>1</sup></p>
+                    </div>
+                </div>
+                <div id="slide9ref" style="display: none" class="slide9ref">
+                    <b>References:</b><br />
+                    <br />
+                    1.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Brentuximab vedotin (SGN-35) in patients with relapsed or refractory systemic anaplastic large-cell lymphoma: results of a phase II study. J Clin Oncol. 2012;30(18):2190-6.<br />
+                    <br />
+                    2.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Four-year survival results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 3095, American Society of Hematology, December, 2014, San Francisco, CA, USA.<br /><br />
+                    3.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Three-year survival results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 1809, American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+                    <br />
+                    4.	ADCETRIS®. Summary of Product Characteristics. 22 August 2014. Available at European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB/document_library/EPAR_-<br />_Product_Information/human/002455/WC500135055.pdf. Accessed on 26 June 2015.<br /><br />
+                    5.	FDA Approval for Brentuximab Vedotin. National Cancer Institute Web site. Available at: http://www.cancer.gov/cancertopics/druginfo/fda-brentuximabvedotin. Accessed on 17 January 2014.
+                </div>
+            </div>
+            <!--slide 9 ending-->
+            <!--slide 10 starting-->
+			  <div id="slide9a" style="display: none;">
+                <!--Body -->
+                <!--<div class="topic-bar">
+                        <div id="topic-title">HL: CHL</div>
+                    </div>-->
+                <div class="slidecontent" style="">
+                    <div class="playBody">
+                         <div style="text-align:center;margin-top: 30px;">
+                                <img data-class="fadeInDown" id="s9agraph1" src="img/HL/frame8_img2.png" style="display: none;  width: 527px;" />
+                            </div>
+                    </div>
+                </div>
+            
+                <!--Transcript -->
+                <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none;position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#"><img src="../common/img/showTrans.png" /></a>
+                    </div>
+                <div id="transcript-hide" style="display: none;">
+                    <center>
+                        <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                            Hide Transcript</button></center>
+                    <div class="transcript" style="">
+                        <p>
+                           The median PFS observed after 4 years of follow up was 20 months. Better PFS was observed with a better degree of response. The median PFS in the population that achieved a stable disease was 2.5 months, while the PFS in the population with a PR was 4.5 months. The PFS in those with a complete response had not been reached.<sup>2</sup></p>
+                       
+                    </div>
+                </div>
+                <div id="slide3ref" style="display: none;" class="slide3ref">
+                    <b>References:</b><br />
+                    <br />
+                     1.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Brentuximab vedotin (SGN-35) in patients with relapsed or refractory systemic anaplastic large-cell lymphoma: results of a phase II study. J Clin Oncol. 2012;30(18):2190-6.<br />
+                    <br />
+                    2.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Four-year survival results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 3095, American Society of Hematology, December, 2014, San Francisco, CA, USA.<br /><br />
+                    3.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Three-year survival results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 1809, American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+                    <br />
+                    4.	ADCETRIS®. Summary of Product Characteristics. 22 August 2014. Available at European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB/document_library/EPAR_-<br />_Product_Information/human/002455/WC500135055.pdf. Accessed on 26 June 2015.<br /><br />
+                    5.	FDA Approval for Brentuximab Vedotin. National Cancer Institute Web site. Available at: http://www.cancer.gov/cancertopics/druginfo/fda-brentuximabvedotin. Accessed on 17 January 2014.
+                </div>
+            </div>  
+            <div id="slide10" style="display: none;">
+                <!--<div class="topic-bar">
+                        <div id="topic-title">HL: clinical presentation (2)</div>
+                    </div>-->
+                <div class="slidecontent" style="">
+                    <div class="playBody">
+                        <div style="padding-left: 20px">
+                           <br />
+                            <p data-class="fadeInDown" style="display: none; text-align:center;" id="s10txt1">PFS with brentuximab vedotin longer than PFS with most recent prior therapy</p>
+                            <center>
+                            <table class="leftbluetable"  id="s10Table1" style=" display: none; border:1px solid #ccc; width:550px;">
+                            <tr style="border-bottom: 1px solid #ccc; background:#00717f;">
+                                <td class="" style="width: 60%; text-align: left;">
+
+ 
+                                </td>
+                                <td style=" ">
+                                    PFS, months
+                                </td>
+                                <td style=" ">
+                                    95% CI
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ccc; background-color:rgba(179,221,230,.5);">
+                                <td class="" style="width: 20%; text-align: left; ">
+                                    Brentuximab vedotin
+
+                                <td style=" text-align:center;">
+                                    14.3
+                                </td>
+                                <td style="text-align:center;">
+                                    9.1, NE
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ccc; background-color:rgba(179,221,230,.5);">
+                                <td class="" style="width: 40%; text-align:justify;">
+                                    Most recent prior therapy*
+                                </td>
+                               
+                                <td style="  text-align:center;">
+                                    5.9                                   
+                                </td>
+                                <td style="  text-align:center;">
+                                    3.9, 8.3                                   
+                                </td>
+                            </tr>
+                        </table>
+                        </center>
+                        <p data-class="fadeInDown" style="display: none; text-align:center; font-size:11px; margin-top:10px;" id="s10txt2"> *Including ASCT;  NE = Not estimable; HR = 0.48 (p=0.001)</p><br />
+                        <p data-class="fadeInDown" style="display: none; font-size:11px; text-align:center;" id="s10txt3"></p>
+                        </div>
+                    </div>
+                </div>
+                <!--Transcript -->
+                <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none;position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#"><img src="../common/img/showTrans.png" /></a>
+                    </div>
+                <div id="transcript-hide" style="display: none;">
+                    <center>
+                        <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                            Hide Transcript</button></center>
+                    <div class="transcript">
+                        </br><p>Progression-free survival achieved with brentuximab vedotin was compared with that achieved with most recent prior therapy, typically multi-agent chemotherapy or autologous stem cell transplantation.</p>
+                        
+                        <p>Data from this study demonstrated that the median PFS as reported by investigator assessment with brentuximab vedotin was 14.3 months. This was longer than the 5.9 month PFS observed with last prior therapy.<sup>1</sup></p>
+                        
+                    </div>
+                </div>
+                <div id="slide10ref" style="display: none" class="slide10ref">
+                    <b>References:</b><br />
+                    <br />
+                    1.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Brentuximab vedotin (SGN-35) in patients with relapsed or refractory systemic anaplastic large-cell lymphoma: results of a phase II study. J Clin Oncol. 2012;30(18):2190-6.<br />
+                    <br />
+                    2.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Four-year survival results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 3095, American Society of Hematology, December, 2014, San Francisco, CA, USA.<br /><br />
+                    3.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Three-year survival results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 1809, American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+                    <br />
+                    4.	ADCETRIS®. Summary of Product Characteristics. 22 August 2014. Available at European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB/document_library/EPAR_-<br />_Product_Information/human/002455/WC500135055.pdf. Accessed on 26 June 2015.<br /><br />
+                    5.	FDA Approval for Brentuximab Vedotin. National Cancer Institute Web site. Available at: http://www.cancer.gov/cancertopics/druginfo/fda-brentuximabvedotin. Accessed on 17 January 2014.
+                </div>
+            </div>
+            <!--slide 10 ending-->
+            <div id="slide10a" style="display: none;">
+                    <!-- <div class="topic-bar">
+                        <div id="topic-title">HL: survival rates</div>
+                    </div>-->
+                    <!--Body -->
+                    <div class="slidecontent" style="">
+                        <div class="playBody">
+                            <div style="padding-left: 20px">
+                                <br />
+                                <p data-class="fadeInDown" style="display: none;" id="s10atxt1">
+                                   Identify the correct statement. (Select the most appropriate option)?</p>
+                                <br />
+                                <input type="hidden" id="Answer" value="4" qid="3" />
+                                <input type="hidden" id="Percentage" value="50" />
+                                <div id="radio1" style="padding: 10px 25px 10px 10px; display: none;">
+                                    <input name="ratio1" value="1" type="radio" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="padding-left: 55px;">Median PFS with brentuximab vedotin was longer compared to median PFS with last prior therapy</p>
+                                        
+                                </div>
+                                <div id="radio2" style="padding: 10px 25px 10px 10px; display: none;">
+                                    <input name="ratio1" value="2" type="radio" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="padding-left: 55px;">The likelihood of achieving CR was not similar among the groups analysed</p>
+                                      
+                                </div>
+                                <div id="radio3" style="padding: 10px 25px 10px 10px; display: none;">
+                                    <input name="ratio1" value="3" type="radio" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="padding-left: 55px;">Median overall survival was 33.4 months</p>
+                                       
+                                </div>
+                                <div id="radio4" style="padding: 10px 25px 10px 10px; display: none;">
+                                    <input name="ratio1" value="4" type="radio" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="padding-left: 55px;">A and B</p>
+                                        
+                                </div>
+                                <div id="radio5" style="padding: 10px 25px 10px 10px; display: none;">
+                                    <input name="ratio1" value="4" type="radio" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="padding-left: 55px;">A, B and C</p>
+                                       
+                                </div>
+                                <div style="margin-left:470px;">
+                                    <div>
+                                        <input id="s10aimag9" onclick="onclickAnswer(this);" type="button" class="btn btn-primary" value="Submit"
+                                            style="width: 100px; margin-right: 25px; display: none" />
+                                    </div>
+                                    <br />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Transcript -->
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none;
+                        position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#">
+                            <img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center>
+                            <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                                Hide Transcript</button></center>
+                        <div class="transcript">
+                            <br />
+
+                            Please take a moment to answer a question. Please select the best answer and click submit to continue.
+
+                           
+                        </div>
+                    </div>
+                    
+                </div>
+                <!--slide 10a ending-->
+            <div id="slide11" style="display: none;">
+                <!--  <div class="topic-bar">
+                    <div id="topic-title">HL: Staging</div>
+                </div>-->
+                <div class="slidecontent" style="">
+                   <div style="">
+                          <p data-class="fadeInDown" style="display: none; text-align:center;" id="s11txt1"> Overall survival by best response</p>
+                          
+                          <br />
+                           <div data-class="fadeInDown" id="s11bimg2" style="display: none;" >    
+                                <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                               <p style="padding-left: 30px;">
+                                Median OS for patients who obtained a CR has not yet been reached</p>
+                           </div>
+                           <div  data-class="fadeInDown" id="s11bimg1" style=" display:none;">
+                               <img src="../common/img/bullet01.png" style=" width: 12px; height: 12px; float: left; margin: 10px;" />
+                               <p style="padding-left: 30px;">
+                                Duration of overall survival was better with deeper responses</p>
+                           </div>
+                       <div style="text-align:center;">
+                            <img data-class="fadeInDown" id="s11img1" src="img/HL/overall survival  by  best response.png" style="display: none;width:420px;" />
+                          </div>
+                        <div  data-class="fadeInDown" id="s11bimg3" style=" display:none;">
+                               <img src="../common/img/bullet01.png" style=" width: 12px; height: 12px; float: left; margin: 10px;" />
+                               <p style="padding-left: 30px;">
+                               Median duration of objective response (OR) was 13.2 months</p>
+                           </div>
+                        <div  data-class="fadeInDown" id="s11bimg4" style=" display:none;">
+                               <img src="../common/img/bullet01.png" style=" width: 12px; height: 12px; float: left; margin: 10px;" />
+                               <p style="padding-left: 30px;">
+                              Median duration of response in patients with complete remission was longer at 26.3 months</p>
+                           </div>
+                        </div>
+                </div>
+                <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none;position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#"><img src="../common/img/showTrans.png" /></a>
+                    </div>
+                <div id="transcript-hide" style="display: none;">
+                    <center>
+                        <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                            Hide Transcript</button></center>
+                    <div class="transcript" style="">
+                        <p>
+                            After a 4-year extended follow-up, The median OS for patients who obtained a CR had not yet been reached.<sup>2</sup></p>
+                        <p>
+                            The median duration of overall survival varied with the degree of response to brentuximab vedotin. It was observed to be lesser with a lesser degree of response to treatment.<sup>2</sup></p>
+                        <p>
+                           The median OS for patients with partial remission was 11.6 months and for those with stable disease was 6.9 months.<sup>2</sup></p>
+                        <p>
+                           Based on data from the three-year follow-up, the median duration of objective response (OR) was 13.2 months. In comparison, the median duration in patients who achieved a complete remission was relatively longer at 26.3 months.<sup>3</sup></p>
+                        
+                    </div>
+                </div>
+                <div id="slide11ref" style="display: none" class="slide11ref">
+                    <b>References:</b><br />
+                    <br />
+                    1.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Brentuximab vedotin (SGN-35) in patients with relapsed or refractory systemic anaplastic large-cell lymphoma: results of a phase II study. J Clin Oncol. 2012;30(18):2190-6.<br />
+                    <br />
+                    2.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Four-year survival results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 3095, American Society of Hematology, December, 2014, San Francisco, CA, USA.<br /><br />
+                    3.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Three-year survival results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 1809, American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+                    <br />
+                    4.	ADCETRIS®. Summary of Product Characteristics. 22 August 2014. Available at European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB/document_library/EPAR_-<br />_Product_Information/human/002455/WC500135055.pdf. Accessed on 26 June 2015.<br /><br />
+                    5.	FDA Approval for Brentuximab Vedotin. National Cancer Institute Web site. Available at: http://www.cancer.gov/cancertopics/druginfo/fda-brentuximabvedotin. Accessed on 17 January 2014.
+                </div>
+            </div>
+            <div id="slide12" style="display: none;">
+                <!--  <div class="topic-bar">
+                    <div id="topic-title">HL: work up and diagnosis</div>
+                </div>-->
+                <div class="slidecontent" style="">
+                    <div style="margin-bottom:20px;">
+                          <p data-class="fadeInDown" style="display: none; text-align:center;" id="s12txt1">Overall Survival and Progression-Free Survival by Cycle 4 PET Status</p>
+                            <div style="text-align:center;">
+                            <img data-class="fadeInDown" id="s12img1" src="img/HL/cycle 4 PET.png" style="display: none;;" />
+                            </div>    
+                        </div>
+                    <div data-class="fadeInDown" id="s12imag12n" style="display: none;" >    
+                                <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                               <p style="padding-left: 30px;">
+                              The median OS and PFS in patients with a positive PET scan was 14.6 months and 4.6 months respectively</p>
+                          </div>
+                           <div  data-class="fadeInDown" id="s12imag13n" style=" display:none;">
+                               <img src="../common/img/bullet01.png" style=" width: 12px; height: 12px; float: left; margin: 10px;" />
+                               <p style="padding-left: 30px;">
+                              The median OS and PFS in patients with a negative PET scan had not yet been reached.</p>
+                     </div>
+                         
+                   
+
+                </div>
+                <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none;position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#"><img src="../common/img/showTrans.png" /></a>
+                    </div>
+                <div id="transcript-hide" style="display: none;">
+                    <center>
+                        <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                            Hide Transcript</button></center>
+                    <div class="transcript" style="">
+                        <p>
+                            Overall survival and progression free survival were analyzed by PET status of the patients at cycle 4 of administration of brentuximab vedotin.<sup>2</sup></p>
+                        
+                        <p>
+                            Three patients did not have a PET scan at cycle 4 due to adverse events, 5 did not get a scan due to progressive disease, and the investigator and patient decided against getting a PET scan in 2 different instances. A total of 10 patients did not get a PET scan at cycle 4.<sup>2</sup></p>
+                        <p>
+                            The median OS and PFS in patients with a positive PET scan was 14.6 months and 4.6 months respectively.<sup>2</sup></p>
+                        
+                        <p>
+                            The median OS and PFS in patients with a negative PET scan had not yet been reached.<sup>2</sup></p>
+                    </div>
+                </div>
+                <div id="slide12ref" style="display: none" class="slide12ref">
+                    <b>References:</b><br />
+                    <br />
+                    1.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Brentuximab vedotin (SGN-35) in patients with relapsed or refractory systemic anaplastic large-cell lymphoma: results of a phase II study. J Clin Oncol. 2012;30(18):2190-6.<br />
+                    <br />
+                    2.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Four-year survival results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 3095, American Society of Hematology, December, 2014, San Francisco, CA, USA.<br /><br />
+                    3.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Three-year survival results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 1809, American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+                    <br />
+                    4.	ADCETRIS®. Summary of Product Characteristics. 22 August 2014. Available at European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB/document_library/EPAR_-<br />_Product_Information/human/002455/WC500135055.pdf. Accessed on 26 June 2015.<br /><br />
+                    5.	FDA Approval for Brentuximab Vedotin. National Cancer Institute Web site. Available at: http://www.cancer.gov/cancertopics/druginfo/fda-brentuximabvedotin. Accessed on 17 January 2014.
+                </div>
+            </div>
+            <div id="slide13" style="display: none;">
+                <!--  <div class="topic-bar">
+                    <div id="topic-title">HL: prognosis and survival</div>
+                </div>-->
+                <div class="slidecontent" style="">
+                    <div data-class="fadeInDown" id="s13bimg1" style="display:none;padding-top:25px;">
+                        <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin:6px; margin-top: 6px;" />
+                        <p>
+                            Overall, patients received a median of 7 cycles (range, 1-16)</p>
+                    </div>
+                    <div data-class="fadeInDown" id="s13bimg2" style="display: none;">        
+                            <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 6px; margin-top: 6px;" />
+                        <p>
+                            Patients who achieved an objective response received more cycles of therapy</p>
+                     </div>
+                     <div style="text-align:center;">   
+                        <img data-class="fadeInDown" id="s13img1" src="img/HL/brentuximab vedotin doses.png" style="display: none;" />
+                    </div>
+                </div>
+                <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none;position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#"><img src="../common/img/showTrans.png" /></a>
+                    </div>
+                <div id="transcript-hide" style="display: none;">
+                    <center>
+                        <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                            Hide Transcript</button></center>
+                    <div class="transcript" style="">
+                        <p>Patients received a median of 7 cycles of treatment with brentuximab vedotin.<sup>1</sup></p>
+                        <p>The number of cycles of treatment with brentuximab vedotin was highest in patients who achieved a complete response.<sup>3</sup></p>
+                        <p>The recommended duration of treatment with brentuximab vedotin is a minimum of 8 cycles and up to a maximum of 16 cycles administered every 3 weeks.<sup>4</sup></p>
+                        <p>Let us now go through a case study that demonstrates the efficacy and safety of brentuximab vedotin in a patient with ALK positive disease.</p>
+                    </div>
+                </div>
+                <div id="slide13ref" style="display: none" class="slide13ref">
+                    <b>References:</b><br />
+                    <br />
+                    1.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Brentuximab vedotin (SGN-35) in patients with relapsed or refractory systemic anaplastic large-cell lymphoma: results of a phase II study. J Clin Oncol. 2012;30(18):2190-6.<br />
+                    <br />
+                    2.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Four-year survival results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 3095, American Society of Hematology, December, 2014, San Francisco, CA, USA.<br /><br />
+                    3.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Three-year survival results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 1809, American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+                    <br />
+                    4.	ADCETRIS®. Summary of Product Characteristics. 22 August 2014. Available at European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB/document_library/EPAR_-<br />_Product_Information/human/002455/WC500135055.pdf. Accessed on 26 June 2015.<br /><br />
+                    5.	FDA Approval for Brentuximab Vedotin. National Cancer Institute Web site. Available at: http://www.cancer.gov/cancertopics/druginfo/fda-brentuximabvedotin. Accessed on 17 January 2014.
+                </div>
+            </div>
+            <div id="slide14" style="display: none;">
+                <!--  <div class="topic-bar">
+                    <div id="topic-title">HL: prognosis (early disease)</div>
+                </div>-->
+                <div class="slidecontent" style="">
+                <div style="width:100%;">
+                    <p data-class="fadeInDown" style="display: none; text-align:center;" id="s14txt1"><strong>Case Study</strong></p>
+                    <div>
+                    <p style="text-align:center; display:none;" id="s14text1">Baseline&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;After 4 cycles</p>
+                    </div>
+                    <div style="text-align:center;">
+                        <img data-class="fadeIndown" id="s14img1" src="img/HL/frame15.png" style="display: none;
+                             position:relative; width:335px; height:275px;" />
+                    </div>
+                    <div style="margin-top:10px; margin-left:50px;">
+                    <div id="s14hdn1">
+                  <div data-class="fadeInDown" id="s14bimg1" style="display: none;">  
+                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px; margin-top: 10px;" />
+                    <p style="text-align:left;">42-year-old male with ALK+ disease</p>
+                  </div>
+                  <div data-class="fadeInDown" id="s14bimg2" style="display: none;">  
+                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px; margin-top: 10px;" />
+                    <p style="text-align:left;">Prior treatment:</p>
+                  </div>
+                  <div  data-class="fadeInDown" id="s14bimg3" style="display: none; padding-left:40px;">  
+                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px; margin-top: 10px;" />
+                    <p>CHOP</p>
+                  </div>
+                  <div data-class="fadeInDown" style="display: none;  padding-left:40px;" id="s14bimg4">  
+                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px; margin-top: 10px;" />
+                    <p>VAPEC B</p>
+                  </div>
+                  <div  data-class="fadeInDown" style="display: none;  padding-left:40px;" id="s14bimg5">  
+                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px; margin-top: 10px;" />
+                    <p>ASCT </p>
+                  </div>
+                  </div>
+                  <div  data-class="fadeInDown" id="s14bimg6" style="display: none; margin-top:10px;">  
+                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px; margin-top: 10px;" />
+                    <p style="text-align:left;">Cycle 4 restaging: CR</p>
+                  </div>
+                  <div data-class="fadeInDown" id="s14bimg7" style="display: none;">  
+                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px; margin-top: 10px;" />
+                    <p style="text-align:left; padding-left:32px;">Patient experienced tumour lysis syndrome after 1<sup>st</sup> dose, recovered </p>
+                  </div>
+                  <div  data-class="fadeInDown" id="s14bimg8" style="display: none;">  
+                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px; margin-top: 10px;" />
+                    <p style="text-align:left;">Patient received 8 cycles in total</p>
+                   </div> 
+                    </div>
+                  </div>
+               </div>
+                <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none;position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#"><img src="../common/img/showTrans.png" /></a>
+                    </div>
+                <div id="transcript-hide" style="display: none;">
+                    <center>
+                        <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                            Hide Transcript</button></center>
+                    <div class="transcript" style="">
+                        <p>The patient was a 42 year old male with ALK positive disease and had received prior chemotherapy and ASCT.<sup>1</sup></p>
+                        <p>Complete remission was achieved in this patient after four cycles of treatment with brentuximab vedotin. 
+The patient experienced tumor lysis syndrome after the first dose of brentuximab vedotin; after he recovered from this event, seven additional doses of brentuximab vedotin were administered in the study (eight total doses). The patient received an allogeneic SCT after discontinuing treatment with brentuximab vedotin; 9 months after the last dose in the study, the patient remained in remission.<sup>1</sup></p>
+                    </div>
+                </div>
+                <div id="slide14ref" style="display: none" class="slide14ref">
+                    <b>References:</b><br />
+                    <br />
+                   1.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Brentuximab vedotin (SGN-35) in patients with relapsed or refractory systemic anaplastic large-cell lymphoma: results of a phase II study. J Clin Oncol. 2012;30(18):2190-6.<br />
+                    <br />
+                    2.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Four-year survival results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 3095, American Society of Hematology, December, 2014, San Francisco, CA, USA.<br /><br />
+                    3.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Three-year survival results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 1809, American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+                    <br />
+                    4.	ADCETRIS®. Summary of Product Characteristics. 22 August 2014. Available at European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB/document_library/EPAR_-<br />_Product_Information/human/002455/WC500135055.pdf. Accessed on 26 June 2015.<br /><br />
+                    5.	FDA Approval for Brentuximab Vedotin. National Cancer Institute Web site. Available at: http://www.cancer.gov/cancertopics/druginfo/fda-brentuximabvedotin. Accessed on 17 January 2014.
+                </div>
+            </div>
+            
+             <div id="slide14a" style="display: none;">
+                    <!-- <div class="topic-bar">
+                        <div id="topic-title">HL: survival rates</div>
+                    </div>-->
+                    <!--Body -->
+                    <div class="slidecontent" style="">
+                        <div class="playBody">
+                            <div style="padding-left: 20px">
+                                <br />
+                                <p data-class="fadeInDown" style="display: none;" id="s14atxt1">
+                                  The number of cycles of treatment with brentuximab vedotin was highest in patients who achieved a complete response</p>
+                                <br />
+                                <input type="hidden" id="Answer" value="1" qid="1" />
+                                <input type="hidden" id="Percentage" value="25" />
+                                <div id="radio1" style="padding: 10px 25px 10px 10px; display: none;">
+                                    <input name="ratio1" value="1" type="radio" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="padding-left: 55px;">True</p>
+                                        
+                                </div>
+                                <div id="radio2" style="padding: 10px 25px 10px 10px; display: none;">
+                                    <input name="ratio1" value="2" type="radio" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="padding-left: 55px;">False</p>
+                                      
+                                </div>
+                               
+                                <div style="margin-left:470px;">
+                                    <div>
+                                        <input id="s14aimag9" onclick="onclickAnswer(this);" type="button" class="btn btn-primary" value="Submit"
+                                            style="width: 100px; margin-right: 25px; display: none" />
+                                    </div>
+                                    <br />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Transcript -->
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none;
+                        position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#">
+                            <img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center>
+                            <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                                Hide Transcript</button></center>
+                        <div class="transcript">
+                            <br />
+                           Please take a moment to answer a question. Please select the best answer and click submit to continue.
+                          </div>
+                    </div>
+                   
+                </div>
+                <!--slide 14a ending-->
+            <div id="slide15" style="display: none;">
+                <!--  <div class="topic-bar">
+                    <div id="topic-title">HL: prognosis (advanced disease)</div>
+                </div>-->
+                <div class="slidecontent" style="">
+                    <div class="playBody">
+                        <div style="padding-left: 20px">
+                            <br />
+                            <p data-class="fadeInDown" style="display: none;" id="s15txt1">Safety and tolerability of brentuximab vedotin in patients with refractory or relapsed ALCL</p>
+                      <div data-class="fadeInDown" id="s15bimg1" style="display: none;">  
+                        <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                        <p>Adverse Events in ≥20% of patients(N=58) </p>
+                      </div>
+                            <div style="text-align:center;">
+                                <img data-class="fadeInDown" id="s15Table1" src="img/HL/frame17_img.png" style="display: none;" />
+                            </div>
+                      
+                      <!--<center>  
+                         
+                            <table class="leftbluetable"  id="s15Table1" style=" display: none; margin-bottom:20px; border:1px solid #ccc; width:550px;">
+                            <tr style="border-bottom: 1px solid #ccc;">
+                                <td class="" style="width: 60%; text-align: left;">
+                                  Preferred Term
+ 
+                                </td>
+                                <td style=" ">
+                                    All Grades
+                                    n(%)
+
+                                </td>
+                                <td style=" ">
+                                    Grade 3
+                                     n(%)
+                                </td>
+                                <td style=" ">
+                                    Grade 4
+                                     n(%)
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ccc;">
+                                <td class="" style="width: 20%; text-align: left; ">
+                                   <strong> Peripheral neuropathy<sup>a</sup></strong>
+
+                                <td style=" ">
+                                    57
+
+                                </td>
+                                <td style=" ">
+                                    17
+
+                                </td>
+                                <td style=" ">
+                                    0
+
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ccc;">
+                                <td class="" style="width: 40%; text-align:justify;">
+                                   <strong> Nausea</strong>
+                                </td>
+                               
+                                <td style=" ">
+                                    
+                                        40                                   
+                                </td>
+                                <td style=" ">
+                                    
+                                        2                                   
+                                </td>
+                                <td style=" ">
+                                    
+                                        0                                   
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ccc;">
+                                <td class="" style="width: 40%; text-align:justify;">
+                                    <strong> Fatigue</strong>
+                                </td>
+                               
+                                <td style=" ">
+                                    
+                                        38                                   
+                                </td>
+                                <td style=" ">
+                                    
+                                        3                                   
+                                </td>
+                                <td style=" ">
+                                    
+                                        2                                   
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ccc;">
+                                <td class="" style="width: 40%; text-align:justify;">
+                                    <strong> Pyrexia </strong>
+                                </td>
+                               
+                                <td style=" ">
+                                    
+                                        34                                   
+                                </td>
+                                <td style=" ">
+                                    
+                                        2                                   
+                                </td>
+                                <td style=" ">
+                                    
+                                        0                                   
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ccc;">
+                                <td class="" style="width: 40%; text-align:justify;">
+                                    <strong> Diarrhea</strong>
+                                </td>
+                               
+                                <td style=" ">
+                                    
+                                        29                                   
+                                </td>
+                                <td style=" ">
+                                    
+                                        3                                   
+                                </td>
+                                <td style=" ">
+                                    
+                                        0                                   
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ccc;">
+                                <td class="" style="width: 40%; text-align:justify;">
+                                    <strong> Rash</strong>
+                                </td>
+                               
+                                <td style=" ">
+                                    
+                                        24                                   
+                                </td>
+                                <td style=" ">
+                                    
+                                        0                                   
+                                </td>
+                                <td style=" ">
+                                    
+                                        0                                   
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ccc;">
+                                <td class="" style="width: 40%; text-align:justify;">
+                                    <strong> Constipation</strong>
+                                </td>
+                               
+                                <td style=" ">
+                                    
+                                        22                                   
+                                </td>
+                                <td style=" ">
+                                    
+                                        2                                   
+                                </td>
+                                <td style=" ">
+                                    
+                                        0                                   
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid black;">
+                                <td class="" style="width: 40%; text-align:justify;">
+                                    <strong> Neutropenia</strong>
+                                </td>
+                               
+                                <td style=" ">
+                                    
+                                        21                                   
+                                </td>
+                                <td style=" ">
+                                    
+                                        12                                   
+                                </td>  <td style=" ">
+                                    
+                                        9                                   
+                                </td>
+                            </tr>
+                        </table>
+                        </center>-->
+                            <div  data-class="fadeInDown" style="display: none;" id="s15bimg2" >  
+                        <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                        <p style="margin-top:10px;">Other grade 3/4 events in ≥5% of patients: thrombocytopenia (14%), anemia (7%) and recurrent ALCL (5%)</p>
+                      </div> 
+                        </div>
+                    </div>
+                </div>
+                <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none;position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#"><img src="../common/img/showTrans.png" /></a>
+                    </div>
+                <div id="transcript-hide" style="display: none;">
+                    <center>
+                        <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                            Hide Transcript</button></center>
+                    <div class="transcript" style="">
+                        <p>The most common adverse events of any grade, occurring in 20% or more of the patients, were peripheral neuropathy, nausea, fatigue, pyrexia, diarrhea, rash, constipation and neutropenia.<sup>2</sup></p>
+                        <p>Among these the most common grade 3 events were peripheral neuropathy and neutropenia. The most common grade 4 adverse event was neutropenia.<sup>2</sup></p>
+                        <p>Other grade 3 or 4 adverse events that occurred in 5% or more of the patients were thrombocytopenia (14%) anaemia (7%) and recurrent ALCL (5%).<sup>2</sup></p>
+                        <p>Let us continue, to discuss the dose modifications associated with the adverse events.</p>
+                    </div>
+                </div>
+                <div id="slide15ref" style="display: none" class="slide15ref">
+                    <b>References:</b><br />
+                    <br />
+                    1.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Brentuximab vedotin (SGN-35) in patients with relapsed or refractory systemic anaplastic large-cell lymphoma: results of a phase II study. J Clin Oncol. 2012;30(18):2190-6.<br />
+                    <br />
+                    2.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Four-year survival results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 3095, American Society of Hematology, December, 2014, San Francisco, CA, USA.<br /><br />
+                    3.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Three-year survival results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 1809, American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+                    <br />
+                    4.	ADCETRIS®. Summary of Product Characteristics. 22 August 2014. Available at European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB/document_library/EPAR_-<br />_Product_Information/human/002455/WC500135055.pdf. Accessed on 26 June 2015.<br /><br />
+                    5.	FDA Approval for Brentuximab Vedotin. National Cancer Institute Web site. Available at: http://www.cancer.gov/cancertopics/druginfo/fda-brentuximabvedotin. Accessed on 17 January 2014.
+                </div>
+            </div>
+            <div id="slide16" style="display: none;">
+                <!--  <div class="topic-bar">
+                    <div id="topic-title">HL: Elderly Patients </div>
+                </div>-->
+                <div class="slidecontent" style="">
+                    <div class="playBody">
+                        <div style="padding-left: 20px">
+                            <br />
+                            <p data-class="fadeInDown" style="display: none; text-align:center;" id="s16txt1">Adverse events and dose modifications</p>
+                            <center>
+                            <table class="leftbluetable"  id="s16Table1" style=" display: none; width: 550px; border:1px solid #ccc;">
+                            <tr style="border-bottom: 1px solid #ccc;  background-color:#00717f;">
+                                <td class="" style="width: 70%; text-align: left;">
+                                  
+ 
+                                </td>
+                                <td style="text-align: center; ">
+                                  N=58
+  
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ccc; background-color:rgba(179,221,230,.5);">
+                                <td class="" style="width: 20%; text-align: left; ">
+                                    <strong> Median cycles of treatment, n (range)</strong>
+
+                                <td style="text-align: center; ">
+                                    7 (1–16)
+
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ccc; background-color:rgba(179,221,230,.5);">
+                                <td class="" style="width: 40%; text-align:justify;">
+                                    <strong> Patients remaining on treatment, n (%)</strong>
+                                </td>
+                               
+                                <td style="text-align: center; ">
+                                    
+                                        9 (16)
+                                   
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ccc; background-color:rgba(179,221,230,.5);">
+                                <td colspan="2" class="" style="width: 40%; text-align:justify;">
+                                    <strong>Dose modifications</strong> 
+
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ccc; background-color:rgba(179,221,230,.5)">
+                                <td class="" style="width: 40%; text-align:justify; padding-left:30px;">
+                                    Patients with dose delays due to AEs, n (%)
+
+                                </td>
+                               
+                                <td style="text-align: center; ">
+                                    
+                                        23 (40)                                
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid #ccc; background-color:rgba(179,221,230,.5);">
+                                <td class="" style="width: 40%; text-align:justify; padding-left:30px;">
+                                    Patients with dose reductions to 1.2 mg/kg, n (%)
+                                </td>
+                               
+                                <td style="text-align: center; ">
+                                    
+                                        7 (12)
+                                </td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid black; background-color:rgba(179,221,230,.5);">
+                                <td class="" style="width: 40%; text-align:left;">
+                                    <strong>Patients with AEs leading to treatment discontinuation, n (%)</strong>
+                                </td>
+                               
+                                <td style="text-align: center; ">
+                                       14 (24)                                   
+                                </td>
+                            </tr>
+                        </table>
+                        </center><br />
+                     <div data-class="fadeInDown" style="display: none;" id="s16bimg1">   
+                        <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                        <p>The only adverse event that led to treatment discontinuation in more than one patient was peripheral sensory neuropathy</p>
+                     </div>
+                     <div  data-class="fadeInDown" style="display: none;" id="s16bimg2">   
+                        <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                        <p>The most common adverse event that led to dose delays and dose reduction was peripheral neuropathy</p>
+                      </div>  
+                        </div>
+                    </div>
+                </div>
+                <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none;position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#"><img src="../common/img/showTrans.png" /></a>
+                    </div>
+                <div id="transcript-hide" style="display: none;">
+                    <center>
+                        <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                            Hide Transcript</button></center>
+                    <div class="transcript" style="">
+                        <p>Dose delays due to adverse events were required in 40% of patients; however, only 10% of doses were delayed overall.<sup>1</sup></p>
+                        <p>Seven patients had a dose reduction from 1.8 to 1.2 mg/kg and a total of 14 patients experienced adverse events that led to treatment discontinuation.<sup>1</sup></p>
+                        <p>The only adverse event that led to treatment discontinuation in more than one patient was peripheral sensory neuropathy (6 patients).<sup>1</sup></p>
+                        <p>Peripheral neuropathy was the most common adverse event that led to dose delays and dose reduction.<sup>1</sup></p>
+                    </div>
+                </div>
+                <div id="slide16ref" style="display: none" class="slide16ref">
+                    <b>References:</b><br />
+                    <br />
+                    1.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Brentuximab vedotin (SGN-35) in patients with relapsed or refractory systemic anaplastic large-cell lymphoma: results of a phase II study. J Clin Oncol. 2012;30(18):2190-6.<br />
+                    <br />
+                    2.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Four-year survival results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 3095, American Society of Hematology, December, 2014, San Francisco, CA, USA.<br /><br />
+                    3.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Three-year survival results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 1809, American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+                    <br />
+                    4.	ADCETRIS®. Summary of Product Characteristics. 22 August 2014. Available at European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB/document_library/EPAR_-<br />_Product_Information/human/002455/WC500135055.pdf. Accessed on 26 June 2015.<br /><br />
+                    5.	FDA Approval for Brentuximab Vedotin. National Cancer Institute Web site. Available at: http://www.cancer.gov/cancertopics/druginfo/fda-brentuximabvedotin. Accessed on 17 January 2014.
+                </div>
+            </div>
+            <div id="slide17" style="display: none;">
+                <!--  <div class="topic-bar">
+                    <div id="topic-title">Knowledge Check</div>
+                </div>-->
+                <div class="slidecontent" style="">
+                    <div class="playBody">
+                    <div id="s17hdn1">
+                        <p data-class="fadeInDown" style="display: none; text-align: left; padding-left:10px;padding-top:25px;" id="s17txt1">
+                        Peripheral neuropathy: Largely reversible and manageable with dose modification</p>
+                        <div data-class="fadeInDown" id="s17btxt2" style="display: none; padding-left:10px;"> 
+                        <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 7px;" />
+                        <p data-class="fadeInDown" style="text-align: left;">
+                        Incidence and timing of peripheral neuropathy </p>
+                        </div>
+                        <div style="padding-left:50px;">
+                   <div data-class="fadeInDown" id="s17bimg1" style="display: none;"> 
+                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 7px;" />
+                    <p style="text-align: left;">
+                        53% of patients (n=31) had at least 1 event of peripheral neuropathy</p>                    
+                   </div>
+                   <div data-class="fadeInDown" id="s17bimg2" style="display: none;"> 
+                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 7px;" />
+                    <p style="text-align: left;">
+                        Peripheral sensory neuropathy: 41%</p>
+                   </div>
+                   <div data-class="fadeInDown" id="s17bimg3" style="display: none;"> 
+                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 7px;" />
+                    <p style="text-align: left;">
+                        Paraesthesia: 7%</p>
+                   </div>
+                   <div data-class="fadeInDown" id="s17bimg4" style="display: none;"> 
+                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 7px;" />
+                    <p style="text-align: left;">
+                        Neuralgia: 5%</p>
+                   </div>
+                   <div data-class="fadeInDown" id="s17bimg5" style="display: none;">     
+                        <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 7px;" />
+                    <p style="text-align: left;">
+                        Peripheral motor neuropathy: 5%</p>
+                   </div>
+                   <div data-class="fadeInDown" id="s17bimg6" style="display: none;">
+                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 7px;" />
+                    <p style="text-align: left;">
+                        Burning sensation: 2%</p>
+                   </div>
+                   <div data-class="fadeInDown" id="s17bimg7" style="display: none;">     
+                        <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 7px;" />
+                    <p style="text-align: left;">
+                        Polyneuropathy: 2%</p>
+                   </div>
+                   <div data-class="fadeInDown" id="s17bimg8" style="display: none;">     
+                        <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 7px;" />
+                    <p style="text-align: left;">
+                        No grade 4 events observed</p>
+                   </div>
+                   <div data-class="fadeInDown" id="s17bimg9" style="display: none;">     
+                        <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 7px;" />
+                    <p style="text-align: left;">
+                        Median time to onset of any grade: 13.3 weeks</p>
+                   </div> 
+                   </div>
+                   </div>
+                   <div data-class="fadeInDown" id="s17btxt12" style="display: none;padding-top:25px;"> 
+                        <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 7px;" />
+                    <p data-class="fadeInDown" style=" text-align: left;">
+                        Resolution or improvement of peripheral neuropathy </p>
+                        </div>
+                        <div style="padding-left:50px;">
+                   <div data-class="fadeInDown" id="s17bimg10" style="display: none;">     
+                        <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 7px;" />
+                    <p style="text-align: left;">
+                        Resolution or some improvement in 81% (25/31)</p>
+                   </div>     
+                   <div data-class="fadeInDown" id="s17bimg11" style="display: none;">     
+                        <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 7px;" />
+                    <p style="text-align: left;">
+                        Complete resolution in 48% (15/31)</p>
+                   </div>
+                   <div  data-class="fadeInDown" id="s17bimg12" style="display: none;">     
+                        <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 7px;" />
+                    <p style="text-align: left;">
+                        Median time to resolution or improvement: 14.1 weeks</p>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+                <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none;position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#"><img src="../common/img/showTrans.png" /></a>
+                    </div>
+                <div id="transcript-hide" style="display: none;">
+                    <center>
+                        <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                            Hide Transcript</button></center>
+                    <div class="transcript" style="">
+                        <p>The events of peripheral neuropathy observed with treatment with brentuximab vedotin were mostly reversible and were manageable with dose modification.</p>
+                        <p>Thirty one patients (53%) had at least 1 event of peripheral neuropathy which were reported as peripheral sensory neuropathy, paraesthesia, neuralgia, peripheral motor neuropathy, burning sensation, or polyneuropathy.<sup>1</sup></p>
+                        <p>There were no grade 4 peripheral neuropathy events and the median time to onset of any grade of peripheral neuropathy events was 13.3 weeks.<sup>1</sup></p>
+                        <p>Of the 31 patients who had peripheral neuropathy, resolution or improvement was observed in 25 (81%) and 15 (48%) had complete resolution.<sup>1</sup></p>
+                        <p>The median time from onset to resolution or improvement of peripheral neuropathy was 14.1 weeks.<sup>1</sup></p>
+                    </div>
+                </div>
+                <div id="slide17ref" style="display: none" class="slide17ref">
+                    <b>References:</b><br />
+                    <br />
+                    1.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Brentuximab vedotin (SGN-35) in patients with relapsed or refractory systemic anaplastic large-cell lymphoma: results of a phase II study. J Clin Oncol. 2012;30(18):2190-6.<br />
+                    <br />
+                    2.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Four-year survival results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 3095, American Society of Hematology, December, 2014, San Francisco, CA, USA.<br /><br />
+                    3.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Three-year survival results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 1809, American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+                    <br />
+                    4.	ADCETRIS®. Summary of Product Characteristics. 22 August 2014. Available at European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB/document_library/EPAR_-<br />_Product_Information/human/002455/WC500135055.pdf. Accessed on 26 June 2015.<br /><br />
+                    5.	FDA Approval for Brentuximab Vedotin. National Cancer Institute Web site. Available at: http://www.cancer.gov/cancertopics/druginfo/fda-brentuximabvedotin. Accessed on 17 January 2014.
+                </div>
+            </div>
+            <div id="slide18" style="display: none;">
+                <!--  <div class="topic-bar">
+                    <div id="topic-title">HL: treatment</div>
+                </div>-->
+                <div class="slidecontent" style="">
+                    <div class="playBody">
+                        <p data-class="fadeInDown" style="display: none; text-align: left; padding-left:10px;padding-top:25px;" id="s18txt1">
+                       Additional safety findings of note</p>
+                   <div data-class="fadeInDown" id="s18bimg1" style="display: none; padding-left:30px;"> 
+                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 7px;" />
+                    <p style="text-align: left;">
+                        Progressive multifocal leukoencephalopathy (PML)</p>                    
+                   </div>
+                   <div data-class="fadeInDown" id="s18bimg2" style="display: none; padding-left:60px;"> 
+                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 7px;" />
+                    <p style="text-align: left;">
+                        Cases of PML have been confirmed with brentuximab vedotin used outside clinical studies</p>
+                   </div>
+                   <div data-class="fadeInDown" id="s18bimg3" style="display: none; padding-left:60px;"> 
+                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 7px;" />
+                    <p style="text-align: left;">
+                        A warning outlining the risk of PML has been added to European Union Summary of Product Characteristics (SmPC)</p>
+                   </div>
+                   <div data-class="fadeInDown" id="s18bimg4" style="display: none; padding-left:30px;"> 
+                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 7px;" />
+                    <p style="text-align: left;">
+                        Concomitant administration of brentuximab vedotin and bleomycin is contraindicated due to pulmonary toxicity</p>
+                   </div>
+                   <div data-class="fadeInDown" id="s18bimg5" style="display: none; padding-left:30px;">     
+                        <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 7px;" />
+                    <p style="text-align: left;">
+                        Pancreatitis reported in recent study of previously untreated elderly patients with HL however no wider signal seen in clinical data</p>
+                    </div>   
+                         <div data-class="fadeInDown" id="s18bimg6" style="display: none; padding-left:30px;">     
+                        <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 7px;" />
+                    <p style="text-align: left;">
+                       Other common AEs include infection, hyperglycaemia, elevated ALT/AST levels, alopecia, rash, myalgia, arthralgia and back pain
+</p>
+                    </div>                     
+                    </div>
+                </div>
+                <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none;position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#"><img src="../common/img/showTrans.png" /></a>
+                    </div>
+                <div id="transcript-hide" style="display: none;">
+                    <center>
+                        <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                            Hide Transcript</button></center>
+                    <div class="transcript" style="">
+                        <p>In addition to the safety findings observed with brentuximab vedotin discussed earlier, there were a few other pertinent issues reported.</p>
+                        <p>These include incidences of progressive multifocal leukoencephalopathy, pulmonary toxicity when used along with bleomycin and pancreatitis.</p>
+                        <p>Cases of Progressive multifocal leukoencephalopathy (PML) have been confirmed with brentuximab vedotin used outside clinical studies and a warning outlining the risk of PML has been added to European Union Summary of Product Characteristics (SmPC).<sup>4</sup></p>
+                        <p>Concomitant administration of brentuximab vedotin and bleomycin is contraindicated due to pulmonary toxicity.<sup>4</sup></p>
+                        <p>Pancreatitis has been reported in a recent study of previously untreated elderly patients with Hodgkin lymphoma<sup>4</sup> but no wider signals have been seen in clinical data.</p>
+                        <p>Other common adverse reactions reported with brentuximab vedotin include infection, hyperglycaemia, elevated ALT/AST levels, alopecia, rash, myalgia, arthralgia and back pain.<sup>4</sup></p>
+                    </div>
+                </div>
+                <div id="slide18ref" style="display: none" class="slide18ref">
+                    <b>References:</b><br />
+                    <br />
+                    1.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Brentuximab vedotin (SGN-35) in patients with relapsed or refractory systemic anaplastic large-cell lymphoma: results of a phase II study. J Clin Oncol. 2012;30(18):2190-6.<br />
+                    <br />
+                    2.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Four-year survival results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 3095, American Society of Hematology, December, 2014, San Francisco, CA, USA.<br /><br />
+                    3.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Three-year survival results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 1809, American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+                    <br />
+                    4.	ADCETRIS®. Summary of Product Characteristics. 22 August 2014. Available at European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB/document_library/EPAR_-<br />_Product_Information/human/002455/WC500135055.pdf. Accessed on 26 June 2015.<br /><br />
+                    5.	FDA Approval for Brentuximab Vedotin. National Cancer Institute Web site. Available at: http://www.cancer.gov/cancertopics/druginfo/fda-brentuximabvedotin. Accessed on 17 January 2014.
+                </div>
+            </div>
+            
+            <div id="slide18a" style="display: none;">
+                    <!-- <div class="topic-bar">
+                        <div id="topic-title">HL: survival rates</div>
+                    </div>-->
+                    <!--Body -->
+                    <div class="slidecontent" style="">
+                        <div class="playBody">
+                            <div style="padding-left: 20px">
+                                <br />
+                                <p data-class="fadeInDown" style="display: none;" id="s18atxt1">
+                                   The most common grade 3 adverse events observed in the trial were?</p>
+                                <br />
+                                <input type="hidden" id="Answer" value="3" qid="2" />
+                                <input type="hidden" id="Percentage" value="25" />
+                                <div id="radio1" style="padding: 10px 25px 10px 10px; display: none;">
+                                    <input name="ratio1" value="1" type="radio" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="padding-left: 55px;">Peripheral neuropathy and thrombocytopenia</p>
+                                        
+                                </div>
+                                <div id="radio2" style="padding: 10px 25px 10px 10px; display: none;">
+                                    <input name="ratio1" value="2" type="radio" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="padding-left: 55px;">Thrombocytopenia and anemia</p>
+                                    
+                                </div>
+                                <div id="radio3" style="padding: 10px 25px 10px 10px; display: none;">
+                                    <input name="ratio1" value="3" type="radio" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="padding-left: 55px;">Peripheral neuropathy and neutropenia</p>
+                                </div>
+                                 <div id="radio4" style="padding: 10px 25px 10px 10px; display: none;">
+                                    <input name="ratio1" value="4" type="radio" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="padding-left: 55px;">Thrombocytopenia and neutropenia</p>
+                                      
+                                </div>
+                                <div style="margin-left:470px;">
+                                    <div>
+                                        <input id="s18aimag9" onclick="onclickAnswer(this);" type="button"  class="btn btn-primary" value="Submit"
+                                            style="width: 100px; margin-right: 25px; display: none" />
+                                    </div>
+                                    <br />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Transcript -->
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none;
+                        position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#">
+                            <img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center>
+                            <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                                Hide Transcript</button></center>
+                        <div class="transcript">
+                            <br />
+                            <p>
+                               Please take a moment to answer a question. Please select the best answer and click submit to continue</p>
+                            
+                          </div>
+                    </div>
+                   
+                </div>
+                <!--slide 18a ending-->
+            <div id="slide19" style="display: none;">
+                <!--  <div class="topic-bar">
+                    <div id="topic-title">HL: Early stage treatment (1)</div>
+                </div>-->
+                <div class="slidecontent" style="">
+                    <div class="playBody">
+                    <div>
+                    <div id="s19hdn1">
+                        <p data-class="fadeInDown" style="display: none; text-align: left; padding-left:10px;padding-top:20px;" id="s19txt1">
+                        Summary of the clinical profile of  brentuximab vedotin in patients with sALCL</p>
+                        <p data-class="fadeInDown" style="display: none; text-align: left; padding-left:10px;" id="s19txt2">
+                        In sALCL patients </p>
+                   <div data-class="fadeInDown" id="s19bimg1" style="display: none; margin-left:30px;">
+                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 7px;" />
+                    <p style="text-align: left; padding-left:30px;">
+                        86% of patients attained objective responses (ORR)</p>                    
+                   </div>
+                   <div data-class="fadeInDown" id="s19bimg2" style="display: none; margin-left:30px;">
+                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 7px;" />
+                    <p style="text-align: left; padding-left:30px;">
+                        59% of patients achieved a complete remission (CR)</p>
+                   </div> 
+                   <div data-class="fadeInDown" id="s19bimg3" style="display: none; margin-left:30px;"> 
+                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 7px;" />
+                    <p style="text-align: left; padding-left:30px;">
+                        Median progression free survival (PFS) 20.0 months</p>
+                    </div>
+                    <div data-class="fadeInDown" id="s19bimg4" style="display: none; margin-left:30px;">
+                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 7px;" />
+                    <p style="text-align: left; padding-left:30px;">
+                        Median overall survival was 55.1 months</p>
+                    </div>    
+                    <div data-class="fadeInDown" id="s19bimg5" style="display: none; margin-left:30px;">    
+                        <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 7px;" />
+                    <p style="text-align: left; padding-left:30px;">
+                        PFS rate and OS rate not influenced by ALK status</p>
+                    </div>
+                    <div data-class="fadeInDown" id="s19bimg6" style="display: none; height:35px; margin-left:30px;">
+                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 7px;" />
+                    <p style="text-align: left; padding-left:30px;">
+                        Adverse events profile was manageable with peripheral neuropathy most common AE, generally reversible and manageable through dose modification</p><br />
+                    </div>
+                    </div>   
+                    <div id="s19hdn2"> 
+                    <p data-class="fadeInDown" style="display: none; text-align: left; padding-left:10px;" id="s19txt9">
+                        Brentuximab vedotin: approved indications and dosing</p>
+                    <p data-class="fadeInDown" style="display: none; text-align: left;padding-left:10px;" id="s19txt10">
+                        Indications</p>
+                    <p data-class="fadeInDown" style="display: none; text-align: left; padding-left:10px;" id="s19txt11">
+                        Brentuximab vedotin was approved by FDA<sup>5</sup> (Aug 2011) and EMA (Oct  2012) for:</p>
+                    <div data-class="fadeInDown" id="s19bimg8" style="display: none; margin-left:30px;">    
+                        <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 7px;" />
+                    <p style="text-align: left; padding-left:30px;">
+                    The treatment of adult patients with relapsed or refractory CD30+ Hodgkin lymphoma (HL):</p>
+                    </div>
+                   
+                     <div data-class="fadeInDown" id="s19bimg10" style="display: none; padding-left:55px;">   
+                        <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 7px;" />
+                    <p style="text-align: left; padding-left:30px;">
+                      Following autologous stem cell transplant (ASCT) or 
+</p>
+                     </div>   
+                     <div  data-class="fadeInDown" id="s19bimg11" style="display: none; padding-left:55px;">   
+                        <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 7px;" />
+                    <p style="text-align: left; padding-left:30px;">
+                        Following at least two prior therapies when ASCT or multi-agent chemotherapy is not a treatment option
+</p>
+                     </div>
+                         <div data-class="fadeInDown" id="s19bimg9" style="display: none; margin-left:30px;">    
+                        <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 7px;" />
+                    <p style="text-align: left; padding-left:30px;">
+                         The treatment of adult patients with relapsed or refractory systemic anaplastic large cell lymphoma (sALCL)
+ </p>
+                     </div>
+                     </div>   
+                        <p data-class="fadeInDown" style="display: none; text-align: left; margin-left:10px;" id="s19txt16">
+                        Dosing and Administration</p>
+                       
+                     <div data-class="fadeInDown" id="s19bimg12" style="display: none; margin-left:30px;">   
+                        <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 7px;" />
+                        <p style="text-align: left; padding-left:30px;">
+                       Patients should receive a minimum of 8 cycles and up to a maximum of 16 cycles (approximately 1 year)</p>
+                     </div>
+                         <div data-class="fadeInDown" id="s19bimg13" style="display: none; margin-left:30px;">   
+                        <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 7px;" />
+                    <p style="text-align: left; padding-left:30px;">
+                        The recommended dose is 1.8 mg/kg administered as an intravenous infusion over 30 minutes every 3 weeks 
+</p>
+                    </div>
+                     
+                    </div>
+                    </div>
+                    
+                </div>
+                <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none;position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#"><img src="../common/img/showTrans.png" /></a>
+                    </div>
+                <div id="transcript-hide" style="display: none;">
+                    <center>
+                        <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                            Hide Transcript</button></center>
+                    <div class="transcript" style="">
+                        <p>In conclusion, based on the data from this trial which was the largest prospective trial reported in patients with recurrent or refractory systemic ALCL, a majority of patients responded to treatment with brentuximab vedotin.<sup>1</sup></p>
+                        <p>Good clinical response as evident from objective responses in 86% of patients and CR in 59% of patients was observed.<sup>2</sup></p>
+                        <p>A median progression free survival of 20.0 months was observed and the median overall survival was 55.1 months.<sup>2</sup></p>
+                        <p>The clinical benefit of brentuximab was not limited to certain subsets of patients and the PFS and OS observed with treatment was not influenced by ALK status of the patient.<sup>1</sup></p>
+                        <p>The adverse event profile of brentuximab vedotin was manageable. Peripheral neuropathy was the most common adverse event and was generally reversible and manageable with dose modification.<sup>1</sup></p>
+                        <p>Brentuximab vedotin is approved in the EU for the treatment of adult patients with relapsed or refractory systemic anaplastic large cell lymphoma. It is also approved for the treatment of adult patients with relapsed or refractory CD30+ Hodgkin lymphoma following autologous stem cell transplant or following at least two prior therapies when ASCT or multi-agent chemotherapy is not a treatment option.<sup>4</sup></p>
+                        <p>Brentuximab vedotin for treatment of adults with relapsed or refractory Hodgkin lymphoma will be discussed in detail in a separate module in the curriculum.</p>
+                        <p>A minimum of 8 cycles and up to a maximum of 16 cycles of 1.8 mg/kg administered as an intravenous infusion over 30 minutes every 3 weeks is recommended.<sup>4</sup></p>
+                    </div>
+                </div>
+                <div id="slide19ref" style="display: none" class="slide19ref">
+                    <b>References:</b><br />
+                    <br />
+                    1.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Brentuximab vedotin (SGN-35) in patients with relapsed or refractory systemic anaplastic large-cell lymphoma: results of a phase II study. J Clin Oncol. 2012;30(18):2190-6.<br />
+                    <br />
+                    2.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Four-year survival results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 3095, American Society of Hematology, December, 2014, San Francisco, CA, USA.<br /><br />
+                    3.	Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Three-year survival results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 1809, American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+                    <br />
+                    4.	ADCETRIS®. Summary of Product Characteristics. 22 August 2014. Available at European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB/document_library/EPAR_-<br />_Product_Information/human/002455/WC500135055.pdf. Accessed on 26 June 2015.<br /><br />
+                    5.	FDA Approval for Brentuximab Vedotin. National Cancer Institute Web site. Available at: http://www.cancer.gov/cancertopics/druginfo/fda-brentuximabvedotin. Accessed on 17 January 2014.
+                </div>
+            </div>
+			 <div id="slide20" style="display: none;">
+				
+                    <!-- <div class="topic-bar">
+                        <div id="topic-title">Title</div>
+                    </div>-->
+                    <!--Body -->
+                   <div style="height: 550px;width: 100%;float: left;border: 2px solid rgba(127, 145, 145, 0.12);border-radius: 10px;background-color: rgba(255, 255, 255, 0.2);">
+                        <div class="playBody">
+                            <div data-class="fadeInDown"  class="breakout" style="display: none; text-align:center; height:95px;" id="s20img1">
+                                
+                                <p style="font-size: 20px; width:450px; position:relative; text-align:left;">
+                                    End of Module!</p>
+									
+							    <p id="s20img2" class="fadeInDown" style="display: none; text-align:left;"> Please close the window and attempt the post-test in order to complete the course</p>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+          
+		  
+				
+                    
+                </div>
+		  <div id="slideLabel" style="margin: 0px auto;
+	width: 1024px;  font-size: 10pt;
+	padding-left: 40px; display: none;">For internal training purposes only - not to be used or shared outside Takeda</div>
+        </div>
+		
+		 
+     
+   
+    </div>
+    </div>
+    <div id="footer" style="width: 1024px; margin: 0 auto;">
+	
+        <div class="container" style="">
+            <table style="width: 100%">
+                <tr>
+                    <td>
+                        <img src="../common/img/takeda.png" style="float: left; width: 105px; margin-top: 3px; margin-right: 10px;
+                            margin-left: -25px;" />
+                    </td>
+                    <td>
+                        <img onmouseover="HideToolTip(this)" data-toggle="tooltip" title="Play / Pause" class="effect"
+                            id="toggelbutton" class="effect" src="../common/img/playBtn.png" style="float: left; margin-top: -10px;"
+                            onclick="play()" />
+                    </td>
+                    <td>
+                        <div style="float: left;">
+                            <input id="progress-bar" type="text" data-slider="true" data-slider-highlight="true">
+                            <div class="slider-control">
+                                <span id="slideCount">Frame 0 of 00</span> <span style="float: right;"><span id="timeduration">
+                                    0:00</span> / <span id="slideduration">0:00</span></span>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <img onmouseover="HideToolTip(this)" data-toggle="tooltip" data-placement="left"
+                            title="Previous Slide " class="effect" src="../common/img/prevBtn.png" style="margin-top: -10px;"
+                            onclick="Prev()" />
+                    </td>
+                    <td>
+                        <img onmouseover="HideToolTip(this)" id="NxtImg" data-toggle="tooltip" title="Next Slide" class="effect"
+                            src="../common/img/nxtBtn.png" style="margin-top: -10px;" onclick="Next()" />
+                    </td>
+                    <td>
+                        <img onclick="ShowHelp();" id="showHelp" src="../common/img/smallicon2.png" style="margin-top: -10px;
+                            margin-left: 35px;" />
+                    </td>
+                    <td>
+                        <a href="pdf/Transcript.pdf" target="_blank">
+                            <img onmouseover="HideToolTip(this)" data-toggle="tooltip" title="Print" class="effect"
+                                src="../common/img/smallicon3.png" style="margin-top: -10px;" /></a>
+                    </td>
+                </tr>
+            </table>
+            <!--  <img class="effect" src="../common/img/pauseBtn.png" style="float: left; margin-top: -10px;" onclick="pause()" />-->
+        </div>
+    </div>
+        <div class="modal fade" id="AnswerModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+      </div>
+      <div class="modal-footer">
+        <button type="button"  onclick="onclickAnswerContinue()" class="btn btn-primary">Continue</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <script>
+        $('img').tooltip({ trigger: "focus" });
+
+    </script>
+
+</body>
+</html>

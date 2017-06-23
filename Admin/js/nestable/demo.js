@@ -1,0 +1,1 @@
+$(document).ready(function(){$("#nestable1").nestable({group:1}),$("#nestable2").nestable({group:1});var e=!1;$("#nestable-menu").on("click",function(){e?(e=!1,$(".dd").nestable("expandAll")):(e=!0,$(".dd").nestable("collapseAll"))}),$("#nestable3").nestable()});

@@ -1,0 +1,228 @@
+﻿<xml version='2.0'>
+
+  <module totalduration="20:00">
+
+    <slide id="slide0" name="Title" title="" refid="slide0aref" duration="00:10">
+      <audio src='audio/Module 3 Frame 1.mp3'></audio>
+      <element time='00' id='s0abimg1' type='image'></element>
+    </slide>
+    
+   <slide id="slide1" name="Learning objectives" title="Learning objectives" refid="slide1ref" duration="01:05">
+      <audio src='audio/Slide_1.mp3'></audio>
+      <element time='00' id='bimg1' type='image'></element>
+      <element time='44' id='bimg2' type='image'></element>
+      <element time='46' id='bimg3' type='image'></element>
+      <element time='32' id='bimg4' type='image'></element>
+      <element time='56' id='bimg5' type='image'></element>
+
+    </slide>
+  
+   <slide id="slide2" name="Introduction" title="Introduction" refid="slide2ref" duration="00:58">
+      <audio src='audio/Introducion.mp3'></audio>
+      
+      <element time='03' id='image2' type='image'></element>
+     <element time='05' id='bimg2' type='image'></element>
+      <element time='18' id='bimg1' type='image'></element>
+     
+      
+      
+
+    </slide>
+    <slide id="slide3" name="Pivotal phase II trial in relapsed or refractory hodgkin lymphoma post ASCT" title="Pivotal phase II trial in relapsed or refractory hodgkin lymphoma post ASCT" refid="slide3ref" duration="00:48">
+      <audio src='audio/Pivotal Phase II Trial in Relapsed or Refractory Hodgkin Lymphoma post ASCT.mp3'></audio>
+      <element time='00' id='bimg1' type='image'></element>
+      <element time='10' id='bimg2' type='image'></element>
+    
+    </slide>
+
+    <slide id="slide4" name="Brentuximab vedotin studied in a heavily pre-treated population" title="Brentuximab vedotin studied in a heavily pre-treated population" refid="slide4ref" duration="00:30">
+      <audio src='audio/Brentuximab vedotin studied in a heavily pre-treated population.mp3'></audio>
+      <element time='00' id='text1' type='image'></element>
+      <element time='01' id='table1' type='image'></element>
+      <element time='11' id='table1' type='hidden'></element>
+      <element time='12' id='text2' type='image'></element>
+       <element time='12' id='bimg1' type='image'></element>
+    </slide>
+    <slide id="slide5" name="Efficacy of brentuximab vedotin" title="Efficacy of brentuximab vedotin" refid="slide5ref" duration="00:41">
+      <audio src='audio/Efficacy of brentuximab vedotin.mp3'></audio>
+      <element time='01' id='s5text1' type='image'></element>
+      <element time='02' id='s5table1' type='image'></element>
+      <element time='29' id='s5text1' type='hidden'></element>
+      <element time='29' id='s5table1' type='hidden'></element>
+      <!--<element time='29' id='HDtable1' type='hidden'></element>-->
+      <element time='29.5' id='s5Img1' type='image'></element>
+      <element time='32' id='s5text2' type='image'></element>
+         
+    </slide>
+    
+    <slide id="slide6" name="Tumour size reduction in 94% patients" title="Tumour size reduction in 94% patients" refid="slide6ref" duration="00:18">
+      <audio src='audio/Tumour size reduction in 94 patients.mp3'></audio>
+      <element time='01' id='text1' type='image'></element>
+      <element time='01' id='bimg1' type='image'></element>
+    </slide>
+
+    <slide id="slide6a" name="Knowledge check" title="Knowledge check" refid="slide6aref" duration="00:05">
+      <audio src='audio/knowledg1.mp3'></audio>
+      <element time='00' id='s6atxt1' type='image'></element>
+      <element time='00.5' id='radio1' type='image'></element>
+      <element time='01' id='radio2' type='image'></element>
+      <element time='01.5' id='radio3' type='image'></element>
+      <element time='02' id='radio4' type='image'></element>
+      
+      <element time='03' id='s6aimag9' type='image'></element>
+      <element time='05' id='txt20' type='question'></element>
+    </slide>
+    
+    <slide id="slide7" name="Duration of response much longer with complete remission" title="Duration of response much longer with complete remission" refid="slide7ref" duration="00:21">
+      <audio src='audio/Duration of response nuch longer with complete remission.mp3'></audio>
+      <element time='00' id='text1' type='image'></element>
+      <element time='00' id='text2' type='image'></element>
+      <element time='01' id='table1' type='image'></element>
+    </slide>
+
+    <slide id="slide8" name="Progression free survival with brentuximab vedotin: Notably longer with complete remission" title="Progression free survival with brentuximab vedotin: Notably longer with complete remission" refid="slide8ref" duration="00:38">
+      <audio src='audio/Progression free survival with brentuximab vedotin_notably longer with complete remission.mp3'></audio>
+      <element time='00' id='text1' type='image'></element>
+      <element time='01' id='bimg1' type='image'></element>
+      
+    </slide>
+
+    <slide id="slide9" name="Progression free survival with brentuximab vedotin vs. last prior systemic therapy" title="Progression free survival with brentuximab vedotin vs. last prior systemic therapy"  refid="slide10ref" duration="01:05">
+      <audio src='audio/Progression_free_survival_with_brentuximab_vedotin_vs_last_prior_systemic_therapy.mp3'></audio>
+      <element time='01' id='text1' type='image'></element>
+      <element time='01' id='bimg1' type='image'></element>
+      <element time='44' id='bimg2' type='image'></element>
+      <element time='55' id='bimg3' type='image'></element>
+    </slide>
+
+    <slide id="slide10" name="Progression free survival in patients with complete response by subsequent transplant" title ="Progression free survival in patients with complete response by subsequent transplant" refid="slide11ref" duration="00:55">
+      <audio src='audio/Progression free survival in patients with complete response by subsequent transplant.mp3'></audio>
+      <element time='00' id='bimg11' type='image'></element>
+      <element time='25' id='bimg12' type='image'></element>
+     
+      <element time='26' id='table2' type='image'></element>
+    </slide>
+
+    <slide id="slide10a" name="Knowledge check" title="Knowledge check" refid="slide6aref" duration="00:05">
+      <audio src='audio/knowledg1.mp3'></audio>
+      <element time='00' id='s10atxt1' type='image'></element>
+      <element time='00.5' id='radio1' type='image'></element>
+      <element time='01' id='radio2' type='image'></element>
+      <element time='01.5' id='radio3' type='image'></element>
+      <element time='02' id='radio4' type='image'></element>
+
+      <element time='03' id='s10aimag9' type='image'></element>
+      <element time='05' id='txt20' type='question'></element>
+    </slide>
+    
+    
+
+    <slide id="slide11" name="Overall survival" title="Overall survival" refid="slide12ref" duration="00:30">
+      <audio src='audio/Overall survival.mp3'></audio>
+      <element time='01' id='bimg0' type='image'></element>
+      <element time='03' id='bimg1' type='image'></element>
+
+      <element time='08' id='bimg2' type='image'></element>
+  
+      <element time='15' id='bimg3' type='image'></element>
+      <element time='24' id='bimg4' type='image'></element>
+
+    </slide>
+
+    <slide id="slide12" name="Safety and tolerability: Peripheral neuropathy, the most common treatment related adverse event" title="Safety and tolerability: Peripheral neuropathy, the most common treatment related adverse event" refid="slide13ref" duration="00:50">
+      <audio src='audio/Safety_and_peripheral_neuropathy_the_most_common_treatment_related_adverse_event.mp3'></audio>
+      <element time='00' id='bimg1' type='image'></element>
+      <element time='00' id='bimg2' type='image'></element>
+      <element time='01' id='table1' type='image'></element>
+      <element time='04' id='bimg3' type='image'></element>
+      <element time='29' id='bimg4' type='image'></element>
+      <element time='36' id='bimg5' type='image'></element>
+    </slide>
+    <slide id="slide13" name="Peripheral neuropathy: Largely reversible and manageable with dose modification" title="Peripheral neuropathy: Largely reversible and manageable with dose modification" refid="slide14ref" duration="00:37">
+      <audio src='audio/Pheripheral_neuropathy_largely_reversible_and_manageable_with_dose_modification.mp3'></audio>
+     
+      <element time='14' id='bimg1' type='image'></element>
+      <element time='25' id='bimg2' type='image'></element>
+      <element time='31' id='bimg3' type='image'></element>
+      <element time='01' id='bimg0' type='image'></element>
+    </slide>
+
+    <slide id="slide14" name="Duration of treatment with brentuximab vedotin" title="Duration of treatment with brentuximab vedotin" refid="slide15ref" duration="00:25">
+      <audio src='audio/Duration of treatment with brentuximab vedotin.mp3'></audio>
+      <element time='00' id='bimg0' type='image'></element>
+      <element time='00' id='bimg1' type='image'></element>
+      <element time='10' id='bimg2' type='image'></element>
+      <element time='10' id='bimg3' type='image'></element>
+     
+      <element time='18' id='bimg5' type='image'></element>
+    </slide>
+
+    <slide id="slide15" name="Efficacy of brentuximab vedotin in patients without prior autologous SCT" title="Efficacy of brentuximab vedotin in patients without prior autologous SCT" refid="slide16ref" duration="01:00">
+      <audio src='audio/Efficacy of brentuximab vedotin in patients without prior autologous SCT.mp3'></audio>
+      <element time='00' id='s15bimg1' type='image'></element>
+      <element time='00' id='s15bimg2' type='image'></element>
+      <element time='16' id='s15bimg3' type='image'></element>
+      <element time='18' id='s15bimg4' type='image'></element>
+      <!--<element time='26' id='Hdn1' type='hidden'></element>-->
+      <element time='26' id='s15bimg1' type='hidden'></element>
+      <element time='26' id='s15bimg2' type='hidden'></element>
+      <element time='26' id='s15bimg3' type='hidden'></element>
+      <element time='26' id='s15bimg4' type='hidden'></element>s
+      
+      <element time='27' id='s15bimg5' type='image'></element>
+      <element time='27' id='s15bimg6' type='image'></element>
+
+      
+      <element time='27' id='s15bimg7' type='image'></element>
+      <element time='27' id='s15bimg8' type='image'></element>
+      <element time='27' id='s15bimg9' type='image'></element>
+      <element time='27' id='s15bimg10' type='image'></element>
+      <element time='27' id='s15bimg11' type='image'></element>
+      <element time='53' id='s15bimg12' type='image'></element>
+    </slide>
+
+    <slide id="slide15a" name="Knowledge check" title="Knowledge check" refid="slide6aref" duration="00:05">
+      <audio src='audio/knowledg1.mp3'></audio>
+      <element time='00' id='s15atxt1' type='image'></element>
+      <element time='00.5' id='radio1' type='image'></element>
+      <element time='01' id='radio2' type='image'></element>
+      <element time='01.5' id='radio3' type='image'></element>
+      <element time='02' id='radio4' type='image'></element>
+      <element time='03' id='s15aimag9' type='image'></element>
+      <element time='05' id='txt20' type='question'></element>
+    </slide>
+
+    <slide id="slide16" name="Summary" title="Summary" refid="slide16ref" duration="01:49">
+      <audio src='audio/Conclusion.mp3'></audio>
+      <element time='00' id='bimg1' type='image'></element>
+      <element time='01' id='bimg2' type='image'></element>
+      <element time='02' id='bimg3' type='image'></element>
+      <element time='06' id='bimg4' type='image'></element>
+      <element time='12' id='bimg5' type='image'></element>
+      <element time='20' id='bimg6' type='image'></element>
+      <element time='27' id='bimg7' type='image'></element>
+      <element time='38' id='bimg8' type='image'></element>
+      <element time='40' id='bimg9' type='image'></element>
+      <element time='52' id='Hdn2' type='hidden'></element>
+      <element time='52' id='bimg10' type='image'></element>
+      <element time='53' id='bimg11' type='image'></element>
+      <element time='53' id='bimg12' type='image'></element>
+      <element time='53' id='bimg13' type='image'></element>
+      <element time='62' id='bimg14' type='image'></element>
+      <element time='66' id='bimg15' type='image'></element>
+      <element time='74' id='bimg16' type='image'></element>
+      <element time='94' id='bimg17' type='image'></element>
+      <element time='94' id='bimg18' type='image'></element>
+      <element time='94' id='bimg19' type='image'></element>
+    </slide>
+	
+	<slide id="slide17" name="End" title="" refid="slide26ref" duration="00:10">
+      <audio src='audio/Frame 25 (End of the Module).mp3'></audio>
+      <element time='00' id='s17img1' type='image'></element>
+      <element time='00' id='s17img2' type='image'></element>
+    </slide>
+
+
+   
+</module>
+</xml>

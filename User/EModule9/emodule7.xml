@@ -1,0 +1,894 @@
+﻿<xml version="2.0">
+	<module totalduration="32:05">
+		<slide id="slide0" name="Welcome " title="Welcome" refid="slide0ref" duration="00:04">
+			<audio src="audio/slide0.mp3"></audio>
+			<element time="00" id="S0P1" type="image"></element>
+		</slide>
+		<slide id="slide1b" name="Disclaimer and objectives" title="Disclaimer and objectives" refid="slide1bref" duration="01:12">
+			<audio src="audio/slide1b.mp3"></audio>
+			<element time="00" id="bimg1" type="image"></element>
+			<element time="25" id="bimg1a" type="image"></element>
+			<element time="44" id="bimg1b" type="image"></element>
+			<element time="51" id="bimg2" type="image"></element>
+			<!--<element time="37" id="bimg2a" type="image"></element>
+			<element time="48.5" id="bimg2b" type="image"></element>
+			<element time="08.5" id="bimg3" type="image"></element>
+			<element time="66" id="bimg3a" type="image"></element>
+			<element time="69" id="bimg3b" type="image"></element>
+			<element time="11.5" id="bimg4" type="image"></element>
+			<element time="83.5" id="bimg4a" type="image"></element>
+			<element time="92.5" id="bimg4b" type="image"></element>-->
+		</slide>
+    <slide id="slide1a" name="Steps of objection handling" title="Steps of objection handling" refid="slide1aref" duration="01:43">
+      <audio src="audio/slide1a.mp3"></audio>
+      <element time="00" id="S1bP1" type="image"></element>
+      <element time="05" id="bimg1a" type="image"></element>
+      <element time="22" id="bimg2a" type="image"></element>
+      <element time="28.5" id="bimg3a" type="image"></element>
+      <element time="07" id="bimg4a" type="image"></element>
+      <element time="39" id="bimg5a" type="image"></element>
+      <element time="53" id="bimg6a" type="image"></element>
+      <element time="09" id="bimg7a" type="image"></element>
+      <element time="71" id="bimg8a" type="image"></element>
+      <element time="74" id="bimg9a" type="image"></element>
+      <element time="12" id="bimg10a" type="image"></element>
+      <element time="88" id="bimg11a" type="image"></element>
+      <element time="100" id="bimg12a" type="image"></element>
+    </slide>
+		<slide id="Obj1a" name="Objections" title="" refid="Obj1aref" duration="00:04">
+			<audio src="audio/obj1a.mp3"></audio>
+			<element time="00" id="s1atxt1" type="image"></element>
+			<element time="00" id="s4Table1" type="image"></element>
+		</slide>
+		<!--<slide id="Obj1" name="Objection Title: 1" title="" refid="Obj1ref" duration="00:03">
+
+      <audio src='audio/Slide_1.mp3'></audio>
+      <element time='00' id='s0txt1' type='image'></element>
+    </slide>-->
+		
+		
+		<slide id="slide1" name="Objection 1" title="" refid="slide1ref" duration="03:40">
+			<audio src="audio/Objection_1.mp3"></audio>
+			<element time="00" id="s0txt1" type="image"></element>
+			<element time="7" id="s0txt1" type="hidden"></element>
+			<element time="8" id="slide0img1" type="image"></element>
+			<element time="9" id="Listen and acknowledge" type="Title"></element>
+			<element time="9" id="slide0img2" type="image"></element>
+			<element time="16" id="slide0img2" type="hidden"></element>
+			<element time="17" id="slide0img1" type="hidden"></element>
+			<element time="17.5" id="slide1img1" type="image"></element>
+			<element time="20" id="slide1img2" type="image"></element>
+			<element time="33" id="slide1img2" type="hidden"></element>
+			<element time="36" id="Clarify and understand" type="Title"></element>
+			<element time="33.5" id="slide2img1" type="image"></element>
+			<element time="36" id="txt1" type="image"></element>
+			<element time="37.5" id="txt2" type="image"></element>
+			<element time="56.5" id="txt3" type="image"></element>
+			<element time="61.5" id="txt4" type="image"></element>
+			<element time="70" id="slide2img1" type="hidden"></element>
+			<element time="70" id="txt1" type="hidden"></element>
+			<element time="70" id="txt2" type="hidden"></element>
+			<element time="70" id="txt3" type="hidden"></element>
+			<element time="70" id="txt4" type="hidden"></element>
+			<element time="73" id="Handle and inform" type="Title"></element>
+			<element time="73" id="slide3img1" type="image"></element>
+			<element time="85" id="slide1img1" type="hidden"></element>
+			<element time="85" id="slide3img1" type="hidden"></element>
+			<element time="86" id="slide4img1" type="image"></element>
+			<element time="86" id="s4txt1" type="image"></element>
+			<!--<element time="91" id="s4txt2" type="image"></element>-->
+			<element time="96.5" id="s4txt3" type="image"></element>
+			<element time="96.5" id="slide4img2" type="image"></element>
+			<element time="86" id="slide4img2a" type="image"></element>
+			<element time="96" id="slide4img2a" type="hidden"></element>
+			<element time="96.5" id="slide4img3" type="image"></element>
+			<element time="122" id="slide4img1" type="hidden"></element>
+			<element time="122" id="s4txt1" type="hidden"></element>
+			<!--<element time="121" id="s4txt2" type="hidden"></element>-->
+			<element time="122" id="s4txt3" type="hidden"></element>
+			<element time="122" id="slide4img2" type="hidden"></element>
+			<element time="122" id="slide4img3" type="hidden"></element>
+			<element time="123" id="slide5img1" type="image"></element>
+			<element time="124" id="s5txt1" type="image"></element>
+			<element time="124" id="slide5img4" type="image"></element>
+			<element time="124" id="slide5img2a" type="image"></element>
+			<element time="140" id="slide5img1" type="hidden"></element>
+			<element time="140" id="s5txt1" type="hidden"></element>
+			<element time="140" id="slide5img4" type="hidden"></element>
+			<element time="140.5" id="slide0img0" type="image"></element>
+			<element time="140.5" id="s5txt2" type="image"></element>
+			<element time="140.5" id="slide5img3a" type="image"></element>
+			<element time="140.5" id="slide5img3" type="image"></element>
+			<element time="149" id="slide5img2a" type="hidden"></element>
+			<element time="149" id="slide5img3a" type="hidden"></element>
+			<element time="149" id="slide0img0" type="hidden"></element>
+			<element time="149" id="slide5img3" type="hidden"></element>
+			<element time="149" id="s5txt2" type="hidden"></element>
+			<element time="149.5" id="slide0img1a" type="image"></element>
+			<element time="149.5" id="s5txt3" type="image"></element>
+			<element time="149.5" id="slide5img2" type="image"></element>
+			<element time="149.5" id="slide5img5" type="image"></element>
+			<element time="168.5" id="slide0img1a" type="hidden"></element>
+			<element time="168.5" id="s5txt3" type="hidden"></element>
+			<element time="168.5" id="slide5img2" type="hidden"></element>
+			<element time="168.5" id="slide5img5" type="hidden"></element>
+			<element time="191" id="Expand and close" type="Title"></element>
+			<element time="169" id="slide6img1" type="image"></element>
+			<element time="170" id="slide6img2" type="image"></element>
+			<element time="172" id="s6txt1" type="image"></element>
+			<element time="181" id="s6txt2" type="image"></element>
+			<element time="189" id="slide6img1" type="hidden"></element>
+			<element time="189" id="slide6img2" type="hidden"></element>
+			<element time="189" id="s6txt1" type="hidden"></element>
+			<element time="189" id="s6txt2" type="hidden"></element>
+			<element time="191" id="slide7img1" type="image"></element>
+			<element time="191" id="s7txt1" type="image"></element>
+			<element time="205.5" id="s7txt1" type="hidden"></element>
+			<element time="206" id="s7txt2" type="image"></element>
+			<element time="191" id="heading1" type="image"></element>
+			<element time="191" id="heading2" type="image"></element>
+			<element time="191" id="slide7img3a" type="image"></element>
+			<!--<element time='187' id='slide7img3a' type='hidden'></element>-->
+			<element time="191" id="slide7img2" type="image"></element>
+			<element time="191" id="slide7img3" type="image"></element>
+		</slide>
+		<!--<slide id="Obj2" name="Objection Title: 2" title="" refid="Obj2ref" duration="00:04">
+      <audio src='audio/Slide_2.mp3'></audio>
+      <element time='00' id='s0txt1' type='image'></element>
+    </slide>-->
+		<slide id="slide2" name="Objection 2" title="" refid="slide2ref" duration="04:07">
+			<audio src="audio/Objection_2.mp3"></audio>
+			<element time="00" id="S2txt1" type="image"></element>
+			<element time="09" id="S2txt1" type="hidden"></element>
+			<element time="33" id="Listen and acknowledge" type="Title"></element>
+			<element time="09" id="o2image" type="image"></element>
+			<element time="09" id="o2text" type="image"></element>
+			<element time="32" id="o2image" type="hidden"></element>
+			<element time="31.5" id="o2text" type="hidden"></element>
+			<element time="32" id="s2img1" type="image"></element>
+			<element time="33" id="s2txt1" type="image"></element>
+			<element time="51" id="s2txt1" type="hidden"></element>
+			<element time="55.5" id="Clarify and understand" type="Title"></element>
+			<element time="51.5" id="s2img2" type="image"></element>
+			<element time="55.5" id="o2txt1" type="image"></element>
+			<element time="66" id="o2txt2" type="image"></element>
+			<element time="75" id="o2txt3" type="image"></element>
+			<element time="82" id="o2txt4" type="image"></element>
+			<element time="93" id="s2img2" type="hidden"></element>
+			<element time="93" id="o2txt1" type="hidden"></element>
+			<element time="93" id="o2txt2" type="hidden"></element>
+			<element time="93" id="o2txt3" type="hidden"></element>
+			<element time="93" id="o2txt4" type="hidden"></element>
+			<element time="95" id="Handle and inform" type="Title"></element>
+			<element time="95" id="s2txt2" type="image"></element>
+			<element time="113.7" id="s2txt2" type="hidden"></element>
+			<element time="114" id="s2txt3" type="image"></element>
+			<element time="125" id="s2txt3" type="hidden"></element>
+			<element time="125" id="s2img1" type="hidden"></element>
+			<element time="125" id="o2slide4img1" type="image"></element>
+			<element time="125" id="o2s4txt1" type="image"></element>
+			<element time="125" id="o2slide4img2a" type="image"></element>
+			<element time="148" id="o2s4txt2" type="image"></element>
+			<element time="168" id="S2image2" type="image"></element>
+			<element time="168" id="o2slide4img2a" type="hidden"></element>
+			<element time="168" id="o2slide4img1" type="hidden"></element>
+			<element time="168" id="o2s4txt1" type="hidden"></element>
+			<element time="168" id="o2s4txt2" type="hidden"></element>
+			<element time="168.5" id="o2s4txt3" type="image"></element>
+			<element time="168.5" id="o2slide4img2" type="image"></element>
+			<element time="168.5" id="o2slide4img3" type="image"></element>
+			<element time="168.5" id="o2slide4img3a" type="image"></element>
+			<element time="184" id="o2s5txt1" type="image"></element>
+			<element time="198" id="o2s5txt1" type="hidden"></element>
+			<element time="198.5" id="o2s5txt2" type="image"></element>
+			<element time="214" id="S2image2" type="hidden"></element>
+			<element time="183.7" id="o2s4txt3" type="hidden"></element>
+			<element time="214" id="o2s5txt2" type="hidden"></element>
+			<element time="214" id="o2slide4img3a" type="hidden"></element>
+			<element time="214" id="o2slide4img2" type="hidden"></element>
+			<element time="214" id="o2slide4img3" type="hidden"></element>
+			<element time="216" id="Expand and close" type="Title"></element>
+			<element time="215" id="o2slide7img1" type="image"></element>
+			<element time="216" id="o2s7txt1" type="image"></element>
+      <element time="232" id="o2s7txt1a" type="image"></element>
+			<element time="232" id="o2slide7img2a" type="image"></element>
+			<element time="216" id="o2slide7img2" type="image"></element>
+			<element time="233" id="o2slide7img2" type="hidden"></element>
+		</slide>
+		<!--<slide id="Obj3" name="Objection Title: 3" title="" refid="Obj3ref" duration="00:04">
+      <audio src='audio/Slide_3.mp3'></audio>
+      <element time='00' id='s0txt1' type='image'></element>
+    </slide>-->
+		<slide id="slide3" name="Objection 3" title="" refid="slide3ref" duration="03:37">
+			<audio src="audio/Objection_3.mp3"></audio>
+			<element time="00" id="S3txt1" type="image"></element>
+			<element time="08.5" id="S3txt1" type="hidden"></element>
+			<element time="27.5" id="Listen and acknowledge" type="Title"></element>
+			<element time="08.5" id="O3slide0img1" type="image"></element>
+			<element time="08.7" id="O3slide0img2" type="image"></element>
+			<element time="24" id="O3slide0img2" type="hidden"></element>
+			<element time="24" id="O3slide0img1" type="hidden"></element>
+			<element time="24" id="O3slide0img3" type="image"></element>
+			<element time="27.5" id="O3slide0img4" type="image"></element>
+			<element time="37" id="O3slide0img4" type="hidden"></element>
+			<element time="41" id="Clarify and understand" type="Title"></element>
+			<element time="37.5" id="O3slide2img2" type="image"></element>
+			<element time="41" id="O3txt1" type="image"></element>
+			<element time="49" id="O3txt2" type="image"></element>
+			<element time="53.5" id="O3txt3" type="image"></element>
+			<element time="60.5" id="O3txt4" type="image"></element>
+			<element time="70.5" id="O3txt5" type="image"></element>
+			<element time="78" id="O3txt1" type="hidden"></element>
+			<element time="78" id="O3txt2" type="hidden"></element>
+			<element time="78" id="O3txt3" type="hidden"></element>
+			<element time="78" id="O3txt4" type="hidden"></element>
+			<element time="78" id="O3txt5" type="hidden"></element>
+			<element time="78" id="O3slide2img2" type="hidden"></element>
+			<element time="80" id="Handle and inform" type="Title"></element>
+			<element time="80" id="O3Slide3img1" type="image"></element>
+			<element time="90" id="O3Slide3img1" type="hidden"></element>
+			<element time="90" id="O3Slide4img1" type="image"></element>
+			<element time="118" id="O3Slide4img1" type="hidden"></element>
+			<!--<element time="87.5" id="O3Slide4img1a" type="image"></element>
+			<element time="98.5" id="O3Slide4img1a" type="hidden"></element>-->
+			<element time="118" id="O3slide0img3" type="hidden"></element>
+			<element time="118" id="O3Slide5img0" type="image"></element>
+			<element time="120" id="O3Slide5txt1" type="image"></element>
+			<element time="118" id="O3Slide5img1a" type="image"></element>
+			<element time="118" id="O3Slide5img1b" type="image"></element>
+			<element time="118" id="O3Slide5img2" type="image"></element>
+			<element time="138" id="O3Slide5txt1" type="hidden"></element>
+			<element time="138.3" id="O3Slide5txt2" type="image"></element>
+			<element time="158" id="O3Slide5txt2" type="hidden"></element>
+			<element time="158.3" id="O3Slide5txt3" type="image"></element>
+			<element time="169.5" id="O3Slide5txt3" type="hidden"></element>
+			<element time="169.8" id="O3Slide5txt4" type="image"></element>
+			<element time="185" id="O3Slide5txt4" type="hidden"></element>
+			<element time="185" id="O3Slide5img2" type="hidden"></element>
+			<element time="185" id="O3Slide5img0" type="hidden"></element>
+			<element time="185" id="O3Slide5img1b" type="hidden"></element>
+			<element time="185" id="O3Slide5img1a" type="hidden"></element>
+			<element time="185" id="O3Slide5img1b" type="hidden"></element>
+			<element time="185" id="O3Slide5img2" type="hidden"></element>
+			<element time="187" id="Expand and close" type="Title"></element>
+			<element time="187" id="O3slide6img1" type="image"></element>
+			<element time="187" id="O3slide6img2" type="image"></element>
+      	<element time="200" id="O3slide6img2a" type="image"></element>
+			<element time="187" id="O3s6txt1" type="image"></element>
+			<element time="200" id="O3s6txt1" type="hidden"></element>
+			<element time="200" id="O3s6txt2" type="image"></element>
+		</slide>
+		<!--<slide id="Obj4" name="Objection Title: 4" title="" refid="Obj4ref" duration="00:09">
+      <audio src='audio/Slide_4.mp3'></audio>
+      <element time='00' id='s0txt1' type='image'></element>
+    </slide>-->
+		<slide id="slide4" name="Objection 4" title="" refid="slide4ref" duration="03:22">
+			<audio src="audio/Objection_4.mp3"></audio>
+			<element time="00" id="S4txt1" type="image"></element>
+			<element time="07.5" id="S4txt1" type="hidden"></element>
+			<element time="31" id="Listen and acknowledge" type="Title"></element>
+			<element time="08" id="o4slide0img1" type="image"></element>
+			<element time="08.5" id="o4slide0img2" type="image"></element>
+			<element time="30.5" id="o4slide0img1" type="hidden"></element>
+			<element time="30.5" id="o4slide0img2" type="hidden"></element>
+			<element time="31" id="o4slide1img1" type="image"></element>
+			<element time="31" id="o4slide1img2" type="image"></element>
+			<element time="42" id="o4slide1img2" type="hidden"></element>
+			<element time="46" id="Clarify and understand" type="Title"></element>
+			<element time="43" id="o4slide2img1" type="image"></element>
+			<element time="46" id="o4txt1" type="image"></element>
+			<element time="66" id="o4txt2" type="image"></element>
+			<element time="74" id="o4txt3" type="image"></element>
+			<element time="78" id="o4txt4" type="image"></element>
+			<element time="84.5" id="o4slide2img1" type="hidden"></element>
+			<element time="84.5" id="o4txt1" type="hidden"></element>
+			<element time="84.5" id="o4txt2" type="hidden"></element>
+			<element time="84.5" id="o4txt3" type="hidden"></element>
+			<element time="84.5" id="o4txt4" type="hidden"></element>
+			<element time="97" id="Handle and inform" type="Title"></element>
+			<element time="86" id="o4slide3img1" type="image"></element>
+			<element time="96" id="o4slide3img1" type="hidden"></element>
+			<element time="96" id="o4slide1img1" type="hidden"></element>
+			<element time="97" id="o4slide4img1" type="image"></element>
+			<element time="97" id="o4boxtxt1" type="image"></element>
+			<element time="97" id="o4slide4img2a" type="image"></element>
+			<element time="129" id="o4s4img2" type="image"></element>
+			<element time="129" id="o4boxtxt2" type="image"></element>
+			<element time="129" id="o4slide4img2" type="image"></element>
+			<element time="106" id="o4slide4img3" type="image"></element>
+			<element time="129" id="o4slide4img3a" type="image"></element>
+			<element time="129" id="o4slide4img2a" type="hidden"></element>
+			<element time="129" id="o4slide4img1" type="hidden"></element>
+			<element time="129" id="o4boxtxt1" type="hidden"></element>
+			<!--<element time="142" id="o4slide4img2a" type="hidden"></element>-->
+			<element time="162" id="o4s4img2" type="hidden"></element>
+			<element time="162" id="o4boxtxt2" type="hidden"></element>
+			<element time="162" id="o4slide4img2" type="hidden"></element>
+			<element time="129" id="o4slide4img3" type="hidden"></element>
+			<element time="162" id="o4slide4img3a" type="hidden"></element>
+			<element time="163" id="Expand and close" type="Title"></element>
+			<element time="162" id="o4slide5img1" type="image"></element>
+			<element time="163" id="o4s5txt1" type="image"></element>
+			<element time="163" id="o4slide5img3" type="image"></element>
+			<element time="179" id="o4s5txt1" type="hidden"></element>
+			<element time="179" id="o4s5txt2" type="image"></element>
+			<element time="184" id="o4s5txt2" type="hidden"></element>
+			<element time="184" id="o4s5txt3" type="image"></element>
+			<element time="163" id="o4slide5img2" type="image"></element>
+			<element time="163" id="o4slide5img3a" type="image"></element>
+		</slide>
+		<!--<slide id="Obj5" name="Objection Title: 5" title="" refid="Obj5ref" duration="00:09">
+      <audio src='audio/Slide_5.mp3'></audio>
+      <element time='00' id='S5txt1' type='image'></element>
+    </slide>-->
+		<slide id="slide5" name="Objection 5" title="" refid="slide5ref" duration="03.11">
+			<audio src="audio/Objection_5.mp3"></audio>
+			<element time="00" id="S5txt1" type="image"></element>
+			<element time="09" id="S5txt1" type="hidden"></element>
+			<element time="29" id="Listen and acknowledge" type="Title"></element>
+			<element time="09" id="o5s32img1" type="image"></element>
+			<element time="09" id="o5s32img2" type="image"></element>
+			<element time="27" id="o5s32img2" type="hidden"></element>
+			<element time="27" id="o5s32img1" type="hidden"></element>
+			<element time="28" id="o5s32img2a" type="image"></element>
+			<element time="29" id="o5s32img3" type="image"></element>
+			<element time="40" id="o5s32img3" type="hidden"></element>
+			<element time="45" id="Clarify and understand" type="Title"></element>
+			<element time="41" id="o5s33img1" type="image"></element>
+			<element time="45" id="o5s33txt1" type="image"></element>
+			<element time="68" id="o5s33txt2" type="image"></element>
+			<element time="74" id="o5s33txt3" type="image"></element>
+			<element time="79" id="o5s33txt4" type="image"></element>
+			<element time="81.5" id="o5s33txt5" type="image"></element>
+			<element time="89" id="o5s33img1" type="hidden"></element>
+			<element time="89" id="o5s33txt1" type="hidden"></element>
+			<element time="89" id="o5s33txt2" type="hidden"></element>
+			<element time="89" id="o5s33txt3" type="hidden"></element>
+			<element time="89" id="o5s33txt4" type="hidden"></element>
+			<element time="89" id="o5s33txt5" type="hidden"></element>
+			<element time="89" id="o5s32img2a" type="hidden"></element>
+			<element time="90" id="Handle and inform" type="Title"></element>
+			<element time="90" id="o5slide34img1" type="image"></element>
+			<element time="90" id="o5s34txt1" type="image"></element>
+			<element time="112" id="o5s34txt1" type="hidden"></element>
+			<element time="112" id="o5s34txt2" type="image"></element>
+			<element time="132" id="o5s34txt2" type="hidden"></element>
+			<element time="132" id="o5s34txt3" type="image"></element>
+			<element time="154" id="o5s34txt3" type="hidden"></element>
+			<element time="154" id="o5s34txt4" type="image"></element>
+			<element time="164.5" id="o5s34txt4" type="hidden"></element>
+			<element time="90" id="o5s34img4" type="image"></element>
+			<element time="164.5" id="o5s34img4" type="hidden"></element>
+			<element time="90" id="o5s34img3" type="image"></element>
+			<element time="90" id="o5s34img5" type="image"></element>
+			<element time="164.5" id="o5s34img3" type="hidden"></element>
+			<element time="164.5" id="o5s34img5" type="hidden"></element>
+			<element time="164.5" id="o5slide34img1" type="hidden"></element>
+			<element time="165" id="Expand and close" type="Title"></element>
+			<element time="165" id="o5slide35img1" type="image"></element>
+			<element time="165" id="o5s35txt1" type="image"></element>
+			<element time="165" id="o5s35rep1" type="image"></element>
+		</slide>
+		<!--<slide id="Obj6" name="Objection Title: 6" title="" refid="Obj6ref" duration="00:07">
+      <audio src='audio/Slide_6.mp3'></audio>
+      <element time='00' id='s6txt1' type='image'></element>
+    </slide>-->
+		<slide id="slide6" name="Objection 6" title="" refid="slide6ref" duration="03:27">
+			<audio src="audio/Objection_6.mp3"></audio>
+			<element time="00" id="S6text1" type="image"></element>
+			<element time="03.5" id="S6text1" type="hidden"></element>
+			<element time="16.2" id="Listen and acknowledge" type="Title"></element>
+			<element time="04" id="o6slide0img1" type="image"></element>
+			<element time="04" id="o6slide0img2" type="image"></element>
+			<element time="13.5" id="o6slide0img2" type="hidden"></element>
+			<element time="13.5" id="o6slide0img1" type="hidden"></element>
+			<element time="13.5" id="o6slide1img1" type="image"></element>
+			<element time="16.2" id="o6slide1img2" type="image"></element>
+			<element time="25" id="o6slide1img2" type="hidden"></element>
+			<element time="29" id="Clarify and understand" type="Title"></element>
+			<element time="26" id="o6slide2img1" type="image"></element>
+			<element time="29" id="o6txt1" type="image"></element>
+			<element time="33" id="o6txt2" type="image"></element>
+			<element time="37.5" id="o6txt3" type="image"></element>
+			<element time="43.5" id="o6txt4" type="image"></element>
+			<element time="57" id="o6slide1img1" type="hidden"></element>
+			<element time="57" id="o6slide2img1" type="hidden"></element>
+			<element time="57" id="o6txt1" type="hidden"></element>
+			<element time="57" id="o6txt2" type="hidden"></element>
+			<element time="57" id="o6txt3" type="hidden"></element>
+			<element time="57" id="o6txt4" type="hidden"></element>
+			<element time="58" id="Handle and inform" type="Title"></element>
+			<element time="58" id="o6slide4img1" type="image"></element>
+			<element time="58" id="o6s4txt1" type="image"></element>
+			<element time="72 " id="o6s4txt2" type="image"></element>
+			<element time="87" id="o6s4txt3" type="image"></element>
+			<element time="58" id="o6slide4img2a" type="image"></element>
+			<element time="71.8" id="o6slide4img2a" type="hidden"></element>
+			<element time="72" id="o6slide4img2" type="image"></element>
+			<element time="106" id="o6slide4img1" type="hidden"></element>
+			<element time="106" id="o6s4txt1" type="hidden"></element>
+			<element time="106" id="o6s4txt2" type="hidden"></element>
+			<element time="106" id="o6s4txt3" type="hidden"></element>
+			<element time="106" id="o6slide4img2a" type="hidden"></element>
+			<element time="106" id="o6slide4img2a" type="hidden"></element>
+			<element time="106" id="o6slide4img2" type="hidden"></element>
+			<element time="107" id="o6img1" type="image"></element>
+			<element time="107" id="o6boxtxt1" type="image"></element>
+			<element time="107" id="o6s4R0" type="image"></element>
+			<element time="107" id="o6s4R2" type="image"></element>
+			<element time="148" id="o6s4R0" type="hidden"></element>
+			<element time="148" id="o6s4R1" type="image"></element>
+			<element time="185" id="Expand and close" type="Title"></element>
+			<element time="130" id="o6boxtxt2" type="image"></element>
+			<element time="148" id="o6boxtxt2a" type="image"></element>
+			<element time="148" id="o6s4R3" type="image"></element>
+			<element time="148" id="o6boxtxt1" type="hidden"></element>
+			<element time="148" id="o6boxtxt2" type="hidden"></element>
+			<element time="148" id="o6s4R2" type="hidden"></element>
+			<element time="185" id="o6boxtxt2a" type="hidden"></element>
+			<element time="149" id="o6boxtxt3" type="image"></element>
+			<element time="148" id="o6s4R4" type="image"></element>
+			<element time="158" id="o6boxtxt1" type="hidden"></element>
+			<!--<element time='153' id='o6s4R0' type='hidden'></element>-->
+			<!--<element time='153' id='o6s4R1' type='hidden'></element>-->
+			<!--<element time='153' id='o6boxtxt2' type='hidden'></element>-->
+			<element time="185" id="o6s4R3" type="hidden"></element>
+			<element time="185" id="o6boxtxt3" type="hidden"></element>
+			<element time="185" id="o6s4R4" type="hidden"></element>
+			<!--<element time='153' id='o6s4Rep3' type='image'></element>-->
+			<!--<element time='153' id='o6p1img1' type='image'></element>-->
+			<element time="185" id="o6boxtxt4" type="image"></element>
+			<!--<element time='175' id='o6img1' type='hidden'></element>-->
+			<!--<element time='153.5' id='o6a' type='image'></element>
+	    <element time='161' id='o6a' type='hidden'></element>
+      <element time='161' id='o6b' type='image'></element>-->
+		</slide>
+		<!--<slide id="Obj7" name="Objection Title: 7" title="" refid="Obj7ref" duration="00:09">
+      <audio src='audio/Slide_7.mp3'></audio>
+      <element time='00' id='obj7s42txt1' type='image'></element>
+    </slide>-->
+		<slide id="slide7" name="Objection 7" title="" refid="slide7ref" duration="02:34">
+			<audio src="audio/Objection_7.mp3"></audio>
+			<element time="00" id="obj7s42txt1" type="image"></element>
+			<element time="04" id="obj7s42txt1" type="hidden"></element>
+			<element time="16" id="Listen and acknowledge" type="Title"></element>
+			<element time="4" id="o7s42img1" type="image"></element>
+			<element time="4" id="o7s42img2" type="image"></element>
+			<element time="15" id="o7s42img2" type="hidden"></element>
+			<element time="15" id="o7s42img1" type="hidden"></element>
+			<element time="16" id="o7s42img3" type="image"></element>
+			<element time="16" id="o7s42img4" type="image"></element>
+			<element time="25" id="o7s42img4" type="hidden"></element>
+			<element time="30" id="Clarify and understand" type="Title"></element>
+			<element time="25" id="o7s43img1" type="image"></element>
+			<element time="30" id="o7s43txt1" type="image"></element>
+			<element time="36" id="o7s43txt2" type="image"></element>
+			<element time="41" id="o7s43txt3" type="image"></element>
+			<element time="45" id="o7s43txt4" type="image"></element>
+			<element time="49" id="o7s43txt5" type="image"></element>
+			<element time="59" id="o7s43img1" type="hidden"></element>
+			<element time="59" id="o7s43txt1" type="hidden"></element>
+			<element time="59" id="o7s43txt2" type="hidden"></element>
+			<element time="59" id="o7s43txt3" type="hidden"></element>
+			<element time="59" id="o7s43txt4" type="hidden"></element>
+			<element time="59" id="o7s43txt5" type="hidden"></element>
+			<element time="59" id="o7s42img4" type="hidden"></element>
+			<element time="70" id="Handle and inform" type="Title"></element>
+			<element time="59" id="o7s45txt1" type="image"></element>
+			<element time="70" id="o7s45txt1" type="hidden"></element>
+			<element time="70" id="o7s42img3" type="hidden"></element>
+			<element time="72" id="o7s46img1" type="image"></element>
+			<element time="72" id="o7s46img2" type="image"></element>
+			<element time="72" id="o7s46img3" type="image"></element>
+			<element time="72" id="o7s46txt1" type="image"></element>
+			<element time="92" id="o7s46txt2" type="image"></element>
+			<element time="106.5" id="o7s46txt1" type="hidden"></element>
+			<element time="106.5" id="o7s46txt2" type="hidden"></element>
+			<element time="92" id="o7s46img2" type="hidden"></element>
+			<element time="92" id="o7s46img4" type="image"></element>
+			<element time="107" id="o7s46txt3" type="image"></element>
+			<element time="123" id="o7s46txt4" type="image"></element>
+			<element time="138" id="o7s46txt3" type="hidden"></element>
+			<element time="138" id="o7s46txt4" type="hidden"></element>
+			<element time="138" id="o7s46img4" type="hidden"></element>
+			<element time="106.5" id="o7s46img3" type="hidden"></element>
+			<!--<element time="108" id="o7s46img1" type="hidden"></element>-->
+			<element time="138" id="Expand and close" type="Title"></element>
+			<!--<element time="108" id="o7s47img2" type="image"></element>-->
+			<element time="138" id="o7s46rep2" type="image"></element>
+			<element time="138" id="o7s47txt1" type="image"></element>
+		</slide>
+		<!--<slide id="Obj8" name="Objection Title: 8" title="" refid="Obj8ref" duration="00:06">
+      <audio src='audio/Slide_8.mp3'></audio>
+      <element time='00' id='s0txt1' type='image'></element>
+    </slide>-->
+		<slide id="slide8" name="Objection 8" title="" refid="slide8ref" duration="03:05">
+			<audio src="audio/Objection_8.mp3"></audio>
+			<element time="00" id="s8txt1" type="image"></element>
+			<element time="04" id="s8txt1" type="hidden"></element>
+			<element time="12" id="Listen and acknowledge" type="Title"></element>
+			<element time="4" id="o8slide0img1" type="image"></element>
+			<element time="4.5" id="o8slide0img2" type="image"></element>
+			<element time="9" id="o8slide0img1" type="hidden"></element>
+			<element time="9.5" id="o8slide0img2" type="hidden"></element>
+			<element time="9.5" id="o8slide1img1" type="image"></element>
+			<element time="12" id="o8slide1img2" type="image"></element>
+			<element time="25" id="o8slide1img2" type="hidden"></element>
+			<element time="28" id="Clarify and understand" type="Title"></element>
+			<element time="26" id="o8slide2img1" type="image"></element>
+			<element time="28" id="o8txt1" type="image"></element>
+			<element time="39" id="o8txt2" type="image"></element>
+			<element time="47" id="o8txt3" type="image"></element>
+			<element time="53" id="o8txt4" type="image"></element>
+			<element time="70" id="o8slide2img1" type="hidden"></element>
+			<element time="70" id="o8slide1img1" type="hidden"></element>
+			<element time="70" id="o8txt1" type="hidden"></element>
+			<element time="70" id="o8txt2" type="hidden"></element>
+			<element time="70" id="o8txt3" type="hidden"></element>
+			<element time="70" id="o8txt4" type="hidden"></element>
+			<element time="70.5" id="Handle and inform" type="Title"></element>
+			<element time="70" id="o8slide4img1" type="image"></element>
+			<element time="70.5" id="o8s4txt1" type="image"></element>
+			<element time="79" id="o8s4txt2" type="image"></element>
+			<element time="98" id="o8s4txt3" type="image"></element>
+			<element time="137" id="o8s4txt4" type="image"></element>
+			<element time="149" id="o8s4txt5" type="image"></element>
+			<element time="70.5" id="o8box1" type="image"></element>
+			<element time="82" id="o8box1" type="hidden"></element>
+			<element time="82" id="o8box2" type="image"></element>
+			<element time="70.5" id="o8box3" type="image"></element>
+			<element time="98" id="o8box4" type="image"></element>
+			<element time="98" id="o8box4a" type="image"></element>
+			<element time="98" id="o8box4b" type="image"></element>
+			<element time="137" id="o8box5" type="image"></element>
+			<element time="160" id="o8slide4img1" type="hidden"></element>
+			<element time="137" id="o8s4txt1" type="hidden"></element>
+			<element time="137" id="o8s4txt2" type="hidden"></element>
+			<element time="137" id="o8s4txt3" type="hidden"></element>
+			<element time="160" id="o8s4txt4" type="hidden"></element>
+			<element time="160" id="o8s4txt5" type="hidden"></element>
+			<element time="133" id="o8box1" type="hidden"></element>
+			<element time="160" id="o8box2" type="hidden"></element>
+			<element time="137" id="o8box3" type="hidden"></element>
+			<element time="137" id="o8box4" type="hidden"></element>
+			<element time="137" id="o8box4a" type="hidden"></element>
+			<element time="137" id="o8box4b" type="hidden"></element>
+			<element time="160" id="o8box5" type="hidden"></element>
+			<element time="160.5" id="Expand and close" type="Title"></element>
+			<element time="160" id="o8slide5img1" type="image"></element>
+			<element time="160.5" id="o8s5txt1" type="image"></element>
+			<element time="160.5" id="o8slide5img2a" type="image"></element>
+			<!--<element time="175" id="o8slide5img2" type="image"></element>
+			<element time="175" id="o8slide5img2a" type="hidden"></element>-->
+		</slide>
+		<!--<slide id="Obj9" name="Objection Title: 9" title="" refid="Obj9ref" duration="00:07">
+      <audio src='audio/Slide_9.mp3'></audio>
+      <element time='00' id='s9txt1' type='image'></element>
+    </slide>-->
+		<slide id="slide9" name="Objection 9" title="" refid="slide9ref" duration="03:12">
+			<audio src="audio/Objection_9.mp3"></audio>
+			<element time="00" id="s9txt1" type="image"></element>
+			<element time="08" id="s9txt1" type="hidden"></element>
+			<element time="30" id="Listen and acknowledge" type="Title"></element>
+			<element time="08" id="o9slide0img1" type="image"></element>
+			<element time="09" id="o9slide0img2" type="image"></element>
+			<element time="26" id="o9slide0img2" type="hidden"></element>
+			<element time="26.5" id="o9slide0img1" type="hidden"></element>
+			<element time="27" id="o9slide1img1" type="image"></element>
+			<element time="30" id="o9slide1img2" type="image"></element>
+			<element time="38" id="o9slide1img2" type="hidden"></element>
+			<element time="43.5" id="Clarify and understand" type="Title"></element>
+			<element time="38.5" id="o9slide2img1" type="image"></element>
+			<element time="43.5" id="o9txt1" type="image"></element>
+			<element time="50" id="o9txt2" type="image"></element>
+			<element time="53.5" id="o9txt3" type="image"></element>
+			<element time="56" id="o9txt4" type="image"></element>
+			<element time="61" id="o9txt5" type="image"></element>
+			<element time="71" id="o9slide2img1" type="hidden"></element>
+			<element time="71" id="o9txt1" type="hidden"></element>
+			<element time="71" id="o9txt2" type="hidden"></element>
+			<element time="71" id="o9txt3" type="hidden"></element>
+			<element time="71" id="o9txt4" type="hidden"></element>
+			<element time="71" id="o9txt5" type="hidden"></element>
+			<element time="71.5" id="o9slide1img1" type="hidden"></element>
+			<element time="71" id="Handle and inform" type="Title"></element>
+			<element time="71.5" id="o9slide4img1a" type="image"></element>
+			<element time="71" id="o9s4txt1a" type="image"></element>
+			<element time="82" id="o9s4txt2a" type="image"></element>
+			<element time="91" id="o9s4txt3a" type="image"></element>
+			<element time="71" id="o9box1a" type="image"></element>
+			<element time="82" id="o9box1a" type="hidden"></element>
+			<element time="82" id="o9box2a" type="image"></element>
+			<element time="103" id="o9slide4img1a" type="hidden"></element>
+			<element time="103" id="o9s4txt1a" type="hidden"></element>
+			<element time="103" id="o9s4txt2a" type="hidden"></element>
+			<element time="103" id="o9s4txt3a" type="hidden"></element>
+			<element time="103" id="o9box2a" type="hidden"></element>
+			<element time="103" id="o9slide4img1" type="image"></element>
+			<element time="103" id="o9s4txt1" type="image"></element>
+			<element time="131" id="o9s4txt2" type="image"></element>
+			<element time="152" id="o9s4txt3" type="image"></element>
+			<element time="103" id="o9box1" type="image"></element>
+			<element time="131" id="o9box1" type="hidden"></element>
+			<element time="131" id="o9box2" type="image"></element>
+			<element time="103" id="o9box3" type="image"></element>
+			<element time="164" id="o9slide4img1" type="hidden"></element>
+			<element time="164" id="o9s4txt1" type="hidden"></element>
+			<element time="164" id="o9s4txt2" type="hidden"></element>
+			<element time="164" id="o9s4txt3" type="hidden"></element>
+			<element time="164" id="o9box1" type="hidden"></element>
+			<element time="164" id="o9box2" type="hidden"></element>
+			<element time="164" id="o9box3" type="hidden"></element>
+			<element time="164" id="Expand and close" type="Title"></element>
+			<element time="164" id="o9slide5img1" type="image"></element>
+			<element time="164" id="o9s5txt1" type="image"></element>
+			<element time="164" id="o9slide5img2a" type="image"></element>
+			<!--<element time="175" id="o9slide5img2" type="image"></element>
+			<element time="175" id="o9slide5img2a" type="hidden"></element>-->
+		</slide>
+		<!--<slide id="Obj10" name="Objection Title: 10" title="" refid="Obj10ref" duration="00:06">
+      <audio src='audio/Slide_10.mp3'></audio>
+      <element time='00' id='s10txt1' type='image'></element>
+
+     </slide>-->
+		<slide id="slide10" name="Objection 10" title="" refid="slide10ref" duration="03:22">
+			<audio src="audio/Objection_10.mp3"></audio>
+			<element time="00" id="s10txt1" type="image"></element>
+			<element time="04" id="s10txt1" type="hidden"></element>
+			<element time="14.5" id="Listen and acknowledge" type="Title"></element>
+			<element time="4.5" id="o10s59img1" type="image"></element>
+			<element time="4.5" id="o10s59txt1" type="image"></element>
+			<element time="13" id="o10s59txt1" type="hidden"></element>
+			<element time="13" id="o10s59img1" type="hidden"></element>
+			<element time="14" id="o10s59img2" type="image"></element>
+			<element time="14.5" id="o10s59txt2" type="image"></element>
+			<element time="31" id="o10s59txt2" type="hidden"></element>
+			<element time="36" id="Clarify and understand" type="Title"></element>
+			<element time="33" id="o10s60img1" type="image"></element>
+			<element time="36" id="o10s60txt1" type="image"></element>
+			<element time="56" id="o10s60txt2" type="image"></element>
+			<element time="61" id="o10s60txt3" type="image"></element>
+			<element time="66" id="o10s60txt4" type="image"></element>
+			<element time="69" id="o10s60txt5" type="image"></element>
+			<element time="80" id="o10s60img1" type="hidden"></element>
+			<element time="80" id="o10s60txt1" type="hidden"></element>
+			<element time="80" id="o10s60txt2" type="hidden"></element>
+			<element time="80" id="o10s60txt3" type="hidden"></element>
+			<element time="80" id="o10s60txt4" type="hidden"></element>
+			<element time="80" id="o10s60txt5" type="hidden"></element>
+			<element time="80" id="o10s59img2" type="hidden"></element>
+			<element time="80.5" id="Handle and inform" type="Title"></element>
+			<element time="80" id="o10s61img1" type="image"></element>
+      <element time="122" id="o10s61img1a" type="image"></element>
+			<element time="80.5" id="o10s61txt1" type="image"></element>
+			<element time="80" id="o10s61rep1" type="image"></element>
+			<element time="122" id="o10s61gra2" type="image"></element>
+      <element time="122" id="o10s61gra2a" type="image"></element>
+			<element time="94" id="o10s61txt2" type="image"></element>
+			<element time="103" id="o10s61txt3" type="image"></element>
+			<element time="122" id="o10s61txt1" type="hidden"></element>
+			<element time="122" id="o10s61txt2" type="hidden"></element>
+			<element time="122" id="o10s61txt3" type="hidden"></element>
+			<element time="122" id="o10s61txt4" type="image"></element>
+			<element time="132" id="o10s61txt5" type="image"></element>
+			<element time="147" id="o10s61txt4" type="hidden"></element>
+			<element time="147" id="o10s61txt5" type="hidden"></element>
+			<element time="147" id="o10s61rep1" type="hidden"></element>
+			<element time="147" id="o10s61gra2" type="hidden"></element>
+      	<element time="147" id="o10s61gra2a" type="hidden"></element>
+			<element time="122" id="o10s61img1" type="hidden"></element>
+        <element time="147" id="o10s61img1a" type="hidden"></element>
+			<element time="148" id="Expand and close" type="Title"></element>
+			<element time="148" id="o10s62img1" type="image"></element>
+			<element time="148" id="o10s61rep2" type="image"></element>
+			<element time="148" id="o10s62txt1" type="image"></element>
+			<element time="159" id="o10img1" type="image"></element>
+			<element time="163" id="o10img2" type="image"></element>
+			<element time="192" id="o10img3" type="image"></element>
+			<element time="180" id="o10s61rep2" type="hidden"></element>
+			<element time="180" id="o10s61rep3" type="image"></element>
+			<element time="180" id="o10s62txt2" type="image"></element>
+			<element time="192" id="o10s62txt3" type="image"></element>
+		</slide>
+		<!--<slide id="Obj11" name="Objection Title: 11" title="" refid="Obj11ref" duration="00:03">
+      <audio src='audio/Slide_11.mp3'></audio>
+      <element time='00' id='s11txt1' type='image'></element>
+
+    </slide>-->
+		<slide id="slide11" name="Objection 11" title="" refid="slide11ref" duration="04:55">
+			<audio src="audio/Objection_11.mp3"></audio>
+			<element time="00" id="s11txt1" type="image"></element>
+			<element time="04" id="s11txt1" type="hidden"></element>
+			<element time="17.5" id="Listen and acknowledge" type="Title"></element>
+			<element time="4" id="o11s64img1" type="image"></element>
+			<element time="4.5" id="o11s64txt1" type="image"></element>
+			<element time="17" id="o11s64txt1" type="hidden"></element>
+			<element time="17.5" id="o11s64img1" type="hidden"></element>
+			<element time="17.5" id="o11s64img2" type="image"></element>
+			<element time="17.5" id="o11s64txt2" type="image"></element>
+			<element time="35" id="o11s64txt2" type="hidden"></element>
+			<element time="38" id="Clarify and understand" type="Title"></element>
+			<element time="35" id="o11s65img1" type="image"></element>
+			<element time="38" id="o11s65txt1" type="image"></element>
+			<element time="43" id="o11s65txt2" type="image"></element>
+			<element time="45.5" id="o11s65txt3" type="image"></element>
+			<element time="72" id="o11s65txt4" type="image"></element>
+			<element time="86" id="o11s65img1" type="hidden"></element>
+			<element time="86" id="o11s65txt1" type="hidden"></element>
+			<element time="86" id="o11s65txt2" type="hidden"></element>
+			<element time="86" id="o11s65txt3" type="hidden"></element>
+			<element time="86" id="o11s65txt4" type="hidden"></element>
+			<element time="86" id="o11s64img2" type="hidden"></element>
+			<element time="87.5" id="Handle and inform" type="Title"></element>
+			<element time="87" id="o11s66img1" type="image"></element>
+			<element time="87" id="o11s66rep1" type="image"></element>
+			<element time="87" id="o11s66gra1" type="image"></element>
+			<element time="87.5" id="o11s66txt1" type="image"></element>
+			<element time="95.5" id="o11s66txt2" type="image"></element>
+			<element time="124" id="o11s66rep1" type="hidden"></element>
+			<element time="124" id="o11s66rep2" type="image"></element>
+			<element time="112.5" id="o11s66txt3" type="image"></element>
+			<element time="122.5" id="o11s66txt4" type="image"></element>
+			<element time="95" id="o11s66txt1" type="hidden"></element>
+			<element time="112" id="o11s66txt2" type="hidden"></element>
+			<element time="122" id="o11s66txt3" type="hidden"></element>
+			<element time="128" id="o11s66txt4" type="hidden"></element>
+			<element time="128.5" id="o11s66txt5" type="image"></element>
+			<element time="139.5" id="o11s66txt6" type="image"></element>
+			<element time="139" id="o11s66txt5" type="hidden"></element>
+			<element time="149" id="o11s66txt6" type="hidden"></element>
+			<element time="149" id="o11s66gra1" type="hidden"></element>
+			<element time="149" id="o11s66img1" type="hidden"></element>
+			<element time="149" id="o11s67bg1" type="image"></element>
+			<element time="149.5" id="o11s67txt1" type="image"></element>
+			<element time="149" id="o11s67gra2" type="image"></element>
+			<element time="135.5" id="o11s67img4" type="image"></element>
+			<element time="161.5" id="o11s67txt2" type="image"></element>
+			<element time="169" id="o11s67txt3" type="image"></element>
+			<element time="176" id="o11s67txt4" type="image"></element>
+			<element time="161.5" id="o11s67txt1" type="hidden"></element>
+			<element time="169" id="o11s67txt2" type="hidden"></element>
+			<element time="176" id="o11s67txt3" type="hidden"></element>
+			<element time="192.5" id="o11s67txt4" type="hidden"></element>
+			<element time="192.5" id="o11s67bg1" type="hidden"></element>
+			<element time="192.5" id="o11s66rep2" type="hidden"></element>
+			<element time="192.5" id="o11s67gra2" type="hidden"></element>
+			<element time="192.5" id="o11s66rep3" type="image"></element>
+			<element time="192.5" id="o11s68bg1" type="image"></element>
+			<element time="192.5" id="o11s68box1" type="image"></element>
+			<element time="192.5" id="o11s68txt1" type="image"></element>
+			<element time="224" id="o11s68txt1" type="hidden"></element>
+			<element time="224" id="o11s68box1" type="hidden"></element>
+			<element time="201" id="o11s68txt2" type="image"></element>
+			<element time="201" id="o11s68txt3" type="image"></element>
+			<element time="224" id="o11s68txt2" type="hidden"></element>
+			<element time="224" id="o11s68txt3" type="hidden"></element>
+			<element time="224" id="o11s68txt4" type="image"></element>
+			<element time="224" id="o11s68box2" type="image"></element>
+			<element time="258" id="o11s68txt4" type="hidden"></element>
+			<element time="258" id="o11s68box2" type="hidden"></element>
+			<element time="236.5" id="o11s68txt5" type="image"></element>
+			<element time="224" id="o11s68box3" type="image"></element>
+			<element time="258" id="o11s68box3" type="hidden"></element>
+			<element time="258" id="o11s66rep3" type="hidden"></element>
+			<element time="258" id="o11s68txt5" type="hidden"></element>
+			<element time="258" id="Expand and close" type="Title"></element>
+			<element time="258" id="o11s68txt5a" type="image"></element>
+			<element time="274" id="o11s68txt5b" type="image"></element>
+			<element time="281.5" id="o11s68txt5c" type="image"></element>
+			<element time="258" id="o11s66rep4" type="image"></element>
+			<!--<element time='255' id='o11s69txt3' type='hidden'></element>-->
+			<!--<element time='255' id='o11s68img1' type='hidden'></element>-->
+		</slide>
+		<!--<slide id="Obj12" name="Objection Title: 12" title="" refid="Obj12ref" duration="00:03">
+      <audio src='audio/Slide_12.mp3'></audio>
+    
+    </slide>-->
+		<slide id="slide12" name="Objection 12" title="" refid="slide12ref" duration="05:42">
+			<audio src="audio/Objection_12.mp3"></audio>
+			<element time="00" id="s12txt1" type="image"></element>
+			<element time="7" id="s12txt1" type="hidden"></element>
+			<element time="28" id="Listen and acknowledge" type="Title"></element>
+			<element time="7" id="o12slide0img1" type="image"></element>
+			<element time="9" id="o12slide0img2" type="image"></element>
+			<element time="26.5" id="o12slide0img1" type="hidden"></element>
+			<element time="26.5" id="o12slide0img2" type="hidden"></element>
+			<element time="26.5" id="o12slide1img1" type="image"></element>
+			<element time="28" id="o12slide1img2" type="image"></element>
+			<element time="47" id="o12slide1img2" type="hidden"></element>
+			<element time="49" id="Clarify and understand" type="Title"></element>
+			<element time="47.5" id="o12slide2img1" type="image"></element>
+			<element time="49" id="o12txt0" type="image"></element>
+			<element time="61" id="o12txt1" type="image"></element>
+			<element time="63.5" id="o12txt2" type="image"></element>
+			<element time="83" id="o12txt3" type="image"></element>
+			<element time="93" id="o12txt4" type="image"></element>
+			<element time="102" id="o12slide2img1" type="hidden"></element>
+			<element time="102" id="o12txt0" type="hidden"></element>
+			<element time="102" id="o12txt1" type="hidden"></element>
+			<element time="102" id="o12txt2" type="hidden"></element>
+			<element time="102" id="o12txt3" type="hidden"></element>
+			<element time="102" id="o12txt4" type="hidden"></element>
+			<element time="102" id="o12slide1img1" type="hidden"></element>
+			<element time="103" id="Handle and inform" type="Title"></element>
+			<element time="103" id="o12slide4img1a" type="image"></element>
+			<element time="103" id="o12s1txt1" type="image"></element>
+			<element time="121" id="o12s1txt2" type="image"></element>
+			<element time="103" id="o12s1box1" type="image"></element>
+			<element time="121" id="o12s1box1" type="hidden"></element>
+			<element time="121" id="o12s1box2" type="image"></element>
+			<element time="131.5" id="o12slide4img1a" type="hidden"></element>
+			<element time="131.5" id="o12s1txt1" type="hidden"></element>
+			<element time="131.5" id="o12s1txt2" type="hidden"></element>
+			<!--<element time="100" id="o12s1box1" type="hidden"></element>-->
+			<element time="131.5" id="o12s1box2" type="hidden"></element>
+			<element time="132" id="o12slide4img1" type="image"></element>
+			<element time="132.5" id="o12s4txt1" type="image"></element>
+			<element time="146" id="o12s4txt2" type="image"></element>
+			<element time="132" id="o12box1" type="image"></element>
+			<element time="146" id="o12box1" type="hidden"></element>
+			<element time="146" id="o12box2" type="image"></element>
+			<element time="131.5" id="o12box3" type="image"></element>
+			<element time="146" id="o12box4" type="image"></element>
+			<element time="160" id="o12slide4img1" type="hidden"></element>
+			<element time="160" id="o12s4txt1" type="hidden"></element>
+			<element time="160" id="o12s4txt2" type="hidden"></element>
+			<element time="160" id="o12box2" type="hidden"></element>
+			<element time="160" id="o12box3" type="hidden"></element>
+			<element time="160" id="o12box4" type="hidden"></element>
+			<element time="160.5" id="o12slide4img1b" type="image"></element>
+			<element time="160.5" id="o12s4txt1b" type="image"></element>
+			<element time="176" id="o12s4txt2b" type="image"></element>
+			<element time="161" id="o12box1b" type="image"></element>
+			<element time="176" id="o12box1b" type="hidden"></element>
+			<element time="176" id="o12box2b" type="image"></element>
+			<element time="160.5" id="o12box3b" type="image"></element>
+			<element time="193" id="o12slide4img1b" type="hidden"></element>
+			<element time="193" id="o12s4txt1b" type="hidden"></element>
+			<element time="193" id="o12s4txt2b" type="hidden"></element>
+			<element time="193" id="o12box1b" type="hidden"></element>
+			<element time="193" id="o12box2b" type="hidden"></element>
+			<element time="193" id="o12box3b" type="hidden"></element>
+			<element time="193" id="o12slide1img1a" type="image"></element>
+			<element time="193" id="o12slide1img2a" type="image"></element>
+			<element time="200" id="o12slide1img2a" type="hidden"></element>
+			<element time="200" id="o12slide1img1a" type="hidden"></element>
+			<element time="200.5" id="o12sa" type="image"></element>
+			<element time="201" id="o12txt1a" type="image"></element>
+			<element time="216" id="o12txt2a" type="image"></element>
+			<element time="231" id="o12txt3a" type="image"></element>
+			<element time="244" id="o12txt1a" type="hidden"></element>
+			<element time="244" id="o12txt2a" type="hidden"></element>
+			<element time="244" id="o12txt3a" type="hidden"></element>
+			<element time="244.5" id="o12txt4a" type="image"></element>
+			<element time="252.5" id="o12txt5a" type="image"></element>
+			<element time="200.5" id="o12box6a" type="image"></element>
+			<element time="244.5" id="o12box6a" type="hidden"></element>
+			<element time="244.5" id="o12box7a" type="image"></element>
+			<element time="244.5" id="o12box8a" type="image"></element>
+			<element time="252.5" id="o12box9a" type="image"></element>
+			<element time="277" id="o12sa" type="hidden"></element>
+			<element time="277" id="o12txt4a" type="hidden"></element>
+			<element time="277" id="o12txt5a" type="hidden"></element>
+			<element time="277" id="o12box7a" type="hidden"></element>
+			<element time="277" id="o12box8a" type="hidden"></element>
+			<element time="277" id="o12box9a" type="hidden"></element>
+			<element time="277.5" id="Expand and close" type="Title"></element>
+			<element time="277" id="o12sb" type="image"></element>
+			<element time="277.5" id="o12txt1b" type="image"></element>
+			<element time="296" id="o12txt2b" type="image"></element>
+			<element time="312.5" id="o12txt2b" type="hidden"></element>
+			<element time="312.5" id="o12txt1b" type="hidden"></element>
+			<element time="313" id="o12txt3b" type="image"></element>
+			<element time="334.5" id="o12txt4b" type="image"></element>
+			<element time="277" id="o12box6b" type="image"></element>
+			<element time="312.5" id="o12box6b" type="hidden"></element>
+			<element time="312.5" id="o12box7b" type="image"></element>
+		</slide>
+		<slide id="slide13" name="End" title="" refid="" duration="00:01">
+			<audio src="audio/last Frame.mp3"></audio>
+			<element time="00" id="s24img1" type="image"></element>
+			<!--<element time='00' id='s24img2' type='image'></element>-->
+		</slide>
+	</module>
+</xml>

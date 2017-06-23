@@ -1,0 +1,568 @@
+﻿<xml version='2.0'>
+  <module totalduration="19:52">
+
+    <slide id="slide0a" name="Title" title=""  duration="00:09">
+      <audio src='audio/New Frame 1.mp3'></audio>
+      <element time='00' id='s0abimg1' type='image'></element>
+    </slide>
+
+    <slide id="slide0" name="Learning objectives" title="Learning objectives" refid="slide1aref" duration="01:17">
+      <audio src='audio/New 1.mp3'></audio>
+      <element time='00' id='bimg1' type='image'></element>
+      <element time='31' id='bimg2' type='image'></element>
+      <element time='33' id='bimg3' type='image'></element>
+      <element time='54' id='bimg4' type='image'></element>
+      <element time='68' id='bimg5' type='image'></element>
+    </slide>
+
+    <slide id="slide0b" name="Clinical Papers: HL and sALCL" title="Clinical Papers: HL and sALCL" refid="" duration="00:02">
+      <audio src='audio/New Frame 3.mp3'></audio>
+      <element time='00' id='txt1' type='image'></element>
+      <element time='00' id='txt2' type='image'></element>
+      <element time='01' id='img1' type='image'></element>
+      <element time='01' id='img2' type='image'></element>
+    </slide>
+    
+    <slide id="slide1a" name="Pivotal trial in HL" title="Pivotal trial in HL" refid="" duration="00:15">
+      <audio src='audio/2.mp3'></audio>
+      <element time='00' id='s1abimg1' type='image'></element>
+      <element time='01' id='s1abimg2' type='image'></element>
+    </slide>
+
+    <slide id="slide1" name="Introduction" title="Introduction" refid="slide0ref" duration="00:18">
+      <audio src='audio/Introduction.mp3'></audio>
+      <element time='00' id='s1img1' type='zoomimg' x='-100px' y='-850px' percent='0'></element>
+      <element time='01' id='s1img1' type='zoomimg' x='-225px' y='-858px' percent='90'></element>
+      <element time='17' id='s1img1' type='hidden'></element>
+      <!--<element time='04' id='popupDiv' type='popup'></element>
+      
+      <element time='05' id='bimg2' type='image'></element>
+      <element time='07' id='bimg3' type='image'></element>
+      <element time='17' id='popupDiv' type='hidden'></element>
+      <element time='17' id='btnHide' type='image'></element>-->
+      <element time='17' id='s1imag1' type='image'></element>
+      <element time='17' id='imgZoom' type='zoom'></element>
+    </slide>
+   
+    <slide id="slide2" name="Need for a new standard of care " title="Need for a new standard of care " refid="slide2ref" duration="00:41">
+      <audio src='audio/3.mp3'></audio>
+      <element time='00' id='s2img1' type='zoomimg' x='0px' y='0px' percent='0'></element>
+      <element time='01' id='s2img1' type='zoomimg' x='-200px' y='-650px' percent='90'></element>
+      <element time='39' id='s2img1' type='hidden'></element>
+      <!--<element time='04' id='popupDiv1' type='popup'></element>
+      <element time='04' id='bimg3' type='image'></element>
+      <element time='18' id='bimg4' type='image'></element>
+     <element time='20' id='bimg5' type='image'></element>
+     <element time='38' id='popupDiv1' type='hidden'></element>
+     <element time='39' id='btnHide' type='image'></element>-->
+      <element time='39' id='s2imag1' type='image'></element>
+      <element time='39' id='imgZoom1' type='zoom'></element>
+    </slide>
+    
+    <slide id="slide3" name="Brentuximab vedotin – mode of action" title="Brentuximab vedotin – mode of action" refid="slide3ref" duration="01:05">
+      <audio src='audio/4.mp3'></audio>
+      <element time='00' id='s3img1' type='image'></element>
+      <element time='00' id='s3img1' type='zoomimg' x='0px' y='0px' percent='0'></element>
+      <element time='01' id='s3img1' type='zoomimg' x='-546px' y='-859px' percent='100'></element>
+      <element time='08' id='s3img1' type='hidden'></element>
+      <element time='09' id='popupDiv2' type='popup'></element>
+      <element time='09' id='s3img2' type='image'></element>
+      <element time='55' id='s3img4' type='image'></element>
+      <element time='43' id='s3img3' type='image'></element>
+
+      <element time='63' id='popupDiv2' type='hidden'></element>
+       <element time='64' id='img5' type='image'></element>
+      <element time='64' id='imgZoom2' type='zoom'></element>
+
+    </slide>
+    
+    <slide id="slide4" name="Patients and methods" title="Patients and methods" refid="slide4ref" duration="00:20">
+      <audio src='audio/Patients_and_Methods.mp3'></audio>
+      <element time='00' id='s4img1' type='zoomimg' x='0px' y='0px' percent='0'></element>
+      <element time='00' id='s4img1' type='zoomimg' x='-15px' y='-400px' percent='100'></element>
+      <element time='19' id='s4img1' type='hidden'></element>
+      <!--<element time='04' id='popupDiv3' type='popup'></element>
+      <element time='02' id='txt1' type='image'></element>
+      <element time='03' id='bimg3' type='image'></element>
+      <element time='08' id='bimg4' type='image'></element>
+	  <element time='19' id='popupDiv3' type='hidden'></element>
+     <element time='20' id='btnHide' type='image'></element>-->
+      <element time='19' id='s4imag1' type='image'></element>
+      <element time='19' id='imgZoom3' type='zoom'></element>
+    </slide>
+
+    <slide id="slide5" name="Treatment and assessment" title="Treatment and assessment" refid="slide5ref" duration="00:33">
+      <audio src='audio/Treatment_and_Assessment.mp3'></audio>
+      <element time='00' id='s5img1' type='zoomimg' x='0px' y='0px' percent='0'></element>
+      <!--<element time='01' id='s5img1' type='zoomimg' x='-15px' y='-400px' percent='100'></element>-->
+      <element time='01' id='s5img1' type='zoomimg' x='-15px' y='-650px' percent='100'></element>
+      <element time='32' id='s5img1' type='hidden'></element>
+      <!-- <element time='04' id='popupDiv4' type='popup'></element>
+      
+      <element time='01' id='s5bimg1' type='image'></element>
+    
+   
+      <element time='16' id='s5bimg2' type='image'></element>
+	  <element time='31' id='popupDiv4' type='hidden'></element>-->
+      <element time='32' id='s5imag1' type='image'></element>
+      <element time='32' id='imgZoom4' type='zoom'></element>
+    </slide>
+    
+    <slide id="slide6" name="Patient characteristics" title="Patient characteristics" refid="slide6ref" duration="00:44">
+      <audio src='audio/Patient_Characteristics.mp3'></audio>
+      <element time='00' id='s6img1' type='hidden'></element>
+      <element time='00' id='s6img2' type='hidden'></element>
+      <element time='00' id='s6img1' type='zoomimg' x='0px' y='0px' percent='0'></element>
+      <element time='01' id='s6img1' type='zoomimg' x='-440px' y='-670px' percent='100'></element>
+      <element time='10' id='s6img1' type='hidden'></element>
+      <element time='11' id='s6img2' type='zoomimg' x='-15px' y='-900px' percent='0'></element>
+      <element time='11' id='s6img2' type='zoomimg' x='-15px' y='-380px' percent='100'></element>
+      <element time='42' id='s6img2' type='hidden'></element>
+      <element time='43' id='s6table1' type='image'></element>
+     
+      <!--<element time='11' id='s6img2' type='zoomImage'></element>
+      <element time='20' id='s6img3' type='zoomImage'></element>
+      <element time='43' id='s6img1' type='ImgZoom4'></element>
+      <element time='43' id='s6img2' type='ImgZoom5'></element>
+      <element time='43' id='s6img3' type='ImgZoom6'></element>-->
+    </slide>
+
+    <slide id="slide6a" name="Knowledge check" title="Knowledge check" refid="" duration="00:06">
+      <audio src='audio/Knowledge_Check.mp3'></audio>
+      <element time='00' id='s6atxt1' type='image'></element>
+      <element time='01' id='radio1' type='image'></element>
+      <element time='02' id='radio2' type='image'></element>
+      <element time='03' id='radio3' type='image'></element>
+      <element time='04' id='radio4' type='image'></element>
+      <element time='05' id='radio5' type='image'></element>
+      <element time='05' id='s6aimag9' type='image'></element>
+      <element time='07' id='txt20' type='question'></element>
+    </slide>
+
+
+    <slide id="slide7" name="Response to treatment" title="Response to treatment" refid="slide7ref" duration="00:27">
+      <audio src='audio/Response_to_treatment.mp3'></audio>
+      
+      <element time='00' id='s7img22' type='zoomimg' x='0px' y='0px' percent='0'></element>
+      <element time='02' id='s7img22' type='zoomimg' x='-15px' y='-400px' percent='80'></element>
+      <element time='11' id='s7img22' type='zoomimg' x='-15px' y='-60px' percent='80'></element>
+     
+     <element time='25' id='s7img22' type='hidden'></element>
+     <element time='26' id='img7' type='image'></element>
+
+      <element time='26' id='imgZoom7' type='zoom'></element>
+	  
+    </slide>
+
+    <slide id="slide8" name="Duration of response" title="Duration of response" refid="slide8ref" duration="00:37">
+      <audio src='audio/Duration_of_response.mp3'></audio>
+	   <element time='00' id='s8img2' type='zoomimg' x='0' y='0' percent='0'></element>
+     <element time='01' id='s8img2' type='zoomimg' x='-20px' y='-948px' percent='100'></element>
+      <element time='13' id='s8img2' type='zoomimg' x='-440px' y='-77px' percent='100'></element>
+
+     
+     <element time='36' id='s8img2' type='hidden'></element>
+
+
+     <element time='36' id='img8' type='image'></element>
+      <element time='36' id='imgZoom8' type='zoom'></element>
+	  
+	  
+	  
+
+      <!--<element time='00' id='s8bimg4' type='image'></element>
+      <element time='06' id='s8bimg5' type='image'></element>
+      <element time='12' id='s8img1' type='hidden'></element>
+      <element time='12' id='s8bimg4' type='hidden'></element>
+      <element time='12' id='s8bimg5' type='hidden'></element>
+      <element time='13' id='s8img2' type='image'></element>
+      <element time='13' id='s8bimg6' type='image'></element>
+      <element time='18' id='s8bimg7' type='image'></element>-->
+      <element time='36' id='imgZoom5' type='zoom'></element>
+    </slide>
+   
+    <slide id="slide9" name="Comparison of response with brentuximab vedotin with prior therapy" title="Comparison of response with brentuximab vedotin with prior therapy" refid="slide8ref" duration="00:41">
+      <audio src='audio/Comparison_of_response_with_brentuximab_vedotin_with_prior_therapy.mp3'></audio>
+      <element time='00' id='s9img1' type='hidden'></element>
+      <element time='00' id='s9img2' type='hidden'></element>
+      <element time='00' id='s9img1' type='zoomimg' x='0px' y='0px' percent='0'></element>
+      <element time='02' id='s9img1' type='zoomimg' x='-436px' y='-632px' percent='100'></element>
+      <element time='18' id='s9img1' type='hidden'></element>
+      <element time='19' id='s9img2' type='zoomimg' x='-0px' y='-0px' percent='0'></element>
+      <element time='20' id='s9img2' type='zoomimg' x='-5px' y='-60px' percent='100'></element>
+      <element time='39' id='s9img2' type='hidden'></element>
+      <element time='40' id='s9table1' type='image'></element>
+      <!--<element time='20' id='s9bimg4' type='image'></element>
+      <element time='20' id='s9img3' type='image'></element>
+      <element time='20' id='s9bimg5' type='image'></element>-->
+    </slide>
+    
+    <slide id="slide9a" name="Knowledge check" title="Knowledge check" refid="slide9aref" duration="00:06">
+      <audio src='audio/Knowledge_Check.mp3'></audio>
+      <element time='00' id='s9atxt1' type='image'></element>
+      <element time='01' id='radio1' type='image'></element>
+      <element time='02' id='radio2' type='image'></element>
+      <element time='03' id='radio3' type='image'></element>
+      <element time='04' id='radio4' type='image'></element>
+      <element time='05' id='s9aimag9' type='image'></element>
+      <!--<element time='05' id='txt20' type='question'></element>-->
+    </slide>
+
+
+    <slide id="slide10" name="Safety" title="Safety"  refid="slide10ref" duration="01:51">
+      <audio src='audio/5.mp3'></audio>
+      <element time='00' id='s10img1' type='hidden'></element>
+      <element time='00' id='s10img2' type='hidden'></element>
+      <element time='00' id='s10img3' type='hidden'></element>
+      <element time='00' id='s10img1' type='zoomimg' x='0px' y='0px' percent='0'></element>
+      <element time='02' id='s10img1' type='zoomimg' x='-332px' y='-732px' percent='100'></element>
+      <element time='36' id='s10img1' type='hidden'></element>
+      <element time='37' id='s10img2' type='zoomimg' x='-0px' y='-0px' percent='0'></element>
+      <element time='38' id='s10img2' type='zoomimg' x='-10px' y='-420px' percent='100'></element>
+      <element time='78' id='s10img2' type='hidden'></element>
+      <element time='79' id='s10img3' type='zoomimg' x='-0px' y='-0px' percent='0'></element>
+      <element time='80' id='s10img3' type='zoomimg' x='-10px' y='-475px' percent='100'></element>
+      <element time='109' id='s10img3' type='hidden'></element>
+      <!--<element time='76' id='s10img4' type='zoomimg' x='-0px' y='-0px' percent='0'></element>
+      <element time='80' id='s10img4' type='zoomimg' x='-10px' y='-475px' percent='100'></element>
+      <element time='108' id='s10img4' type='hidden'></element>-->
+      <element time='109' id='s10table1' type='image'></element>
+      <!--<element time='04' id='s10bimg1' type='image'></element>
+      <element time='18' id='s10img1' type='hidden'></element>
+      <element time='19' id='s10img2' type='image'></element>
+      <element time='34' id='s10img2' type='hidden'></element>
+      <element time='35' id='s10img3' type='image'></element>
+	  <element time='51' id='s10img3' type='hidden'></element>
+	  <element time='52' id='s10img4' type='image'></element>
+	  <element time='76' id='s10img4' type='hidden'></element>
+      <element time='77' id='s10table1' type='image'></element>
+      <element time='78' id='s10hdn3' type='hidden'></element>
+
+
+      <element time='37' id='s10bimg2' type='image'></element>
+      <element time='44' id='s10bimg3' type='image'></element>
+      <element time='49' id='s10bimg4' type='image'></element>
+      <element time='78' id='s10hdn4' type='hidden'></element>
+      <element time='81' id='s10bimg5' type='image'></element>
+      <element time='85' id='s10bimg6' type='image'></element>
+      <element time='89' id='s10bimg7' type='image'></element>
+      <element time='95' id='s10bimg8' type='image'></element>
+      <element time='102' id='s10bimg9' type='image'></element>
+      <element time='79' id='s10img4' type='image'></element>-->
+    </slide>
+
+    <slide id="slide11" name="Discussion" title ="Discussion" refid="slide11ref" duration="01:44">
+      <audio src='audio/Conclusion.mp3'></audio>
+      <element time='00' id='s11img1' type='zoomimg' x='0px' y='0px' percent='0'></element>
+      <element time='01' id='s11img1' type='zoomimg' x='-335px' y='-800px' percent='100'></element>
+      <element time='11' id='s11img1' type='zoomimg' x='-335px' y='-60px' percent='100'></element>
+      <element time='63' id='s11img1' type='zoomimg' x='-335px' y='-400px' percent='100'></element>
+      <element time='102' id='s11img1' type='hidden'></element>
+      <!--<element time='04' id='popupDiv0' type='popup'></element>
+	  <element time='70' id='popupDiv0' type='hidden'></element>
+     <element time='20' id='btnHide' type='image'></element>
+   
+      <element time='00' id='s11bimg1' type='image'></element>
+      <element time='06' id='s11bimg2' type='image'></element>
+
+      <element time='18' id='s11bimg3' type='image'></element>
+      <element time='28' id='s11bimg4' type='image'></element>
+      
+    
+      <element time='55' id='s11bimg5' type='image'></element>
+     
+      <element time='67' id='s11img3' type='image'></element>
+      <element time='68' id='s11bimg6' type='image'></element>-->
+      <element time='102' id='s11imag1' type='image'></element>
+      <element time='103' id='imgZoom11' type='zoom'></element>
+    </slide>
+
+    <slide id="slide11a" name="Pivotal trial in sALCL" title="Pivotal trial in sALCL" refid="slide11aref" duration="00:17">
+      <audio src='audio/breakup1.mp3'></audio>
+      <element time='00' id='s11abimg1' type='image'></element>
+    </slide>
+
+    <slide id="slide12" name="Introduction" title="Introduction" refid="slide12ref" duration="00:28">
+      <audio src='audio/TranscriptALCL/Introduction.mp3'></audio>
+     
+	   <element time='00' id='s12img1' type='zoomimg' x='0' y='0' percent='0'></element>
+     <element time='02' id='s12img1' type='zoomimg' x='-217px' y='-826px' percent='100'></element>
+     
+     <element time='26' id='s12img1' type='hidden'></element>
+
+
+     <element time='27' id='img12' type='image'></element>
+      <element time='27' id='imgZoom12' type='zoom'></element>
+
+    </slide>
+
+    <slide id="slide13" name="Need for a new standard of care" title="Need for a new standard of care" refid="slide13ref" duration="00:41">
+      <audio src='audio/TranscriptALCL/Need for a new standard of care.mp3'></audio>
+      <!--<element time='00' id='img1' type='image'></element>-->
+	  <element time='00' id='s13img1' type='zoomimg' x='0' y='0' percent='0'></element>
+     <element time='02' id='s13img1' type='zoomimg' x='-220px' y='-830px' percent='93'></element>
+     
+     <element time='40' id='s13img1' type='hidden'></element>
+	  <element time='40' id='img13' type='image'></element>
+    
+      <element time='40' id='imgZoom13' type='zoom'></element>
+      <!--<element time='00' id='bimg3' type='image'></element>
+      <element time='19' id='bimg4' type='image'></element>-->
+    </slide>
+    <slide id="slide14" name="Brentuximab vedotin – mode of action" title="Brentuximab vedotin – mode of action" refid="slide14ref" duration="01:07">
+      <audio src='audio/8.mp3'></audio>
+	  <element time='00' id='s14img1' type='zoomimg' x='0' y='0' percent='0'></element>
+     <element time='02' id='s14img1' type='zoomimg' x='-18px' y='-47px' percent='100'></element>
+     
+     <element time='28' id='s14img1' type='hidden'></element>
+	 
+      
+      <element time='28' id='popupDiv14' type='popup'></element>
+      <element time='29' id='s3img2' type='image'></element>
+      <element time='35' id='s3img4' type='image'></element>
+      <element time='32' id='s3img3' type='image'></element>
+
+
+      <element time='66' id='popupDiv14' type='hidden'></element>
+	  <element time='66' id='img14' type='image'></element>
+      <element time='66' id='imgZoom14' type='zoom'></element>
+    </slide>
+
+    <slide id="slide15" name="Patients and methods" title="Patients and methods" refid="slide15ref" duration="00:24">
+      <audio src='audio/TranscriptALCL/Patients and Methods.mp3'></audio>
+	  <element time='00' id='s15img1' type='zoomimg' x='0' y='0' percent='0'></element>
+     <element time='02' id='s15img1' type='zoomimg' x='-22px' y='-622px' percent='100'></element>
+     
+     <element time='23' id='s15img1' type='hidden'></element>
+      <element time='23' id='img15' type='image'></element>
+
+      <element time='23' id='imgZoom15' type='zoom'></element>
+    </slide>
+
+    <slide id="slide16" name="Treatment and assessment" title="Treatment and assessment" refid="slide16ref" duration="00:28">
+      <audio src='audio/TranscriptALCL/Treatment and Assessment.mp3'></audio>
+	  <element time='00' id='s16img1' type='zoomimg' x='0' y='0' percent='0'></element>
+     <element time='01' id='s16img1' type='zoomimg' x='-21px' y='-840px' percent='100'></element>
+     
+     <element time='27' id='s16img1' type='hidden'></element>
+      <element time='27' id='img16' type='image'></element>
+
+      <element time='27' id='imgZoom16' type='zoom'></element>
+    </slide>
+
+    <slide id="slide17" name="Patient characteristics" title="Patient characteristics" refid="slide17ref" duration="00:22">
+      <audio src='audio/TranscriptALCL/Patient Characteristics.mp3'></audio>
+	   <!--<element time='00' id='s17imag1' type='zoomimg' x='0px' y='0px' percent='0'></element>
+      <element time='01' id='s17imag1' type='zoomimg' x='-448px' y='-605px' percent='100'></element>
+      <element time='12' id='s17imag1' type='hidden'></element>-->
+
+      <element time='00' id='s17img1' type='zoomimg' x='0' y='0' percent='0'></element>
+      <element time='01' id='s17img1' type='zoomimg' x='-27px' y='-480px' percent='100'></element>
+
+      <element time='20' id='s17img1' type='hidden'></element>
+      <element time='21' id='img17' type='image'></element>
+
+      <element time='21' id='imgZoom17' type='zoom'></element>
+	 
+      <!--<element time='00' id='s17imag2' type='zoomimg' x='0px' y='0px' percent='0'></element>
+      <element time='01' id='s17imag2' type='zoomimg' x='-27px' y='-480px' percent='100'></element>
+      <element time='20' id='s17imag2' type='hidden'></element>
+	  <element time='27' id='img17' type='image'></element>
+      <element time='27' id='imgZoom17' type='zoom'></element>-->
+     
+   <!--<element time='36' id='imgZoom5' type='zoom'></element>
+      <element time='00' id='s17imag1' type='image'></element>
+      <element time='10' id='s17imag1' type='hidden'></element>
+      <element time='11' id='s17imag2' type='image'></element>
+      <element time='19' id='s17imag2' type='hidden'></element>
+      <element time='20' id='table1' type='image'></element>-->
+    </slide>
+    <slide id="slide17a" name="Knowledge check" title="Knowledge check" refid="slide17aref" duration="00:06">
+      <audio src='audio/Knowledge_Check.mp3'></audio>
+      <element time='00' id='s17atxt1' type='image'></element>
+      <element time='01' id='radio1' type='image'></element>
+      <element time='02' id='radio2' type='image'></element>
+      <element time='03' id='radio3' type='image'></element>
+      <element time='04' id='radio4' type='image'></element>
+      <element time='05' id='s17aimag9' type='image'></element>
+      <element time='07' id='s17atxt20' type='question'></element>
+    </slide>
+
+    <slide id="slide18" name="Response to treatment" title="Response to treatment" refid="slide18ref" duration="00:21">
+      <audio src='audio/TranscriptALCL/Response to treatment.mp3'></audio>
+      <element time='00' id='s18img1' type='zoomimg' x='0' y='0' percent='0'></element>
+      <element time='01' id='s18img1' type='zoomimg' x='-444px' y='-65px' percent='100'></element>
+      <element time='16' id='s18img1' type='zoomimg' x='-434px' y='-875px' percent='100'></element>
+      <element time='20' id='s18img1' type='hidden'></element>
+      <element time='20' id='img18' type='image'></element>
+
+      <element time='20' id='imgZoom18' type='zoom'></element>
+      
+      
+      
+	  <!--<element time='00' id='s18imag1' type='zoomimg' x='0px' y='0px' percent='0'></element>
+      <element time='02' id='s18imag1' type='zoomimg' x='-1125px' y='-2360px' percent='50'></element>
+      <element time='12' id='s18imag1' type='hidden'></element>
+      <element time='13' id='s18imag2' type='zoomimg' x='0px' y='0px' percent='0'></element>
+      <element time='18' id='s18imag2' type='zoomimg' x='-441px' y='-50px' percent='100'></element>
+      <element time='20' id='s18imag2' type='hidden'></element>
+      <element time='20' id='s18table1' type='image'></element>-->
+      <!--<element time='00' id='s18imag1' type='image'></element>
+      <element time='10' id='s18imag1' type='hidden'></element>
+      <element time='11' id='s18imag2' type='image'></element>
+      <element time='19' id='s18imag2' type='hidden'></element>
+      <element time='20' id='table1' type='image'></element>-->
+    </slide>
+
+    <slide id="slide19" name="Duration of response" title="Duration of response" refid="slide19ref" duration="00:33">
+      <audio src='audio/TranscriptALCL/Duration of response.mp3'></audio>
+      <element time='00' id='s19imag1' type='hidden'></element>
+      <element time='00' id='s19imag2' type='hidden'></element>
+	   <element time='00' id='s19imag1' type='zoomimg' x='0px' y='0px' percent='0'></element>
+      <element time='01' id='s19imag1' type='zoomimg' x='-447px' y='-924px' percent='100'></element>
+      <element time='05' id='s19imag1' type='hidden'></element>
+      <element time='06' id='s19imag2' type='zoomimg' x='0px' y='0px' percent='0'></element>
+      <element time='07' id='s19imag2' type='zoomimg' x='-16px' y='-980px' percent='100'></element>
+      <element time='32' id='s19imag2' type='hidden'></element>
+      <element time='32' id='s19table1' type='image'></element>
+      <!--<element time='00' id='s19imag1' type='image'></element>
+      <element time='10' id='s19imag1' type='hidden'></element>
+      <element time='15' id='s19imag2' type='image'></element>
+      <element time='25' id='s19imag2' type='hidden'></element>
+      <element time='32' id='table1' type='image'></element>-->
+    </slide>
+    <slide id="slide20" name="Overall survival and progression free survival" title="Overall survival and progression free survival" refid="slide20ref" duration="00:54">
+      <audio src='audio/TranscriptALCL/Overall survival and progression free survival.mp3'></audio>
+      <element time='00' id='s20imag1' type='hidden'></element>
+      <element time='00' id='s20imag2' type='hidden'></element>
+      <element time='00' id='s20imag1' type='zoomimg' x='0px' y='0px' percent='0'></element>
+      <element time='01' id='s20imag1' type='zoomimg' x='-424px' y='-754px' percent='100'></element>
+      <element time='34' id='s20imag1' type='hidden'></element>
+      <element time='35' id='s20imag2' type='zoomimg' x='0px' y='0px' percent='0'></element>
+      <element time='35' id='s20imag2' type='zoomimg' x='-9px' y='-62px' percent='100'></element>
+      <element time='53' id='s20imag2' type='hidden'></element>
+      <element time='53' id='s20table1' type='image'></element>
+      <!--<element time='00' id='s20img1' type='image'></element>
+      <element time='03' id='bimg1' type='image'></element>
+      <element time='07' id='bimg2' type='image'></element>
+      <element time='11' id='bimg3' type='image'></element>
+      <element time='19' id='bimg4' type='image'></element>
+      <element time='21' id='s20hdn1' type='hidden'></element>
+      <element time='22' id='bimg5' type='image'></element>
+      <element time='24' id='bimg6' type='image'></element>-->
+    </slide>
+    <slide id="slide21" name="Comparison of response with brentuximab vedotin with prior therapy" title="Comparison of response with brentuximab vedotin with prior therapy" refid="slide21ref" duration="00:25">
+      <audio src='audio/TranscriptALCL/Comparison of response with brentuximab vedotin with prior therapy.mp3'></audio>
+       <element time='00' id='s21img1' type='zoomimg' x='0' y='0' percent='0'></element>
+     <element time='01' id='s21img1' type='zoomimg' x='-445px' y='-499px' percent='100'></element>
+     
+     <element time='24' id='s21img1' type='hidden'></element>
+	  <element time='24' id='img21' type='image'></element>
+
+      <element time='24' id='imgZoom21' type='zoom'></element>
+	  <!--<element time='00' id='img1' type='image'></element>
+      <element time='00' id='bimg1' type='image'></element>
+      <element time='07' id='bimg2' type='image'></element>-->
+    </slide>
+
+    <slide id="slide22" name="Safety" title="Safety" refid="slide22ref" duration="02:07">
+      <audio src='audio/TranscriptALCL/Safety.mp3'></audio>
+      <element time='00' id='s22imag1' type='hidden'></element>
+      <element time='00' id='s22imag2' type='hidden'></element>
+	  <element time='00' id='s22imag1' type='zoomimg' x='0px' y='0px' percent='0'></element>
+      <element time='02' id='s22imag1' type='zoomimg' x='-18px' y='-903px' percent='100'></element>
+      
+	  
+      <element time='13' id='s22imag1' type='zoomimg' x='-446px' y='-71px' percent='100'></element>
+    
+	  
+      <element time='53' id='s22imag1' type='zoomimg' x='-443px' y='-846px' percent='100'></element>
+      <element time='97' id='s22imag1' type='hidden'></element>
+      <element time='98' id='s22imag2' type='zoomimg' x='-17px' y='-826px' percent='100'></element>
+      <element time='126' id='s22imag2' type='hidden'></element>
+      <element time='126' id='s22table1' type='image'></element>
+	  <!--<element time='00' id='s22imag1' type='image'></element>
+      <element time='40' id='s22imag1' type='hidden'></element>
+      <element time='41' id='s22imag2' type='image'></element>
+      <element time='80' id='s22imag2' type='hidden'></element>
+      <element time='120' id='table1' type='image'></element>-->
+      <!--<element time='00' id='s22img1' type='image'></element>
+      <element time='05' id='s22bimg1' type='image'></element>
+      <element time='09' id='s22bimg2' type='image'></element>
+      <element time='12' id='s22img1' type='hidden'></element>
+      <element time='13' id='s22img2' type='image'></element>
+      <element time='13' id='s22img2' type='image'></element>
+      <element time='18' id='s22hdn1' type='hidden'></element>
+      <element time='19' id='s22img3' type='image'></element>
+      <element time='44' id='s22bimg3' type='image'></element>
+      <element time='49' id='s22hdn2' type='hidden'></element>
+      <element time='50' id='s22img3' type='hidden'></element>
+      <element time='51' id='s22img4' type='image'></element>
+      <element time='52' id='s22bimg4' type='image'></element>
+      <element time='59' id='s22bimg5' type='image'></element>
+      <element time='67' id='s22bimg6' type='image'></element>
+      <element time='79' id='s22bimg7' type='image'></element>
+      <element time='98' id='s22img4' type='hidden'></element>
+      <element time='99' id='s22img5' type='image'></element>-->
+
+      <!--<element time='103' id='s22bimg8' type='image'></element>-->
+    </slide>
+    <slide id="slide22a" name="Knowledge check" title="Knowledge check" refid="slide22aref" duration="00:06">
+      <audio src='audio/Knowledge_Check.mp3'></audio>
+      <element time='00' id='s22atxt1' type='image'></element>
+      <element time='01' id='radio1' type='image'></element>
+      <element time='02' id='radio2' type='image'></element>
+      <element time='03' id='radio3' type='image'></element>
+      <element time='04' id='radio4' type='image'></element>
+      <element time='05' id='s22aimag9' type='image'></element>
+      <element time='07' id='s22atxt20' type='question'></element>
+    </slide>
+
+    <slide id="slide23" name="Discussion" title="Discussion" refid="slide23ref" duration="02:12">
+      <audio src='audio/TranscriptALCL/Discussion.mp3'></audio>
+      <element time='00' id='s23imag1' type='hidden'></element>
+      <element time='00' id='s23imag2' type='hidden'></element>
+	  <element time='00' id='s23imag1' type='zoomimg' x='0px' y='0px' percent='0'></element>
+      <element time='00' id='s23imag1' type='zoomimg' x='-18px' y='-1061px' percent='100'></element>
+      <element time='10' id='s23imag1' type='zoomimg' x='-446px' y='-675px' percent='100'></element>
+      <element time='66' id='s23imag1' type='hidden'></element>
+      <element time='67' id='s23imag2' type='zoomimg' x='0px' y='0px' percent='0'></element>
+      <element time='67' id='s23imag2' type='zoomimg' x='-20px' y='-187px' percent='100'></element>
+      <element time='131' id='s23imag2' type='hidden'></element>
+      <element time='131' id='s23table1' type='image'></element>
+	   <!--<element time='00' id='s23imag1' type='image'></element>
+      <element time='40' id='s23imag1' type='hidden'></element>
+      <element time='41' id='s23imag2' type='image'></element>
+      <element time='80' id='s23imag2' type='hidden'></element>
+      <element time='120' id='table1' type='image'></element>-->
+      <!--<element time='00' id='s23img1' type='image'></element>
+      <element time='10' id='s23bimg1' type='image'></element>
+      <element time='25' id='s23bimg2' type='image'></element>
+      <element time='27' id='s23hdn1' type='hidden'></element>
+      <element time='28' id='s23img2' type='image'></element>
+      <element time='28' id='s23bimg3' type='image'></element>
+      <element time='38' id='s23hdn5' type='hidden'></element>
+      <element time='40' id='s23bimg5' type='image'></element>
+      <element time='58' id='s23bimg4' type='image'></element>
+      <element time='65' id='s23bimg4' type='hidden'></element>
+      <element time='65' id='s23bimg5' type='hidden'></element>
+      <element time='66' id='s23img2' type='hidden'></element>
+      <element time='67' id='s23img3' type='image'></element>
+      <element time='112' id='s23img3' type='hidden'></element>
+      <element time='114' id='s23img4' type='image'></element>
+      <element time='115' id='s23bimg6' type='image'></element>
+      <element time='122' id='s23img4' type='hidden'></element>
+      <element time='123' id='s23img5' type='image'></element>
+      <element time='124' id='s23bimg7' type='image'></element>-->
+
+    </slide>
+
+    <slide id="slide24" name="End" title="" refid="" duration="00:07">
+      <audio src='audio/last Frame.mp3'></audio>
+      <element time='00' id='s24img1' type='image'></element>
+      <element time='00' id='s24img2' type='image'></element>
+    </slide>
+
+
+  </module>
+</xml>

@@ -1,0 +1,1 @@
+﻿function CourseService(){this.URL="../service/CourseService.aspx"}CourseService.prototype=new ServiceBase,CourseService.prototype.ChangeCourseSettings=function(e){var r=[];for(var s in e)r.push(e[s]);var t=new RequestHeader;t.Command="ChangeCourseSettings",t.Data=r,this.Execute(t)};

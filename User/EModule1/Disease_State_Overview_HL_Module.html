@@ -1,0 +1,2777 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    <!-- Website Design By: www.happyworm.com -->
+    <title>E Module</title>
+
+    <!-- fonticon -->
+    <link href="../common/css/font-awesome.css" rel="stylesheet" />
+
+    <!-- textillate -->
+    <link href="../common/css/animate.css" rel="stylesheet">
+    <link href="../common/css/style.css" rel="stylesheet">
+    <link href="../common/css/table.css" rel="stylesheet">
+    <link href="../common/css/bluetable.css" rel="stylesheet">
+
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="../common/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../common/css/bootstrap-theme.min.css">
+    <link href="../common/css/sticky-footer.css" rel="stylesheet">
+
+    <!-- slide bar -->
+    <link href="../common/css/mbExtruder.css" media="all" rel="stylesheet" type="text/css">
+
+    <!-- custom styles -->
+    <link href="../common/css/common.css" media="all" rel="stylesheet" type="text/css">
+
+    <!-- jquery Slider -->
+    <link href="../common/css/simple-slider.css" rel="stylesheet" type="text/css" />
+    <link href="../common/css/simple-slider-volume.css" rel="stylesheet" type="text/css" />
+
+
+    <!-- tooltip -->
+    <link href="../common/css/tipsy.css" rel="stylesheet" type="text/css" />
+
+    <!-- image efect -->
+    <link rel="stylesheet" href="../common/css/hoverEx.css" />
+
+
+    <!-- jquery dropdown -->
+    <link type="text/css" rel="stylesheet" href="../common/css/jquery.dropdown.css" />
+
+    <style type="text/css">
+        #S12TBL1 tr td:first-child {
+            background-color: #00717f;
+            background: -o-linear-gradient(bottom, #00717f 65%, #00797f 100%);
+            background: -webkit-gradient( linear, left top, left bottom, color-stop(0.65, #00717f), color-stop(1, #00797f) );
+            background: -moz-linear-gradient( center top, #00717f 65%, #00797f 100% );
+        }
+    </style>
+
+    <!-- scripts-->
+    <!-- Latest compiled and minified JavaScript -->
+    <script type="text/javascript" src="../common/js/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="../common/js/jquery-ui.js"></script>
+    <script type="text/javascript" src="../common/js/jquery.dropdown.js"></script>
+
+
+    <!-- simple slider -->
+    <script src="../common/js/simple-slider.js"></script>
+
+    <!-- bootstrap -->
+    <script src="../common/js/bootstrap.min.js"></script>
+
+    <!-- slide bar -->
+    <script type="text/javascript" src="../common/js/jquery.hoverIntent.min.js"></script>
+    <script type="text/javascript" src="../common/js/jquery.mb.flipText.js"></script>
+    <script type="text/javascript" src="../common/js/mbExtruder.js"></script>
+
+    <!-- textillate -->
+    <script src="../common/js/jquery.fittext.js"></script>
+    <script src="../common/js/jquery.lettering.js"></script>
+    <script src="../common/js/jquery.textillate.js"></script>
+
+    <!-- tooltip -->
+    <script src="../common/js/jquery.tipsy.js"></script>
+
+    <!-- course player -->
+    <script src="../common/js/player/CoursePlayer.js"></script>
+
+    <script src="../common/js/player/TrackerService.js"></script>
+
+    <script src="../common/js/custom.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $("#extruderLeft2").buildMbExtruder({
+                position: "left",
+                width: 200,
+                positionFixed: false,
+                top: 125,
+                extruderOpacity: .8,
+                onExtOpen: function () { },
+                onExtContentLoad: function () { },
+                onExtClose: function () { }
+            });
+        });
+
+        function PlayEvents() {
+        }
+        PlayEvents.prototype.onAudioFailed = function () {
+            alert("Failed to load audio.");
+        }
+
+        var coursePlayer = null;
+
+        function Init() {
+            coursePlayer = new CoursePlayer("moduleAudio", new PlayEvents());
+            coursePlayer.initialize("Disease_State_Overview_HL_Module.xml");
+            coursePlayer.play();
+        }
+
+        function Next() {
+            if (disableAll)
+                return;
+            if (coursePlayer.nextSlide())
+                coursePlayer.play();
+        }
+        function Prev() {
+            if (disableAll)
+                return;
+            if (coursePlayer.prevSlide())
+                coursePlayer.play();
+        }
+
+        function play() {
+            if (disableAll)
+                return;
+
+            if (!coursePlayer.getPlayerStatus()) {
+                document.getElementById("toggelbutton").src = "../common/img/pauseBtn.png";
+                coursePlayer.play();
+            }
+            else {
+
+                document.getElementById("toggelbutton").src = "../common/img/playBtn.png";
+                coursePlayer.pause();
+            }
+        }
+
+
+
+
+        //]]>
+    </script>
+</head>
+<body style="overflow-x: hidden; font-family: Verdana" onload="createAttempt();">
+    <div class="loader"></div>
+    <div id="wrap" style="width: 1024px;">
+        <div class="" style="height: 90px;">
+            <div class="header-top"></div>
+            <div class="header-body">
+                <img src="../common/img/logo.png" class="logo" />
+                <div class="header-help">
+                    <h4 id="slideTitle" class="module-title" style="max-width: 50%;"></h4>
+                    <div style="float: right">
+                        <img class="effect" onmouseover="HideToolTip(this)" onclick="onclickPlaylistImg()" data-toggle="tooltip" data-placement="left" title="Playlist" style="float: left; opacity: 0.7; width: 36px; margin-top: 14px; margin-right: 8px;"
+                            src="../common/img/content.png" />
+                        <img class="effect" onmouseover="HideToolTip(this)" data-horizontal-offset="-10" data-dropdown="#dropdown-6" data-toggle="tooltip" data-placement="bottom" title="Reference" style="float: left;" src="../common/img/smallicon1.png" />
+                        <img class="effect" onmouseover="HideToolTip(this)" onclick="onclickGlossaryImg()" data-toggle="tooltip" data-placement="customTooltip" title="Glossary" style="float: left; margin-right: 40px;" src="../common/img/smallicon4.png" />
+                        <img class="headerleftbg" src="../common/img/headerCorBg.png" />
+                    </div>
+                </div>
+                <div id="dropdown-6" class="dropdown dropdown-tip dropdown-anchor-right has-icons">
+                    <div class="dropdown-panel">
+                    </div>
+                </div>
+            </div>
+            <audio id="moduleAudio"></audio>
+
+        </div>
+
+        <div style="position: relative; height: 615px;">
+            <!--<div id="extruderLeft2" class="a {title:'Slides\'s', url:'parts/extruderLeft.html'}">
+                <div class="playlist" style="height: 615px;">
+                    <div class="playlist-header"></div>
+                    <div id="playlist" class="playlist-item">
+                        <div class="list-items">title <span>0:00</span></div>
+                    </div>
+                    <div class="playlist-footer">
+                        <p>Total Duration : <span id="totalDuration">00:00</span></p>
+                    </div>
+                </div>
+
+            </div>-->
+            <div class="slidePlayer">
+
+                <div id="PlayListDiv" style="display: none;">
+                    <div class="coursecontent" style="height: 600px; width: 100%;">
+                        <div class="playlist-header">
+                            <button type="button" class="header-close" onclick="onclickClosePlaylist()" style="float: right;">Close</button>
+                        </div>
+                        <div id="playlist" class="playlist-item  style-5">
+                            <div class="list-items">title <span>0:00</span></div>
+                        </div>
+                        <div class="playlist-footer">
+                            <p>Total Duration : <span id="totalDuration">00:00</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div id="GlossaryDiv" style="display: none;">
+                    <div class="coursecontent" style="height: 600px; width: 100%;">
+                        <div class="playlist-header">
+                            <button type="button" class="header-close" onclick="onclickCloseglossary()" style="float: right;">Close</button>
+                        </div>
+                        <div id="Div2" class="playlist-item  style-5">
+                            <div id="GlossaryTitle" class="GlossaryTitle style-5">
+                            </div>
+                            <div id="GlossaryData" class="GlossaryData style-5">
+                            </div>
+                        </div>
+                        <div class="playlist-footer">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="slide0" style="display: none;">
+
+                    <!-- <div class="topic-bar">
+                        <div id="topic-title">Title</div>
+                    </div>-->
+                    <!--Body -->
+                    <div style="height: 550px; width: 100%; float: left; border: 2px solid rgba(127, 145, 145, 0.12); border-radius: 10px; background-color: rgba(255, 255, 255, 0.2);">
+                        <div class="playBody">
+                            <div data-class="fadeInDown" style="display: none; text-align: center; margin: 0px auto;" id="s0abimg1">
+                                <p class="breakout" style="width: 500px; font-size: 20px; position: relative; left: 210px;">
+                                    Disease State Overview: Hodgkin Lymphoma
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Transcript -->
+                    <!--<div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none;
+                        position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#">
+                            <img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center>
+                            <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                                Hide Transcript</button></center>
+                        <div class="transcript">
+                           
+                        </div>
+                    </div>
+                    <div id="slide0aref" style="display: none;" class="slide0aref">
+                        <b>References:</b><br />
+                        <br />
+                       
+                    </div>-->
+                </div>
+				
+				<div id="slide1a" style="display: none;">
+           
+
+                    <div class="slidecontent" style="">
+                        <div class="playBody">
+
+                                <div id="bimg1" style="display:none;padding-left:20px;">
+                                <img data-class="fadeInDown"  src="../common/img/bullet01.png" style=" width: 12px;
+height: 12px;
+float: left;
+margin: 10px;
+margin-top: 36px;" />
+                                <p data-class="fadeInDown" style=" padding-top: 30px" >Material presented as part of this e-learning program is strictly for internal training purposes only</p>
+                                 </div>
+                              <div id="bimg2" style="display:none;padding-left:20px;">
+                                <img data-class="fadeInDown"  src="../common/img/bullet01.png" style=" width: 12px; height: 12px; float: left; margin: 10px; margin-top: 5px;" />
+                                <p data-class="fadeInDown" style="" >By the end of this module you should</p>
+                            </div><br />
+                                <div id="bimg3" style="display:none;padding-left:40px;">
+                                <img data-class="fadeInDown"  src="../common/img/bullet01.png" style=" width: 12px; height: 12px; float: left; margin: 10px;margin-bottom: 30px;" />
+                                <p data-class="fadeInDown" style="" >Be familiarized with the morphological features, epidemiology, and clinical features of Hodgkin’s lymphoma</p>
+                                <br />
+                                    </div>
+                                <div id="bimg4" style="display:none;padding-left:40px;">
+                                <img data-class="fadeInDown"  src="../common/img/bullet01.png" style=" width: 12px; height: 12px; float: left; margin: 10px;margin-bottom: 30px;" />
+                                <p data-class="fadeInDown" style="" >Be aware of the prognosis and staging of Hodgkin’s lymphoma and be able to discuss treatment strategies recommended for Hodgkin’s lymphoma</p>
+                                <br />
+                                    </div>
+                                
+
+                        </div>
+                   </div>
+
+
+                   
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none; position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#"><img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center> <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);" > Hide Transcript</button></center>
+                        <div class="transcript" style="">
+                            <p>
+                               This module is a part of an e-learning program which focuses on the different aspects of brentuximab vedotin, pivotal clinical trials with brentuximab vedotin, role and approval for use in certain patient populations which include; patients with relapsed or refractory Hodgkin’s lymphoma and patients with relapsed or refractory systemic anaplastic large-cell lymphoma. The material presented as part of this e-learning program is strictly for internal training purposes only.
+
+                            </p>
+                            <p>
+                               This module will enable you to get familiarized with the morphological features, epidemiology, and clinical features of Hodgkin’s lymphoma. 
+  
+                            </p>
+                            <p>
+                               By the end of this module you should be aware of the prognosis and staging of Hodgkin’s lymphoma and be able to discuss treatment strategies recommended for Hodgkin’s lymphoma.
+
+                            </p>
+                            
+
+
+
+                        </div>
+                    </div>
+                </div>
+				
+				
+				
+
+
+
+                <div id="slide1" style="display: none;">
+                    <!--Body -->
+                    <!--<div class="topic-bar">
+                        <div id="topic-title">HL: Disease Description</div>
+                     </div>-->
+                    <div id="slide1ref" style="display: none;" class="slide1ref">
+                        <b>References:</b><br />
+                        <br />
+                        1. Montes-Moreno S. Adv Hematol. 2011;2011:142395. Epub 2010 Oct 24<br />
+                        <br />
+                        2. Cancer Research UK website: http://info.cancerresearchuk.org/<br />
+                        accessed 260111.<br />
+                        <br />
+                        3. Ferlay J, et al. GLOBOCAN 2008, World Health Organization. Cancer Incidence and Mortality Worldwide: IARC CancerBase No. 10 [Internet].
+Lyon, France: International Agency for Research on Cancer; 2010. Available from: http://globocan.iarc.fr 
+
+                    </div>
+                    <div class="slidecontent" style="">
+                        <div class="playBody">
+
+                            <div style="float: right; width: 50%; margin-top: 20px;" class="soft-embossed">
+                                <img data-class="fadeInDown" id="img1" src="img/HL/HLsymtoms.jpg" style="display: none;" />
+                                <br />
+
+                                <p data-class="fadeInDown" style="display: none; font-family: Verdana; font-size: 11px; text-align: center; width: 300px;" id="text0">The lymphatic system showing sites commonly affected by Hodgkin's lymphoma<sup>1</sup></p>
+                                <br />
+                                <br />
+                            </div>
+                            <div style="padding-left: 20px">
+                                <br />
+                                <div id="bimg2" style="display: none;">
+                                    <img data-class="fadeInDown" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                    <p data-class="fadeInDown">HL is a cancer of the lymphatic system<sup>1</sup></p>
+                                    <br />
+                                </div>
+                                <div id="bimg3" style="display: none;">
+                                    <img data-class="fadeInDown" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                    <p data-class="fadeInRight">HL commonly occurs in the lymph nodes of the neck<sup>2</sup></p>
+
+                                </div>
+                                <div id="bimg4" style="display: none;">
+                                    <img data-class="fadeInDown" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                    <p data-class="fadeInRightBig">The WHO classifies HL into two variants<sup>2</sup></p>
+                                    <br />
+                                </div>
+
+                                <div id="bimg5" style="display: none; padding-left: 40px">
+                                    <img data-class="fadeInRightBig" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                    <p data-class="fadeInRightBig" style="padding-left: 30px;">Classical Hodgkin lymphoma (CHL), comprising 95% of all cases</p>
+                                </div>
+                                <div id="bimg6" style="display: none; padding-left: 40px">
+                                    <img data-class="fadeInRightBig" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                    <p data-class="fadeInRightBig" style="padding-left: 30px;">Nodular lymphocyte- predominant Hodgkin lymphoma (NLPHL), comprising 5% of all cases</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--Transcript -->
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent">
+                        <a href="#">
+                            <img src="../common/../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center> <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);" > Hide Transcript</button></center>
+                        <div class="transcript" style="">
+                            <p>
+                                Let's begin with a description of HL
+                            </p>
+                            <p>
+                                Hodgkin lymphoma (HL), sometimes referred to as Hodgkin's disease was first recognised
+                        by Thomas Hodgkin and Samuel Wilks in the first half of the 19th century.<sup>1</sup>
+                            </p>
+                            <p>
+                                HL is a cancer of the lymphatic system. Since lymph nodes are distributed throughout
+                        the body, it can occur in almost any part of the body,<sup>2</sup> but it commonly
+                        occurs in the lymph nodes of the neck.
+                            </p>
+                            <p>
+                                This is an uncommon cancer with approximately 6,338 cases in men and 5,439 in women
+                        diagnosed in the EU each year.<sup>3</sup>
+                            </p>
+                            The WHO classifies HL into two variants:<sup>2</sup>
+                            <br />
+                            <br />
+                            <ul>
+                                <li><span>Classical Hodgkin lymphoma (CHL) comprises 95% of all cases.</span></li>
+                                <li><span>Nodular lymphocyte-predominant Hodgkin lymphoma (NLPHL), comprises 5% of all cases.</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!--slide 2 starting-->
+                <div id="slide2" style="display: none;">
+                    <!--Body -->
+                    <!--<div class="topic-bar">
+                        <div id="topic-title">HL: morphological characteristics</div>
+                     </div>-->
+                    <div class="slidecontent" style="">
+                        <div style="padding-left: 20px">
+                            <br />
+                            <div id="bimg1" style="display: none;">
+                                <img data-class="fadeInDown" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                <p data-class="fadeInDown">CHL is characterised by the presence of Reed-Sternberg (RS) cells<sup>1</sup></p>
+                                <br />
+                            </div>
+                            <div id="bimg2" style="display: none;">
+                                <img data-class="fadeInDown" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                <p data-class="fadeInDown">NLPHL lacks RS cells and is instead characterised by the presence of popcorn cells, also known as lymphocyte predominant (LP) cells<sup>2</sup></p>
+                                <br />
+                                <br />
+                                <br />
+                            </div>
+                        </div>
+
+
+                        <div style="width: 50%; float: left; padding-left: 5%; min-width: 50%; max-width: 50%; text-align: center;">
+                            <img data-class="fadeInDown" id="img2" src="img/HL/RscellsCHL.png" style="display: none; width: 75%;" />
+                            <p style="display: none; font-family: Verdana; font-size: 11px;"
+                                id="txt9">
+                                RS cells in lymphocyte-rich CHL<sup>1</sup>
+                            </p>
+                        </div>
+                        <div style="max-width: 87%; min-width: 100%; text-align: center; padding-left: 51%;">
+                            <img data-class="fadeInDown" id="img3" src="img/HL/NLPHL.png" style="display: none; width: 70%;" />
+                            <p data-class="fadeInDown" style="display: none; font-family: Verdana; font-size: 11px;"
+                                id="txt8">
+                                Popcorn cells in NLPHL<sup>2</sup>
+                            </p>
+
+                        </div>
+                    </div>
+                    <!--Transcript -->
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent">
+                        <a href="#">
+                            <img src="../common/../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center> <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);" > Hide Transcript</button></center>
+
+                        <div class="transcript" style="">
+                            </br><p>The two types of HL differ in their morphology, immunophenotype, and their microenvironment.<sup>1</sup><sup>,</sup><sup>2</sup></p>
+                            <p>CHL is characterised by the presence of Reed-Sternberg (RS) cells.<sup>1</sup></p>
+                            <p>NLPHL lacks RS cells and is instead characterised by the presence of popcorn cells, also known as lymphocyte predominant (LP) cells.<sup>2</sup></p>
+                            <p>Reed-Sternberg (RS) cells are thought to derive from na&#239;ve germinal centre (GC) B cells, while LP cells derive from antigen-selected GC B cells.<sup>3</sup></p>
+                            <p>CD15 and CD30 are characteristic markers expressed by RS cells, while LP cells express CD20 and lack CD15 and CD30.<sup>4</sup></p>
+                            <p>RS and LP tumour cells usually account for 0.1% to 10% of cells in tissue.<sup>1</sup></p>
+                        </div>
+                    </div>
+                    <div id="slide2ref" style="display: none;" class="slide2ref">
+                        <b>References:</b><br />
+                        <br />
+                        1. Glass C. Am Fam Physician. 2008;78:615-622.<br />
+                        <br />
+                        2. Lichtman MA et al. Lichtman’s Atlas of Hematology. Access Medicine:McGraw-Hill;2007.
+                        <br />
+                        <br />
+                        3. Schmitz R, et al Annu Rev Pathol. 2009;4:151–74.<br />
+                        <br />
+                        4. Anagnostopoulos I, et al. Blood. 2000;96:1889–99.<br />
+
+                    </div>
+
+
+                </div>
+
+                <!--slide 2 ending-->
+                <!--slide03 starting-->
+                <div id="slide3" style="display: none;">
+                    <!--Body -->
+                    <!--<div class="topic-bar">
+                        <div id="topic-title">HL: CHL</div>
+                    </div>-->
+                    <div class="slidecontent" style="">
+                        <div class="playBody">
+                            <div id="img5" style="padding-left: 20px; display: none;">
+                                <br />
+                                <img data-class="fadeInDown" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 8px;" />
+                                <p data-class="fadeInDown">CHL is further subdivided into four histological subtypes:<sup>1</sup></p>
+                                <br />
+                            </div>
+
+
+                            <div style="width: 50%; float: left; padding-left: 5px; min-width: 50%; max-width: 50%; text-align: center;">
+                                <p style="display: none; font-family: Verdana; font-size: 11px;"
+                                    id="tex1">
+                                    1) Nodular sclerosis (NS)<sup>1</sup><sup>,</sup><sup>2</sup>
+                                </p>
+                                <img data-class="fadeInDown" id="imag1" src="img/HL/CHL-NS.png" style="display: none; width: 240px; height: 180px;" />
+
+                            </div>
+                            <div style="max-width: 87%; min-width: 99%; text-align: center; padding-left: 51%;">
+                                <p data-class="fadeInDown" style="display: none; font-family: Verdana; font-size: 11px;"
+                                    id="tex2">
+                                    2) Mixed cellularity (MC)<sup>1</sup><sup>,</sup><sup>3</sup>
+                                </p>
+                                <img data-class="fadeInDown" id="imag2" src="img/HL/CHL-MC.png" style="display: none; width: 240px; height: 180px;" />
+                            </div>
+                            <div style="float: left; padding-left: 5px; min-width: 50%; max-width: 50%; text-align: center;">
+                                <br />
+                                <p style="display: none; font-family: Verdana; font-size: 11px;"
+                                    id="tex3">
+                                    3) Lymphocyte-rich (LR)<sup>1</sup><sup>,</sup><sup>2</sup>
+                                </p>
+                                <img data-class="fadeInDown" id="imag3" src="img/HL/CHL-LR.png" style="display: none; width: 240px; height: 180px;" />
+
+                            </div>
+                            <div style="max-width: 87%; min-width: 99%; text-align: center; padding-left: 51%;">
+                                <br />
+                                <p data-class="fadeInDown" style="display: none; font-family: Verdana; font-size: 11px;"
+                                    id="tex4">
+                                    4) Lymphocyte-depleted (LD)<sup>1</sup><sup>,</sup><sup>2</sup>
+                                </p>
+                                <img data-class="fadeInDown" id="imag4" src="img/HL/CHL-LD.png" style="display: none; width: 240px; height: 180px;" />
+                            </div>
+                        </div>
+                    </div>
+                    <!--Transcript -->
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent">
+                        <a href="#">
+                            <img src="../common/../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center> <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);" > Hide Transcript</button></center>
+
+                        <div class="transcript" style="">
+                            <p>
+                                CHL is further subdivided into four subtypes: Nodular sclerosis (NS); Mixed cellularity (MC); Lymphocyte rich (LR) and Lymphocyte depleted (LD).
+                            </p>
+                            <p>
+                                This classification has been adopted by the World Health Organization (WHO).<sup>1</sup><sup>,</sup><sup>2</sup>
+
+                            </p>
+                        </div>
+                    </div>
+                    <div id="slide3ref" style="display: none" class="slide3ref">
+                        <b>References:</b><br />
+                        <br />
+                        1. Swerdlow SH, Campo E, Harris NL, et al. WHO Classification of Tumours of Haematopoietic and Lymphoid Tissues.Lyon:IARC Press;2008<br />
+                        <br />
+                        2. Piccaluga et al. Adv Hematol. 2011;2011:920898. Epub 2010 Dec 22.<br />
+                    </div>
+
+
+                </div>
+                <!--slide03 ending-->
+                <!--slide 4 starting-->
+                <div id="slide4" style="display: none;">
+                    <!--<div class="topic-bar">
+                        <div id="topic-title">HL: epidemiology</div>
+                    </div>-->
+                    <!--Body -->
+                    <div class="slidecontent" style="">
+                        <div class="playBody">
+                            <div style="padding-left: 20px">
+                                <br />
+                                <img data-class="fadeInDown" id="bimg1" src="../common/img/bullet01.png" style="display: none; width: 12px; height: 12px; float: left; margin: 10px;" />
+                                <p data-class="fadeInDown" style="display: none; font-family: Verdana; font-size: 14px" id="txt10">In 2010 the global incidence of HL was estimated at 69,970 in both males and females<sup>1</sup></p>
+                                <img data-class="fadeInDown" id="bimg2" src="../common/img/bullet01.png" style="display: none; width: 12px; height: 12px; float: left; margin: 10px;" />
+                                <p data-class="fadeInRight" style="display: none; font-family: Verdana; font-size: 14px" id="txt11">HL incidence typically manifests as two peaks in both genders, either in early (20-34 years) or late (70-79 years) adulthood<sup>2</sup></p>
+                                <br />
+                            </div>
+
+
+                            <div style="text-align: center;">
+                                <img data-class="fadeInDown" src="img/1.png" id="image1" frameborder="0" style="width: 600px; height: 350px; margin-left: 30px; display: none;"></img>
+                            </div>
+                            <div style="width:100%;">
+                            <div data-class="fadeInDown" id="text1" style="width: 50%; float: left; font-size:12px; padding-left: 43px; margin-top: 10px; min-width: 50%; max-width: 50%; text-align: center; display: none;">
+                                Age-standardised incidence and mortality rates 
+for HL in selected countries, 2002<sup>2</sup>
+                            </div>
+
+                            <div data-class="fadeInDown" id="text2" style="width: 50%; float: right; font-size:12px;  padding-left: 78px; margin-top: -35px; min-width: 50%; max-width: 50%; text-align: center; margin-right: 47px; display: none;">
+                                Age-standardised incidence rates 
+for HL by sex in the EU, 2002<sup>2</sup>
+
+                            </div>
+</div>
+                        </div>
+                    </div>
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent">
+                        <a href="#">
+                            <img src="../common/../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center> <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);" > Hide Transcript</button></center>
+
+                        <div class="transcript" style="">
+                            <br />
+                            <p>In 2010 the global incidence of HL was estimated at 69,970 in both males and females.<sup>1</sup></p>
+                            <ul>
+                                <li><span>The graph on the left shows the age-standardised incidence and mortality rates for HL in selected countries around the globe in 2002.</li>
+                                </span>
+                            </ul>
+                            <p>HL incidence and survival rates are dependant on gender, race and age.<sup>1</sup></p>
+                            <p>It should be noted that in Western countries there is a clear bimodal age incidence  in both genders with an early peak in young adults aged 20-34 years, followed by a second peak in older adults aged 70-79 years.</p>
+                            <p>In the Middle East and parts of Asia, the peak is more pronounced in early childhood.<sup>1</sup></p>
+                            <p>The crude incidence of HL in the European Union is 2.2/100,000 per year, the mortality 0.7/100,000 per year.<sup>2</sup></p>
+                            <ul>
+                                <li><span>The graph on the right shows the age-standardised incidence rate for HL by sex in the EU in 2002.</li>
+                                </span>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="slide4ref" style="display: none" class="slide4ref">
+                        <b>References:</b><br />
+                        <br />
+                        1. Maggioncalda Adv Hematol. 2011.<br />
+                        <br />
+                        2. Jost LM, et al. Ann Oncol. 2005;16 Suppl 1:i54–5.<br />
+                        <br />
+                    </div>
+
+                </div>
+                <!--slide 4 ending-->
+                <!--slide 5 starting-->
+                <div id="slide5" style="display: none;">
+                    <!--<div class="topic-bar">
+                        <div id="topic-title">Knowledge Check</div>
+                    </div>
+                 <!--Body -->
+                    <div class="slidecontent" style="">
+                        <div class="playBody">
+                            <div style="padding-left: 20px">
+                                <br />
+                                <p data-class="fadeInDown" style="display: none;" id="txt16">What percentage of patients have CHL and what percentage of patients have NLPHL?</p>
+                                <br />
+                                <input type="hidden" id="Answer" value="1" qid="1" />
+                                <input type="hidden" id="Percentage" value="50" />
+                                <div id="radio1" style="padding: 10px 25px 10px 10px; display: none;">
+                                    <input name="ratio1" value="1" type="radio" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="padding-left: 55px;">CHL: 95%, NLPHL 5%</p>
+                                </div>
+                                <div id="radio2" style="padding: 10px 25px 10px 10px; display: none;">
+                                    <input name="ratio1" value="2" type="radio" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="padding-left: 55px;">CHL: 85%, NLPHL 15%</p>
+                                </div>
+                                <div id="radio3" style="padding: 10px 25px 10px 10px; display: none;">
+                                    <input name="ratio1" value="3" type="radio" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="padding-left: 55px;">CHL: 75%, NLPHL 25%</p>
+                                </div>
+                                <div id="radio4" style="padding: 10px 25px 10px 10px; display: none;">
+                                    <input name="ratio1" value="4" type="radio" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="padding-left: 55px;">CHL: 65%, NLPHL 35%</p>
+                                </div>
+                                <div style="margin-left: 470px;">
+                                    <div>
+                                        <input id="button5" onclick="onclickAnswer(this);" type="button" class="btn btn-primary" value="Submit" style="width: 100px; margin-right: 25px; display: none;" />
+                                    </div>
+                                    <br />
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!--Transcript -->
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent">
+                        <a href="#">
+                            <img src="../common/../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center> <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);" > Hide Transcript</button></center>
+
+                        <div class="transcript" style="">
+                            <br />
+                            <p>Please take a moment to answer a question. Please select the best answer and click submit to continue</p>
+                        </div>
+                    </div>
+                    <div id="slide5ref" style="display: none" class="slide5ref">
+
+                        <b>References:</b><br />
+                        <br />
+                        NO References
+            <br />
+
+
+                    </div>
+
+                </div>
+                <!--slide 5 ending-->
+                <!--slide 6 starting-->
+                <div id="slide6" style="display: none;">
+                    <!-- <div class="topic-bar">
+                        <div id="topic-title">HL: survival rates</div>
+                    </div>-->
+                    <!--Body -->
+                    <div class="slidecontent" style="">
+                        <div class="playBody">
+                            <div style="padding-left: 20px">
+                                <br />
+                                <img data-class="fadeInDown" id="bimg8" src="../common/img/bullet01.png" style="display: none; width: 12px; height: 12px; float: left; margin: 10px;" />
+
+                                <p data-class="fadeInDown" style="display: none;" id="txt21">Improvement in 5-year survival rates is unmatched in any other cancer type over the past four decades<sup>1</sup></p>
+                                <br />
+                                <img data-class="fadeInDown" id="bimg9" src="../common/img/bullet01.png" style="display: none; width: 12px; height: 12px; float: left; margin: 10px;" />
+
+                                <p data-class="fadeInDown" style="display: none; padding-left: 30px;" id="txt22">In the UK, compared with survival in the early 1970s, the 10 year survival rate for 2010 was predicted to have increased from less than 50% to approximately 78%<sup>2</sup></p>
+                                <div style="float: right; width: 100%; text-align: center;">
+                                       <img data-class="fadeInDown" src="img/2.png" id="image1" type="image" frameborder="0" style="margin-top: 25px; display: none;"></img>
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                    <!--Transcript -->
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent">
+                        <a href="#">
+                            <img src="../common/../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center> <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);" > Hide Transcript</button></center>
+
+                        <div class="transcript">
+                            <br />
+                            <p>The improvement in 5-year survival rates for HL is unmatched in any other cancer type over the past four decades.<sup>1</sup></p>
+                            <p>The graph shows the UK HL mortality statistics trend in men and women from 1971 to 2007:</p>
+                            <ul>
+                                <li><span>You can see that in the UK, compared with survival in the early 1970s, the 10 year survival rate for 2010 was predicted to have increased from less than 50% to approximately 78%.<sup>2</sup></></span>
+                                </li>
+
+                                <li><span>In fact, in the UK and Wales, the 10-year relative survival for adults (15 to 99 yrs) diagnosed with HL was 49% between 1971&#45;72. The survival rates increased to 77.9% by 2007.<sup>2</sup></span>
+                                </li>
+                            </ul>
+                            <p>Since HL is a rare cancer with high cure rates, drug development is slow.</p>
+                            <p>No new HL drugs have been approved by the FDA in more than three decades.<sup>1</sup></p>
+                        </div>
+                    </div>
+                    <div id="slide6ref" style="display: none;" class="slide6ref">
+
+                        <b>References:</b><br />
+                        <br />
+                        1. Jona A, Younes A Blood Rev. 2010;24:233–8
+                        <br />
+                        <br />
+                        2. Cancer UK website: http://info.cancerresearchuk.org/news/archive
+                           /pressrelease/2010-07-12-deadly-cancer-survival-doubles 
+
+            <br />
+
+                    </div>
+                </div>
+                <!--slide 6 ending-->
+                <!--slide 7 starting-->
+                <div id="slide7" style="display: none;">
+                    <!--<div class="topic-bar">
+                        <div id="topic-title">HL: Predisposing factors</div>
+                    </div>-->
+                    <div class="slidecontent" style="">
+                        <div class="playBody">
+                            <div style="padding-left: 20px">
+                                <br />
+                                <p data-class="fadeInDown" style="display: none;" id="txt24">Factors that may be associated with HL include</p>
+                                <div style="padding-left: 50px">
+
+                                    <div style="padding: 10px">
+                                        <img data-class="fadeInDown" id="bimg8" src="../common/img/bullet01.png" style="display: none; width: 12px; height: 12px; float: left; margin: 8px;" />
+                                        <p data-class="fadeInDown" style="display: none;" id="txt25">Age with the highest risk of developing HL during adolescence and early adulthood<sup>1</sup></p>
+                                    </div>
+                                    <div style="padding: 10px">
+                                        <img data-class="fadeInDown" id="bimg9" src="../common/img/bullet01.png" style="display: none; width: 12px; height: 12px; float: left; margin: 8px;" />
+                                        <p data-class="fadeInDown" style="display: none;" id="txt26">
+                                            Occupational exposure, including uranium radiation 
+and smoking<sup>2</sup>
+                                        </p>
+                                    </div>
+                                    <div style="padding: 10px">
+                                        <img data-class="fadeInDown" id="bimg10" src="../common/img/bullet01.png" style="display: none; width: 12px; height: 12px; float: left; margin: 8px; margin-bottom: 37px;" />
+                                        <p data-class="fadeInDown" style="display: none;" id="txt27">Childhood environment, increased susceptibility to young/adolescent HL may be due to a reduction in the cumulative microbial exposures of childhood<sup>3</sup></p>
+                                    </div>
+                                    <div style="padding: 10px">
+                                        <img data-class="fadeInDown" id="bimg11" src="../common/img/bullet01.png" style="display: none; width: 12px; height: 12px; float: left; margin: 8px;" />
+                                        <p data-class="fadeInDown" style="display: none;" id="txt28">Viral infections with Epstein Barr virus (EBV)<sup>4</sup> and HIV,<sup>5</sup> both of which affect the immune system</p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--Transcript -->
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent">
+                        <a href="#">
+                            <img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center> <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);" > Hide Transcript</button></center>
+                        <div class="transcript">
+                            <br />
+                            <p>The exact cause of HL is unknown, and most people who develop the disease do not have any particular risk factor.</p>
+                            <p>That said, some predisposing factors have been identified:<sup>1</sup></p>
+                            <ul>
+                                <li><span>One factor is age, with the highest risk of developing HL during adolescence and early adulthood.<sup>1</sup></span>
+                                </li>
+                                <li><span>Another factor is occupational exposure, including uranium radiation  and smoking.<sup>2</sup></span>
+                                </li>
+                                <li><span>A third factor is childhood environment. Findings from one study related the susceptibility to young/adolescent HL to an aberrant cytokine response pattern that resulted from reduced microbial exposures in childhood.<sup>3</sup></span>
+                                </li>
+                                <li><span>Viral infections with Epstein Barr virus (EBV)<sup>4</sup> and HIV,<sup>5</sup> both of which affect the immune system are also predisposing factors for HL:</span>
+                                </li>
+                                <ul>
+                                    <li><span>EBV, is a ubiquitous human herpes virus. It was first thought to be involved in the pathogenesis of HL when it was detected in HL cells.</span>
+                                    </li>
+                                    <li><span>The incidence of HL is also known to increase in patients with HIV/AIDS.<sup>5</sup> This incidence has been reported to be higher in patients receiving HIV antiretroviral therapy.<sup>6</sup></span>
+                                    </li>
+                                </ul>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="slide7ref" style="display: none;" class="slide7ref">
+
+                        <b>References:</b><br />
+                        <br />
+                        1. Gospodarowicz MK, Cancer J. 2009;15:138–42.<br />
+                        <br />
+                        2. Connors JM, Cancer Journal 2009;15:124–28.<br />
+                        <br />
+
+
+
+                    </div>
+                </div>
+                <!--slide 7 ending-->
+                <!--slide 8 starting-->
+                <div id="slide8" style="display: none;">
+                    <!--<div class="topic-bar">
+                        <div id="topic-title">HL: clinical presentation (1)</div>
+                    </div>-->
+                    <div class="slidecontent" style="">
+                        <div class="playBody">
+                            <div style="padding-left: 20px">
+                                <br />
+                                <img data-class="fadeInDown" id="bimg8" src="../common/img/bullet01.png" style="display: none; width: 12px; height: 12px; float: left; margin: 10px;" />
+
+                                <p data-class="fadeInDown" style="display: none;" id="txt29">Patients with CHL typically present with asymptomatic lymph node enlargement, commonly in the neck<sup>1</sup></p>
+                                <img data-class="fadeInDown" id="bimg9" src="../common/img/bullet01.png" style="display: none; width: 12px; height: 12px; float: left; margin: 10px;" />
+
+                                <p data-class="fadeInDown" style="display: none;" id="txt30">
+                                    Occasionally mass lesions may be found in other organs, 
+such as the spleen, bone marrow, liver, bone or lungs<sup>2</sup>
+                                </p>
+
+                                <center><table class="leftbluetable" style="display: none;width: 600px;height: 400px; border: 1px solid #000000;" id="img7">
+                                    <tr >
+                                        <td style="background:#00717f;color:white;font-size:large;"> Common manifestations of HL</td>
+                                        <td  style="background:#00717f;color:white; font-size:large;">Occurrence</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Lymphadenopathy</td>
+                                        <td></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td style="padding-left:40px;">Supradiaphragmatic</td>
+                                        <td>90%</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td style="padding-left:40px;">Infradiaphragmatic</td>
+                                        <td>10%</td>
+                                        </tr>
+
+                                    <tr>
+                                        <td>Extranodal disease</td>
+                                        <td>   </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td style="padding-left:40px;">No extranodal extension</td>
+                                        <td>75%</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td style="padding-left:40px;">
+                                            Localised, contiguous with involved lymph nodes</td>
+                                        <td>
+                                            10%</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-left:40px;">
+                                            Disseminated (liver, lung, bone, bone marrow)</td>
+                                        <td>    </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-left:80px;">
+                                            Classical</td>
+                                        <td>
+                                            15%</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-left:80px;">
+                                            Nodular lymphocyte predominant</td>
+                                        <td style="padding-left: 10px;">
+                                            5%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            B-Symptoms</td>
+                                        <td>
+                                            35%</td>
+                                    </tr>
+                                </table>
+                                </center>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                    <!--Transcript -->
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent">
+                        <a href="#">
+                            <img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center> <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);" > Hide Transcript</button></center>
+
+                        <div class="transcript">
+                            <br />
+                            <p>Patients with CHL typically present with asymptomatic lymph node enlargement, commonly in the neck.<sup>1</sup></p>
+                            <p>Occasionally mass lesions may be found in other organs, such as the spleen, bone marrow, liver, bone or lungs.<sup>2</sup></p>
+                            <p>This screen shows the percentage of patients who have each of the most common manifestations of HL:</p>
+                            <ul>
+                                <li><span>The most common manifestation of HL in younger patients is the development of persistent, painless, firm (but not hard), supradiaphragmatic lymphadenopathy, typically in the neck.</span>
+                                </li>
+                            </ul>
+                            <p>HL typically spreads in a predictable fashion from one set of lymph nodes to adjacent groups.</p>
+
+                        </div>
+                    </div>
+                    <div id="slide8ref" style="display: none" class="slide8ref">
+
+                        <b>References:</b><br />
+                        <br />
+                        1. Connors JM, Cancer Journal 2009;15:124–28. 
+            
+            
+                    </div>
+                </div>
+                <!--slide 8 ending-->
+                <!--slide 10 starting-->
+                <div id="slide10" style="display: none;">
+                    <!--<div class="topic-bar">
+                        <div id="topic-title">HL: clinical presentation (2)</div>
+                    </div>-->
+                    <div class="slidecontent" style="">
+                        <div class="playBody">
+                            <div style="padding-left: 20px">
+                                <br />
+                                <div id="tex5" style="display: none;">
+                                    <img data-class="fadeInDown" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 8px; margin-bottom: 40px;" />
+                                    <p data-class="fadeInDown">Clinical presentation of CHL depends on the geographic region, age of the patient and co-infections, or diseases affecting the immune status of the patient<sup>1</sup>, for example</p>
+                                </div>
+                                <div style="padding-left: 70px">
+                                    <div style="padding: 10px">
+                                        <img data-class="fadeInDown" id="bimg8" src="../common/img/bullet01.png" style="display: none; width: 12px; height: 12px; float: left; margin: 8px;" />
+                                        <p data-class="fadeInDown" style="display: none; padding-left: 29px;" id="tex6">In developing countries clinical presentation may lack bimodal age pattern<sup>1</sup></p>
+                                    </div>
+                                    <div style="padding: 10px">
+                                        <img data-class="fadeInDown" id="bimg9" src="../common/img/bullet01.png" style="display: none; width: 12px; height: 12px; float: left; margin: 8px;" />
+                                        <p data-class="fadeInDown" style="display: none; padding-left: 29px;" id="tex7">Immunocompromised patients (with HIV), typically present with extranodal disease with B symptoms<sup>1</sup></p>
+                                    </div>
+                                    <div style="padding: 10px">
+                                        <img data-class="fadeInDown" id="bimg10" src="../common/img/bullet01.png" style="display: none; width: 12px; height: 12px; float: left; margin: 8px;" />
+                                        <p data-class="fadeInDown" style="display: none; padding-left: 29px;" id="tex8">Older patients (>60 years) often show subdiaphragmatic disease, mixed cellularity histology and B symptoms<sup>1</sup></p>
+                                    </div>
+                                </div>
+                                <div id="tex9" style="display: none;">
+                                    <img data-class="fadeInDown" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 8px;" />
+                                    <p data-class="fadeInDown">In comparison NLPHL is associated with less aggressive tumour growth and lymphadenopathy, usually preceding diagnosis for many years<sup>1</sup><sup>,</sup><sup>2</sup> </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                    <!--Transcript -->
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent">
+                        <a href="#">
+                            <img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center> <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);" > Hide Transcript</button></center>
+
+                        <div class="transcript">
+                            </br><p>The clinical presentation of CHL depends on the geographic region, age of the patient and co-infections, or diseases affecting the immune status of the patient:<sup>1</sup></p>
+                            <ul>
+                                <li><span>In developing countries clinical presentation may lack the bimodal age pattern<sup>1</sup> that is more evident in developed countries.</span>
+                                </li>
+                                <li><span>Immunocompromised patients (with HIV), typically present with extranodal disease with B symptoms.<sup>1</sup></span>
+                                </li>
+                                <li><span>Clinical presentation has also been affected by other co-infections such as  Epstein Bar Virus (EBV), that affect the immune status of the patient.<sup>1</sup></span>
+                                </li>
+                                <li><span>Patients over the age of 60 often show subdiaphragmatic disease, mixed cellularity histology and B symptoms.<sup>1</sup></span>
+                                </li>
+                            </ul>
+                            <p>The way that NLPHL presents clinically is somewhat different from how CHL presents:</p>
+                            <ul>
+                                <li><span>NLPHL is associated with less aggressive tumour growth and lymphadenopathy, usually preceding diagnosis for many years.<sup>1</sup><sup>,</sup><sup>2</sup></span>
+                                </li>
+                                <li><span>Other clinical characteristics of NLPHL include rare occurrence of systemic symptoms, and a low frequency of site-specific organ involvement.<sup>3</sup></span>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div id="slide10ref" style="display: none" class="slide10ref">
+
+                        <b>References:</b><br />
+                        <br />
+                        1. Banerjee D, Adv in Hematol 2011; Volume 2011 (2011), Article ID 439456.<br />
+                        <br />
+                        2. Nogová L, et al. J. Clin. Oncol. 2008;26:434–9<br />
+                        <br />
+                        3. Nogová L, et al. Hematology Am Soc Hematol Educ Program. 2006:266–72<br />
+
+
+                    </div>
+                </div>
+                <!--slide 10 ending-->
+
+                <div id="slide11" style="display: none;">
+                    <!--  <div class="topic-bar">
+                    <div id="topic-title">HL: Staging</div>
+                </div>-->
+
+                    <div class="slidecontent" style="">
+                        <div>
+                            <img data-class="fadeInDown" id="bimg8" src="../common/img/bullet01.png" style="display: none; width: 12px; height: 12px; float: left; margin: 10px; margin-top: 24px;" />
+
+                            <p data-class="fadeInDown" style="display: none; padding: 16px" id="S11P1">
+                                HL is defined by four stages which are further described according 
+to the presence of A, B, E, or X symptoms
+                            </p>
+
+
+                            <div>
+                                <center>
+                                <table class="leftbluetable" id="S11TBL1" style="width: 600px;height: 400px;margin-top: -16px;display: none;">
+                                <tr>
+                                    <td colspan="2" style="width: 30%;">HL Stage</td>
+                                    <td>Description</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: bold; text-align: center; width: 5%">I</td>
+                                    <td rowspan="2" style="font-weight: bold; text-align: center">Early stage favourable* or unfavourable<sup>&dagger;</sup></td>
+                                    <td>Single lymph node region, or localised involvement of single 
+extralymphatic organ/site.</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: bold; text-align: center; width: 5%">II</td>
+
+                                    <td>Involvement of &ge;2 lymph node regions on same side as diaphragm, or localised involvement of single associated extralymphatic organ/site and its regional lymph node(s), with or without involvement of other lymph node regions on the same side of the diaphragm.</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: bold; text-align: center; width: 5%">III</td>
+                                    <td rowspan="2" style="font-weight: bold; text-align: center">Advanced stage</td>
+                                    <td>Involvement of lymph nodes regions on both sides of diaphragm, which may also be accompanied  by localised involvement of an associated extralymphatic organ or site, by involvement of the spleen, or by both.</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: bold; text-align: center; width: 5%">IV</td>
+
+                                    <td>Disseminated (multifocal) involvement of &ge;1 extralymphatic organs, with or without associated lymph node involvement, or isolated extralymphatic organ involvement with distant (nonregional) nodal involvement.</td>
+                                </tr>
+                            </table></center>
+                            </div>
+                            <div>
+                                <!-- <p style="padding-top:10px; font-size: 12px; padding-left: 5%; padding-right: 5em; display: none;" id="S11P2">*no B symptoms or large mediastinal adenopathy; <sup>&dagger;</sup> with/without B symptoms with large mediastinal mass or with B symptoms accompanied by numerous sites of disease or elevated erythrocyte sedimentation rate (ESR)   </p>-->
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent">
+                        <a href="#">
+                            <img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center> <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);" > Hide Transcript</button></center>
+
+                        <div class="transcript" style="">
+                            <p>HL is defined by four stages that are based on the Ann Arbor staging system.<sup>1</sup></p>
+                            <p>At Stage I, HL is present in a single lymph node region, or there is localised involvement of single extralymphatic organ/site.</p>
+                            <p>At Stage II, there is involvement of &ge;2 lymph node regions on same side as diaphragm or localised involvement of single associated extralymphatic organ/site and its regional lymph node(s). These may occur with or without involvement of other lymph node regions on the same side of the diaphragm.</p>
+                            <p>At Stage III, there is involvement of lymph nodes regions on both sides of diaphragm, which may also be accompanied by localised involvement of an associated extralymphatic organ or site, by involvement of the spleen, or by both.</p>
+                            <p>At Stage IV, there is disseminated (multifocal) involvement of &ge;1 extralymphatic organs, with or without associated lymph node involvement, or isolated extralymphatic organ involvement with distant (nonregional) nodal involvement.</p>
+                            <p>The stages are further described according to the presence of A, B, E or X symptoms:</p>
+                            <ul>
+                                <li><span>A means that no systemic symptoms are present.</span></li>
+                                <li><span>B means that the patient has unexplained fevers (>38°C), night sweats, unexplained weight loss (>10% body weight).</span></li>
+                                <li><span>E means that a single extranodal site is involved that is contiguous or proximal to the known nodal site.</span></li>
+                                <li><span>X is used to describe bulky disease and can also be applied to any stage of HL.<sup>2</sup></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="slide11ref" style="display: none" class="slide11ref">
+                        <b>References:</b><br />
+                        <br />
+                        1. National Comprehensive Cancer Network. NCCN Clinical Practice Guidelines in Oncology Hodgkin Lymphoma. V.2.2014.<br />
+                        <br />
+                        2. Gospodarowicz MK. Cancer J. 2009;15:138–42.<br />
+                        <br />
+
+
+                    </div>
+                </div>
+
+
+
+                <div id="slide12" style="display: none;">
+                    <!--  <div class="topic-bar">
+                    <div id="topic-title">HL: Work Up and Diagnosis</div>
+                </div>-->
+
+                    <div class="slidecontent" style="">
+                        <div>
+                            <img data-class="fadeInDown" id="bimg8" src="../common/img/bullet01.png" style="display: none; width: 12px; height: 12px; float: left; margin: 10px; margin-top: 35px;" />
+
+                            <p data-class="fadeInDown" style="display: none; padding: 26px" id="S12P1">The work up and assessment of patients with newly diagnosed HL should include:</p>
+
+
+                            <div>
+                                <center>
+                            <table id="S12TBL1" style="margin-left: 25px; margin-right: 25px;display: none;">
+                                <tr style="border-bottom: 1px solid #ccc;">
+                                    <td class="TableHeaderBackground"  style="width: 20%;text-align: left;">History</td>
+                                    <td style="background-color: white;">
+                                        <ul>
+                                            <li>presence of B symptoms</li>
+                                            <li>pruritus and alcohol-related pain</li>
+                                            <li>HIV status, hepatitis B and C </li>
+                                            <li>cardiac, pulmonary, renal disease</li>
+
+
+                                        </ul>
+                                    </td>
+
+                                </tr>
+                                <tr style="border-bottom: 1px solid #ccc;">
+                                    <td class="TableHeaderBackground" style="width: 20%; text-align: left;">Physical examination</td>
+                                    <td style="background-color: white;">
+                                        <ul>
+                                            <li>peripheral lymph node area, liver, and spleen</li>
+
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #ccc;">
+                                    <td class="TableHeaderBackground" style="width: 20%; text-align: left;">Laboratory tests</td>
+                                    <td style="background-color: white;">
+                                        <ul>
+                                            <li>complete blood count, LDH, liver function tests, ESR</li>
+
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid #ccc;">
+                                    <td class="TableHeaderBackground" style="width: 20%; text-align: left;">Imaging</td>
+                                    <td style="background-color: white;">
+                                        <ul>
+                                            <li>CT scan &#45; head, neck, chest, abdomen, and pelvis</li>
+                                            <li>PET&#45;CT scan</li>
+
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="TableHeaderBackground" style="width: 20%; text-align: left;">Bone marrow biopsy</td>
+                                    <td style="background-color: white;">
+                                        <ul>
+                                            <li>stages III&#45;IV</li>
+                                            <li>B symptoms</li>
+
+                                        </ul>
+                                    </td>
+                                </tr>
+
+                            </table>
+                                </center>
+                            </div>
+                            <div>
+                                <p style="display: none; font-size: 12px; padding-left: 4%; padding-top: 2%; text-align: center;" id="S12P2">CT = computed tomography;  ESR = erythrocyte sedimentation rate;</p>
+                                <p style="display: none; font-size: 12px; padding-left: 4%; text-align: center;" id="S12P3">LDH = lactate dehydrogenase;  PET =  positron emission tomography</p>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent">
+                        <a href="#">
+                            <img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center> <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);" > Hide Transcript</button></center>
+
+                        <div class="transcript" style="">
+                            <p>A full history and physical examination is recommended for patients who may have HL:</p>
+                            <ul>
+                                <li><span>The patient's history may show  the presence of B symptoms, pruritus and alcohol-related pain, HIV status, hepatitis B, hepatitis C, cardiac disease, pulmonary disease, or renal disease.</li>
+                                </span>
+                                <li><span>The physical examination should include checking the peripheral lymph node area, liver, and spleen.<sup>1</sup></li>
+                                </span>
+                                <li><span>Laboratory tests should include a complete blood count, LDH, liver function tests, and ESR.</li>
+                                </span>
+
+                            </ul>
+                            <p>For a definitive diagnosis excisional biopsy of a lymph node is recommended, although a core needle biopsy may be sufficient.<sup>1</sup></p>
+                            <p>If the biopsy is positive, additional tests may be performed, such as imaging, bone marrow aspiration, and histology.<sup>2</sup></p>
+                            <ul>
+                                <li><span>Imaging should include a CT scan and a PET-CT scan.</li>
+                                </span>
+                            </ul>
+                            <p>Immunohistochemistry is also recommended, particularly to determine if the patient has markers such as CD15 and CD30, both of which are expressed by RS cells.<sup>1</sup></p>
+
+
+                        </div>
+                    </div>
+                    <div id="slide12ref" style="display: none" class="slide12ref">
+                        <b>References:</b><br />
+                        <br />
+                        1. National Comprehensive Cancer Network. NCCN Clinical Practice Guidelines in Oncology Hodgkin Lymphoma. V.2.2014.<br />
+                        <br />
+                        2. Engert A, Eichenauer DA, Dreyling M; ESMO Guidelines Working Group Ann Oncol. 2010;21:v168–71.<br />
+                        <br />
+
+                    </div>
+                </div>
+
+
+
+
+                <div id="slide13" style="display: none;">
+                    <!--  <div class="topic-bar">
+                    <div id="topic-title">HL: Prognosis and Survival</div>
+                </div>-->
+
+                    <div class="slidecontent" style="">
+                        <div>
+                            <img data-class="fadeInDown" id="bimg8" src="../common/img/bullet01.png" style="display: none; width: 12px; height: 12px; float: left; margin: 10px; margin-top: 35px;" />
+
+                            <p data-class="fadeInDown" style="display: none; padding: 28px" id="S13P1">Survival rates in HL are influenced by age at diagnosis, histology and stage of disease</p>
+                        </div>
+                        <div style="margin-top: 20px; padding: 10px; text-align: center;">
+                            <img data-class="fadeInDown" src="img/4.png" id="image1" frameborder="0" style="width: 650px; height: 250px; display: none;"></img>
+
+                        </div>
+
+                        <div style="width: 650px; margin: 0 auto;">
+                            <div id="txt2" style="display: none; padding-left: 5px; padding-top: 10px; float: left; text-align: center;">
+                                <p data-class="fadeInDown" style="font-size: 12px">Survival curves by age at diagnosis<br />
+                                    (<45 yrs vs ≥ 45 years)<br />
+                                    and stage (Stage I–IIA versus Stage IIB–IV)</p>
+                            </div>
+
+                            <div id="txt3" style="display: none; padding-left: 5px; padding-top: 10px; float: right; text-align: center;">
+                                <p data-class="fadeInDown" style="margin-right: 37px; font-size: 12px">Survival curves for CHL and NLPHL</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent">
+                        <a href="#">
+                            <img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center> <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);" > Hide Transcript</button></center>
+
+                        <div class="transcript" style="">
+                            <p>Survival of HL is influenced by age, histology, and stage of disease:</p>
+                            <ul>
+                                <li><span>The graph on the left shows survival information for patients who were diagnosed before the age of 45 and those who were diagnosed at or after the age of 45. For each age group, the graph shows the survival curve based on staging: Stage I&#45;IIA versus Stage IIB&#45;IV.  Younger patients and those with Stage I &#45; IIA have higher survival rates compared to patients 45 years of age and older, and those with stage IIB &#45; IV disease.</li>
+                                </span></br>
+                                <li><span>The graph on the right shows survival curves for CHL and NLPHL. As you can see, the survival curves differ for CHL and NLPHL, with the prognosis in NLPHL being better than for those with CHL.</li>
+                                </span>
+                            </ul>
+
+
+
+                        </div>
+                    </div>
+                    <div id="slide13ref" style="display: none" class="slide13ref">
+                        <b>References:</b><br />
+                        <br />
+                        Shenoy P, et al. Adv Hematol. 2011;2011:725219. Epub 2010 Dec 16
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+                <div id="slide14" style="display: none;">
+                    <!--  <div class="topic-bar">
+                    <div id="topic-title">HL: Prognosis (Early Disease)</div>
+                </div>-->
+
+                    <div class="slidecontent" style="">
+                        <div>
+                            <div id="S14P1" style="display: none;">
+                                <img data-class="fadeInDown" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 8px; margin-left: 40px;" />
+                                <p data-class="fadeInDown" style="padding-left: 26px;">Prognosis varies with disease stage<sup>1</sup></p>
+                            </div>
+                            <img data-class="fadeInDown" id="bimg8" src="../common/img/bullet01.png" style="display: none; width: 12px; height: 12px; float: left; margin: 8px; margin-left: 40px;" />
+
+                            <p data-class="fadeInDown" style="display: none;" id="S14P2">Unfavourable prognostic factors for patients with stage I to II include<sup>2</sup><sup>,</sup><sup>3</sup> </p>
+                            <center>
+                            <div style="">
+                               
+                            <table class="leftbluetable" cellspacing="5" cellpadding="5" border="0" class="slide11table" id="S14TBL1" style="margin-left: 25px; padding-top: 10px; margin-right: 25px; width: 600px; display: none;">
+                                <tr>
+                                    <td class="TableHeaderBackground" style="width: 30%; text-align: left">Risk factor</td>
+                                    <td class="TableHeaderBackground" style="text-align: left">GHSG</td>
+                                    <td class="TableHeaderBackground" style="text-align: left">EORTC</td>
+                                    <td class="TableHeaderBackground" style="text-align: left">NCIC</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: bold; text-align: left; width: 5%">Age</td>
+                                    <td></td>
+                                    <td>&ge;50</td>
+                                    <td>&ge;40</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: bold; text-align: left; width: 5%">Histology</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>MC or LD</td>
+
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: bold; text-align: left; width: 5%">ESR and B symptoms</td>
+                                    <td>&gt;50 if A; &gt;30 if B</td>
+                                    <td>&gt;50 if A; &gt;30 if B</td>
+                                    <td>&gt;50 or any B sx</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: bold; text-align: left; width: 5%">Mediastinal mass</td>
+                                    <td>MMR &gt;0.33</td>
+                                    <td>MTR &gt;0.33</td>
+                                    <td>MMR &gt;0.33 or &gt;10cm</td>
+
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: bold; text-align: left; width: 5%">&#35; Nodal sites</td>
+                                    <td>&gt;2</td>
+                                    <td>&gt;3</td>
+                                    <td>&gt;3</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: bold; text-align: left; width: 5%">E lesion</td>
+                                    <td>Any</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+
+
+                            </table>
+                           
+                            
+                            <div>
+                                <p style="display: none; font-size: 12px; padding-left: 0%; padding-top: 3%;" id="S14P3">ESR and B symptoms: GHSG&#61; ESR &gt;50 if asymptomatic, ESR &gt;30 if B symptoms;</p>
+                                <p style="display: none; font-size: 12px; padding-left: 0%;" id="S14P4">EORTC&#61; ESR &gt;50 if asymptomatic, ESR &gt;30 if B symptoms, NCIC &#61; ESR &gt;50 or any B symptoms</p>
+
+                            </div>
+
+                        </div>
+                        <!--<hr id="S14HR1" style="height: 3px; background-color: rgb(33, 5, 124); border-color: rgb(33, 5, 124); width: 90%; display: none; margin-left: 25px; margin-right: 25px;" />-->
+                        <div>
+                            <p style="display: none; font-size: 12px; padding-left:0%; padding-top: 1%;" id="S14P5">GHSG &#61; German Hodgkin Study Group; EORTC &#61; European Organization for the Research and </p>
+                            <p style="display: none; font-size: 12px; padding-left: 0%;" id="S14P6">Treatment of Cancer; LD &#61; lymphocyte depleted; MC &#61; mixed  cellularity; MMR &#61; mediastinal mass </p>
+                            <p style="display: none; font-size: 12px; padding-left: 0%;" id="S14P7">ratio; MTR &#61; mediastinal thoracic ratio; NCIC &#61; National Cancer Institute, Canada.</p>
+                        
+                        </div>
+                      </center>
+
+                        </div>
+
+                    </div>
+
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent">
+                        <a href="#">
+                            <img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center> <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);" > Hide Transcript</button></center>
+
+                        <div class="transcript" style="">
+                            <p>A number of cooperative clinical study groups have identified risk factors which help determine prognosis in patients with early Hodgkin lymphoma. Unfavourable prognostic factors include age, histology, erythrocyte sedimentation rate (ESR), the presence of B (systemic) symptoms, mediastinal mass, and nodal sites.<sup>1</sup><sup>,</sup><sup>2</sup></p>
+
+
+
+                        </div>
+                    </div>
+                    <div id="slide14ref" style="display: none" class="slide14ref">
+                        <b>References:</b><br />
+                        <br />
+                        1. Hasenclever D, Diehl V, N Engl J Med. 1998;339:1506–14.<br />
+                        <br />
+                        2. Steidl C, et al. N Engl J Med. 2010;362:875–85.<br />
+                        <br />
+
+
+                    </div>
+                </div>
+
+
+
+
+
+                <div id="slide15" style="display: none;">
+                    <!--  <div class="topic-bar">
+                    <div id="topic-title">HL: Prognosis (Advanced Disease)</div>
+                </div>-->
+
+                    <div class="slidecontent" style="">
+                        <div id="bimg1" style="display: none;">
+
+
+                            <img data-class="fadeInDown" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 8px;" />
+                            <p data-class="fadeInDown" style="padding-left: 29px; padding-top: 2px;">The<b> international prognostic system (IPS)</b> is a seven-factor prognostic scoring system that predicts five-year rates of freedom from progression of disease and overall survival<sup>1</sup></p>
+                        </div>
+
+                        <div data-class="fadeInDown" id="image2" style="float: right; width: 50%; margin-top: 5px; padding-top: 30px; display: none;">
+                            <img data-class="fadeInDown" src="img/3.png" frameborder="0" style="margin-top: 0px; left: -10px; position: relative;"></img>
+
+                            <br />
+
+
+                            <p data-class="fadeInDown" style="float: left; margin-left: 56px; font-size: 14px; text-align: center;">Overall survival (OS) in patients<br />
+                                with advanced HL by IPS</p>
+                        </div>
+                        <div id="S15P2" style="display: none;">
+                            <img data-class="fadeInDown" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 8px;" />
+                            <p data-class="fadeInDown" style="padding-left: 29px; margin-top: 30px;"><b>These prognostic factors are:</b></p>
+                        </div>
+
+                        <div style="float: left; width: 50%; font-size: 12px;">
+                            <ul>
+                                <div id="bimg2" style="display: none;">
+                                    <img data-class="fadeInDown" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 8px;" />
+
+                                    <p data-class="fadeInDown" style="padding-left: 30px;">age &ge;45 years</p>
+                                </div>
+                                <div id="bimg3" style="display: none;">
+
+                                    <img data-class="fadeInDown" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 8px;" />
+
+                                    <p data-class="fadeInDown" style="padding-left: 30px;">male gender</p>
+                                </div>
+                                <div id="bimg4" style="display: none">
+                                    <img data-class="fadeInDown" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 8px;" />
+
+                                    <p data-class="fadeInDown" style="padding-left: 30px;">stage IV disease</p>
+                                </div>
+                                <div id="bimg5" style="display: none;">
+                                    <img data-class="fadeInDown" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 8px;" />
+
+                                    <p data-class="fadeInDown" style="padding-left: 30px;">serum albumin of &lt;4 g&#47;dL</p>
+                                </div>
+                                <div id="bimg6" style="display: none;">
+                                    <img data-class="fadeInDown" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+
+                                    <p data-class="fadeInDown" style="padding-left: 30px;">haemoglobin level &lt;10.5 g&#47;dL</p>
+                                </div>
+                                <div id="bimg7" style="display: none;">
+                                    <img data-class="fadeInDown" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 8px;" />
+
+                                    <p data-class="fadeInDown" style="padding-left: 30px;">
+                                        white blood cell count of
+                                    <br />
+                                        &gt;15,000&#47;mm3
+                                    </p>
+                                </div>
+                                <div id="bimg8" style="display: none;">
+                                    <img data-class="fadeInDown" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 8px;" />
+
+                                    <p data-class="fadeInDown" style="padding-left: 30px;">
+                                        >lymphocyte count of &lt;600&#47;mm3
+                                    <br />
+                                        and&#47;or &lt;8% of white blood count
+                                    </p>
+                                </div>
+
+
+                            </ul>
+                        </div>
+
+
+                    </div>
+
+
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent">
+                        <a href="#">
+                            <img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center> <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);" > Hide Transcript</button></center>
+
+                        <div class="transcript" style="">
+                            <p>The international prognostic system (IPS) is a seven-factor prognostic scoring system that predicts five-year rates of freedom from progression of disease and overall survival:<sup>1</sup></p>
+
+                            <ul>
+                                <li><span>The International Prognostic Score (IPS) is based on a scale of 0 to 7, with higher scores indicating increased risk. It is the standard that is used for risk stratification of advanced stage HL.<sup>1</sup><sup>,</sup><sup>2</sup></li>
+                                </span>
+                            </ul>
+                            <p>The IPS has been used to predict overall survival based on the number of prognostic factors in an individual.<sup>1</sup></p>
+
+                            <p>Prognostic factors include age, gender, staging, and certain laboratory values.</p>
+
+
+                        </div>
+                    </div>
+                    <div id="slide15ref" style="display: none" class="slide15ref">
+                        <b>References:</b><br />
+                        <br />
+                        1. Hasenclever D, Diehl V, N Engl J Med. 1998;339:1506–14.<br />
+                        <br />
+                        2. Steidl C, et al. N Engl J Med. 2010;362:875–85.<br />
+                        <br />
+
+
+                    </div>
+
+                </div>
+
+
+                <div id="slide16" style="display: none;">
+                    <!--  <div class="topic-bar">
+                    <div id="topic-title">HL: Elderly Patients </div>
+                </div>-->
+
+                    <div class="slidecontent" style="">
+                        <div id="S16P1" style="display: none;">
+                            <img data-class="fadeInDown" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                            <p data-class="fadeInDown" style="padding-left: 26px; padding-top: 3px;">
+                                Older age (&gt;60 years) is an additional unfavourable risk factor for 
+HL patients and poor outcomes have been attributed due to:
+                            </p>
+                        </div>
+                        <div>
+                            <ul>
+                                <img data-class="fadeInDown" id="bimg8" src="../common/img/bullet01.png" style="display: none; width: 12px; height: 12px; float: left; margin: 10px;" />
+
+                                <p data-class="fadeInDown" style="display: none; padding-left: 26px; padding-top: 4px;" id="S16P2">Biologically less favourable disease</p>
+                                <img data-class="fadeInDown" id="bimg9" src="../common/img/bullet01.png" style="display: none; width: 12px; height: 12px; float: left; margin: 10px;" />
+
+                                <p data-class="fadeInDown" style="display: none; padding-left: 26px; padding-top: 4px;" id="S16P3">Less tolerance for conventional chemotherapy</p>
+                                <img data-class="fadeInDown" id="bimg10" src="../common/img/bullet01.png" style="display: none; width: 12px; height: 12px; float: left; margin: 10px;" />
+
+                                <p data-class="fadeInDown" style="display: none; padding-left: 26px; padding-top: 4px;" id="S16P4">Lower-dose intensity treatment</p>
+                                <img data-class="fadeInDown" id="bimg11" src="../common/img/bullet01.png" style="display: none; width: 12px; height: 12px; float: left; margin: 10px;" />
+
+                                <p data-class="fadeInDown" style="display: none; padding-left: 26px; padding-top: 4px;" id="S16P5">Higher-treatment related mortality</p>
+                            </ul>
+
+                            <div style="margin-top: 5px; padding-top: 10px; padding-right: 30px; text-align: center;">
+                                <img data-class="fadeInDown" id="image1" src="img/5.png" frameborder="0" style="padding-left: 50px; display: none;"></img>
+
+
+
+                            </div>
+
+
+
+
+
+                            <div>
+                                <p style="display: none; font-size: 12px; padding-left: 3%; padding-top: 1%;" id="P8">ESR and B symptoms: GHSG&#61; ESR &gt;50 if asymptomatic, ESR &gt;30 if B symptoms;</p>
+                                <p style="display: none; font-size: 12px; padding-left: 3%;" id="P9">EORTC&#61; ESR &gt;50 if asymptomatic, ESR &gt;30 if B symptoms, NCIC &#61; ESR &gt;50 or any B symptoms</p>
+
+                            </div>
+                        </div>
+
+                        <div>
+                            <p style="display: none; font-size: 12px; padding-left: 4%; padding-top: 1%;" id="P10">GHSG &#61; German Hodgkin Study Group; EORTC &#61; European Organization for the Research and </p>
+                            <p style="display: none; font-size: 12px; padding-left: 4%;" id="P11">Treatment of Cancer; LD &#61; lymphocyte depleted; MC &#61; mixed  cellularity; MMR &#61; mediastinal mass </p>
+                            <p style="display: none; font-size: 12px; padding-left: 4%;" id="P12">ratio; MTR &#61; mediastinal thoracic ratio; NCIC &#61; National Cancer Institute, Canada.</p>
+
+                        </div>
+                    </div>
+
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent">
+                        <a href="#">
+                            <img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center> <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);" > Hide Transcript</button></center>
+
+                        <div class="transcript" style="">
+                            <p>
+                                <p>Elderly patients over the age of 60 have a poorer risk profile compared with younger HL patients.</p>
+
+                                <p>These patients generally have poorer overall outcomes; due to a number of factors.</p>
+
+
+                                <p>The factors include:</p>
+
+                                <ul>
+                                    <li><span>Biologically less favourable disease.</li>
+                                    </span>
+                                    <li><span>A lower tolerance for conventional chemotherapy due to severe treatment-associated toxicity.</li>
+                                    </span>
+                                    <li><span>The need for lower-dose intensity treatment, and</li>
+                                    </span>
+                                    <li><span>Higher mortality during treatment.</li>
+                                    </span>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                    <div id="slide16ref" style="display: none" class="slide16ref">
+                        <b>References:</b><br />
+                        <br />
+                        Engert A,, et al. J Clin Oncol. 2005;23:5052–60.<br />
+                        <br />
+
+
+
+                    </div>
+                </div>
+
+
+
+                <div id="slide17" style="display: none;">
+                    <!--  <div class="topic-bar">
+                    <div id="topic-title">Knowledge Check</div>
+                </div>-->
+
+
+                    <div class="slidecontent" style="">
+                        <div class="playBody">
+                            <div style="padding-left: 20px">
+                                <br />
+                                <p data-class="fadeInDown" style="display: none;" id="S17P1">What is the IPS?</p>
+                                <br />
+                                <input type="hidden" id="Answer" value="3"  qid="2" />
+                                <input type="hidden" id="Percentage" value="25" />
+                                <div id="radio1" style="padding: 10px 10px 10px 25px; display: none;">
+                                    <input name="ratio2" value="1" type="radio" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="margin-left: 55px;">International Position Staging</p>
+                                </div>
+                                <div id="radio2" style="padding: 10px 10px 10px 25px; display: none;">
+                                    <input name="ratio2" value="2" type="radio" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="margin-left: 55px;">International Phase Scoring</p>
+                                </div>
+                                <div id="radio3" style="padding: 10px 10px 10px 25px; display: none;">
+                                    <input name="ratio2" value="3" type="radio" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="margin-left: 55px;">International Prognostic System</p>
+                                </div>
+                                <div id="radio4" style="padding: 10px 10px 10px 25px; display: none;">
+                                    <input name="ratio2" value="4" type="radio" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="margin-left: 55px;">International Passive Sets</p>
+                                </div>
+                                <div style="margin-left: 470px;">
+                                    <div>
+                                        <input id="Button1" onclick="onclickAnswer(this);" type="button" class="btn btn-primary" value="Submit" style="width: 100px; margin-right: 25px; display: none" />
+                                    </div>
+                                    <br />
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent">
+                        <a href="#">
+                            <img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center> <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);" > Hide Transcript</button></center>
+
+                        <div class="transcript" style="">
+                            <p>
+                                Please take a moment to answer a question. Please select the best answer and click submit to continue
+                            </p>
+
+
+                            <!--<p>Radio buttons to answer. #3 is correct</p>
+                            <p>If the user selects the incorrect answer, the pop-up should say: Try again</p>
+                            <p>If the user selects the correct answer, the pop-up should say: Correct. This pop-up should have an embedded Continue button</p>-->
+                        </div>
+                    </div>
+                    <div id="slide17ref" style="display: none" class="slide17ref">
+                        <b>No References:</b><br />
+                        <br />
+
+
+
+                    </div>
+
+                </div>
+
+
+                <div id="slide18" style="display: none;">
+                    <!--  <div class="topic-bar">
+                    <div id="topic-title">HL: Treatment</div>
+                </div>-->
+
+                    <div class="slidecontent" style="">
+                        <div>
+                            <img data-class="fadeInDown" id="bimg8" src="../common/img/bullet01.png" style="display: none; width: 12px; height: 12px; float: left; margin: 10px; margin-top: 34px;" />
+
+                            <p data-class="fadeInDown" style="display: none; padding-left: 26px; padding-top: 26px;" id="S18P1">Significant progress has been made with current regimens resulting in cure rates of ~ 80&#37;<sup>1</sup><sup>,</sup><sup>2</sup></p>
+                            <img data-class="fadeInDown" id="bimg9" src="../common/img/bullet01.png" style="display: none; width: 12px; height: 12px; float: left; margin: 10px;" />
+
+                            <p data-class="fadeInDown" style="display: none; padding-left: 26px; padding-top: 2px;" id="S18P2">Treatment is based on disease stage </p>
+
+                            <center><table class="leftbluetable" cellspacing="5" cellpadding="3" border="0" class="slide11table" id="S18TBL1" style="margin-left: 20px;padding-top:50px;margin-right: 25px;width:600px;margin-top: 43px;display:none;">
+                            <tr>
+                                <td class="TableHeaderBackground" style="width:30%;text-align:left">Treatment group (stage)</td>
+                                <td class="TableHeaderBackground" style="text-align:center">Description</td>
+                                
+                            </tr>
+                            <tr>
+                                <td style="text-align:left;width:5%">Early</td>
+                                <td style="text-align:left;"> Stage I&#8212;II without risk factors </td>
+                                
+                            </tr>
+                            <tr>
+                                <td style="text-align:left;width:5%">Intermediate</td>
+                                <td style="text-align:left;">Stage I&#8212;II with &ge; 1 risk factors</td>
+                               
+                               
+                            </tr>
+                            <tr>
+                                <td style="text-align:left;width:5%">Advanced</td>
+                                <td style="text-align:left;">Stage III&#8212;IV, large mediastinal<br /> mass, age &ge;50 years, elevated <br />ESR, &ge;4 nodal areas </td>
+                                
+                            </tr>
+                            </table></center>
+
+
+
+                            <div>
+                                <p style="display: none; font-size: 13px; padding-left: 4%; padding-top: 6%;" id="S18P3">Table adapted with permission from Engert A, et al. ESMO Guidelines Working Group. Ann Oncol 2010;21:v168&#8212;71.</p>
+                                <p style="display: none; font-size: 13px; padding-left: 4%;" id="S18P4">&#169; European Society for Medical Oncology.</p>
+
+                            </div>
+
+
+
+                        </div>
+
+                    </div>
+
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent">
+                        <a href="#">
+                            <img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center> <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);" > Hide Transcript</button></center>
+
+                        <div class="transcript" style="">
+                            <p>
+                                Significant progress has been made with current regimens.
+                            </p>
+                            <p>More than 80% of patients with classical HL are cured by conventional therapy.<sup>1</sup><sup>,</sup><sup>2</sup></p>
+                            <p>Therapy is based on disease stage and clinical presentation as well as additional prognostic factors.<sup>3</sup></p>
+                            <p>Treatment typically involves polychemotherapy regimens that include chemotherapy with combinations of more than one agent.</p>
+                        </div>
+                    </div>
+
+                    <div id="slide18ref" style="display: none" class="slide18ref">
+                        <b>References:</b><br />
+                        <br />
+                        1. Jona A, Younes A. Blood Rev. 2010. doi:10.1016/j.blre.2010.08.003.<br />
+                        <br />
+                        2. Czuczman M, et al. Leuk Lymphoma. 2010;51suppl 1:41–49.<br />
+                        <br />
+                        3. Engert A, Eichenauer DA, Dreyling M; ESMO Guidelines Working Group Ann Oncol. 2010;21:v168–71.<br />
+
+
+                    </div>
+
+                </div>
+
+
+                <div id="slide19" style="display: none;">
+                    <!--  <div class="topic-bar">
+                    <div id="topic-title">HL: Early Stage Treatment (1) </div>
+                </div>-->
+
+                    <div class="slidecontent" style="">
+                        <div style="float: left; width: 53%;">
+                            <div id="bimg8" style="float: left; padding-top: 5px; display: none;">
+
+                                <img data-class="fadeInDown" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+
+                                <p data-class="fadeInDown" style="float: left;">ESMO<sup>1</sup></p>
+                            </div>
+                            <div id="bimg9" style="float: left; display: none;">
+                                <ul>
+                                    <img data-class="fadeInDown" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px; margin-bottom: 42px;" />
+
+                                    <p data-class="fadeInDown" style="padding-left: 26px; padding-top: 2px;">Combined modality treatment (CMT) is recommended as standard</p>
+                                </ul>
+                            </div>
+                            <div id="bimg10" style="float: left; display: none;">
+                                <ul>
+                                    <img data-class="fadeInDown" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px; margin-bottom: 54px;" />
+
+                                    <p data-class="fadeInDown" style="padding-left: 26px;">
+                                        2 or 3 cycles ABVD (each in 28 day cycles)  followed by 
+30 Gy involved-field radiotherapy (IF-RT)
+                                    </p>
+                                </ul>
+                            </div>
+                            <br />
+
+                            <center>
+                             <table class="leftbluetable" cellspacing="5" cellpadding="3" border="0" id="table1" style="display: none;margin-left: 11px;width: 95%;width: 329px;margin-top: 16px; float:left;">
+
+                                <tr>
+                                    <td style="text-align: left;">Adriamycin</td>
+                                    <td style="text-align: left;">25 mg/m2</td>
+                                    <td style="text-align: left;">i.v.</td>
+                                    <td style="text-align: left;">Days</td>
+                                    <td style="text-align: left;">1 + 15</td>
+                                </tr>
+
+                                <tr>
+                                    <td style="text-align: left;">Bleomycin</td>
+                                    <td style="text-align: left;">10 mg/m2</td>
+                                    <td style="text-align: left;">i.v.</td>
+                                    <td style="text-align: left;">Days</td>
+                                    <td style="text-align: left;">1 + 15</td>
+                                </tr>
+
+                                <tr>
+                                    <td style="text-align: left;">Vinblastine</td>
+                                    <td style="text-align: left;">6 mg/m2</td>
+                                    <td style="text-align: left;">i.v.</td>
+                                    <td style="text-align: left;">Days</td>
+                                    <td style="text-align: left;">1 + 15</td>
+                                </tr>
+
+                                <tr>
+                                    <td style="text-align: left;">Dacarbazine</td>
+                                    <td style="text-align: left;">375 mg/m2</td>
+                                    <td style="text-align: left;">i.v.</td>
+                                    <td style="text-align: left;">Days</td>
+                                    <td style="text-align: left;">1 + 15</td>
+                                </tr>
+
+                                 
+
+
+                            </table>
+                                <table id="table2" style="border:0px solid black;display: none;margin-left: 11px;width: 95%;width: 329px;margin-top: 16px;float:left;">
+                                    <tr style="">
+                                     <td style="">Recycle: day 29<br />The ABVD treatment regime,
+administered in 28 day cycles</td>
+                                     
+                                 </tr>
+                                </table>
+                            </center>
+
+                            <br />
+                            <div style="float: left; margin: 0px auto">
+                                <p data-class="fadeInDown" style="display: none; padding-left: 12px; font-size: 12px; padding-top: 5px;" id="S19P8">Recycle: day 29</p>
+                                <p data-class="fadeInDown" style="display: none; padding-left: 12px; font-size: 12px;" id="S19P9">
+                                    The ABVD treatment regime,
+administered in 28 day cycles<sup>1</sup>
+                                </p>
+                            </div>
+
+
+
+
+                        </div>
+                        <div style="float: right; width: 46%">
+                            <p>
+                                <img data-class="fadeInDown" id="bimg11" src="../common/img/bullet01.png" style="display: none; width: 12px; height: 12px; float: left; margin: 10px;" />
+
+                                <p data-class="fadeInDown" style="display: none; padding-left: 26px; margin-top: -6px;" id="S19P4">NCCN<sup>2</sup></p>
+                                <ul>
+                                    <img data-class="fadeInDown" id="bimg12" src="../common/img/bullet01.png" style="display: none; width: 12px; height: 12px; float: left; margin: 9px 7px -26px;" />
+
+                                    <p data-class="fadeInDown" style="display: none; padding-left: 26px; padding-top: 2px;" id="S19P5">
+                                        If using CMT: 4 cycles ABVD
+                                    followed by 30 Gy RT; patients with
+                                    favourable disease, 2 cycles ABVD
+                                    followed by 20 Gy RT
+                                    </p>
+                                </ul>
+                                <ul>
+                                    <img data-class="fadeInDown" id="bimg13" src="../common/img/bullet01.png" style="display: none; width: 12px; height: 12px; float: left; margin: 10px; margin-bottom: 65px;" />
+
+                                    <p data-class="fadeInDown" style="display: none; padding-left: 26px; padding-top: 2px;" id="S19P6">
+                                        Chemotherapy only: 2 cycles ABVD,
+                                    followed by re-staging, followed by
+                                    another 2 to 4 cycles ABVD
+                                    </p>
+                                </ul>
+                                <ul>
+                                    <img data-class="fadeInDown" id="bimg14" src="../common/img/bullet01.png" style="display: none; width: 12px; height: 12px; float: left; margin: 10px; margin-bottom: 89px;" />
+
+                                    <p data-class="fadeInDown" style="display: none; padding-left: 26px; padding-top: 2px;" id="S19P7">
+                                        If using Stanford V:* 2 cycles
+                                  
+                                    (over 8 weeks), followed by
+                                    restaging; consolidative irradiation is
+                                    instituted within 3 weeks (30 Gy)
+                                    </p>
+                                </ul>
+                            </p>
+                            <p data-class="fadeInDown" style="display: none; padding-left: 26px; font-size: 12px; padding-top: 4px;" id="S19P10">*Stanford V = doxorubicin, vinblastine, mechlorethamine, etoposide, vincristine, bleomycin and prednisone</p>
+
+                        </div>
+
+
+
+
+                    </div>
+
+
+
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent">
+                        <a href="#">
+                            <img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center> <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);" > Hide Transcript</button></center>
+
+                        <div class="transcript" style="">
+                            <p>
+                                The European Society for Medical Oncology (ESMO) recommends the use of combined modality treatment (CMT) which is both chemotherapy and radiation therapy, as standard in limited stage HL.<sup>1</sup></li>
+                             
+                            </p>
+                            <ul>
+                                <li><span>It recommends that patients receive two or three 28-day cycles of adriamycine, bleomycin, vinblastine, and dacarbazine (ABVD); followed by 30 Gy involved-field radiotherapy (IF-RT).</li>
+                                </span>
+                            </ul>
+                            <p>
+                                In the US, the National Comprehensive Cancer Network (NCCN) guidelines recommend the use of chemotherapy alone in certain cases, particularly in younger patients with favourable presentations of stage I-II non-bulky disease, especially if they experience prompt and complete response to the first 2 cycles.<sup>2</sup>
+                            </p>
+
+                            <ul>
+                                <li><span>If using CMT, NCCN recommends using 4 cycles of ABVD, followed by 30 Gy RT.</li>
+                                </span>
+                           <li><span>For patients with favourable disease, NCCN recommends 2 cycles of ABVD, followed by 20 Gy RT.</li>
+                                </span>
+                            </ul>
+                            <p>
+                                Chemotherapy alone is also recommended in certain cases to avoid radiation induced toxicity.<sup>3</sup></li>
+                               
+                            </p>
+                            <ul>
+                                <li><span>Under these circumstances, NCCN recommends 2 cycles ABVD, followed by re-staging, followed by another 2 to 4 cycles ABVD.</li>
+                                </span>
+                            </ul>
+                            <p>
+                                Stanford V treatment consists of doxorubicin (also known as ‘Adriamycin’), vinblastine, mechlorethamine, etoposide, vincristine, bleomycin, and prednisone. It is recommended in stage I or II with non-bulky disease.<sup>2</sup></li>
+                                
+                            </p>
+                            <ul>
+                                <li><span>When Stanford V is used, NCCN recommends 2 cycles over 8 weeks, followed by restaging. Consolidative irradiation should then be instituted within 3 weeks (30 Gy).</li>
+                                </span>
+                            </ul>
+
+                        </div>
+                    </div>
+
+
+                    <div id="slide19ref" style="display: none" class="slide19ref">
+                        <b>References:</b><br />
+                        <br />
+                        1. Engert A, Eichenauer DA, Dreyling M; ESMO Guidelines Working Group Ann Oncol. 2010;21:v168–71.<br />
+                        <br />
+                        2. National Comprehensive Cancer Network. NCCN Clinical Practice Guidelines in Oncology, Hodgkin Lymphoma. V.2.2014.<br />
+                        <br />
+                        3. Meyer RM, et al. J Clin Oncol. 2005;23:4634–42.<br />
+
+                    </div>
+
+
+
+                </div>
+
+
+                <div id="slide20" style="display: none;">
+                    <!--<div class="topic-bar">
+                    <div id="topic-title">HL: intermediate stage treatment per ESMO guidelines</div>
+                </div>-->
+
+                    <div class="slidecontent" style="">
+                        <div style="padding-left: 20px">
+                            <br />
+                            <div id="bimg7" style="display: none;">
+                                <img data-class="fadeInDown" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+
+                                <p data-class="fadeInDown">Intermediate stage disease, also referred to as stage I-II unfavourable disease</p>
+                            </div>
+                            <img data-class="fadeInDown" id="bimg8" src="../common/img/bullet01.png" style="display: none; width: 12px; height: 12px; float: left; margin: 10px;" />
+
+                            <p data-class="fadeInDown" style="display: none;" id="tex39">ESMO recommends<sup>1</sup></p>
+                            <div>
+                                <ul>
+                                    <img data-class="fadeInDown" id="bimg9" src="../common/img/bullet01.png" style="display: none; width: 12px; height: 12px; float: left; margin: 10px;" />
+
+                                    <p data-class="fadeInDown" style="display: none;" id="tex40">Standard therapy of 4 cycles ABVD followed by 30 Gy IF-RT</p>
+                                </ul>
+                            </div>
+                            <div>
+                                <ul>
+                                    <img data-class="fadeInDown" id="bimg10" src="../common/img/bullet01.png" style="display: none; width: 12px; height: 12px; float: left; margin: 10px;" />
+
+                                    <p data-class="fadeInDown" style="display: none; padding-left: 30px;" id="tex41">In patients up to 60 years, more intensive treatment is recommended with 2 cycles BEACOPP escalated</p>
+                                </ul>
+                            </div>
+                            <div style="float: right; max-width: 47%; text-align: center;">
+                                <!--<div >
+                                    <img data-class="fadeInDown" id="image1" src="img/6.png" frameborder="0" style="display: none; width:100%";"></img>
+                                </div>-->
+                                <!-- <div>
+                                    <p style="display: none; font-family: Georgia; font-size: 11px; float: right; margin-right: 14px; text-align: center;" id="tex42">OS rate is highest in the escalated-dose BEACOPP compared to standard BEACOPP or ABVD regimes in patients with advanced HL<sup>2</sup></p>
+                                </div>-->
+                            </div>
+
+                        </div>
+
+
+                        <div>
+                            <center>
+                            <hr id="tex43" style="height: 2px; background-color: rgb(33, 5, 124); border-color: rgb(33, 5, 124); width: 395px; display: none; margin-left: 25px; margin-right: 25px;" />
+                            <table border="0" class="slide11table" cellpadding="3px" id="tex44" style="display: none;margin-left: 25px;font-size:13px;">
+
+                                <tr>
+                                    <td style="text-align: left;">Bleomycin</td>
+                                    <td style="text-align: left;padding-left:20px;">10 mg/m<sup>2</sup></td>
+                                    <td style="text-align: left;">i.v.</td>
+                                    <td style="text-align: left; padding-left:10px;">Day 8</td>
+                                </tr>
+
+                                <tr>
+                                    <td style="text-align: left;">Etoposide</td>
+                                    <td style="text-align: left;">200 mg/m<sup>2</sup></td>
+                                    <td style="text-align: left;">i.v.</td>
+                                    <td style="text-align: left;padding-left:10px;">Day 1 &minus; 3</td>
+                                </tr>
+
+                                <tr>
+                                    <td style="text-align: left;">Adriamycine</td>
+                                    <td style="text-align: left;">35 mg/m<sup>2</sup></td>
+                                    <td style="text-align: left;">i.v.</td>
+                                    <td style="text-align: left;padding-left:10px;">Day 1</td>
+                                </tr>
+
+                                <tr>
+                                    <td style="text-align: left;">Cyclophosphamide</td>
+                                    <td style="text-align: left;">1250 mg/m<sup>2</sup></td>
+                                    <td style="text-align: left;">i.v.</td>
+                                    <td style="text-align: left;padding-left:10px;">Day 1</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left;">Vincristine</td>
+                                    <td style="text-align: left;">1.4 mg/m<sup>2</sup></td>
+                                    <td style="text-align: left;">i.v.</td>
+                                    <td style="text-align: left;padding-left:10px;">Day 8</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left;">Procarbazine</td>
+                                    <td style="text-align: left;">100 mg/m<sup>2</sup></td>
+                                    <td style="text-align: left;">p.o</td>
+                                    <td style="text-align: left;padding-left:10px;">Days 1 &minus; 7</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left;">Prednisone</td>
+                                    <td style="text-align: left;">40 mg/m<sup>2</sup></td>
+                                    <td style="text-align: left;">p.o</td>
+                                    <td style="text-align: left;padding-left:10px;">Days 1 &minus; 14</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left;">G-CSF</td>
+                                    <td style="text-align: left;"></td>
+                                    <td style="text-align: left;">s.c</td>
+                                    <td style="text-align: left;padding-left:10px;">From day 8</td>
+                                </tr>
+
+
+
+                            </table> 
+                            <hr id="tex45" style="height: 2px; background-color: rgb(33, 5, 124); border-color: rgb(33, 5, 124); width: 395px; display: none; margin-left: 25px; margin-right: 25px;" />
+                        
+                        <!--<div>
+                           <p style="display: none; font-family: Georgia; font-size: 11px; float: left; margin-right: 14px;padding-left: 25px; width: 45%" id="text1"></p>
+                        </div>-->
+                        
+                            <p style="display: none; font-family: Georgia; font-size: 11px; text-align: center; max-width: 386px;" id="tex46">The BEACOPP dose-escalated  treatment regime, in 21 day cycles2. Recycle: day 22<sup>1</sup></p>
+                      </div></center>
+                       
+                    </div>
+
+
+
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent">
+                        <a href="#">
+                            <img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center> <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);" > Hide Transcript</button></center>
+
+                        <div class="transcript" style="">
+                            <p>Intermediate stage disease, also referred to as stage I-II unfavourable disease, can be subdivided further into bulky or non-bulky.<sup>1</sup></p>
+                            <p>ESMO recommends a standard therapy of 4 cycles of ABVD, followed by 30 Gy IF-RT.<sup>1</sup></p>
+                            <p>In patients up to 60 years of age, ESMO recommends a more intensive treatment, consisting of 2 cycles of BEACOPP chemotherapy in escalated doses.<sup>1</sup></p>
+                            <p>The BEACOPP escalated regimen is mainly used in younger patients with advanced HL. It was developed to improve treatment results through dose escalation and time intensification:<sup>2</sup></p>
+
+                            <ul>
+                                <li><span>BEACOPP consists of bleomycin, etoposide, Adriamycin, cyclophosphamide, vincristine, procarbazine, and prednisone.</li>
+                                </span>
+                                <li><span>The BEACOPP dose-escalated treatment regimen is administered in 21-day cycles.</li>
+                                </span>
+                               <!-- <li><span>In patients with advanced HL, the OS rate is highest in those who receive escalated-dose BEACOPP, compared to standard BEACOPP or to ABVD regimes.<sup>2</sup></li>
+                                </span>
+                            </ul>
+                            <p>The information on the screen reflects the ESMO guidelines, but there are also NCCN guidelines for intermediate stage HL:<sup>3</sup></p>
+                            <ul>
+                                <li><span>NCCN guidelines recommend ABVD for 4 cycles followed by restaging.</li>
+                                </span>
+                                <ul>
+                                    <li><span>For patients who achieve complete or partial remission (CR or PR), 2-6 additional cycles of chemotherapy may be initiated.</li>
+                                    </span>
+                                </ul>
+                                <li><span>For patients who have non-bulky unfavourable disease with B symptoms, NCCN recommends 12 weeks of Stanford V and 30 Gy IF-RT.</li>
+                                </span>
+                                <li><span>For patients who have non-bulky disease with other criteria for unfavourable disease, NCCN recommends 8 weeks of Stanford V and 30 Gy IF-RT.</span></li>
+                                <li><span>In bulky disease, the NCCN guidelines recommends 12 weeks Stanford V, followed by restaging and consolidative irradiation within 3 weeks (36 Gy to initial sites).</li>
+                                </span>
+                               -->
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div id="slide20ref" style="display: none" class="slide20ref">
+
+                        <b>References:</b><br />
+                        <br />
+                        1. Engert A, Eichenauer DA, Dreyling M; ESMO Guidelines Working Group Ann Oncol. 2010;21:v168–71.<br />
+                        <br />
+                        2. National Comprehensive Cancer Network. NCCN Clinical Practice Guidelines in Oncology, Hodgkin Lymphoma. V.2.2014.<br />
+                        <br />
+                        3. Meyer RM, et al. J Clin Oncol. 2005;23:4634–42.<br />
+
+
+                    </div>
+
+                </div>
+
+
+                <div id="slide20a" style="display: none;">
+                    <!--<div class="topic-bar">
+                    <div id="topic-title">HL: intermediate stage treatment per ESMO guidelines</div>
+                </div>-->
+
+                    <div class="slidecontent" style="">
+                        <div style="padding-left: 20px;text-align: center;">
+                         
+                                    <img data-class="fadeInDown" id="image1" src="img/img-1.png" frameborder="0" style="display: none; margin:0 auto;"></img>
+  
+
+                        </div>
+
+
+</div>
+
+
+
+                        <div onclick="onclickShowTranscription(this);" id="stickyContent">
+                            <a href="#">
+                                <img src="../common/img/showTrans.png" /></a>
+                        </div>
+                        <div id="transcript-hide" style="display: none;">
+                            <center> <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);" > Hide Transcript</button></center>
+
+                            <div class="transcript" style="">
+
+                                <p>The NCCN guidelines for intermediate stage HL recommend</p>
+
+
+
+
+
+                                <ul>
+                                    <li><span>NCCN guidelines recommend ABVD for 4 cycles followed by restaging.</li>
+                                    </span>
+                                <ul>
+                                    <li><span>For patients who achieve complete or partial remission (CR or PR), 2-6 additional cycles of chemotherapy may be initiated.</li>
+                                    </span>
+                                </ul>
+                                    <li><span>For patients who have non-bulky unfavourable disease with B symptoms, NCCN recommends 12 weeks of Stanford V and 30 Gy IF-RT.</li>
+                                    </span>
+                                <li><span>For patients who have non-bulky disease with other criteria for unfavourable disease, NCCN recommends 8 weeks of Stanford V and 30 Gy IF-RT.</span></li>
+                                    <li><span>In bulky disease, the NCCN guidelines recommends 12 weeks Stanford V, followed by restaging and consolidative irradiation within 3 weeks (36 Gy to initial sites).</li>
+                                    </span>
+                            
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div id="slide20ref" style="display: none" class="slide20ref">
+
+                            <b>References:</b><br />
+                            <br />
+                            1. National Comprehensive Cancer Network. NCCN Clinical Practice Guidelines in Oncology, Hodgkin Lymphoma. V.2.2014.<br />
+                            <br />
+
+
+
+                        </div>
+
+                    </div>
+
+
+
+
+
+                    <div id="slide21" style="display: none;">
+                        <!--<div class="topic-bar">
+                          <div id="topic-title">HL: Advanced Stage Treatment</div>
+                        </div>-->
+
+                        <div class="slidecontent" style="">
+
+
+                            <div style="padding-left: 20px; float: left;">
+                                <br />
+                                <p data-class="fadeInDown" style="display: none;" id="tex31"><b>ESMO</b><sup>1</sup></p>
+                                <div id="tex32" style="display: none;">
+                                    <img data-class="fadeInDown" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 8px; margin-left: -8px;" />
+                                    <p data-class="fadeInDown" style="font-size: 14px; padding-left: 14px;">Patients ≤60 years treated with a chemotherapy regimen followed by localised RT of 30 Gy to any residual lymphomas. Chemotherapy may be either:</p>
+                                </div>
+                                <div id="tex33" style="display: none;">
+                                    <img data-class="fadeInDown" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 8px;" />
+                                    <p data-class="fadeInRight" style="font-size: 14px; padding-left: 35px;">ABVD (6 or 8 cycles, every 28 days) </p>
+                                </div>
+                                <div id="tex34" style="display: none;">
+                                    <img data-class="fadeInDown" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 8px;" />
+                                    <p data-class="fadeInRight" style="font-size: 14px; padding-left: 35px;">BEACOPP escalated (8 cycles, every 21 days)</p>
+                                </div>
+
+                                <div>
+                                    <div style="width: 45%; float: left">
+                                        <div id="tex35" style="display: none; position: relative; margin: 8px; margin-left: -10px;">
+                                            <br />
+                                            <img data-class="fadeInDown" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 4px;" />
+                                            <p data-class="fadeInDown" style="font-size: 14px; padding-left: 30px;">Patients >60 years:</p>
+                                        </div>
+                                        <div id="tex36" style="display: none;">
+                                            <img data-class="fadeInDown" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 8px;" />
+                                            <p data-class="fadeInRight" style="font-size: 14px; padding-left: 35px;">ABVD followed by localised radiation, 30 Gy, to residual lymphoma</p>
+                                        </div>
+                                        <div id="tex37" style="display: none;">
+                                            <img data-class="fadeInDown" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 8px;" />
+                                            <p data-class="fadeInRight" style="font-size: 14px; padding-left: 35px;">BEACOPP escalated is NOT recommended in elderly patients, as increased toxicity has been observed in this age group</p>
+                                        </div>
+                                    </div>
+                                    <div id="tex38" style="display: none; float: right; width: 55%;">
+                                        <center><img data-class="fadeInDown"  src="img/7.png" style="margin-right: 10px;"/>
+                                    <p style=" font-family: Georgia; font-size: 11px;text-align: center;  margin-right: 14px;width:330px">
+                                        In patients with advanced HL BEACOPP escalated showed improved OS compared to other regimens<sup>2</sup>
+                                    </p>
+                                    </center>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="float: right; width: 45%; position: relative; top: 0px;">
+                            </div>
+
+                        </div>
+                        <div onclick="onclickShowTranscription(this);" id="stickyContent">
+                            <a href="#">
+                                <img src="../common/img/showTrans.png" /></a>
+                        </div>
+                        <div id="transcript-hide" style="display: none;">
+                            <center> <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);" > Hide Transcript</button></center>
+
+                            <div class="transcript" style="">
+                                </br><p>Advanced stage HL is usually treated with chemotherapy only.</p>
+                                <p>For patients up to 60 years old, ESMO recommends a chemotherapy regimen followed by localised RT of 30 Gy to any residual lymphomas:</p>
+                                <ul>
+                                    <li><span>Chemotherapy may be either  6 or 8 cycles of ABVD every 28 days or 8 cycles of BEACOPP escalated every 21 days. Chemotherapy should be followed by 30 Gy RT for residual lymphoma larger than 1.5 cm.<sup>1</sup></li>
+                                    </span>
+                                <li><span>Treatment with BEACOPP escalated leads to superior freedom from treatment failure (FFTF) and overall survival (OS) rates, but is associated with increased toxicity.<sup>1</sup><sup>,</sup><sup>2</sup></li>
+                                    </span>
+                                </ul>
+                                <p>For patients over the age of 60, ESMO recommends 6-8 cycles of ABVD, followed by localised radiation of 30 Gy to the residual lymphoma:</p>
+                                <ul>
+                                    <li><span>BEACOPP escalated is NOT recommended in elderly patients because increased toxicity has been observed in this age group.</li>
+                                    </span>
+                                </ul>
+                                <p>NCCN guidelines are slightly different. They recommend 6 cycles of ABVD with restaging after 4 cycles:</p>
+                                <ul>
+                                    <li><span>Two additional cycles are administered in patients with complete remission (CR) or partial remission (PR).</li>
+                                    </span>
+                                <li><span>Patients with bulky disease may have consolidative radiation therapy.<sup>3</sup></li>
+                                    </span>
+                                <li><span>Alternatively NCCN recommend the use of Stanford V for 12 weeks, followed by restaging.</li>
+                                    </span>
+                                <li><span>Consolidative irradiation should be instituted within 3 weeks (stage I–IIB, 30 Gy; stage II–IV, 36 Gy).<sup>3</sup> </li>
+                                    </span>
+                                <li><span>The NCCN recommends escalated-dose BEACOPP for 4 cycles followed by restaging with PET. Additional cycles of escalated-dose BEACOPP may be required based on results from the PET scan and biopsy.</li>
+                                    </span>
+                                </ul>
+
+
+                            </div>
+                        </div>
+                        <div id="slide21ref" style="display: none" class="slide21ref">
+
+                            <b>References:</b><br />
+
+                            1. Engert A, Eichenauer DA, Dreyling M; ESMO Guidelines Working Group Ann Oncol. 2010;21:v168–71.<br />
+                            <br />
+                            2. National Comprehensive Cancer Network. NCCN Clinical Practice Guidelines in Oncology, Hodgkin Lymphoma. V.2.2014.<br />
+                            <br />
+                            3. Meyer RM, et al. J Clin Oncol. 2005;23:4634–42.<br />
+
+
+                        </div>
+
+                    </div>
+
+
+                    <div id="slide22" style="display: none;">
+                        <!-- <div class="topic-bar">
+                          <div id="topic-title">HL: Relapsed/Refractory disease treatment per ESMO guidelines</div>
+                        </div>-->
+
+                        <div class="slidecontent" style="">
+                            <div id="bimg8" style="display: none;padding-left:20px;padding-top:15px;">
+                                <img data-class="fadeInDown" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 8px;" />
+                                <p data-class="fadeInRight">High-dose chemotherapy followed by autologous stem cell transplantation (ASCT) can be regarded as treatment of choice</p>
+
+                            </div>
+
+                            <div id="bimg10" style="display: none;padding-left:20px;padding-top:5px;">
+                                <img data-class="fadeInDown" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 8px;" />
+                                <p data-class="fadeInRight">Salvage regimens given to reduce the tumour burden and mobilise stem cells before giving high-dose chemotherapy and ASCT</p>
+
+                            </div>
+                            <div id="bimg11" style="display: none; padding-left: 45px;padding-top:5px;">
+                                <img data-class="fadeInDown" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 8px;" />
+                                <p data-class="fadeInRight">DHAP: dexamethasone, high-dose  ara-C, cisplatin</p>
+
+                            </div>
+                            <div id="bimg12" style="display: none; padding-left: 45px;padding-top:5px;">
+                                <img data-class="fadeInDown" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 8px;" />
+                                <p data-class="fadeInRight">IGEV: ifosphamide, gemcitabine, vinorelbine, dexamethasone</p>
+
+                            </div>
+
+                            <div id="bimg13" style="display: none;padding-left:20px;padding-top:5px;">
+                                <img data-class="fadeInDown" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 8px;margin-bottom: 34px;" />
+                                <p data-class="fadeInRight">Low-risk patients who relapse after 2 cycles followed by RT should receive salvage treatment with intensive chemotherapy e.g. BEACOPP escalated</p>
+
+                            </div>
+                            <div id="bimg14" style="display: none;padding-left:20px;padding-top:5px;">
+                                <img data-class="fadeInDown" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 8px;" />
+                                <p data-class="fadeInRight">Patients with localised late relapse should receive salvage RT only</p>
+
+                            </div>
+                            <div id="bimg15" style="display: none;padding-left:20px;padding-top:5px;">
+                                <img data-class="fadeInDown" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 8px;" />
+                                <p data-class="fadeInRight">No standard treatment for patients who relapse after high-dose chemotherapy and ASCT as per ESMO guidelines</p>
+
+                            </div>
+
+                        </div>
+                        <div onclick="onclickShowTranscription(this);" id="stickyContent">
+                            <a href="#">
+                                <img src="../common/img/showTrans.png" /></a>
+                        </div>
+                        <div id="transcript-hide" style="display: none;">
+                            <center> <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);" > Hide Transcript</button></center>
+                            <div class="transcript" style="">
+                                </br><p>Management of relapsed or treatment refractory to chemotherapy is dependant on the primary treatment used.<sup>1</sup></p>
+
+                                <p>For most patients with refractory or relapsed HL, high-dose chemotherapy followed by autologous stem cell transplantation (ASCT) can be regarded as treatment of choice.</p>
+                                <p>Salvage regimens given to reduce the tumour burden and mobilise stem cells before giving high-dose chemotherapy and ASCT</p>
+
+                                <ul>
+                                    <li><span>DHAP: dexamethasone, high-dose  ara-C, cisplatin</span>
+                                    </li>
+                                    <li><span>IGEV: ifosphamide, gemcitabine, vinorelbine, dexamethasone</span>
+                                    </li>
+
+                                </ul>
+                                <p>Most relapsed patients should receive high-dose therapy (HDT) followed by ASCT.</p>
+                                <p>Low-risk patients who relapse after 2 cycles followed by RT should receive salvage treatment with intensive chemotherapy e.g. BEACOPescalated.</p>
+                                <p>Patients with localised late relapse should receive salvage RT only.</p>
+                               <p>No standard treatment for patients who relapse after high-dose chemotherapy and ASCT by ESMO</p>
+
+                            </div>
+                        </div>
+                        <div id="slide22ref" style="display: none" class="slide22ref">
+
+                        <b>References:</b><br />
+                       
+                       <br />
+                         1. Engert A, Eichenauer DA, Dreyling M; ESMO Guidelines Working Group Ann Oncol. 2010;21:v168–71.<br />
+                        <br />
+                         2. National Comprehensive Cancer Network. NCCN Clinical Practice Guidelines in Oncology, Hodgkin Lymphoma. V.2.2014.<br />
+                        <br />
+                         3. Meyer RM, et al. J Clin Oncol. 2005;23:4634–42.<br />
+
+
+
+                        </div>
+
+                    </div>
+
+
+                    <div id="slide23" style="display: none;">
+                        <!-- <div class="topic-bar">
+                          <div id="topic-title">HL: Relapsed/Refractory disease treatment per NCCN guidelines</div>
+                        </div>-->
+
+                        <div class="slidecontent" style="">
+                            <div style="padding-left: 20px">
+                                <br />
+                                <p data-class="fadeInDown" style="display: none;" id="tex17"><b>NCCN<sup>2</sup></b></p>
+                                <div id="tex18" style="display: none;">
+                                    <img data-class="fadeInDown" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 8px;" />
+                                    <p data-class="fadeInDown" style="padding-left: 30px;">Biopsy, including bone marrow, and restaging</p>
+                                </div>
+                                <div id="tex19" style="display: none;">
+                                    <img data-class="fadeInDown" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 8px;" />
+                                    <p data-class="fadeInDown" style="padding-left: 30px;">Relapse in patients with initial IA to IIA who underwent chemotherapy: no standard therapy, treat individually, options include:</p>
+                                </div>
+                                <div style="padding-left: 70px">
+                                    <div>
+                                        <img data-class="fadeInDown" id="bimg8" src="../common/img/bullet01.png" style="display: none; width: 12px; height: 12px; float: left; margin: 8px;" />
+                                        <p data-class="fadeInRight" style="display: none;" id="tex20">RT</p>
+                                    </div>
+                                    <div>
+                                        <img data-class="fadeInDown" id="bimg9" src="../common/img/bullet01.png" style="display: none; width: 12px; height: 12px; float: left; margin: 8px;" />
+                                        <p data-class="fadeInRight" style="display: none;" id="tex21">Second-line chemotherapy &plusmn; RT</p>
+                                    </div>
+                                    <div>
+                                        <img data-class="fadeInDown" id="bimg10" src="../common/img/bullet01.png" style="display: none; width: 12px; height: 12px; float: left; margin: 8px;" />
+                                        <p data-class="fadeInRight" style="display: none;" id="tex22">HDT/ASCT &plusmn; RT</p>
+                                    </div>
+                                </div>
+                                <div id="tex23" style="display: none;">
+                                    <img data-class="fadeInDown" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 8px;" />
+                                    <p data-class="fadeInDown" style="">Radiation na&iuml;ve patients: total lymphoid irradiation recommended</p>
+                                </div>
+                                <div id="tex24" style="display: none;">
+                                    <img data-class="fadeInDown" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 8px;" />
+                                    <p data-class="fadeInDown" style="">All other patients recommendations include:</p>
+                                </div>
+                                <div style="padding-left: 70px">
+                                    <div>
+                                        <img data-class="fadeInDown" id="bimg11" src="../common/img/bullet01.png" style="display: none; width: 12px; height: 12px; float: left; margin: 8px;" />
+                                        <p data-class="fadeInRight" style="display: none;" id="tex25">HDT/ASCT &plusmn; locoregional RT</p>
+                                    </div>
+
+                                    <div>
+                                        <img data-class="fadeInDown" id="bimg12" src="../common/img/bullet01.png" style="display: none; width: 12px; height: 12px; float: left; margin: 8px;" />
+                                        <p data-class="fadeInRight" style="display: none;" id="tex47">Second-line chemotherapy  &plusmn; RT</p>
+                                    </div>
+
+                                    <div id="bimg13" style="display: none; margin-left: -68px;">
+                                        <img data-class="fadeInDown" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 8px;" />
+                                        <p data-class="fadeInRight" style="">Brentuximab vedotin an option for relapse/ refractory disease following</p>
+                                    </div>
+                                    <div id="bimg14" style="display: none; font-size: 10px;">
+                                        <img data-class="fadeInDown" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 8px;" />
+                                        <p data-class="fadeInRight" style="">HDT/ASCT or</p>
+                                    </div>
+                                    <div id="bimg15" style="display: none; font-size: 10px;">
+                                        <img data-class="fadeInDown" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 8px;" />
+                                        <p data-class="fadeInRight" style="">At least 2 prior chemotherapy regimens regardless of HDT/ASCT eligibility</p>
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div onclick="onclickShowTranscription(this);" id="stickyContent">
+                            <a href="#">
+                                <img src="../common/img/showTrans.png" /></a>
+                        </div>
+                        <div id="transcript-hide" style="display: none;">
+                            <center> <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);" > Hide Transcript</button></center>
+
+                            <div class="transcript" style="">
+                                </br><p>For patients with relapsed/refractory HL, NCCN guidelines recommend biopsy, including bone marrow, and restaging:</p>
+                                <ul>
+                                    <li><span>There is no standard therapy for relapse in patients with initial IA to IIA who underwent chemotherapy. These patients should be treated individually. Potential treatment options for them include RT, second-line chemotherapy &plusmn; RT, and HDT/ASCT &plusmn; RT.</span>
+                                    </li>
+                                    <br />
+                                    <li><span>Brentuximab vedotin is an option for treatment of relapsed/refractory patients who failed treatment with HDT/ASCT or after at least 2 prior chemotherapy regimens regardless of HDT/ASCT eligibility.</span></li>
+                                </ul>
+
+
+                            </div>
+                        </div>
+                        <div id="slide23ref" style="display: none;" class="slide23ref">
+
+                            <b>References:</b><br />
+                            <br />
+
+
+                        1. National Comprehensive Cancer Network. NCCN Clinical Practice Guidelines in Oncology, Hodgkin Lymphoma. V.2.2014.<br />
+                        <br />
+                        2. Kuruvilla J. Hematology Am Soc Hematol Educ Program. 2009:497–506.<br />
+                        <br />
+                        3. Engert A, Eichenauer DA, Dreyling M; ESMO Guidelines Working Group Ann Oncol. 2010;21:v168–712.<br />
+
+                        </div>
+
+                    </div>
+
+
+                    <div id="slide24" style="display: none;">
+                        <!-- <div class="topic-bar">
+                          <div id="topic-title">HL: management steps as per NCCN guidelines</div>
+                        </div>-->
+
+                        <div class="slidecontent" style="">
+                            <div style="padding-left: 20px">
+                                <br />
+
+                                <div style="text-align: center;">
+                                    <img data-class="fadeInDown" id="imag24" src="img/Picture1.png" style="display: none; width: 630px; padding: 10px;" />
+                                </div>
+                                <div style="float: right; width: 100%;">
+                                    <p data-class="fadeInDown" style="display: none; font-size: 12px; margin-top: 31px;" id="tex15">
+                                        * Choice of primary treatment is dependent on disease stage and presence of unfavourable risk factors.
+                                    </p>
+                                    <br />
+                                    <p data-class="fadeInRight" style="display: none; font-size: 12px; margin-top: -21px;" id="tex16">+ Selection of regimen depends on pattern of relapse and agents previously used; some patients with minimal disease at relapse may not need additional treatment prior to HDT/ASCT. Agents listed in alphabetical order</p>
+                                    <p data-class="fadeInRight" style="display: none; font-size: 12px;" id="tex17">¥ Brentuximab is a treatment option for patients with relapsed or refractory HL who have failed HDT/ASCT or at least 2 prior chemotherapy regimens</p>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div onclick="onclickShowTranscription(this);" id="stickyContent">
+                            <a href="#">
+                                <img src="../common/img/showTrans.png" /></a>
+                        </div>
+                        <div id="transcript-hide" style="display: none;">
+                            <center> <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);" > Hide Transcript</button></center>
+
+                            <div class="transcript" style="">
+                                </br><p>The latest NCCN guidelines recommend a primary treatment involving ABVD, Stanford V, or BEACOPP &plusmn;RT.</p>
+                                <p>With progressive disease or a relapse, the patient is given second-line chemotherapy and possibly HDT/ASCT.</p>
+                                <p>Second-line therapy consists of several chemotherapy regimens such as C-MOPP, DHAP, ESHAP and ICE. The choice of the regimen suited for the patient is based on factors like pattern of the relapse and prior regimens used.</p>
+                                <p>Also, some patients with minimal disease at relapse may be treated with HDT/ASCT without prior chemotherapy.</p>
+                                <p>For patients who relapsed despite 2 chemotherapy regimens, brentuximab vedotin is an option irrespective of eligibility for HDT/ASCT.</p>
+                                <p>Brentuximab is also an option for patients who had a relapse following HDT/ASCT or have been refractory to treatment with HDT/ASCT.</p>
+                            </div>
+                        </div>
+                        <div id="slide24ref" style="display: none;" class="slide24ref">
+
+                            <b>References:</b><br />
+                            <br />
+
+
+                        1. National Comprehensive Cancer Network. NCCN Clinical Practice Guidelines in Oncology,Hodgkin Lymphoma. V.2.2014.
+
+		
+                        </div>
+
+                    </div>
+
+
+                    <div id="slide25" style="display: none;">
+                        <!--<div class="topic-bar">
+                          <div id="topic-title">Knowledge Check</div>
+                        </div>-->
+
+                        <div class="slidecontent" style="">
+                            <div style="padding-left: 20px">
+                                <br />
+                                <p data-class="fadeInDown" style="display: none;" id="tex10">The NCCN guidelines recommend Brentuximab Vedotin for the treatment of relapsed or refractory HL in patients who have failed HDT/ASCT or at least 2 prior chemotherapy regimens</p>
+                                <br />
+                                <input type="hidden" id="Answer" value="1"  qid="3" />
+                                <input type="hidden" id="Percentage" value="25" />
+                                <div id="radio1" style="padding: 15px; display: none;">
+                                    <input type="radio" value="1" name="ratio4" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="padding-left: 55px;">True</p>
+                                </div>
+                                <div id="radio2" style="padding: 15px; display: none;">
+                                    <input type="radio" value="2" name="ratio4" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="padding-left: 55px;">False</p>
+                                </div>
+                               
+                               
+                                <div style="margin-left: 470px;">
+                                    <div>
+                                        <input id="imag22" onclick="onclickAnswer(this);" type="button" class="btn btn-primary" value="Submit" style="width: 100px; margin-right: 10px; display: none;" />
+                                    </div>
+                                    <br />
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div onclick="onclickShowTranscription(this);" id="stickyContent">
+                            <a href="#">
+                                <img src="../common/img/showTrans.png" /></a>
+                        </div>
+                        <div id="transcript-hide" style="display: none;">
+                            <center> <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);" > Hide Transcript</button></center>
+
+                            <div class="transcript" style="">
+                                </br><p>Please take a moment to answer a question. Please select the best answer and click submit to continue</p>
+
+
+
+                            </div>
+                        </div>
+                        <div id="slide25ref" style="display: none;" class="slide25ref">
+
+                            <b>References:</b><br />
+                            <br />
+
+                            No Reference
+
+		
+                        </div>
+
+                    </div>
+
+
+                    <div id="slide26" style="display: none;">
+
+                        <!-- <div class="topic-bar">
+                        <div id="topic-title">Title</div>
+                    </div>-->
+                        <!--Body -->
+                        <div style="height: 550px; width: 100%; margin: 0px auto; border: 2px solid rgba(127, 145, 145, 0.12); border-radius: 10px; background-color: rgba(255, 255, 255, 0.2);">
+                            <div class="playBody">
+                                <div data-class="fadeInDown" class="breakout" style="display: none; text-align: center; height: 95px;" id="s26img1">
+                                    <p class="" style="font-size: 20px; width: 450px; position: relative; text-align: left">
+                                        End of Module!
+                                    </p>
+                                    <p class="fadeInDown" id="s26img2" style="display: none; text-align: left">Please close the window and attempt the post-test in order to complete the course.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!--Transcript -->
+                        <!--<div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none;
+                        position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#">
+                            <img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center>
+                            <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                                Hide Transcript</button></center>
+                        <div class="transcript">
+                           
+                        </div>
+                    </div>
+                    <div id="slide0aref" style="display: none;" class="slide0aref">
+                        <b>References:</b><br />
+                        <br />
+                       
+                    </div>-->
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div id="footer" style="width: 1024px; margin: 0 auto;">
+            <div class="container" style="">
+                <table style="width: 100%">
+                    <tr>
+                        <td>
+                            <img src="../common/img/takeda.png" style="float: left; width: 105px; margin-top: 3px; margin-right: 10px; margin-left: -25px;" />
+                        </td>
+                        <td>
+                            <img onmouseover="HideToolTip(this)" data-toggle="tooltip" title="Play / Pause" class="effect" id="toggelbutton" class="effect" src="../common/img/playBtn.png" style="float: left; margin-top: -10px;" onclick="play()" />
+                        </td>
+                        <td>
+                            <div style="float: left;">
+                                <input id="progress-bar" type="text" data-slider="true" data-slider-highlight="true">
+                                <div class="slider-control"><span id="slideCount">Frame 0 of 00</span> <span style="float: right;"><span id="timeduration">0:00</span> / <span id="slideduration">0:00</span></span> </div>
+                            </div>
+                        </td>
+                        <td>
+                            <img onmouseover="HideToolTip(this)" data-toggle="tooltip" data-placement="left" title="Previous Slide " class="effect" src="../common/img/prevBtn.png" style="margin-top: -10px;" onclick="Prev()" />
+                        </td>
+                        <td>
+                            <img onmouseover="HideToolTip(this)" data-toggle="tooltip" id="NxtImg" title="Next Slide" class="effect" src="../common/img/nxtBtn.png" style="margin-top: -10px;" onclick="Next()" />
+                        </td>
+                        <td>
+                            <img onclick="ShowHelp(); " id="showHelp" src="../common/img/smallicon2.png" style="margin-top: -10px; margin-left: 35px;" />
+                        </td>
+                        <td><a href="pdf/Transcript.pdf" target="_blank">
+                            <img onmouseover="HideToolTip(this)" data-toggle="tooltip" title="Print" class="effect" src="../common/img/smallicon3.png" style="margin-top: -10px;" /></a>
+                        </td>
+                    </tr>
+
+                </table>
+
+                <!--  <img class="effect" src="../common/img/pauseBtn.png" style="float: left; margin-top: -10px;" onclick="pause()" />-->
+            </div>
+        </div>
+
+        <div class="modal fade" id="AnswerModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" onclick="onclickAnswerContinue()" class="btn btn-primary">Continue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script>
+            $('img').tooltip({ trigger: "focus" });
+
+        </script>
+</body>
+
+</html>

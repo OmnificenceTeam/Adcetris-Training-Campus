@@ -1,0 +1,405 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    <!-- Website Design By: www.happyworm.com -->
+    <title>Pre Test
+    </title>
+
+    <!-- fonticon -->
+    <link href="css/font-awesome.css" rel="stylesheet" />
+
+    <!-- textillate -->
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/table.css" rel="stylesheet">
+    <link href="css/bluetable.css" rel="stylesheet">
+
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link href="css/sticky-footer.css" rel="stylesheet">
+
+    <!-- slide bar -->
+    <link href="css/mbExtruder.css" media="all" rel="stylesheet" type="text/css">
+
+    <!-- custom styles -->
+    <link href="css/common.css" media="all" rel="stylesheet" type="text/css">
+
+    <!-- jquery Slider -->
+    <link href="css/simple-slider.css" rel="stylesheet" type="text/css" />
+    <link href="css/simple-slider-volume.css" rel="stylesheet" type="text/css" />
+
+
+    <!-- tooltip -->
+    <link href="css/tipsy.css" rel="stylesheet" type="text/css" />
+
+    <!-- image efect -->
+    <link rel="stylesheet" href="css/hoverEx.css" />
+    <link rel="stylesheet" href="emodule.image.css" />
+
+
+    <!-- jquery dropdown -->
+    <link type="text/css" rel="stylesheet" href="css/jquery.dropdown.css" />
+
+    <!-- scripts-->
+    <!-- Latest compiled and minified JavaScript -->
+    <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/jquery.dropdown.js"></script>
+
+
+    <!-- simple slider -->
+    <script src="js/simple-slider.js"></script>
+
+    <!-- bootstrap -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- slide bar -->
+    <script type="text/javascript" src="js/jquery.hoverIntent.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mb.flipText.js"></script>
+    <script type="text/javascript" src="js/mbExtruder.js"></script>
+
+    <!-- textillate -->
+    <script src="js/jquery.fittext.js"></script>
+    <script src="js/jquery.lettering.js"></script>
+    <script src="js/jquery.textillate.js"></script>
+
+    <!-- tooltip -->
+    <script src="js/jquery.tipsy.js"></script>
+
+    <!-- course player -->
+
+      <script src="js/player/TrackerService.js"></script>
+    <script src="js/custom.js"></script>
+    <link rel="stylesheet" href="css/app.v2.css" type="text/css" />
+
+</head>
+<body style="overflow-x: hidden; font-family: Verdana" onload="Init()">
+
+    <div id="wrap" style="width: 1024px;">
+        <div class="" style="height: 90px;">
+            <div class="header-top"></div>
+            <div class="header-body">
+                <img src="img/logo.png" class="logo" />
+                <div class="header-help">
+                    <h3 id="slideTitle" class="module-title">Pre-test Questions (index8)</h3>
+                    <div style="float: right">
+                        <!--  <img class="effect" onmouseover="HideToolTip(this)" onclick="onclickPlaylistImg()" data-toggle="tooltip" data-placement="left" title="Playlist" style="float: left; opacity: 0.7; width: 36px; margin-top: 14px; margin-right: 8px;"
+                            src="img/content.png" />
+                        <img class="effect" onmouseover="HideToolTip(this)"  data-horizontal-offset="-10" data-dropdown="#dropdown-6" data-toggle="tooltip" data-placement="bottom" title="Reference" style="float: left;" src="img/smallicon1.png" />
+                        <img class="effect" onmouseover="HideToolTip(this)" onclick="onclickGlossaryImg()" data-toggle="tooltip" data-placement="right" title="Glossary" style="float: left; margin-right: 40px;" src="img/smallicon4.png" />
+          -->
+                        <img class="headerleftbg" src="img/headerCorBg.png" />
+                    </div>
+                </div>
+                <div id="dropdown-6" class="dropdown dropdown-tip dropdown-anchor-right has-icons">
+                    <div class="dropdown-panel">
+                    </div>
+                </div>
+            </div>
+            <audio id="moduleAudio"></audio>
+
+        </div>
+
+        <div style="position: relative; height: 615px;">
+            <!--<div id="extruderLeft2" class="a {title:'Slides\'s', url:'parts/extruderLeft.html'}">
+                <div class="playlist" style="height: 615px;">
+                    <div class="playlist-header"></div>
+                    <div id="playlist" class="playlist-item">
+                        <div class="list-items">title <span>0:00</span></div>
+                    </div>
+                    <div class="playlist-footer">
+                        <p>Total Duration : <span id="totalDuration">00:00</span></p>
+                    </div>
+                </div>
+
+            </div>-->
+            <div id="question1" style="display: none;">
+                <h3 style="line-height: 35px;">1. The median duration of response was ___ months in patients who had an objective response. The 
+
+median duration of response for patients who 
+
+achieved a CR was ___ months</h3>
+                <div style="padding-top: 10px; padding-left: 20px; width: 525px; float: left;">
+                    <input type="hidden" id="Answer" value="1" />
+					<input type="hidden" id="QuestionID" value="1" />
+						<input type="hidden" id="Percentage" value="10" />
+						<input type="hidden" id="Rating" value="10" />
+                    <div class="frame" id="radio1" style="padding: 10px 25px 10px 10px;">
+                        <input name="ratio1" value="1" type="radio" style="width: 2em; height: 1.5em; float: left; margin-top: 17px;" />
+                        <p data-class="fadeInRight" style="padding-left: 20px;">6.7 and 20.5</p>
+                    </div>
+                    <div class="frame" id="radio2" style="padding: 10px 25px 10px 10px;">
+                        <input name="ratio1" value="2" type="radio" style="width: 2em; height: 1.5em; float: left; margin-top: 17px;" />
+                        <p data-class="fadeInRight" style="padding-left: 20px;">20.5 and 6.7</p>
+                    </div>
+					 <div class="frame" id="radio3" style="padding: 10px 25px 10px 10px;">
+                        <input name="ratio1" value="3" type="radio" style="width: 2em; height: 1.5em; float: left; margin-top: 17px;" />
+                        <p data-class="fadeInRight" style="padding-left: 20px;">20.5 and 20.5</p>
+                    </div>
+					 <div class="frame" id="radi4" style="padding: 10px 25px 10px 10px;">
+                        <input name="ratio1" value="4" type="radio" style="width: 2em; height: 1.5em; float: left; margin-top: 17px;" />
+                        <p data-class="fadeInRight" style="padding-left: 20px;">6.7 and 6.1</p>
+                    </div>
+					
+					
+                    
+                </div>
+                <div id="AnswerDisp" style="display: none; width: 350px; float: left; height: 350px; padding: 10px; border: 2px solid rgba(0, 0, 0, 0.1); border-radius: 10px; background-color: rgba(255, 255, 255, 0.41); box-shadow: 2px 1px 12px -3px rgba(0, 0, 0, 0.33);">
+                </div>
+                <div class="clearfix"></div>
+                <center>       <input id="imag9" onclick="onclickAnswer(this);" type="button" value="Submit" style="width: 100px; bottom: 50px; position: absolute; margin-left: -50px;" /></center>
+
+
+            </div>
+
+
+
+<div id="question2" style="display: none;">
+
+                <h3 style="line-height: 35px;">2. Which of the following statements is incorrect</h3>
+                <div style="padding-top: 10px; padding-left: 20px; width: 525px; float: left;">
+                    <input type="hidden" id="Answer" value="4" />
+					<input type="hidden" id="QuestionID" value="2" />
+						<input type="hidden" id="Percentage" value="10 />
+						<input type="hidden" id="Rating" value="10" />
+                    <div class="frame" id="radio1" style="padding: 10px 25px 10px 10px;">
+                        <input name="ratio1" value="1" type="radio" style="width: 2em; height: 1.5em; float: left; margin-top: 17px;" />
+                        <p data-class="fadeInRight" style="padding-left: 20px;">All patients received at least one infusion of brentuximab vedotin</p>
+                    </div>
+                    <div class="frame" id="radio2" style="padding: 10px 25px 10px 10px;">
+                        <input name="ratio1" value="2" type="radio" style="width: 2em; height: 1.5em; float: left; margin-top: 17px;" />
+                        <p data-class="fadeInRight" style="padding-left: 20px;">The median number of cycles administered in the study was 9</p>
+                    </div>
+                    <div class="frame" id="radio3" style="padding: 10px 25px 10px 10px;">
+                        <input name="ratio1" value="3" type="radio" style="width: 2em; height: 1.5em; float: left; margin-top: 17px;" />
+                        <p data-class="fadeInRight" style="padding-left: 20px;">The mean number of cycles of brentuximab administered was 10 </p>
+                    </div>
+                    <div class="frame" id="radio4" style="padding: 10px 25px 10px 10px;">
+                        <input name="ratio1" value="4" type="radio" style="width: 2em; height: 1.5em; float: left; margin-top: 17px;" />
+                        <p data-class="fadeInRight" style="padding-left: 20px;">None of the above</p>
+                    </div>
+					
+					
+                </div>
+                <div id="AnswerDisp" style="display: none; width: 350px; float: left; height: 350px; padding: 10px; border: 2px solid rgba(0, 0, 0, 0.1); border-radius: 10px; background-color: rgba(255, 255, 255, 0.41); box-shadow: 2px 1px 12px -3px rgba(0, 0, 0, 0.33);">
+                </div>
+                <div class="clearfix"></div>
+                <center>       <input id="imag9" onclick="onclickAnswer(this);" type="button" value="Submit" style="width: 100px; bottom: 2px; position: absolute; margin-left: -50px;" /></center>
+
+
+            </div>
+
+
+<div id="question3" style="display: none;">
+
+                <h3 style="line-height: 35px; margin-top: -10px;">3. Median PFS and duration of response were significantly different between patients with ALK-negative 
+
+disease and patients with ALK-positive</h3>
+                <div style="padding-top: 10px; padding-left: 20px; width: 525px; float: left;">
+                    <input type="hidden" id="Answer" value="2" />
+					<input type="hidden" id="QuestionID" value="3" />
+						<input type="hidden" id="Percentage" value="10" />
+						<input type="hidden" id="Rating" value="10" />
+                    <div class="frame" id="radio1" style="padding: 10px 25px 10px 10px;">
+                        <input name="ratio1" value="1" type="radio" style="width: 2em; height: 1.5em; float: left; margin-top: 17px;" />
+                        <p data-class="fadeInRight" style="padding-left: 20px;">True</p>
+                    </div>
+                    <div class="frame" id="radio2" style="padding: 10px 25px 10px 10px;">
+                        <input name="ratio1" value="2" type="radio" style="width: 2em; height: 1.5em; float: left; margin-top: 17px;" />
+                        <p data-class="fadeInRight" style="padding-left: 20px;">False</p>
+                    </div>
+                    
+					
+                </div>
+                <div id="AnswerDisp" style="display: none; width: 350px; float: left; height: 350px; padding: 10px; border: 2px solid rgba(0, 0, 0, 0.1); border-radius: 10px; background-color: rgba(255, 255, 255, 0.41); box-shadow: 2px 1px 12px -3px rgba(0, 0, 0, 0.33);">
+                </div>
+                <div class="clearfix"></div>
+                <center>       <input id="imag9" onclick="onclickAnswer(this);" type="button" value="Submit" style="width: 100px; bottom: 30px; position: absolute; margin-left: -50px;" /></center>
+
+
+            </div>
+
+			
+			
+			<div id="question4" style="display: none;">
+
+                <h3 style="line-height: 35px;">4. In the trial of brentuximab vedotin in relapsed/refractory ALCL, resolution or some improvement in 
+
+peripheral neuropathy was observed in</h3>
+                <div style="padding-top: 10px; padding-left: 20px; width: 525px; float: left;">
+                    <input type="hidden" id="Answer" value="1" />
+					<input type="hidden" id="QuestionID" value="4" />
+						<input type="hidden" id="Percentage" value="10" />
+						<input type="hidden" id="Rating" value="10" />
+                    <div class="frame" id="radio1" style="padding: 10px 25px 10px 10px;">
+                        <input name="ratio1" value="1" type="radio" style="width: 2em; height: 1.5em; float: left; margin-top: 17px;" />
+                        <p data-class="fadeInRight" style="padding-left: 20px;">81% of patients</p>
+                    </div>
+                    <div class="frame" id="radio2" style="padding: 10px 25px 10px 10px;">
+                        <input name="ratio1" value="2" type="radio" style="width: 2em; height: 1.5em; float: left; margin-top: 17px;" />
+                        <p data-class="fadeInRight" style="padding-left: 20px;">48% of patients</p>
+                    </div>
+					 <div class="frame" id="radio3" style="padding: 10px 25px 10px 10px;">
+                        <input name="ratio1" value="3" type="radio" style="width: 2em; height: 1.5em; float: left; margin-top: 17px;" />
+                        <p data-class="fadeInRight" style="padding-left: 20px;">10% of patients</p>
+                    </div>
+					 <div class="frame" id="radio4" style="padding: 10px 25px 10px 10px;">
+                        <input name="ratio1" value="4" type="radio" style="width: 2em; height: 1.5em; float: left; margin-top: 17px;" />
+                        <p data-class="fadeInRight" style="padding-left: 20px;">35% of patients</p>
+                    </div>
+					 
+					
+                 
+                </div>
+                <div id="AnswerDisp" style="display: none; width: 350px; float: left; height: 350px; padding: 10px; border: 2px solid rgba(0, 0, 0, 0.1); border-radius: 10px; background-color: rgba(255, 255, 255, 0.41); box-shadow: 2px 1px 12px -3px rgba(0, 0, 0, 0.33);">
+                </div>
+                <div class="clearfix"></div>
+                <center>       <input id="imag9" onclick="onclickAnswer(this);" type="button" value="Submit" style="width: 100px; bottom: 50px; position: absolute; margin-left: -50px;" /></center>
+
+
+            </div>
+
+			
+			
+			<div id="question5" style="display: none;">
+
+                <h3 style="line-height: 35px;">5. In the trial of brentuximab vedotin in relapsed/refractory ALCL, tumour reduction was achieved in</h3>
+                <div style="padding-top: 10px; padding-left: 20px; width: 525px; float: left;">
+                    <input type="hidden" id="Answer" value="2" />
+					<input type="hidden" id="QuestionID" value="5" />
+						<input type="hidden" id="Percentage" value="10" />
+						<input type="hidden" id="Rating" value="10" />
+                    <div class="frame" id="radio1" style="padding: 10px 25px 10px 10px;">
+                        <input name="ratio1" value="1" type="radio" style="width: 2em; height: 1.5em; float: left; margin-top: 17px;" />
+                        <p data-class="fadeInRight" style="padding-left: 20px;">86% of patients</p>
+                    </div>
+                    <div class="frame" id="radio2" style="padding: 10px 25px 10px 10px;">
+                        <input name="ratio1" value="2" type="radio" style="width: 2em; height: 1.5em; float: left; margin-top: 17px;" />
+                        <p data-class="fadeInRight" style="padding-left: 20px;">97% of patients</p>
+                    </div>
+                    <div class="frame" id="radio3" style="padding: 10px 25px 10px 10px;">
+                        <input name="ratio1" value="3" type="radio" style="width: 2em; height: 1.5em; float: left; margin-top: 17px;" />
+                        <p data-class="fadeInRight" style="padding-left: 20px;">70% of patients</p>
+                    </div>
+                    <div class="frame" id="radio4" style="padding: 10px 25px 10px 10px;">
+                        <input name="ratio1" value="4" type="radio" style="width: 2em; height: 1.5em; float: left; margin-top: 17px;" />
+                        <p data-class="fadeInRight" style="padding-left: 20px;">40% of patients </p>
+                    </div>
+					
+					
+                </div>
+                <div id="AnswerDisp" style="display: none; width: 350px; float: left; height: 350px; padding: 10px; border: 2px solid rgba(0, 0, 0, 0.1); border-radius: 10px; background-color: rgba(255, 255, 255, 0.41); box-shadow: 2px 1px 12px -3px rgba(0, 0, 0, 0.33);">
+                </div>
+                <div class="clearfix"></div>
+                <center>       <input id="imag9" onclick="onclickAnswer(this);" type="button" value="Submit" style="width: 100px; bottom: 50px; position: absolute; margin-left: -50px;" /></center>
+
+
+            </div>
+
+			
+			
+
+            <div id="Success" style="display: none;">
+
+                <h3 style="line-height: 35px; text-align: center;">Thank you for your participation </h3>
+                <center>
+                    <div style="width: 60%;
+height: 250px;
+border: 2px solid rgba(0, 0, 0, 0.1);
+border-radius: 10px;
+background-color: rgba(255, 255, 255, 0.41);
+box-shadow: 2px 1px 12px -3px rgba(0, 0, 0, 0.33);
+margin-top: 10%;">
+
+                        <div class="inline">
+                                                <div id="score" class="easypiechart" data-percent="60" data-line-width="30" data-track-color="rgba(179, 221, 230, 0.39);" data-bar-color="#00718e" data-scale-color="#fff" data-size="188" data-line-cap='butt'>
+                                                    
+                                                </div>
+                                            </div>
+                        <h4 style="text-align:center;">Your Score</h4>
+                    </div>
+                    
+
+                </center>
+            </div>
+            <div id="questionPlayer" class="slidePlayer" style="padding-top: 25px; padding-left: 20px;">
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <div id="footer" style="width: 1024px; margin: 0 auto;">
+        <div class="container" style="">
+            <table style="width: 100%">
+                <tr>
+                    <td>
+                        <img src="img/takeda.png" style="float: left; width: 105px; margin-top: 3px; margin-right: 10px; margin-left: -25px;" />
+                    </td>
+                    <td style="color: white;">Question <span id="qqNumber">1 of 5</span>
+
+                    </td>
+                    <!--    <td>
+                    <img onmouseover="HideToolTip(this)" data-toggle="tooltip" title="Play / Pause" class="effect" id="toggelbutton" class="effect" src="img/playBtn.png" style="float: left; margin-top: -10px;" onclick="play()" />
+                </td>
+                <td>
+                    <div style="float: left;">
+                        <input id="progress-bar" type="text" data-slider="true" data-slider-highlight="true">
+                        <div class="slider-control"><span id="slideCount">Slide 0 of 00</span> <span style="float: right;"><span id="timeduration">0:00</span> / <span id="slideduration">0:00</span></span> </div>
+                    </div>
+                </td>
+                <td>
+                    <img onmouseover="HideToolTip(this)" data-toggle="tooltip" data-placement="left" title="Previous Slide " class="effect" src="img/prevBtn.png" style="margin-top: -10px;" onclick="Prev()" />
+                </td>
+                <td>
+                    <img onmouseover="HideToolTip(this)" data-toggle="tooltip" title="Next Slide" class="effect" src="img/nxtBtn.png" style="margin-top: -10px;" onclick="Next()" />
+                </td>
+                <td>
+                    <img onclick="ShowHelp();" id="showHelp" src="img/smallicon2.png" style="margin-top: -10px; margin-left: 35px;" />
+                </td>
+                <td><a href="pdf/Disease State Overview HL_Module_1.pdf" target="_blank">
+                    <img onmouseover="HideToolTip(this)" data-toggle="tooltip" title="Print" class="effect" src="img/smallicon3.png" style="margin-top: -10px;" /></a>
+                </td>-->
+                </tr>
+
+            </table>
+
+            <!--  <img class="effect" src="img/pauseBtn.png" style="float: left; margin-top: -10px;" onclick="pause()" />-->
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="AnswerModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" onclick="onclickAnswerContinue()" class="btn btn-primary">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Easy Pie Chart -->
+    <script src="js/chart/jquery.easy-pie-chart.js" cache="false"></script>
+    <script>
+        $('img').tooltip({ trigger: "focus" });
+
+
+
+    </script>
+
+
+</body>
+
+</html>

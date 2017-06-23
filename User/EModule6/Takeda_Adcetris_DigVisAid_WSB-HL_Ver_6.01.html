@@ -1,0 +1,2983 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Website Design By: www.happyworm.com -->
+    <title>E Module</title>
+    <!-- fonticon -->
+    <link href="../common/css/font-awesome.css" rel="stylesheet" />
+    <!-- textillate -->
+    <link href="../common/css/animate.css" rel="stylesheet">
+    <link href="../common/css/style.css" rel="stylesheet">
+    <link href="../common/css/table.css" rel="stylesheet">
+    <link href="../common/css/bluetable.css" rel="stylesheet">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="../common/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../common/css/bootstrap-theme.min.css">
+    <link href="../common/css/sticky-footer.css" rel="stylesheet">
+    <!-- slide bar -->
+    <link href="../common/css/mbExtruder.css" media="all" rel="stylesheet" type="text/css">
+    <!-- custom styles -->
+    <link href="../common/css/common.css" media="all" rel="stylesheet" type="text/css">
+    <!-- jquery Slider -->
+    <link href="../common/css/simple-slider.css" rel="stylesheet" type="text/css" />
+    <link href="../common/css/simple-slider-volume.css" rel="stylesheet" type="text/css" />
+    <!-- tooltip -->
+    <link href="../common/css/tipsy.css" rel="stylesheet" type="text/css" />
+    <!-- image efect -->
+    <link rel="stylesheet" href="../common/css/hoverEx.css" />
+    <link rel="stylesheet" href="../common/css/emodule.image.css" />
+    <!-- jquery dropdown -->
+    <link type="text/css" rel="stylesheet" href="../common/css/jquery.dropdown.css" />
+    <!-- scripts-->
+    <!-- Latest compiled and minified JavaScript -->
+
+    <script type="text/javascript" src="../common/js/jquery-1.9.1.js"></script>
+
+    <script type="text/javascript" src="../common/js/jquery-ui.js"></script>
+
+    <script type="text/javascript" src="../common/js/jquery.dropdown.js"></script>
+
+    <!-- simple slider -->
+
+    <script src="../common/js/simple-slider.js"></script>
+
+    <!-- bootstrap -->
+
+    <script src="../common/js/bootstrap.min.js"></script>
+
+    <!-- slide bar -->
+
+    <script type="text/javascript" src="../common/js/jquery.hoverIntent.min.js"></script>
+
+    <script type="text/javascript" src="../common/js/jquery.mb.flipText.js"></script>
+
+    <script type="text/javascript" src="../common/js/mbExtruder.js"></script>
+
+    <!-- textillate -->
+
+    <script src="../common/js/jquery.fittext.js"></script>
+
+    <script src="../common/js/jquery.lettering.js"></script>
+
+    <script src="../common/js/jquery.textillate.js"></script>
+
+    <!-- tooltip -->
+
+    <script src="../common/js/jquery.tipsy.js"></script>
+
+    <script src="../common/js/jquery.zoom.js"></script>
+
+
+    <script type="text/javascript">
+        $(function () {
+            $("#extruderLeft2").buildMbExtruder({
+                position: "left",
+                width: 200,
+                positionFixed: false,
+                top: 125,
+                extruderOpacity: .8,
+                onExtOpen: function () { },
+                onExtContentLoad: function () { },
+                onExtClose: function () { }
+            });
+        });
+
+        function PlayEvents() {
+        }
+        PlayEvents.prototype.onAudioFailed = function () {
+            alert("Failed to load audio.");
+        }
+
+        var coursePlayer = null;
+
+        function Init() {
+            coursePlayer = new CoursePlayer("moduleAudio", new PlayEvents());
+            coursePlayer.initialize("Takeda_Adcetris_DigVisAid_WSB-HL_Ver_6.01.xml");
+            coursePlayer.play();
+        }
+
+        function Next() {
+            if (coursePlayer.nextSlide())
+                coursePlayer.play();
+        }
+        function Prev() {
+            if (coursePlayer.prevSlide())
+                coursePlayer.play();
+        }
+
+        function play() {
+            if (!coursePlayer.getPlayerStatus()) {
+                document.getElementById("toggelbutton").src = "../common/img/pauseBtn.png";
+                coursePlayer.play();
+            }
+            else {
+
+                document.getElementById("toggelbutton").src = "../common/img/playBtn.png";
+                coursePlayer.pause();
+            }
+        }
+
+        //]]>
+    </script>
+    <!-- course player -->
+
+    <script src="../common/js/player/CoursePlayer.js"></script>
+
+    <script src="../common/js/player/TrackerService.js"></script>
+
+    <script src="../common/js/custom.js"></script>
+</head>
+<body style="overflow-x: hidden; font-family: Verdana" onload="createAttempt();">
+    <div id="wrap" style="width: 1024px;">
+        <div class="" style="height: 90px;">
+            <div class="header-top">
+            </div>
+            <div class="header-body">
+                <img src="../common/img/logo.png" class="logo" />
+                <div class="header-help">
+                    <h3 id="slideTitle"  style="max-width: 58%; font-size: 18px;" class="module-title"></h3>
+                    <div style="float: right">
+                        <img class="effect" onmouseover="HideToolTip(this)" onclick="onclickPlaylistImg()"
+                            data-toggle="tooltip" data-placement="left" title="Playlist" style="float: left; opacity: 0.7; width: 36px; margin-top: 14px; margin-right: 8px;"
+                            src="../common/img/content.png" />
+                        <img class="effect" onmouseover="HideToolTip(this)" data-horizontal-offset="-10"
+                            data-dropdown="#dropdown-6" data-toggle="tooltip" data-placement="bottom" title="Reference"
+                            style="float: left;" src="../common/img/smallicon1.png" />
+                        <img class="effect"  onclick="onclickGlossaryImg()" onmouseover="HideToolTip(this)" data-toggle="tooltip" data-placement="customTooltip"
+                            title="Glossary" style="float: left; margin-right: 40px;" src="../common/img/smallicon4.png" />
+                        <img class="headerleftbg" src="../common/img/headerCorBg.png" />
+                    </div>
+                </div>
+                <div id="dropdown-6" class="dropdown dropdown-tip dropdown-anchor-right has-icons">
+                    <div class="dropdown-panel">
+                    </div>
+                </div>
+            </div>
+            <audio id="moduleAudio"></audio>
+        </div>
+        <div style="position: relative; height: 615px;">
+            <!--<div id="extruderLeft2" class="a {title:'Slides\'s', url:'parts/extruderLeft.html'}">
+                <div class="playlist" style="height: 615px;">
+                    <div class="playlist-header"></div>
+                    <div id="playlist" class="playlist-item">
+                        <div class="list-items">title <span>0:00</span></div>
+                    </div>
+                    <div class="playlist-footer">
+                        <p>Total Duration : <span id="totalDuration">00:00</span></p>
+                    </div>
+                </div>
+
+            </div>-->
+            <div class="slidePlayer">
+                <div id="PlayListDiv" style="display: none;">
+                    <div class="coursecontent" style="height: 600px; width: 100%;">
+                        <div class="playlist-header">
+                            <button type="button" class="header-close" onclick="onclickClosePlaylist()" style="float: right;">
+                                Close</button>
+                        </div>
+                        <div id="playlist" class="playlist-item  style-5">
+                            <div class="list-items">
+                                title <span>0:00</span>
+                            </div>
+                        </div>
+                        <div class="playlist-footer">
+                            <p>
+                                Total Duration : <span id="totalDuration">00:00</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                  <div id="GlossaryDiv" style="display: none;">
+                    <div class="coursecontent" style="height: 600px; width: 100%;">
+                        <div class="playlist-header">
+                            <button type="button" class="header-close" onclick="onclickCloseglossary()" style="float: right;">Close</button>
+                        </div>
+                        <div id="Div2" class="playlist-item  style-5">
+                            <div id="GlossaryTitle" class="GlossaryTitle style-5">
+                                
+                            </div> 
+                             <div id="GlossaryData" class="GlossaryData style-5">
+                               
+                            </div>
+                        </div>
+                        <div class="playlist-footer">
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div id="slide0" style="display: none;">
+                    <!-- <div class="topic-bar">
+                        <div id="topic-title">Title</div>
+                    </div>-->
+                    <!--Body -->
+                    <div style="height: 550px; width: 100%; float: left; border: 2px solid rgba(127, 145, 145, 0.12); border-radius: 10px; background-color: rgba(255, 255, 255, 0.2);">
+                        <div class="playBody">
+                            <div data-class="fadeInDown" class="breakout" style="display: none; margin-left: 30px; margin-top: 250px; text-align: center;"
+                                id="s0txt1">
+                                <p style="padding-left: 40px; font-size: 20px;">
+                                   ADCETRIS Visual Aid for Relapsed/Refractory Hodgkin Lymphoma.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                
+                <div id="slide1" style="display: none;">
+                    <!--Body -->
+                    <!--<div class="topic-bar">
+                        <div id="topic-title">Introduction</div>
+                     </div>-->
+                    <div id="slide1ref" style="display: none;" class="slide1ref">
+                        <b>References:</b><br />
+                        <br />
+                        1. Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Brentuximab vedotin
+                        (SGN-35) in patients with relapsed or refractory systemic anaplastic large-cell
+                        lymphoma: results of a phase II study. J Clin Oncol. 2012;30(18):2190-6.<br />
+                        <br />
+                        2. Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Three-year survival
+                        results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed
+                        or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 1809,
+                        American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+                        <br />
+                        3. ADCETRIS®. Summary of Product Characteristics. 25 October 2012. Available at
+                        European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB/document_library/EPAR_-_Product_Information/human/002455/WC500135055.pdf.
+                        Accessed on 17 January 2014.<br />
+                        <br />
+                        4. FDA Approval for Brentuximab Vedotin. National Cancer Institute Web site. Available
+                        at: http://www.cancer.gov/cancertopics/druginfo/fda-brentuximabvedotin. Accessed
+                        on 17 January 2014.
+                    </div>
+                    <div class="slidecontent" style="">
+                        <div class="playBody">
+                            <div data-class="fadeInDown" id="s1txt1" style="display: none;">
+                                <p style="text-align: center;">
+                                    <br />
+                                    Module 5<br />
+                                    ADCETRIS Visual Aid for Relapsed/Refractory Hodgkin Lymphoma.
+                                </p>
+                            </div>
+                            <div data-class="fadeInDown" id="s1txt2" style="display: none;">
+                                <p style="padding-top:30px;padding-left:25px;">
+                                    This module will explore:
+                                </p>
+                            </div>
+                        </div>
+                        <br />
+                        <div data-class="fadeInDown" id="s1bimg1" style="display: none; padding-left: 50px;">
+                            <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                            <p style="padding-left: 30px; text-align: left;">
+                                Key elements of the visual aid
+                            </p>
+                        </div>
+                        <br />
+                        <div data-class="fadeInDown" id="s1bimg2" style="display: none; padding-left: 50px;">
+                            <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                            <p style="padding-left: 30px; text-align: left;">
+                                Core messaging of ADCETRIS
+                            </p>
+                        </div>
+                    </div>
+                    <!--Transcript -->
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none; position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#">
+                            <img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center>
+                            <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                                Hide Transcript</button></center>
+                        <div class="transcript" style="">
+                           <!-- <p>
+                                Welcome to Module 5 - ADCETRIS Visual Aid for Relapsed/Refractory Hodgkin Lymphoma.
+                            </p>-->
+                            <p>
+                                This module, which is aligned to the visual aid, will explore the key elements of the visual aid as well as the core messaging of ADCETRIS with supporting evidence from pivotal trials.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!--slide 2 starting-->
+                <div id="slide2" style="display: none;">
+                    <!--Body -->
+                    <!--<div class="topic-bar">
+                        <div id="topic-title">Learner Objectives
+                     </div>-->
+                    <div class="slidecontent" style="">
+                        <!--<br />-->
+                        <div id="s2txt1" style="display: none;" data-class="fadeInDown">
+                           <p style="padding-top:30px;padding-left:25px;">
+                                Learner Objectives:
+                            </p>
+                            <br />
+                        </div>
+                        <div style="padding-left: 40px">
+                            <div data-class="fadeInDown" id="s2bimg1" style="display: none;">
+                                <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                <p style="padding-left: 30px; text-align: left;">
+                                    Gain a thorough understanding of the information contained within the Visual Aid
+                                </p>
+                                <br />
+                            </div>
+                            <div data-class="fadeInDown" id="s2bimg2" style="display: none;">
+                                <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                <p style="padding-left: 30px; text-align: left;">
+                                    Reference the proof source for information contained within the Visual Aid
+                                </p>
+                                <br />
+                            </div>
+                            <div data-class="fadeInDown" id="s2bimg3" style="display: none;">
+                                <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                <p style="padding-left: 30px; text-align: left;">
+                                    Use the visual aid to support a clear and concise sales presentation
+                                </p>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                    <!--Transcript -->
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none; position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#">
+                            <img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center>
+                            <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                                Hide Transcript</button></center>
+                        <div class="transcript" style="">
+                            <p>
+                                By the end of this module, you should:
+                            </p>
+							<ul>
+                            <li><span>
+                                Gain a thorough understanding of all information contained within the Visual Aid
+                            </li></span>
+                             <li><span>
+                                Be able to reference the proof source for information contained within the Visual Aid
+                           </li></span>
+                            <li><span>
+                                Use the visual aid to support a clear and concise sales presentation.
+                           </li></span>
+						   </ul>
+                        </div>
+                    </div>
+                    <div id="slide2ref" style="display: none;" class="slide2ref">
+                        <b>References:</b><br />
+                        <br />
+                        1. Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Brentuximab vedotin
+                        (SGN-35) in patients with relapsed or refractory systemic anaplastic large-cell
+                        lymphoma: results of a phase II study. J Clin Oncol. 2012;30(18):2190-6.<br />
+                        <br />
+                        2. Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Three-year survival
+                        results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed
+                        or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 1809,
+                        American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+                        <br />
+                        3. ADCETRIS®. Summary of Product Characteristics. 25 October 2012. Available at
+                        European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB/document_library/EPAR_-_Product_Information/human/002455/WC500135055.pdf.
+                        Accessed on 17 January 2014.<br />
+                        <br />
+                        4. FDA Approval for Brentuximab Vedotin. National Cancer Institute Web site. Available
+                        at: http://www.cancer.gov/cancertopics/druginfo/fda-brentuximabvedotin. Accessed
+                        on 17 January 2014.
+                    </div>
+                </div>
+                <!--slide 2 ending-->
+                <!--slide03 starting-->
+                <div id="slide3" style="display: none;">
+                    <!--Body -->
+                    <!--<div class="topic-bar">
+                        <div id="topic-title">The Visual Aid</div>
+                    </div>-->
+                    <div class="slidecontent" style="">
+                        <div class="playBody">
+                            <div id="s3txt1" style="display: none; " data-class="fadeInDown">
+                                <p style="padding-top:30px;padding-left:25px;">
+                                    Marketing Tool consists of:
+                                </p>
+                            </div>
+                            <br />
+
+                            <div style="padding-left: 40px">
+                                <div data-class="fadeInDown" id="s3bimg1" style="display: none;">
+                                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                    <p style="padding-left: 30px; text-align: left;">
+                                        Product Information
+                                    </p>
+
+                                </div>
+             
+
+                                <div data-class="fadeInDown" id="s3bimg2" style="display: none;">
+                                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                    <p style="padding-left: 30px; text-align: left;">
+                                        Core Messaging
+                                    </p>
+
+                                </div>
+  
+
+                                <div data-class="fadeInDown" id="s3bimg3" style="display: none;">
+                                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                    <p style="padding-left: 30px; text-align: left;">
+                                        Brand Logos
+                                    </p>
+
+                                </div>
+                            </div>
+                           
+
+                            <div id="s3txt2" style="display: none;" data-class="fadeInDown">
+                                <p style="padding-top: 10px;padding-left:25px;">
+                                   Information Guide contains:
+                                </p>
+                            </div>
+                            <br />
+
+                            <div style="padding-left: 40px">
+                                <div data-class="fadeInDown" id="s3bimg4" style="display: none;">
+                                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                    <p style="padding-left: 30px; text-align: left;">
+                                        Product efficacy
+                                    </p>
+
+                                </div>
+                 
+
+                                <div data-class="fadeInDown" id="s3bimg5" style="display: none;">
+                                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                    <p style="padding-left: 30px; text-align: left;">
+                                        Data from clinical trials
+                                    </p>
+
+                                </div>
+
+
+                                <div data-class="fadeInDown" id="s3bimg6" style="display: none;">
+                                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                    <p style="padding-left: 30px; text-align: left;">
+                                        Approved indications
+                                    </p>
+
+                                </div>
+                
+
+                                <div data-class="fadeInDown" id="s3bimg7" style="display: none;">
+                                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                    <p style="padding-left: 30px; text-align: left;">
+                                        Tolerability and safety
+                                    </p>
+
+                                </div>
+                        
+
+                                <div data-class="fadeInDown" id="s3bimg8" style="display: none;">
+                                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                    <p style="padding-left: 30px; text-align: left;">
+                                        Dosing and administration
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Transcript -->
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none; position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#">
+                            <img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center>
+                            <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                                Hide Transcript</button></center>
+                        <div class="transcript" style="">
+                            <p>
+                                The visual aid is a marketing tool used to support your presentation on the product information and the core messaging.
+                            </p>
+                            <p>
+                                It highlights information on product efficacy with the data from clinical trials, lists approved indications, and discusses tolerability and safety along with the dosing and administration. 
+                            </p>
+                        </div>
+                    </div>
+                    <div id="slide3ref" style="display: none;" class="slide3ref">
+                        <b>References:</b><br />
+                        <br />
+                        1. Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Brentuximab vedotin
+                        (SGN-35) in patients with relapsed or refractory systemic anaplastic large-cell
+                        lymphoma: results of a phase II study. J Clin Oncol. 2012;30(18):2190-6.<br />
+                        <br />
+                        2. Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Three-year survival
+                        results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed
+                        or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 1809,
+                        American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+                        <br />
+                        3. ADCETRIS®. Summary of Product Characteristics. 25 October 2012. Available at
+                        European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB/document_library/EPAR_-_Product_Information/human/002455/WC500135055.pdf.
+                        Accessed on 17 January 2014.<br />
+                        <br />
+                        4. FDA Approval for Brentuximab Vedotin. National Cancer Institute Web site. Available
+                        at: http://www.cancer.gov/cancertopics/druginfo/fda-brentuximabvedotin. Accessed
+                        on 17 January 2014.
+                    </div>
+                </div>
+                <!--slide03 ending-->
+                <!--slide 4 starting-->
+                <div id="slide4" style="display: none;">
+                    <!--<div class="topic-bar">
+                        <div id="topic-title">Target Patient Types</div>
+                    </div>-->
+                    <!--Body -->
+                    <div class="slidecontent" style="">
+                        <div id="s4hdn1">
+                            <div id="s4txt1" style="display: none; display: none;" data-class="fadeInDown">
+                                <p style="padding-top:30px;padding-left:25px;">
+                                    ADCETRIS is an innovative CD30-targeted therapy for two patient types:
+                                </p>
+                                <br />
+                            </div>
+                            <div style="padding-left: 40px">
+                                <div data-class="fadeInDown" id="s4bimg1" style="display: none;">
+                                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                    <p style="padding-left: 30px; text-align: left;">
+                                        Relapsed/refractory Hodgkins Lymphoma (HL)
+                                    </p>
+                                    <br />
+                                </div>
+                                <div data-class="fadeInDown" id="s4bimg2" style="display: none;">
+                                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                    <p style="padding-left: 30px; text-align: left;">
+                                        Relapsed/refractory Systemic anaplastic large cell lymphoma (sALCL)
+                                    </p>
+                                    <br />
+                                </div>
+                            </div>
+                        </div>
+                        <span id='Spanzoom'>
+                            <span class="helper"></span>
+                            <img data-class="fadeInDown" alt="zoom" id="img2" class="border" src="img/3.jpg" style="display: none; position: relative; width: 380px; height: 548px; margin: 0 auto;" />
+                        </span>
+                    </div>
+                    <!--Transcript-->
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none; position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#"></a>
+                         <img src="../common/img/showTrans.png" />
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center>
+                            <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                                Hide Transcript</button></center>
+                        <div class="transcript" style="">
+                            <p>
+                                ADCETRIS is indicated in two patient types:
+                            </p>
+							<ul>
+                            <li><span>
+                                Relapsed/refractory Hodgkins Lymphoma (HL)
+                            </li></span>
+                            <li><span>
+                                Relapsed/refractory Systemic anaplastic large cell lymphoma (sALCL)
+                              </li></span>
+							  </ul>
+							  <p>Note: approved indication may vary in your local market.</p>
+                        </div>
+                    </div>
+                    <div id="slide4ref" style="display: none" class="slide4ref">
+                        <b>References:</b><br />
+                        <br />
+                        <p>
+                            1. Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Brentuximab vedotin
+                            (SGN-35) in patients with relapsed or refractory systemic anaplastic large-cell
+                            lymphoma: results of a phase II study. J Clin Oncol. 2012;30(18):2190-6.<br />
+                        </p>
+                        <br />
+                        2. Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Three-year survival
+                        results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed
+                        or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 1809,
+                        American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+                        <br />
+                        3. ADCETRIS®. Summary of Product Characteristics. 25 October 2012. Available at
+                        European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB/document_library/EPAR_-_Product_Information/human/002455/WC500135055.pdf.
+                        Accessed on 17 January 2014.<br />
+                        <br />
+                        4. FDA Approval for Brentuximab Vedotin. National Cancer Institute Web site. Available
+                        at: http://www.cancer.gov/cancertopics/druginfo/fda-brentuximabvedotin. Accessed
+                        on 17 January 2014.
+                    </div>
+                </div>
+                <!--slide 4 ending-->
+                <!--slide 5 starting-->
+                <div id="slide5" style="display: none;">
+                    <!--<div class="topic-bar">
+                        <div id="topic-title">ADCETRIS Visual Aids</div>
+                    </div>
+                 <!--Body -->
+                    <div class="slidecontent" style="">
+                        <div class="playBody">
+                            <div id="s5hdn1">
+                                <div id="s5txt1" style="display: none; padding-left: 10px; padding-top: 20px;" data-class="fadeInDown">
+                                    <p style="text-align: left;">
+                                        Visual Aids:
+                                    </p>
+                                </div>
+                                <div style="padding-left: 40px">
+                                    <div data-class="fadeInDown" id="s5bimg1" style="display: none;">
+                                        <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                        <p style="padding-left: 40px; text-align: left;">
+                                            Relapsed/refractory Hodgkin Lymphoma (HL)                                       
+                                        </p>
+                                    </div>
+                                    <div data-class="fadeInDown" id="s5bimg2" style="display: none;">
+                                        <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                        <p style="padding-left: 30px; text-align: left;">
+                                            Relapsed/refractory systemic Anaplastic Large Cell Lymphoma (sALCL)
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+							     <div class="playBody">
+                                <div style="text-align: center;   height: 500px; overflow: hidden;">
+                                     <table style="width: 665px; margin: 0 auto; display:none" id="sltable"  cellpadding="10px">
+                                     <tr>
+                                        <td style="width: 50%;">
+                                            <img data-class="fadeInDown"  src="img/1.jpg"
+                                                id="Img21" style="width: 100%" />
+                                        </td>
+                                        <!--<td> <span id='imgZoom5'><img data-class="fadeInDown" class="border" src="img/screenshot/Younes-img-2.png" id="s6img2" style="height: 115px;"/></span></td>-->
+                                        <td style="width: 50%;">
+                                            <img  data-class="fadeInDown" src="img/Alcl.jpg"
+                                                id="Img22" style="width: 100%" /></td>
+                                    </tr>
+                                </table>
+                                    <div style="width:665px; margin:0 auto;">
+                                    <img data-class="fadeInDown" id="s5img1" class="border" src="img/1.jpg"
+                                        imgwidth="890" imgheight="1234" style="position: relative; margin: 0 auto; display: none" />
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="playBody">
+                                <div style="text-align: center; margin-top: 10px; width: 500px; height: 500px; overflow: hidden;
+                                    margin: -451px auto;">
+                                    <img data-class="fadeInDown" id="s5img2" class="border" src="img/Alcl.jpg"
+                                        imgwidth="890" imgheight="1234" style="position: relative; margin: 0 auto; display: none" />
+                                </div>
+                            </div>
+                        <div style=" width: 685px; margin :0 auto; ">
+                             <div id="s5table1" style=" position: absolute; width: 685px;  margin-top:110px; display:none;">
+                            <table style="width: 98%;" class="imagTab" cellpadding="10px">
+                                     <tr style="text-align:center;">
+                                        <td style="width: 50%;">
+                                            <img data-class="fadeInDown" onclick="callImageZoom(this)" src="img/1.jpg"
+                                                id="s5img1" style="height:480px;" />
+                                        </td>
+                                        <!--<td> <span id='imgZoom5'><img data-class="fadeInDown" class="border" src="img/screenshot/Younes-img-2.png" id="s6img2" style="height: 115px;"/></span></td>-->
+                                       
+                                    </tr>
+                                </table>
+                            </div>
+                            </div>
+			<div class="playBody">
+                            <div style="text-align: center; margin-top: -550px;">
+                                <span id='imgZoom5'>
+                                    <span class="helper"></span>
+                                    <img data-class="fadeInDown" id="s5imag1" class="border" src="img/1.jpg"
+                                        style="display: none; position: relative; width: 380px; height: 548px; margin: 0 auto;" />
+                                </span>
+                            </div>
+                        </div>
+							
+							<!-- <div class="zoomedDiv" style="text-align: center; position: relative; display: none; margin-top:80px;">
+                                <span id='imgZoom'>
+                                    <span class="helper"></span>
+                                    <img id="zoomShowImg" style="height: 545px; padding: 10px; margin: 0 auto;" />
+                                    <button type="button" onclick="$(this).parent().parent().hide();" class="btn btn-primary"
+                                        style="position: absolute; margin-top: -50px; z-index: 100; right: 0; margin-right: 20px;">
+                                        </button>
+                                </span>
+                            </div>
+							-->
+                           
+						    
+							
+							
+							
+							
+							
+							
+							
+							
+							
+                        </div>
+                    </div>
+                    <!--Transcript -->
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none; position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#">
+                            <img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center>
+                            <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                                Hide Transcript</button></center>
+                        <div class="transcript" style="">
+                            
+                            <p>
+                                Therefore, ADCETRIS has 2 visual aids, each relevant to the associated patient type
+                                and contains the specific messaging for each patient type.
+                            </p>
+                            <p>
+                                This module will focus on the patient with Relapsed/refractory Relapsed/refractory Hodgkin Lymphoma (HL) and the core messages that help to define ADCETRIS in this patient type.
+                            </p>
+                        </div>
+                    </div>
+                    <div id="slide5ref" style="display: none" class="slide5ref">
+                        <b>References:</b><br />
+                        <br />
+                        <p>
+                            1. Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Brentuximab vedotin
+                            (SGN-35) in patients with relapsed or refractory systemic anaplastic large-cell
+                            lymphoma: results of a phase II study. J Clin Oncol. 2012;30(18):2190-6.
+                        
+                        <br />
+                        <br />
+                        
+                            2. Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Three-year survival
+                            results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed
+                            or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 1809,
+                            American Society of Hematology, December, 2013, New Orleans, LA, USA.
+                       
+                        <br />
+                        <br />
+                        
+                            3. ADCETRIS®. Summary of Product Characteristics. 25 October 2012. Available at
+                            European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB/document_library/EPAR_-_Product_Information/human/002455/WC500135055.pdf.
+                            Accessed on 17 January 2014.
+                        <br />
+                        <br />
+                        
+                            4. FDA Approval for Brentuximab Vedotin. National Cancer Institute Web site. Available
+                            at: http://www.cancer.gov/cancertopics/druginfo/fda-brentuximabvedotin. Accessed
+                            on 17 January 2014.
+                        </p>
+                        <br />
+                    </div>
+                </div>
+                <!--slide 5 ending-->
+                <!--slide 6 starting-->
+                <div id="slide6" style="display: none;">
+                    <!-- <div class="topic-bar">
+                        <div id="topic-title">ADCETRIS Visual Aid - Relapsed/refractory Hodgkin Lymphoma</div>
+                    </div>-->
+                    <!--Body -->
+                    <div class="slidecontent" style="">
+                        <div class="playBody">
+                          <div style=" width: 685px; margin :0 auto; ">
+                           <div id="s6table1" style=" position: absolute; width: 685px;  display:none;">
+                            <table style="width: 98%;" class="imagTab" cellpadding="10px">
+                                    <tr>
+                                        <td>
+                                            <img data-class="fadeInDown" onclick="callImageZoom(this)" src="img/1_s.jpg" id="Img1" style="height: 115px;" /></td>
+                                        <!--<td><img data-class="fadeInDown" onclick="callImageZoom(this)" src="img/2.jpg" id="Img2" style="height: 115px;"/></td>-->
+                                        <td>
+                                            <img data-class="fadeInDown" onclick="callImageZoom(this)" src="img/3_S.jpg" id="Img3" style="height: 115px;" /></td>
+                                        <td>
+                                            <img data-class="fadeInDown" onclick="callImageZoom(this)" src="img/4_s.jpg" id="Img4" style="height: 115px;" /></td>
+                                        <td>
+                                            <img data-class="fadeInDown" onclick="callImageZoom(this)" src="img/5_s.jpg" id="Img5" style="height: 115px;" /></td>
+                                        <td>
+                                            <img data-class="fadeInDown" onclick="callImageZoom(this)" src="img/6_s.jpg" id="Img6" style="height: 115px;" /></td>
+                                    </tr>
+                                    <tr>
+
+                                        <td>
+                                            <img data-class="fadeInDown" onclick="callImageZoom(this)" src="img/7_s.jpg" id="Img7" style="height: 115px;" /></td>
+                                        <td>
+                                            <img data-class="fadeInDown" onclick="callImageZoom(this)" src="img/8_s.jpg" id="Img8" style="height: 115px;" /></td>
+                                        <td>
+                                            <img data-class="fadeInDown" onclick="callImageZoom(this)" src="img/9_s.jpg" id="Img9" style="height: 115px;" /></td>
+                                        <td>
+                                            <img data-class="fadeInDown" onclick="callImageZoom(this)" src="img/10_s.jpg" id="Img10" style="height: 115px;" /></td>
+                                        <td>
+                                            <img data-class="fadeInDown" onclick="callImageZoom(this)" src="img/11.jpg" id="Img11" style="height: 115px;" /></td>
+                                    </tr>
+                                    <tr>
+
+                                        <td>
+                                            <img data-class="fadeInDown" onclick="callImageZoom(this)" src="img/12_s.jpg" id="Img12" style="height: 115px;" /></td>
+                                        <td>
+                                            <img data-class="fadeInDown" onclick="callImageZoom(this)" src="img/13_s.jpg" id="Img13" style="height: 115px;" /></td>
+                                        <td>
+                                            <img data-class="fadeInDown" onclick="callImageZoom(this)" src="img/14_s.jpg" id="Img14" style="height: 115px;" /></td>
+                                        <td>
+                                            <img data-class="fadeInDown" onclick="callImageZoom(this)" src="img/15_n.jpg" id="Img15" style="height: 115px;" /></td>
+                                        <td>
+                                            <img data-class="fadeInDown" onclick="callImageZoom(this)" src="img/16_s.jpg" id="Img16" style="height: 115px;" /></td>
+                                    </tr>
+                                    <tr>
+
+                                        <td>
+                                            <img data-class="fadeInDown" onclick="callImageZoom(this)" src="img/17_s.jpg" id="Img17" style="height: 115px;" /></td>
+                                        <td>
+                                            <img data-class="fadeInDown" onclick="callImageZoom(this)" src="img/18_s.jpg" id="Img18" style="height: 115px;" /></td>
+                                        <td>
+                                            <img data-class="fadeInDown" onclick="callImageZoom(this)" src="img/19_s.jpg" id="Img19" style="height: 115px;" /></td>
+                                        <td>
+                                            <img data-class="fadeInDown" onclick="callImageZoom(this)" src="img/20_s.jpg" id="Img20" style="height: 115px;" /></td>
+                                    </tr>
+
+                                </table>
+
+                            </div>
+							</div>
+                           <div id="hdAtLast" style="position:relative; height: 550px; text-align: center;" >
+                                <img id="zoomShowImg" style="height:100%; display:none;" />
+
+                            </div>
+
+                            <div class="zoomedDiv" style="text-align: center; position: relative; display: none;">
+                                <span id='imgZoom'>
+                                    <span class="helper"></span>
+                                    <img id="zoomShowImg" style="height: 545px; padding: 10px; margin: 0 auto;" />
+                                    <button type="button" onclick="$(this).parent().parent().hide();" class="btn btn-primary" style="position: absolute; margin-top: -50px; z-index: 100; right: 0; margin-right: 20px;">
+                                        Close
+                                    </button>
+                                </span>
+                            </div>
+                             
+                            
+                        </div>
+                    </div>
+                    <!--Transcript -->
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none; position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#">
+                            <img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center>
+                            <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                                Hide Transcript</button></center>
+                        <div class="transcript">
+                            <p>
+                                To provide a high-level overview of the visual aid, let’s review the various sections:
+                            </p>
+                            <p>
+                                Page 3 provides the indication and targeted patient types.
+                            </p>
+                            <p>
+                                Page 4 highlights the mechanism of action.
+                            </p>
+                            <p>
+                                Page 5 provides the typical therapeutic pathway
+                            </p>
+                            <p>
+                                Page 6-13 covers the study results for patients with HL following autologous stem cell transplant.
+                            </p>
+                            <p>
+                                Page 14 turns our attention to the results for patients with HL following at least two prior therapies when ASCT or multi-agent chemotherapy is not a treatment option.
+                            </p>
+                            <p>
+                                Page 15 discusses adverse events
+                            </p>
+                            <p>
+                                Page 16 explains the dosing schedule
+                            </p>
+                            <p>
+                                Page 17 depicts the patient type and the number of cycles received for the results achieved.
+                            </p>
+                            <p>
+                                Page 18 lists the references 
+                            </p>
+                            <p>
+                                Page 19 is reserved for local prescribing information
+                            </p>
+                            <p>
+                                And the last page, page 20 defines the core messages with a summary of the supporting data.
+                            </p>
+                            <p>
+                                Let’s review each page in detail so you gain a comfort level navigating the visual aid.
+                            </p>
+                        </div>
+                    </div>
+                    <div id="slide6ref" style="display: none;" class="slide6ref">
+                        <b>References:</b><br />
+                        <br />
+                        1. Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Brentuximab vedotin
+                        (SGN-35) in patients with relapsed or refractory systemic anaplastic large-cell
+                        lymphoma: results of a phase II study. J Clin Oncol. 2012;30(18):2190-6.<br />
+                        <br />
+                        2. Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Three-year survival
+                        results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed
+                        or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 1809,
+                        American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+                        <br />
+                        3. ADCETRIS®. Summary of Product Characteristics. 25 October 2012. Available at
+                        European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB/document_library/EPAR_-_Product_Information/human/002455/WC500135055.pdf.
+                        Accessed on 17 January 2014.<br />
+                        <br />
+                        4. FDA Approval for Brentuximab Vedotin. National Cancer Institute Web site. Available
+                        at: http://www.cancer.gov/cancertopics/druginfo/fda-brentuximabvedotin. Accessed
+                        on 17 January 2014.
+                    </div>
+                </div>
+                <!--slide 6 ending-->
+                <!--slide 7 starting-->
+                <div id="slide7" style="display: none;">
+                    <!--<div class="topic-bar">
+                        <div id="topic-title">Product Information</div>
+                    </div>-->
+                    <div class="slidecontent" style="">
+                        <div class="playBody">
+                            <div id="s7txt1" style="display: none; padding-top: 20px;" data-class="fadeInDown">
+                                <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                <p style="text-align: left;">
+                                    ADCETRIS is a CD30-targeted antibody-drug conjugate indicated for the treatment of patients with relapsed/refractory hodgkin lymphoma
+                                </p>
+                                <br />
+                            </div>
+                            <div style="padding-left: 40px">
+                                <div data-class="fadeInDown" id="s7bimg1" style="display: none;">
+                                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                    <p style="padding-left: 30px; text-align: left;">
+                                        Following autologous stem cell transplant (ASCT) 
+                                    </p>
+                                </div>
+                                <div data-class="fadeInDown" id="s7bimg2" style="display: none;">
+                                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                    <p style="padding-left: 30px; text-align: left;">
+                                        Following at least two prior therapies when ASCT or multi-agent chemotherapy is not a treatment option
+                                    </p>
+                                </div>
+                            </div>
+                            <div data-class="fadeInDown" id="s7bimg3" style="display: none;">
+                                <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                <p style="text-align: left;">
+                                    It is also indicated for relapsed or refractory systemic anaplastic large cell lymphoma
+                                </p>
+                            </div>
+							
+							
+							
+							
+							
+						       <div class="playBody">
+                                <div style="text-align: center; margin-top: 10px; width: 500px; height: 500px; overflow: hidden;
+                                    margin: 10px auto;">
+                                    <img data-class="fadeInDown" id="s7img1" class="border" src="img/3.jpg"
+                                        imgwidth="890" imgheight="1234" style="position: relative; margin: 0 auto; display: none" />
+                                </div>
+                            </div>
+                            <div class="playBody">
+                                <div style="text-align: center; margin-top: 10px; width: 500px; height: 500px; overflow: hidden;
+                                    margin: -540px auto;">
+                                    <img data-class="fadeInDown" id="s7img2" class="border" src="img/4.jpg"
+                                        imgwidth="890" imgheight="1234" style="position: relative; margin: 0 auto; display: none" />
+                                </div>
+                            </div>
+                            <div style=" width: 685px; margin :0 auto; ">
+                             <div id="s7table1" data-class="fadeInDown" style=" position: absolute; width: 685px;  display:none;">
+                            <table style="width: 98%;" class="imagTab" cellpadding="10px">
+                                    <tr>
+                                        <td style="width: 50%;">
+                                            <img data-class="fadeInDown" onclick="callImageZoom(this)" src="img/3.jpg"
+                                                id="s7img1" style="width: 100%" />
+                                        </td>
+                                        <!--<td> <span id='imgZoom5'><img data-class="fadeInDown" class="border" src="img/screenshot/Younes-img-2.png" id="s6img2" style="height: 115px;"/></span></td>-->
+                                        <td style="width: 50%;">
+                                            <img onclick="callImageZoom(this)" data-class="fadeInDown" src="img/4.jpg"
+                                                id="s7img2" style="width: 100%" /></td>
+                                    </tr>
+                                </table>
+                            </div>
+							</div>
+                            <div class="zoomedDiv" style="text-align: center; position: relative; display: none;">
+                                <span id='imgZoom'>
+                                    <span class="helper"></span>
+                                    <img id="zoomShowImg" style="height: 545px; padding: 10px; margin: 0 auto;" />
+                                    <button type="button" onclick="$(this).parent().parent().hide();" class="btn btn-primary"
+                                        style="position: absolute; margin-top: -50px; z-index: 100; right: 0; margin-right: 20px;">
+                                        Close</button>
+                                </span>
+                            </div>
+							
+							
+                        </div>
+                    </div>
+                    <!--Transcript -->
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none; position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#">
+                            <img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center>
+                            <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                                Hide Transcript</button></center>
+                        <div class="transcript">
+                           
+                            <p>
+                                The therapeutic indications and mechanism of action are described on page 3 and 4.
+As discussed, there are 2 target patient types. ADCETRIS is indicated in relapsed or refractory Hodgkin lymphoma (HL) following autologous stem cell transplant (ASCT) or following at least two prior therapies when ASCT or multi-agent chemotherapy is not a treatment option. </p>
+<p>ADCETRIS is also indicated in relapsed or refractory systemic anaplastic large cell lymphoma.
+                            </p>
+                            <p>
+                                Note: approved indication may vary in your local market.
+                            </p>
+                            <p>
+                                ADCETRIS is a novel CD30-targeted antibody-drug conjugate that enables the potent cytotoxic drug monomethyl auristatin E (MMAE) to be delivered inside CD30+ cancer cells resulting in apoptosis (disintegration of the cell which leads to cell death).
+                            </p>
+                        </div>
+                    </div>
+                    <div id="slide7ref" style="display: none;" class="slide7ref">
+                        <b>References:</b><br />
+                        <br />
+                        1. Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Brentuximab vedotin
+                        (SGN-35) in patients with relapsed or refractory systemic anaplastic large-cell
+                        lymphoma: results of a phase II study. J Clin Oncol. 2012;30(18):2190-6.<br />
+                        <br />
+                        2. Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Three-year survival
+                        results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed
+                        or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 1809,
+                        American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+                        <br />
+                        3. ADCETRIS®. Summary of Product Characteristics. 25 October 2012. Available at
+                        European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB/document_library/EPAR_-_Product_Information/human/002455/WC500135055.pdf.
+                        Accessed on 17 January 2014.<br />
+                        <br />
+                        4. FDA Approval for Brentuximab Vedotin. National Cancer Institute Web site. Available
+                        at: http://www.cancer.gov/cancertopics/druginfo/fda-brentuximabvedotin. Accessed
+                        on 17 January 2014.
+                    </div>
+                </div>
+                <!--slide 7 ending-->
+                <!--slide 8 starting-->
+                <div id="slide8" style="display: none;">
+                    <!--<div class="topic-bar">
+                        <div id="topic-title">Treatment Course</div>
+                    </div>-->
+                    <div class="slidecontent" style="">
+                        <div class="playBody">
+                            <div id="s8hdn1">
+                                <div id="s8txt1" style="display: none; padding-left: 10px; padding-top: 20px;" data-class="fadeInDown">
+                                    <p style="text-align: left;">
+                                       The Unmet Need
+                                    </p>
+                                    <br />
+                                </div>
+                                <div id="s8bimg1" style="display: none; padding-left: 30px;" data-class="fadeInDown">
+                                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                    <p style="text-align: left;">
+                                        Patients with relapsed or refractory HL have a poor prognosis with no standard therapy in the relapsed or refractory setting
+                                    </p>
+                                </div>
+                            </div>
+							
+							
+							   <div class="playBody">
+                                <div style="text-align: center; margin-top: 10px; width: 500px; height: 500px; overflow: hidden;
+                                    margin: 10px auto;">
+                                    <img data-class="fadeInDown" id="s8img1" class="border" src="img/s8graph.jpg"
+                                        imgwidth="890" imgheight="1234" style="position: relative; margin: 0 auto; display: none" />
+                                </div>
+                            </div>
+                     
+                        <div class="playBody">
+                            <div style="text-align: center; margin-top: -550px;">
+                                <span id='imgZoom8'>
+                                    <span class="helper"></span>
+                                    <img data-class="fadeInDown" id="s8imag1" class="border" src="img/s8graph.jpg"
+                                        style="display: none; position: relative; width: 380px; height: 548px; margin: 0 auto;" />
+                                </span>
+                            </div>
+                        </div>
+							
+							
+					
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+                            
+                           
+                        </div>
+                    </div>
+                    <!--Transcript -->
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none; position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#">
+                            <img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center>
+                            <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                                Hide Transcript</button></center>
+                        <div class="transcript">
+                           
+                            <p>
+                                The graph in the visual aid depicts the typical course of treatment for relapsed or refractory Hodgkin Lymphoma patients.
+                            </p>
+                            <p>Patients with relapsed or refractory HL have a poor prognosis with no standard therapy options.</p>
+                        </div>
+                    </div>
+                    <div id="slide8ref" style="display: none" class="slide8ref">
+                        <b>References:</b><br />
+                        <br />
+                        1. Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Brentuximab vedotin
+                        (SGN-35) in patients with relapsed or refractory systemic anaplastic large-cell
+                        lymphoma: results of a phase II study. J Clin Oncol. 2012;30(18):2190-6.<br />
+                        <br />
+                        2. Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Three-year survival
+                        results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed
+                        or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 1809,
+                        American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+                        <br />
+                        3. ADCETRIS®. Summary of Product Characteristics. 25 October 2012. Available at
+                        European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB/document_library/EPAR_-_Product_Information/human/002455/WC500135055.pdf.
+                        Accessed on 17 January 2014.<br />
+                        <br />
+                        4. FDA Approval for Brentuximab Vedotin. National Cancer Institute Web site. Available
+                        at: http://www.cancer.gov/cancertopics/druginfo/fda-brentuximabvedotin. Accessed
+                        on 17 January 2014.
+                    </div>
+                </div>
+                <!--slide 8 ending-->
+                <!--slide 9 starting-->
+                <div id="slide9" style="display: none;">
+                    <!--<div class="topic-bar">
+                        <div id="topic-title">The Unmet Need</div>
+                    </div>-->
+                    <div class="slidecontent" style="">
+                        <div class="playBody">
+                            <br />
+                            <div id="s9hdn1">
+                                <div id="s9txt1" style="display: none;" data-class="fadeInDown">
+                                    <p style="text-align: left;">
+                                       Unmet Need – Relapsed HL patients who have failed ASCT
+                                    </p>
+
+                                </div>
+                                <div style="padding-left: 40px">
+                                    <div data-class="fadeInDown" id="s9bimg1" style="display: none;">
+                                        <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                        <p style="padding-left: 30px; text-align: left;">
+                                            Poor Prognosis
+                                        </p>
+
+                                    </div>
+                                    <div data-class="fadeInDown" id="s9bimg2" style="display: none;">
+                                        <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                        <p style="padding-left: 30px; text-align: left;">
+                                            If relapsed within 12 months, survival of 0.98 year
+                                        </p>
+
+                                    </div>
+
+                                    <div id="s9bimg3" style="display: none;" data-class="fadeInDown">
+                                        <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                        <p style="text-align: left;">
+                                            If relapsed after 12 months, survival of 2.26 years
+                                        </p>
+
+                                    </div>
+                                </div>
+                            </div>
+							
+							 <div class="playBody">
+                                <div style="text-align: center; margin-top: 10px; width: 500px; height: 500px; overflow: hidden;
+                                    margin: 0px auto;">
+                                    <img data-class="fadeInDown" id="s9img1" class="border" src="img/s9.jpg"
+                                        imgwidth="890" imgheight="1234" style="position: relative; margin: 0 auto; display: none" />
+                                </div>
+                            </div>
+                     
+                        <div class="playBody">
+                            <div style="text-align: center; margin-top: -550px;">
+                                <span id='imgZoom9'>
+                                    <span class="helper"></span>
+                                    <img data-class="fadeInDown" id="s9imag1" class="border" src="img/s9.jpg"
+                                        style="display: none; position: relative; width: 380px; height: 548px; margin: 0 auto;" />
+                                </span>
+                            </div>
+                        </div>
+							
+							
+							
+							
+
+                          
+							
+			           
+                        </div>
+                    </div>
+                    <!--Transcript -->
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none; position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#">
+                            <img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center>
+                            <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                                Hide Transcript</button></center>
+                        <div class="transcript">
+                            </br>
+                            <p>
+                                So let’s discuss the first indication of ADCETRIS which is for patients with relapsed or refractory HL following ASCT (relapsed after ASCT).
+                            </p>
+                            <p>
+                                Patients who relapse within 12 months after ASCT have post-progression survival of 0.98 years.
+                            </p>
+                            <p>
+                                Patients who relapse after 12 months have post-progression survival of 2.26 years.
+                            </p>
+                        </div>
+                    </div>
+                    <div id="slide9ref" style="display: none" class="slide9ref">
+                        <b>References:</b><br />
+                        <br />
+                        1. Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Brentuximab vedotin
+                        (SGN-35) in patients with relapsed or refractory systemic anaplastic large-cell
+                        lymphoma: results of a phase II study. J Clin Oncol. 2012;30(18):2190-6.<br />
+                        <br />
+                        2. Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Three-year survival
+                        results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed
+                        or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 1809,
+                        American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+                        <br />
+                        3. ADCETRIS®. Summary of Product Characteristics. 25 October 2012. Available at
+                        European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB/document_library/EPAR_-_Product_Information/human/002455/WC500135055.pdf.
+                        Accessed on 17 January 2014.<br />
+                        <br />
+                        4. FDA Approval for Brentuximab Vedotin. National Cancer Institute Web site. Available
+                        at: http://www.cancer.gov/cancertopics/druginfo/fda-brentuximabvedotin. Accessed
+                        on 17 January 2014.
+                    </div>
+                </div>
+                <!--slide 9 ending-->
+				
+				
+				  
+
+				
+				
+				
+				
+                <!--slide 10 starting-->
+                <div id="slide10" style="display: none;">
+                    <!--<div class="topic-bar">
+                        <div id="topic-title">Clinical Study Data</div>
+                    </div>-->
+                    <div class="slidecontent" style="">
+                        <div id="s10hdn1">
+                            <div class="playBody">
+
+                                <div  data-class="fadeInDown" id="s10txt1" style=" padding-top:20px;display:none;">
+                                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                    <p style="text-align: left;padding-left:10px;">
+
+
+                                        <!--Phase II Study-->ADCETRIS pivotal registration study in Hodgkin lymphoma
+                                    </p>
+
+                                </div>
+                                <div style="padding-left: 40px">
+                                    <div data-class="fadeInDown" id="s10bimg1" style="display: none; margin-top:20px;">
+                                        <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                        <p style="padding-left: 30px; text-align: left;">
+                                            Open-label, single-arm, multicenter (United States, Canada, & Europe) trial
+                                        </p>
+
+                                    </div>
+                                    <div data-class="fadeInDown" id="s10bimg2" style="display: none;">
+                                        <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                        <p style="padding-left: 30px; text-align: left;">
+                                            102 patients with HL who had relapsed following ASCT
+                                        </p>
+
+                                    </div>
+                                
+                                        <div data-class="fadeInDown" id="s10bimg3" style="display: none;">
+                                            <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                            <p style="padding-left: 30px; text-align: left;">
+                                                Single-agent ADCETRIS
+                                            </p>
+
+                                        </div>
+                                        <div data-class="fadeInDown" id="s10bimg4" style="display: none;">
+                                            <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                            <p style="padding-left: 30px; text-align: left;">
+                                                Dosing: 1.8 mg/kg of ADCETRIS intravenously over 30 minutes every 3 weeks
+                                            </p>
+
+                                        </div>
+                                        <div data-class="fadeInDown" id="s10bimg5" style="display: none;">
+                                            <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                            <p style="padding-left: 30px; text-align: left;">
+                                                Primary end point – Objective Response Rate (ORR)
+                                            </p>
+
+
+
+                                        </div>
+                                     </div>
+                                        <div id="s10txt2" style="display: none;" data-class="fadeInDown">
+                                            <p style="text-align: left;padding-left:10px;">
+                                                Patient Characteristics
+                                            </p>
+
+                                        </div>
+                                  <div style="padding-left: 40px">
+                                    <div data-class="fadeInDown" id="s10bimg6" style="display: none;">
+                                        <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                        <p style="padding-left: 30px; text-align: left;">
+                                            71% had primary refractory disease defined as:
+                                        </p>
+
+                                    </div>
+                                    <div style="padding-left: 60px">
+                                       <div data-class="fadeInDown" id="s10sub1" style="display: none;">
+                                        <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                        <p style="padding-left: 30px; text-align: left;">
+                                     	failed to obtain complete remission (CR) with front line therapy 
+                                        </p>
+
+                                    </div>
+                                         <div data-class="fadeInDown" id="s10sub2" style="display: none;">
+                                        <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                        <p style="padding-left: 30px; text-align: left;">
+                                       Relapsed within 3 months of front line therapy 
+                                        </p>
+
+                                    </div>  
+                                    </div>
+                                      <div data-class="fadeInDown" id="s10bimg7" style="display: none;">
+                                            <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                            <p style="padding-left: 30px; text-align: left;">
+                                                3.5 prior chemotherapy regimens as a median (range,1-13)
+                                            </p>
+
+                                        </div>
+                                    <div data-class="fadeInDown" id="s10bimg8" style="display: none;">
+                                        <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                        <p style="padding-left: 30px; text-align: left;">
+                                            6.7 months was the median time to relapse after ASCT
+                                        </p>
+
+                                    </div>
+                                 </div>
+
+
+                               
+                            </div>
+                        </div>
+						
+						<div class="playBody">
+                                <div style="text-align: center; margin-top: 10px; width: 500px; height: 500px; overflow: hidden;
+                                    margin: 10px auto;">
+                                    <img data-class="fadeInDown" id="s10img1" class="border" src="img/s10img1.jpg"
+                                        imgwidth="890" imgheight="1234" style="position: relative; margin: 0 auto; display: none" />
+                                </div>
+                            </div>
+                            <div class="playBody">
+                                <div style="text-align: center; margin-top: 10px; width: 500px; height: 500px; overflow: hidden;
+                                    margin: -525px auto;">
+                                    <img data-class="fadeInDown" id="s10img2" class="border" src="img/s10img2.jpg"
+                                        imgwidth="890" imgheight="1234" style="position: relative; margin: 0 auto; display: none" />
+                                </div>
+                            </div>
+                            <div style=" width: 685px; margin :0 auto; ">
+                             <div id="s10table1" data-class="fadeInDown" style="position: absolute; width: 685px;  display:none;">
+                            <table style="width: 98%;" class="imagTab" cellpadding="10px">
+                                    <tr>
+                                        <td style="width: 50%;">
+                                            <img data-class="fadeInDown" onclick="callImageZoom(this)" src="img/s10img1.jpg"
+                                                id="s10img1" style="width: 100%" />
+                                        </td>
+                                        <!--<td> <span id='imgZoom5'><img data-class="fadeInDown" class="border" src="img/screenshot/Younes-img-2.png" id="s6img2" style="height: 115px;"/></span></td>-->
+                                        <td style="width: 50%;">
+                                            <img onclick="callImageZoom(this)" data-class="fadeInDown" src="img/s10img2.jpg"
+                                                id="s10img2" style="width: 100%" /></td>
+                                    </tr>
+                                </table>
+                            </div>
+							</div>
+                            <div class="zoomedDiv" style="text-align: center; position: relative; display: none;">
+                                <span id='imgZoom'>
+                                    <span class="helper"></span>
+                                    <img id="zoomShowImg" style="height: 545px; padding: 10px; margin: 0 auto;" />
+                                    <button type="button" onclick="$(this).parent().parent().hide();" class="btn btn-primary"
+                                        style="position: absolute; margin-top: -50px; z-index: 100; right: 0; margin-right: 20px;">
+                                        Close</button>
+                                </span>
+                            </div>
+						
+						
+						
+						
+						
+
+						 
+                            
+
+                          
+                       
+						
+                           
+                    </div>
+                    <!--Transcript -->
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none; position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#">
+                            <img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center>
+                            <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                                Hide Transcript</button></center>
+                        <div class="transcript">
+                            
+                            <p>
+                               The efficacy of ADCETRIS in patients with HL who relapsed after ASCT was evaluated in one open-label, single-arm, multicenter trial. One hundred two patients were treated with 1.8 mg/kg of ADCETRIS intravenously over 30 minutes every 3 weeks. 
+                            </p>
+                            <p>
+                                The primary end point measured was the objective response rate (ORR).
+                            </p>
+                            <p>
+                               The majority of patients (71%) had primary refractory disease, defined as failure to obtain a CR with front line therapy, or relapse within 3 months of front line therapy
+                            </p>
+                            
+                         <p>Patients were heavily pre-treated with a median of 3.5 prior chemotherapy regimens</p>
+                       <p>A high proportion of patients relapsed early after ASCT, with a median time to relapse of 6.7 months</p>
+                                
+                        </div>
+                    </div>
+                    <div id="slide10ref" style="display: none" class="slide10ref">
+                        <b>References:</b><br />
+                        <br />
+                        1. Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Brentuximab vedotin
+                        (SGN-35) in patients with relapsed or refractory systemic anaplastic large-cell
+                        lymphoma: results of a phase II study. J Clin Oncol. 2012;30(18):2190-6.<br />
+                        <br />
+                        2. Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Three-year survival
+                        results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed
+                        or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 1809,
+                        American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+                        <br />
+                        3. ADCETRIS®. Summary of Product Characteristics. 25 October 2012. Available at
+                        European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB/document_library/EPAR_-_Product_Information/human/002455/WC500135055.pdf.
+                        Accessed on 17 January 2014.<br />
+                        <br />
+                        4. FDA Approval for Brentuximab Vedotin. National Cancer Institute Web site. Available
+                        at: http://www.cancer.gov/cancertopics/druginfo/fda-brentuximabvedotin. Accessed
+                        on 17 January 2014.
+                    </div>
+                </div>
+                <!--slide 10 ending-->
+                <div id="slide11" style="display: none;">
+                    <!--  <div class="topic-bar">
+                    <div id="topic-title">Clinical Study Data</div>
+                </div>-->
+                    <div class="slidecontent" style="">
+                        <div id="s11hdn1">
+                            <div id="s11txt1" style="display: none; padding-top: 20px;" data-class="fadeInDown">
+                                <p style="text-align: left;padding-left:15px;">
+                                    Study Review:
+                                </p>
+                                <br />
+                            </div>
+                            <div id="s11txt2" style="display: none; margin-left:20px; margin-top:20px;" data-class="fadeInDown">
+                                <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                <p style="text-align: left;padding-left:15px;">
+                                    Independent review facility performed efficacy evaluations which included:
+                                </p>
+                            </div>
+                            <div style="padding-left: 40px">
+                            <div data-class="fadeInDown" id="s11bimg3" style="display: none;">
+                                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                    <p style="padding-left: 30px; text-align: left;">
+                                        Duration of response
+                                    </p>
+                                </div>
+                                <div data-class="fadeInDown" id="s11bimg1" style="display: none;">
+                                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                    <p style="padding-left: 30px; text-align: left;">
+                                        Overall response rate (ORR)= CR + PR Complete remission (CR) Partial remission (PR)
+                                    </p>
+                                </div>
+                                <div style="padding-left: 60px">
+                                    <div data-class="fadeInDown" id="s11bimg2" style="display: none;">
+                                        <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                        <p style="padding-left: 30px; text-align: left;">
+                                            ORR = CR + PR Complete remission (CR) Partial remission (PR)
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div id="s11txt3" style="display: none; margin-left:20px; margin-top:20px;" data-class="fadeInDown">
+                                <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                <p style="text-align: left;">
+                                    Evaluation done as per the Revised Response Criteria for Malignant Lymphoma using
+                                </p>
+
+                            </div>
+                            <div style="padding-left: 40px">
+                                <div data-class="fadeInDown" id="s11bimg4" style="display: none;">
+                                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                    <p style="padding-left: 30px; text-align: left;text-decoration-color:darkgray;">
+                                        Clinical assessment<!--34% (n=35) CR (Complete Remission)-->
+                                    </p>
+
+                                </div>
+                                <div data-class="fadeInDown" id="s11bimg5" style="display: none;">
+                                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                    <p style="padding-left: 30px; text-align: left;">
+                                       CT scans <!--40% (n=41) PR (Partial Remission)-->
+                                    </p>
+
+                                </div>
+                                <div data-class="fadeInDown" id="s11bimg6" style="display: none;padding-top:0px;">
+                                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                    <p style="padding-left: 30px; text-align: left;">
+                                        PET scans<!--75% (n=76) ORR (Objective Response Rate)-->
+                                    </p>
+                                </div>
+                                <div data-class="fadeInDown" id="s11bimg7" style="display: none;">
+                                    <p style="text-align: left;">
+                                        Median Duration of Response
+                                    </p>
+                                </div>
+                                <div data-class="fadeInDown" id="s11bimg8" style="display: none; padding-left: 40px;">
+                                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                    <p style="padding-left: 30px; text-align: left;">
+                                        6.7 months = ORR
+                                    </p>
+                                </div>
+                                <div data-class="fadeInDown" id="s11bimg9" style="display: none; padding-left: 40px;">
+                                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                    <p style="padding-left: 30px; text-align: left;">
+                                        20.5 months = CR
+                                    </p>
+                                </div>
+                               </div>  
+                              
+                            </div>
+                          
+                           	<div class="playBody">
+                                <div style="text-align: center; margin-top: 10px; width: 500px; height: 500px; overflow: hidden;
+                                    margin: 10px auto;">
+                                    <img data-class="fadeInDown" id="s11img1" class="border" src="img/9.jpg"
+                                        imgwidth="890" imgheight="1234" style="position: relative; margin: 0 auto; display: none" />
+                                </div>
+                            </div>
+                            <div class="playBody">
+                                <div style="text-align: center; margin-top: 10px; width: 500px; height: 500px; overflow: hidden;
+                                    margin: -540px auto;">
+                                    <img data-class="fadeInDown" id="s11img2" class="border" src="img/10_s.jpg"
+                                        imgwidth="890" imgheight="1234" style="position: relative; margin: 0 auto; display: none" />
+                                </div>
+                            </div>
+                            <div style=" width: 685px; margin :0 auto; ">
+                             <div id="s11table1" data-class="fadeInDown" style="position: absolute; width: 685px;  display:none;">
+                            <table style="width: 98%;" class="imagTab" cellpadding="10px">
+                                    <tr>
+                                        <td style="width: 50%;">
+                                            <img data-class="fadeInDown" onclick="callImageZoom(this)" src="img/9.jpg"
+                                                id="s11img1" style="width: 100%" />
+                                        </td>
+                                      
+                                        <td style="width: 50%;">
+                                            <img onclick="callImageZoom(this)" data-class="fadeInDown" src="img/10_s.jpg"
+                                                id="s11img2" style="width: 100%" /></td>
+                                    </tr>
+                                </table>
+                            </div>
+							</div>
+                            <div class="zoomedDiv" style="text-align: center; position: relative; display: none;">
+                                <span id='imgZoom'>
+                                    <span class="helper"></span>
+                                    <img id="zoomShowImg" style="height: 545px; padding: 10px; margin: 0 auto;" />
+                                    <button type="button" onclick="$(this).parent().parent().hide();" class="btn btn-primary"
+                                        style="position: absolute; margin-top: -50px; z-index: 100; right: 0; margin-right: 20px;">
+                                        Close</button>
+                                </span>
+                            </div>
+                       
+                    </div>
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none; position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#">
+                            <img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center>
+                            <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                                Hide Transcript</button></center>
+                        <div class="transcript" style="">
+                            <p>
+                                An independent review facility (IRF) performed efficacy evaluations which included objective response rate (ORR) and duration of response.
+                            </p>
+                            <p>
+                                ORR is defined as complete remissions [CR] plus partial remissions [PR].
+                            </p>
+                            <p>
+                                The assessment used clinical and radiographic measures including CT scans (computed tomography) and PET scans (positron-emission tomography) as defined in the 2007 Revised Response Criteria for Malignant Lymphoma (modified). <sup>1</sup>
+                            </p>
+                            <p>
+                                Although the patients that were enrolled in this study had a poor prognosis and had previously received multiple chemotherapy regimens, 
+                               75% achieved objective response rates.  
+                               34% achieved complete remission and 40% achieved partial remission.
+                               Please note that ORR does not appear to equal CR plus PR due to rounding of numbers. 
+                               Number of patients achieving responses: ORR n=76; CR n=35; PR n=41.
+                            </p>
+                            <p>
+                                The median duration of objective response was 6.7 months and the median duration of response in patients who achieved a complete remission was 20.5 months. 
+                            </p>
+                        </div>
+                    </div>
+                    <div id="slide11ref" style="display: none" class="slide11ref">
+                        <b>References:</b><br />
+                        <br />
+                        1. Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Brentuximab vedotin
+                        (SGN-35) in patients with relapsed or refractory systemic anaplastic large-cell
+                        lymphoma: results of a phase II study. J Clin Oncol. 2012;30(18):2190-6.<br />
+                        <br />
+                        2. Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Three-year survival
+                        results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed
+                        or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 1809,
+                        American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+                        <br />
+                        3. ADCETRIS®. Summary of Product Characteristics. 25 October 2012. Available at
+                        European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB/document_library/EPAR_-_Product_Information/human/002455/WC500135055.pdf.
+                        Accessed on 17 January 2014.<br />
+                        <br />
+                        4. FDA Approval for Brentuximab Vedotin. National Cancer Institute Web site. Available
+                        at: http://www.cancer.gov/cancertopics/druginfo/fda-brentuximabvedotin. Accessed
+                        on 17 January 2014.
+                    </div>
+                </div>
+				 <div id="slide9a" style="display: none;">
+                    <!--  <div class="topic-bar">
+                    <div id="topic-title">Knowledge Check</div>
+                </div>-->
+
+
+                    <div class="slidecontent" style="">
+                        <div class="playBody">
+                            <div style="padding-left: 20px">
+                                <br />
+                                <p data-class="fadeInDown" style="display: none;" id="S17P1">The objective response (OR) and complete remission (CR) observed in patients treated with ADCETRIS was</p>
+                                <br />
+                                <input type="hidden" id="Answer" value="1"  qid="1" />
+                                <input type="hidden" id="Percentage" value="25" />
+                                <div id="radio1" style="padding: 10px 10px 10px 25px; display: none;">
+                                    <input name="ratio2" value="1" type="radio" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="margin-left: 55px;">75% and 34% respectively</p>
+                                </div>
+                                <div id="radio2" style="padding: 10px 10px 10px 25px; display: none;">
+                                    <input name="ratio2" value="2" type="radio" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="margin-left: 55px;">65% and 34% respectively</p>
+                                </div>
+                                <div id="radio3" style="padding: 10px 10px 10px 25px; display: none;">
+                                    <input name="ratio2" value="3" type="radio" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="margin-left: 55px;">34% and 75% respectively</p>
+                                </div>
+                                <div id="radio4" style="padding: 10px 10px 10px 25px; display: none;">
+                                    <input name="ratio2" value="4" type="radio" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="margin-left: 55px;">34% and 65% respectively</p>
+                                </div>
+                                <div style="margin-left: 470px;">
+                                    <div>
+                                        <input id="Button1" onclick="onclickAnswer(this);" type="button" class="btn btn-primary" value="Submit" style="width: 100px; margin-right: 25px; display: none" />
+                                    </div>
+                                    <br />
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent">
+                        <a href="#">
+                            <img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center> <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);" > Hide Transcript</button></center>
+
+                        <div class="transcript" style="">
+                            <p>
+                                Please take a moment to answer a question. Please select the best answer and click submit to continue
+                            </p>
+
+
+                            
+                        </div>
+                    </div>
+                    <div id="slide9aref" style="display: none" class="slide9aref">
+                        <b>No References:</b><br />
+                        <br />
+
+
+
+                    </div>
+
+                </div>
+				
+				 
+				
+				
+				
+				
+				
+				
+                <div id="slide12" style="display: none;">
+                    <!--  <div class="topic-bar">
+                    <div id="topic-title">Clinical Study Data</div>
+                </div>-->
+                    <div class="slidecontent" style="">
+                        <div id="s12txt1" style="display: none; padding-top: 20px;" data-class="fadeInDown">
+                            <p style="text-align: left;">
+                                Why ADCETRIS?
+                            </p>
+                            <br />
+                        </div>
+                        <div id="s12dbimg1" style="padding-left: 20px">
+                            <div data-class="fadeInDown" id="s12bimg1" style="display: none;">
+                                <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                <p style="padding-left: 30px; text-align: left;">
+                                    Median overall survival was 40.5 months
+                                </p>
+                            </div>
+                            <div data-class="fadeInDown" id="s12bimg2" style="display: none;">
+                                <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                <p style="padding-left: 30px; text-align: left;">
+                                    21.7 month median Progression-free survival 
+                                </p>
+                            </div>
+                            <div data-class="fadeInDown" id="s12bimg3" style="display: none; padding-left: 40px;">
+                                <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                <p style="padding-left: 30px; text-align: left;">
+                                    ­	notably longer for complete remission patients. 
+                                </p>
+                                <br />
+                                <br />
+                            </div>
+                        </div>
+                        
+                        <div style="padding-left: 20px">
+                            <div data-class="fadeInDown" id="s12bimg4" style="display: none;">
+                                <table border="1">
+                                    <tr>
+                                        <td>
+                                            <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                            <p style="padding-left: 30px; text-align: left;">
+                                                Because ADCETRIS offers significant efficacy.
+                                            </p>
+                                        </td>
+                                    </tr>
+                                </table>
+
+
+                            </div>
+                        </div>
+                       
+                         <div class="playBody">
+                                <div style="text-align: center; margin-top: 10px; width: 500px; height: 500px; overflow: hidden;
+                                    margin: 10px auto;">
+                                    <img data-class="fadeInDown" id="s12img1" class="border" src="img/11.jpg"
+                                        imgwidth="890" imgheight="1234" style="position: relative; margin: 0 auto; display: none" />
+                                </div>
+                            </div>
+                            <div class="playBody">
+                                <div style="text-align: center; margin-top: 10px; width: 500px; height: 500px; overflow: hidden;
+                                    margin: -540px auto;">
+                                    <img data-class="fadeInDown" id="s12img2" class="border" src="img/12.jpg"
+                                        imgwidth="890" imgheight="1234" style="position: relative; margin: 0 auto; display: none" />
+                                </div>
+                            </div>
+                            <div style=" width: 685px; margin :0 auto; ">
+                             <div id="s12table1" style="position: absolute; width: 685px;  display:none;">
+                            <table style="width: 98%;" class="imagTab" cellpadding="10px">
+                                    <tr>
+                                        <td style="width: 50%;">
+                                            <img data-class="fadeInDown" onclick="callImageZoom(this)" src="img/11.jpg"
+                                                id="s12img1" style="width: 100%" />
+                                        </td>
+                                        <!--<td> <span id='imgZoom5'><img data-class="fadeInDown" class="border" src="img/screenshot/Younes-img-2.png" id="s6img2" style="height: 115px;"/></span></td>-->
+                                        <td style="width: 50%;">
+                                            <img onclick="callImageZoom(this)" data-class="fadeInDown" src="img/12.jpg"
+                                                id="s12img2" style="width: 100%" /></td>
+                                    </tr>
+                                </table>
+                            </div>
+							</div>
+                            <div class="zoomedDiv" style="text-align: center; position: relative; display: none;">
+                                <span id='imgZoom'>
+                                    <span class="helper"></span>
+                                    <img id="zoomShowImg" style="height: 545px; padding: 10px; margin: 0 auto;" />
+                                    <button type="button" onclick="$(this).parent().parent().hide();" class="btn btn-primary"
+                                        style="position: absolute; margin-top: -50px; z-index: 100; right: 0; margin-right: 20px;">
+                                        Close</button>
+                                </span>
+                            </div>
+                    </div>
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none; position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#">
+                            <img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center>
+                            <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                                Hide Transcript</button></center>
+                        <div class="transcript" style="text-align: justify;">
+                            <p>
+                                Why ADCETRIS?</p>
+                                <p>The rates are impressive for a single-agent therapy after the failure of prior combination chemotherapy and ASCT.</p>
+                               <p> The median overall survival was 40.5 months and patients that achieved Complete Remission had a 21.7 month median progression-free survival based on a 3 year follow up of all patients.
+                                These graphs depict the median overall survival rates and median progression free survival in patients with complete remission.
+                            </p>
+                            <p>
+                                So why ADCETRIS? Because ADCETRIS offers significant efficacy.
+                            </p>
+                        </div>
+                    </div>
+                    <div id="slide12ref" style="display: none" class="slide12ref">
+                        <b>References:</b><br />
+                        <br />
+                        1. Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Brentuximab vedotin
+                        (SGN-35) in patients with relapsed or refractory systemic anaplastic large-cell
+                        lymphoma: results of a phase II study. J Clin Oncol. 2012;30(18):2190-6.<br />
+                        <br />
+                        2. Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Three-year survival
+                        results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed
+                        or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 1809,
+                        American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+                        <br />
+                        3. ADCETRIS®. Summary of Product Characteristics. 25 October 2012. Available at
+                        European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB/document_library/EPAR_-_Product_Information/human/002455/WC500135055.pdf.
+                        Accessed on 17 January 2014.<br />
+                        <br />
+                        4. FDA Approval for Brentuximab Vedotin. National Cancer Institute Web site. Available
+                        at: http://www.cancer.gov/cancertopics/druginfo/fda-brentuximabvedotin. Accessed
+                        on 17 January 2014.
+                    </div>
+                </div>
+				
+				<div id="slide12a" style="display: none;">
+                    <!--  <div class="topic-bar">
+                    <div id="topic-title">Knowledge Check</div>
+                </div>-->
+
+
+                    <div class="slidecontent" style="">
+                        <div class="playBody">
+                            <div style="padding-left: 20px">
+                                <br />
+                                <p data-class="fadeInDown" style="display: none;" id="S17P1">The response observed in patients who are not eligible for ASCT or multi-agent chemotherapy was</p>
+                                <br />
+                                <input type="hidden" id="Answer" value="2"  qid="2" />
+                                <input type="hidden" id="Percentage" value="25" />
+                                <div id="radio1" style="padding: 10px 10px 10px 25px; display: none;">
+                                    <input name="ratio2" value="1" type="radio" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="margin-left: 55px;">PR: 54% and CR: 22%</p>
+                                </div>
+                                <div id="radio2" style="padding: 10px 10px 10px 25px; display: none;">
+                                    <input name="ratio2" value="2" type="radio" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="margin-left: 55px;">OR: 54% and CR: 22%</p>
+                                </div>
+                                <div id="radio3" style="padding: 10px 10px 10px 25px; display: none;">
+                                    <input name="ratio2" value="3" type="radio" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="margin-left: 55px;">SD: 22% and CR: 54%</p>
+                                </div>
+                                <div id="radio4" style="padding: 10px 10px 10px 25px; display: none;">
+                                    <input name="ratio2" value="4" type="radio" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="margin-left: 55px;">SD: 22% and PR: 54%</p>
+                                </div>
+                                <div style="margin-left: 470px;">
+                                    <div>
+                                        <input id="Button1" onclick="onclickAnswer(this);" type="button" class="btn btn-primary" value="Submit" style="width: 100px; margin-right: 25px; display: none" />
+                                    </div>
+                                    <br />
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent">
+                        <a href="#">
+                            <img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center> <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);" > Hide Transcript</button></center>
+
+                        <div class="transcript" style="">
+                            <p>
+                                Please take a moment to answer a question. Please select the best answer and click submit to continue
+                            </p>
+
+
+                            
+                        </div>
+                    </div>
+                    <div id="slide12aref" style="display: none" class="slide12aref">
+                        <b>No References:</b><br />
+                        <br />
+
+
+
+                    </div>
+
+                </div>
+				
+				
+				
+				
+				
+                <div id="slide13" style="display: none;">
+                    <!--  <div class="topic-bar">
+                    <div id="topic-title">Adverse Events</div>
+                </div>-->
+                    <div class="slidecontent" style="">
+                        <div id="s13txt1" style="display: none; padding-top: 10px;" data-class="fadeInDown">
+                            <p style="text-align: left;">
+                                ADCETRIS significantly prolonged progression-free survival compared to prior therapy.
+                            </p>
+                            <br />
+                        </div>
+                        <div id="s13dbimg1" style="padding-left: 20px;padding-top:25px;">
+                            <div data-class="fadeInDown" id="s13bimg1" style="display: none;">
+                               
+                                <p style="text-align: left;">
+                                    Correlated survival analysis
+                                </p>
+                        
+                            </div>
+                            <div data-class="fadeInDown" id="s13bimg2" style="display: none;padding-left:40px;">
+                                <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 8px;" />
+                                <p style="text-align: left;">
+                                    equivalent to 60% decrease in the risk of progression or death 
+                                </p>
+                    
+                            </div>
+							  </div>
+							
+							 <div class="playBody">
+                                <div style="text-align: center; margin-top: 10px; width: 500px; height: 500px; overflow: hidden;
+                                    margin: -13px auto;">
+                                    <img data-class="fadeInDown" id="s13img1" class="border" src="img/13.jpg"
+                                        imgwidth="890" imgheight="1234" style="position: relative; margin: 0 auto; display: none" />
+                                </div>
+                            </div>
+                     
+                        <div class="playBody">
+                            <div style="text-align: center; margin-top: -540px;">
+                                <span id='imgZoom13'>
+                                    <span class="helper"></span>
+                                    <img data-class="fadeInDown" id="s13imag1" class="border" src="img/13.jpg"
+                                        style="display: none; position: relative; width: 380px; height: 548px; margin: 0 auto;" />
+                                </span>
+                            </div>
+                        </div>
+							
+							
+							
+                            
+                      
+                    </div>
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none; position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#">
+                            <img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center>
+                            <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                                Hide Transcript</button></center>
+                        <div class="transcript" style="">
+                            <p style="text-align: justify;">
+                                ADCETRIS significantly prolonged progression-free survival compared to prior therapy.
+                            </p>
+                            <p style="text-align: justify;">
+                                Using a correlated survival analysis, 
+                               the data was equivalent to a 60% decrease in the risk of progression or death for patients after initiating ADCETRIS.
+                            </p>
+                        </div>
+                    </div>
+                    <div id="slide13ref" style="display: none" class="slide13ref">
+                        <b>References:</b><br />
+                        <br />
+                        1. Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Brentuximab vedotin
+                        (SGN-35) in patients with relapsed or refractory systemic anaplastic large-cell
+                        lymphoma: results of a phase II study. J Clin Oncol. 2012;30(18):2190-6.<br />
+                        <br />
+                        2. Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Three-year survival
+                        results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed
+                        or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 1809,
+                        American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+                        <br />
+                        3. ADCETRIS®. Summary of Product Characteristics. 25 October 2012. Available at
+                        European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB/document_library/EPAR_-_Product_Information/human/002455/WC500135055.pdf.
+                        Accessed on 17 January 2014.<br />
+                        <br />
+                        4. FDA Approval for Brentuximab Vedotin. National Cancer Institute Web site. Available
+                        at: http://www.cancer.gov/cancertopics/druginfo/fda-brentuximabvedotin. Accessed
+                        on 17 January 2014.
+                    </div>
+                </div>
+				
+				
+				<div id="slide12b" style="display: none;">
+                    <!--  <div class="topic-bar">
+                    <div id="topic-title">Knowledge Check</div>
+                </div>-->
+
+
+                    <div class="slidecontent" style="">
+                        <div class="playBody">
+                            <div style="padding-left: 20px">
+                                <br />
+                                <p data-class="fadeInDown" style="display: none;" id="S17P1">The recommended dose of ADCETRIS is 1.8 mg/kg. However, dose delay or dose reduction to 1.2 mg/kg is recommended in case of grade 2 or 3 peripheral neuropathy</p>
+                                <br />
+                                <input type="hidden" id="Answer" value="1"  qid="3" />
+                                <input type="hidden" id="Percentage" value="25" />
+                                <div id="radio1" style="padding: 10px 10px 10px 25px; display: none;">
+                                    <input name="ratio2" value="1" type="radio" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="margin-left: 55px;">True</p>
+                                </div>
+                                <div id="radio2" style="padding: 10px 10px 10px 25px; display: none;">
+                                    <input name="ratio2" value="2" type="radio" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="margin-left: 55px;">False</p>
+                                </div>
+                               
+                               
+                                <div style="margin-left: 470px;">
+                                    <div>
+                                        <input id="Button1" onclick="onclickAnswer(this);" type="button" class="btn btn-primary" value="Submit" style="width: 100px; margin-right: 25px; display: none" />
+                                    </div>
+                                    <br />
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent">
+                        <a href="#">
+                            <img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center> <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);" > Hide Transcript</button></center>
+
+                        <div class="transcript" style="">
+                            <p>
+                                Please take a moment to answer a question. Please select the best answer and click submit to continue
+                            </p>
+
+
+                            
+                        </div>
+                    </div>
+                    <div id="slide12aref" style="display: none" class="slide12aref">
+                        <b>No References:</b><br />
+                        <br />
+
+
+
+                    </div>
+
+                </div>
+				
+                <div id="slide14" style="display: none;">
+                    <!--  <div class="topic-bar">
+                    <div id="topic-title">Dosing</div>
+                </div>-->
+                    <div class="slidecontent" style="">
+                        <div id="s14txt1" style="display: none; padding-top: 10px; padding-left: 15px; " data-class="fadeInDown">
+                            <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                            <p style="text-align: left;">
+<!--In patients without prior ASCT-->Efficacy of Adcetris in patients who relapsed after at least 2 prior chemotherapy regimens when
+                            </p>
+                           
+                        </div>
+                        <div style="">
+                            <div data-class="fadeInDown" id="s14bimg1" style="display: none; padding-left:50px;">
+                                <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                <p style="padding-left: 30px; text-align: left;">
+                                    Not eligible for ASCT
+                                </p>
+                                
+                            </div>
+                            <div data-class="fadeInDown" id="s14bimg2" style="display: none; padding-left:50px;">
+                                <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                <p style="padding-left: 30px; text-align: left;">
+                                   <!-- Has failed multiple prior chemotherapy regimens-->Multi-agent chemotherapy is not a treatment option
+                                </p>
+                                <br />
+                            </div>
+                            <div class="playBody">
+                                <div style="text-align: center; margin-top: 10px; width: 500px; height: 500px; overflow: hidden;
+                                    margin: 10px auto;">
+                                    <img data-class="fadeInDown" id="s14img1" class="border" src="img/14.jpg"
+                                        imgwidth="890" imgheight="1234" style="position: relative; margin: 0 auto; display: none" />
+                                </div>
+                            </div>
+                     
+                        <div class="playBody">
+                            <div style="text-align: center; margin-top: -550px;">
+                                <span id='imgZoom14'>
+                                    <span class="helper"></span>
+                                    <img data-class="fadeInDown" id="s14imag1" class="border" src="img/14.jpg"
+                                        style="display: none; position: relative; width: 380px; height: 548px; margin: 0 auto;" />
+                                </span>
+                            </div>
+                        </div>
+                            
+                        </div>
+                    </div>
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none; position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#">
+                            <img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center>
+                            <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                                Hide Transcript</button></center>
+                        <div class="transcript" >
+                            <p>
+                                Now, let’s discuss the second indication of ADCETRIS which is for relapse or refractory HL patients following at least two prior therapies when ASCT or multi-agent chemotherapy is not a treatment option. 
+                                 These patients do not have any other treatment options. 
+                            </p>
+                            <p>
+                                The phase I and NPP (Named Patient Program) studies reported that significant response rates were achieved with ADCETRIS.  
+                               54% of patients attained an objective response rate (ORR) and 22% achieved complete remission (CR).
+
+                            </p>
+                            <p>
+                                ADCETRIS provides significant response rates in patients without prior ASCT.
+                            </p>
+                        </div>
+                    </div>
+                    <div id="slide14ref" style="display: none" class="slide14ref">
+                        <b>References:</b><br />
+                        <br />
+                        1. Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Brentuximab vedotin
+                        (SGN-35) in patients with relapsed or refractory systemic anaplastic large-cell
+                        lymphoma: results of a phase II study. J Clin Oncol. 2012;30(18):2190-6.<br />
+                        <br />
+                        2. Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Three-year survival
+                        results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed
+                        or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 1809,
+                        American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+                        <br />
+                        3. ADCETRIS®. Summary of Product Characteristics. 25 October 2012. Available at
+                        European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB/document_library/EPAR_-_Product_Information/human/002455/WC500135055.pdf.
+                        Accessed on 17 January 2014.<br />
+                        <br />
+                        4. FDA Approval for Brentuximab Vedotin. National Cancer Institute Web site. Available
+                        at: http://www.cancer.gov/cancertopics/druginfo/fda-brentuximabvedotin. Accessed
+                        on 17 January 2014.
+                    </div>
+                </div>
+				
+				
+				
+				
+                <div id="slide15" style="display: none;">
+                    <!--  <div class="topic-bar">
+                    <div id="topic-title">Achieving an Objective Response Rate</div>
+                </div>-->
+                    <div class="slidecontent" style="">
+                        <div class="playBody">
+                            <div id="s15txt1" style="display: none;" data-class="fadeInDown">
+                                <p style="padding-top:30px;padding-left:25px;">
+                                    <b>Adverse Events</b>
+                                </p>
+                                <br />
+                            </div>
+                            <div style="">
+                                <div data-class="fadeInDown" id="s15bimg1" style="display: none; padding-left: 20px;">
+                                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                    <p style="padding-left: 30px; text-align: left;">
+                                        ­Typically grade 1 or 2
+                                    </p>
+                                    <br />
+                                </div>
+                                <div data-class="fadeInDown" id="s15bimg2" style="display: none; padding-left: 20px;">
+                                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                    <p style="padding-left: 30px; text-align: left;">
+                                        Peripheral neuropathy was most clinically meaningful adverse event
+                                    </p>
+                                </div>
+                            </div>
+                            <div id="s15bsimg1" style="display: none; padding-left: 60px;" data-class="fadeInDown">
+                                <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                <p style="text-align: left;">
+                                 	Generally reversible
+                                </p>
+                            </div>
+                            <div id="s15bsimg2" style="display: none; padding-left: 60px;" data-class="fadeInDown">
+                                <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                <p style="text-align: left;">
+                               Manageable through dose modification
+                                </p>
+                            </div>
+                            <div id="s15bsimg3" style="display: none; padding-left: 60px;" data-class="fadeInDown">
+                                <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                <p style="text-align: left;">
+                                  13.2 weeks for improvement or resolution
+                                </p>
+                            </div>
+                            <div id="s15bimg3" style="display: none; padding-left: 20px;" data-class="fadeInDown">
+                               
+                                    
+                                            <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                            <p style="text-align: left;">
+                                              Manageable adverse event profile
+                                            </p>
+                                    
+
+                            </div>
+							
+							<div class="playBody">
+                                <div style="text-align: center; margin-top: 10px; width: 500px; height: 500px; overflow: hidden;
+                                    margin: 10px auto;">
+                                    <img data-class="fadeInDown" id="s15img1" class="border" src="img/15_n.jpg"
+                                        imgwidth="890" imgheight="1234" style="position: relative; margin: 0 auto; display: none" />
+                                </div>
+                            </div>
+                     
+                        <div class="playBody">
+                            <div style="text-align: center; margin-top: -550px;">
+                                <span id='imgZoom15'>
+                                    <span class="helper"></span>
+                                    <img data-class="fadeInDown" id="s15imag1" class="border" src="img/15_n.jpg"
+                                        style="display: none; position: relative; width: 380px; height: 548px; margin: 0 auto;" />
+                                </span>
+                            </div>
+                        </div>
+							
+							
+							
+
+                        </div>
+                    </div>
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none; position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#">
+                            <img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center>
+                            <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                                Hide Transcript</button></center>
+                        <div class="transcript" style="text-align: justify;">
+                            <p>
+                                Now that we have discussed the efficacy of ADCETRIS, let’s review the safety and tolerability profile.
+                            </p>
+                            <p>
+                                Most adverse events associated with ADCETRIS were managed through standard supportive care, 
+                               and the most common events were typically grade 1 or 2. 
+                               The most clinically meaningful adverse event in the study was grade 1 or 2 peripheral neuropathy which was generally reversible and manageable through dose modification. 
+                               The median time to improvement or resolution was 13.2 weeks.
+                            </p>
+                            <p>
+                                ADCETRIS had a manageable adverse event profile.
+                            </p>
+                        </div>
+                    </div>
+                    <div id="slide15ref" style="display: none" class="slide15ref">
+                        <b>References:</b><br />
+                        <br />
+                        1. Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Brentuximab vedotin
+                        (SGN-35) in patients with relapsed or refractory systemic anaplastic large-cell
+                        lymphoma: results of a phase II study. J Clin Oncol. 2012;30(18):2190-6.<br />
+                        <br />
+                        2. Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Three-year survival
+                        results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed
+                        or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 1809,
+                        American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+                        <br />
+                        3. ADCETRIS®. Summary of Product Characteristics. 25 October 2012. Available at
+                        European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB/document_library/EPAR_-_Product_Information/human/002455/WC500135055.pdf.
+                        Accessed on 17 January 2014.<br />
+                        <br />
+                        4. FDA Approval for Brentuximab Vedotin. National Cancer Institute Web site. Available
+                        at: http://www.cancer.gov/cancertopics/druginfo/fda-brentuximabvedotin. Accessed
+                        on 17 January 2014.
+                    </div>
+                </div>
+                <div id="slide16" style="display: none;">
+                    <!--  <div class="topic-bar">
+                    <div id="topic-title">Local PI</div>
+                </div>-->
+                    <div class="slidecontent" style="">
+                        <!--<div class="playBody">
+                            <div id="s16txt1" style="display: none;" data-class="fadeInDown">                                
+                                <p style="text-align: left;padding-top:10px;">
+                                   <b>Convenient Dosing Schedule</b> 
+                                </p>
+                                <br />
+                            </div>
+                            <div style="padding-left: 20px">
+                                <div data-class="fadeInRightBig" id="s16bimg1" style="display: none;">
+                                    <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                    <p style="padding-left: 30px; text-align: left;">
+                                        ­ Every 3 weeks 
+                                    </p>
+                                    <br />
+                                </div>
+                            </div>
+                            <div id="s16bimg2" style="padding-left: 20px" data-class="fadeInDown">
+                                <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                <p style="text-align: left;">
+                                    Over 30 minutes (intravenous infusion only) 
+                                </p>
+                                <br />
+                            </div>
+                            <div data-class="fadeInRightBig" id="s16bimg3" style="padding-left: 20px;">
+                                <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                <p style="padding-left: 30px; text-align: left;">
+                                    Recommended dose - 1.8 mg/kg
+                                </p>
+                                <br />
+                            </div>
+                            <div data-class="fadeInRightBig" id="s16bimg4" style="padding-left: 20px;">
+                                <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                <p style="padding-left: 30px; text-align: left;">
+                                    Exception!<br />
+                                    Patients with hepatic impairment or severe renal impairment 
+                                </p>                                
+                            </div>
+                            <div data-class="fadeInRightBig" id="s16bsimg1" style="padding-left: 60px;">
+                                <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                <p style="padding-left: 30px; text-align: left;">
+                                    Recommended starting dose is 1.2 mg/kg
+                                </p>
+                                <br />
+                            </div>
+                            <div data-class="fadeInRightBig" id="s16bimg5" style="padding-left: 20px;">
+                                <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                <p style="padding-left: 30px; text-align: left;">
+                                    Patients who achieve stable disease or better should receive a minimum of 8 cycles and up to a maximum of 16 cycles (approximately 1 year) 
+                                </p>
+                                <br />
+                            </div>
+                            <div data-class="fadeInRightBig" id="s16bimg6" style="padding-left: 20px;">
+                                <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                <p style="padding-left: 30px; text-align: left;">
+                                    Treatment should be continued until disease progression or unacceptable toxicity
+                                </p>
+                                <br />
+                            </div>-->
+							
+							 <div class="playBody">
+                                <div style="text-align: center; margin-top: 10px; width: 500px; height: 500px; overflow: hidden;
+                                    margin: 0px auto;">
+                                    <img data-class="fadeInDown" id="s16img1" class="border" src="img/16.jpg"
+                                        imgwidth="890" imgheight="1234" style="position: relative; margin: 0 auto; display: none" />
+                                </div>
+                            </div>
+                     
+                        <div class="playBody">
+                            <div style="text-align: center; margin-top: -530px;">
+                                <span id='imgZoom16'>
+                                    <span class="helper"></span>
+                                    <img data-class="fadeInDown" id="s16imag1" class="border" src="img/16.jpg"
+                                        style="display: none; position: relative; width: 380px; height: 548px; margin: 0 auto;" />
+                                </span>
+                            </div>
+                        </div>
+							
+							
+							
+							
+                          
+                        </div>
+                   
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none; position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#">
+                            <img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center>
+                            <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                                Hide Transcript</button></center>
+                        <div class="transcript"">
+                            <p>
+                                ADCETRIS offers a convenient dosing schedule every 3 weeks which is similar to other regimens.
+                            </p>
+
+                            <p>
+                                Given intravenously only, the recommended dose is 1.8 mg/kg except for patients with hepatic impairment or severe renal impairment.
+                            </p>
+
+                            <p>
+                                Patients who achieve stable disease or better should receive a minimum of 8 cycles and up to a maximum of 16 cycles (approximately 1 year).
+                            </p>
+
+                            <p>
+                                Treatment should be continued until disease progression or unacceptable toxicity.
+                            </p>
+                        </div>
+
+                    </div>
+                    <div id="slide16ref" style="display: none" class="slide16ref">
+                        <b>References:</b><br />
+                        <br />
+                        1. Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Brentuximab vedotin
+                        (SGN-35) in patients with relapsed or refractory systemic anaplastic large-cell
+                        lymphoma: results of a phase II study. J Clin Oncol. 2012;30(18):2190-6.<br />
+                        <br />
+                        2. Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Three-year survival
+                        results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed
+                        or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 1809,
+                        American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+                        <br />
+                        3. ADCETRIS®. Summary of Product Characteristics. 25 October 2012. Available at
+                        European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB/document_library/EPAR_-_Product_Information/human/002455/WC500135055.pdf.
+                        Accessed on 17 January 2014.<br />
+                        <br />
+                        4. FDA Approval for Brentuximab Vedotin. National Cancer Institute Web site. Available
+                        at: http://www.cancer.gov/cancertopics/druginfo/fda-brentuximabvedotin. Accessed
+                        on 17 January 2014.
+                    </div>
+                </div>
+                
+                <div id="slide17" style="display: none;">
+                    <!--  <div class="topic-bar">
+                    <div id="topic-title">Achieving an Objective Response</div>
+                </div>-->
+                          <div class="slidecontent" style="">
+                            <div class="playBody">
+                        <div id="s17txt1" style="display: none; margin-top:20px;" data-class="fadeInDown">
+                           <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                            <p style="padding-left:25px;">
+                               Patients who achieve stable disease or better:
+                            </p>
+                     
+                        </div>
+                            <br />
+
+                        <div style="padding-left: 40px">
+                            <div data-class="fadeInDown" id="s17bimg1" style="display: none;">
+                                <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                <p style="padding-left: 30px; text-align: left;">
+                                   Minimum of 8 cycles 
+                                </p>
+                              
+                            </div>
+                            <br />
+                            <div data-class="fadeInDown" id="s17bimg2" style="display: none;">
+                                <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                <p style="padding-left: 30px; text-align: left;">
+                                   Maximum of 16 cycles (approximately 1 year).
+                                </p>
+                           
+                            </div>
+                            <br />
+
+                         </div>
+							<div id="s17txt2" style="display: none; " data-class="fadeInDown">
+                            <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                            <p style="padding-left:25px;text-align: left;">
+                              Treatment should be continued until disease progression or unacceptable toxicity
+                            </p>
+                       
+                        </div>
+                                   </div>
+                            <div class="playBody">
+                                <div style="text-align: center; margin-top: 10px; width: 500px; height: 500px; overflow: hidden;
+                                    margin: -50px auto;">
+                                    <img data-class="fadeInDown" id="s17img1" class="border" src="img/17_s.jpg"
+                                        imgwidth="890" imgheight="1234" style="position: relative; margin: 0 auto; display: none" />
+                                </div>
+                            </div>
+                     
+                        <div class="playBody">
+                            <div style="text-align: center; margin-top: -540px;">
+                                <span id='imgZoom17'>
+                                    <span class="helper"></span>
+                                    <img data-class="fadeInDown" id="s17imag1" class="border" src="img/17_s.jpg"
+                                        style="display: none; position: relative; width: 380px; height: 548px; margin: 0 auto;" />
+                                </span>
+                            </div>
+                        </div>
+                            
+                       
+                  
+                    </div>
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none; position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#">
+                            <img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center>
+                            <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                                Hide Transcript</button></center>
+                        <div class="transcript" style="">
+                            <p>
+                                In reviewing the number of cycles of therapy in HL patients stratified by response category, it is notable that the patients who achieved either Complete Remission (CR) or Partial Remission (PR) received more cycles of therapy than patients with stable disease or progressive disease. Overall, patients received a median of 9 cycles of ADCETRIS.
+                            </p>
+                            <p>
+                               Remember, the dosing schedule recommends a minimum of 8 cycles and maximum of 16 cycles (approximately one year) unless the disease progresses or the patient experiences unacceptable toxicity.
+                            </p>
+                            <p>
+                                So it’s important to discuss with your HCP that patients who achieve an objective response received more cycles of therapy.
+                            </p>
+                            
+                        </div>
+                    </div>
+                    <div id="slide17ref" style="display: none" class="slide17ref">
+                        <b>References:</b><br />
+                        <br />
+                        1. Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Brentuximab vedotin
+                        (SGN-35) in patients with relapsed or refractory systemic anaplastic large-cell
+                        lymphoma: results of a phase II study. J Clin Oncol. 2012;30(18):2190-6.<br />
+                        <br />
+                        2. Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Three-year survival
+                        results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed
+                        or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 1809,
+                        American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+                        <br />
+                        3. ADCETRIS®. Summary of Product Characteristics. 25 October 2012. Available at
+                        European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB/document_library/EPAR_-_Product_Information/human/002455/WC500135055.pdf.
+                        Accessed on 17 January 2014.<br />
+                        <br />
+                        4. FDA Approval for Brentuximab Vedotin. National Cancer Institute Web site. Available
+                        at: http://www.cancer.gov/cancertopics/druginfo/fda-brentuximabvedotin. Accessed
+                        on 17 January 2014.
+                    </div>
+                </div>
+				
+				
+				
+				     <div id="slide18" style="display: none;">
+                    <!--  <div class="topic-bar">
+                    <div id="topic-title">References and Local PI</div>
+                </div>-->
+                    <div class="slidecontent" style="">
+                        <div class="playBody">
+						 <div id="s18hdn1">
+						<div id="s18txt1" style="display: none;" data-class="fadeInDown">
+                                            <p style="text-align: left;padding-left:10px;padding-top:25px;">
+                                             References
+                                            </p>
+
+                                        </div>
+                                  <div style="padding-left: 40px">
+                                    <div data-class="fadeInRightBig" id="s18bimg1" style="display: none;">
+                                        <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                        <p style="padding-left: 30px; text-align: left;">
+                                         Supporting references for the facts cited in this visual aid
+                                        </p>
+
+                                    </div>
+								    </div>	
+                          
+                                       
+								  
+						                 <div id="s18txt2" style="display: none;" data-class="fadeInDown">
+                                            <p style="text-align: left;padding-left:10px;">
+                                          Local PI Information
+                                            </p>
+
+                                        </div>	
+									<div style="padding-left: 40px">
+                                    <div data-class="fadeInRightBig" id="s18bimg2" style="display: none;">
+                                        <img src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+                                        <p style="padding-left: 30px; text-align: left;">
+                                        Specific local prescribing information can be added
+                                        </p>
+
+                                    </div>
+								    </div>	
+							   
+                          </div>
+				       </div>	
+					    <div class="playBody">
+                                <div style="text-align: center; margin-top: 10px; width: 500px; height: 500px; overflow: hidden;
+                                    margin: 10px auto;">
+                                    <img data-class="fadeInDown" id="s18img1" class="border" src="img/18.jpg"
+                                        imgwidth="890" imgheight="1234" style="position: relative; margin: 0 auto; display: none" />
+                                </div>
+                            </div>
+                            <div class="playBody">
+                                <div style="text-align: center; margin-top: 10px; width: 500px; height: 500px; overflow: hidden;
+                                    margin: -540px auto;">
+                                    <img data-class="fadeInDown" id="s18img2" class="border" src="img/19.jpg"
+                                        imgwidth="890" imgheight="1234" style="position: relative; margin: 0 auto; display: none" />
+                                </div>
+                            </div>
+                            <div style=" width: 685px; margin :0 auto; ">
+                             <div id="s18table1" data-class="fadeInDown" style="position: absolute; width: 685px;  display:none;">
+                            <table style="width: 98%;" class="imagTab" cellpadding="10px">
+                                    <tr>
+                                        <td style="width: 50%;">
+                                            <img data-class="fadeInDown" onclick="callImageZoom(this)" src="img/18.jpg"
+                                                id="s18img1" style="width: 100%" />
+                                        </td>
+                                        <!--<td> <span id='imgZoom5'><img data-class="fadeInDown" class="border" src="img/screenshot/Younes-img-2.png" id="s6img2" style="height: 115px;"/></span></td>-->
+                                        <td style="width: 50%;">
+                                            <img onclick="callImageZoom(this)" data-class="fadeInDown" src="img/19.jpg"
+                                                id="s18img2" style="width: 100%" /></td>
+                                    </tr>
+                                </table>
+                            </div>
+							</div>
+                            <div class="zoomedDiv" style="text-align: center; position: relative; display: none;">
+                                <span id='imgZoom'>
+                                    <span class="helper"></span>
+                                    <img id="zoomShowImg" style="height: 545px; padding: 10px; margin: 0 auto;" />
+                                    <button type="button" onclick="$(this).parent().parent().hide();" class="btn btn-primary"
+                                        style="position: absolute; margin-top: -50px; z-index: 100; right: 0; margin-right: 20px;">
+                                        Close</button>
+                                </span>
+                            </div>
+
+							    
+                           
+                            
+                           
+						
+						
+						
+						
+                       
+                    </div>
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none; position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#">
+                            <img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center>
+                            <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                                Hide Transcript</button></center>
+                        <div class="transcript" style="">
+                            <p>
+                                Page 18 includes a listing of the supporting references for the facts cited in the visual aid and page 19 provides space for local prescribing information to be added.
+                            </p>
+                            
+                            
+                        </div>
+                    </div>
+                    <div id="slide18ref" style="display: none" class="slide18ref">
+                        <b>References:</b><br />
+                        <br />
+                        1. Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Brentuximab vedotin
+                        (SGN-35) in patients with relapsed or refractory systemic anaplastic large-cell
+                        lymphoma: results of a phase II study. J Clin Oncol. 2012;30(18):2190-6.<br />
+                        <br />
+                        2. Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Three-year survival
+                        results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed
+                        or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 1809,
+                        American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+                        <br />
+                        3. ADCETRIS®. Summary of Product Characteristics. 25 October 2012. Available at
+                        European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB/document_library/EPAR_-_Product_Information/human/002455/WC500135055.pdf.
+                        Accessed on 17 January 2014.<br />
+                        <br />
+                        4. FDA Approval for Brentuximab Vedotin. National Cancer Institute Web site. Available
+                        at: http://www.cancer.gov/cancertopics/druginfo/fda-brentuximabvedotin. Accessed
+                        on 17 January 2014.
+                    </div>
+                </div>
+            
+			
+			
+			 <div id="slide19" style="display: none;">
+                    <!--  <div class="topic-bar">
+                    <div id="topic-title">Last</div>
+                </div>-->
+                    <div class="slidecontent" style="">
+                        <div class="playBody">
+						
+						  
+						<div class="playBody">
+                                <div style="text-align: center; margin-top: 10px; width: 500px; height: 500px; overflow: hidden;
+                                    margin: 10px auto;">
+                                    <img data-class="fadeInDown" id="s19img1" class="border" src="img/20.jpg"
+                                        imgwidth="890" imgheight="1234" style="position: relative; margin: 0 auto; display: none" />
+                                </div>
+                            </div>
+                     
+                        <div class="playBody">
+                            <div style="text-align: center; margin-top: -550px;">
+                                <span id='imgZoom19'>
+                                    <span class="helper"></span>
+                                    <img data-class="fadeInDown" id="s19imag1" class="border" src="img/20.jpg"
+                                        style="display: none; position: relative; width: 380px; height: 548px; margin: 0 auto;" />
+                                </span>
+                            </div>
+                        </div>
+
+							  
+							
+					
+				  
+						
+						
+						
+					  </div>	
+                       
+                    </div>
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none; position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#">
+                            <img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center>
+                            <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                                Hide Transcript</button></center>
+                        <div class="transcript" style="">
+                            <p>
+                             This page provides a summary of the key points for each of the core messages. Use it to close your presentation. Let’s review it.
+                            </p>
+							<p>ADCETRIS offers significant efficacy:</p>
+							<ul>
+							<li><span>Median overall survival was 40.5 months</li></span>
+							<li><span>75% of patients attain objective responses (ORR)</li></span>
+                            <li><span>34% of patients achieve a complete remission (CR)</li></span>
+                            <li><span>94% of patients experience tumour reduction</li></span>
+							<li><span>Complete remission patients achieve a 21.7 month median PFS</li></span>
+							
+							</ul>
+							<p>ADCETRIS provides significant response rates in patients without prior ASCT</p>
+						    <ul>
+							<li><span>54% of patients attain ORR and 22% achieve a CR</li></span>
+							</ul>
+							<p>ADCETRIS has a manageable adverse event profile</p>
+							<ul>
+							<li><span>Peripheral neuropathy is generally reversible and manageable through dose modification</li></span>
+							</ul>
+							<p>ADCETRIS offers a convenient dosing schedule</p>
+							<ul>
+							<li><span>Adcetris offers 3 week dosing, similar to other regimens</li></span>
+							<li><span>Patients who achieve stable disease or better should receive a minimum of 8 cycles and up to a maximum of 16 cycles (approximately 1 year)</li></span>
+                                <ul>
+							<li><span>Treatment should be continued until disease progression or unacceptable toxicity</li></span></ul>
+							</ul>
+							
+							
+							
+							
+							
+                        </div>
+                    </div>
+                    <div id="slide19ref" style="display: none" class="slide19ref">
+                        <b>References:</b><br />
+                        <br />
+                        1. Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Brentuximab vedotin
+                        (SGN-35) in patients with relapsed or refractory systemic anaplastic large-cell
+                        lymphoma: results of a phase II study. J Clin Oncol. 2012;30(18):2190-6.<br />
+                        <br />
+                        2. Pro B, Advani R, Brice P, Bartlett NL, Rosenblatt JD et al. Three-year survival
+                        results from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed
+                        or refractory systemic anaplastic large cell lymphoma. Poster, Abstract No. 1809,
+                        American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+                        <br />
+                        3. ADCETRIS®. Summary of Product Characteristics. 25 October 2012. Available at
+                        European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB/document_library/EPAR_-_Product_Information/human/002455/WC500135055.pdf.
+                        Accessed on 17 January 2014.<br />
+                        <br />
+                        4. FDA Approval for Brentuximab Vedotin. National Cancer Institute Web site. Available
+                        at: http://www.cancer.gov/cancertopics/druginfo/fda-brentuximabvedotin. Accessed
+                        on 17 January 2014.
+                    </div>
+                </div>
+				
+				<div id="slide15a" style="display: none;">
+                    <!--  <div class="topic-bar">
+                    <div id="topic-title">Knowledge Check</div>
+                </div>-->
+
+
+                    <div class="slidecontent" style="">
+                        <div class="playBody">
+                            <div style="padding-left: 20px">
+                                <br />
+                                <p data-class="fadeInDown" style="display: none;" id="S17P1">In the pivotal trial of ADCETRIS in patients with HL the tumour reduction observed was </p>
+                                <br />
+                                <input type="hidden" id="Answer" value="4"  qid="4" />
+                                <input type="hidden" id="Percentage" value="25" />
+                                <div id="radio1" style="padding: 10px 10px 10px 25px; display: none;">
+                                    <input name="ratio2" value="1" type="radio" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="margin-left: 55px;">64%</p>
+                                </div>
+                                <div id="radio2" style="padding: 10px 10px 10px 25px; display: none;">
+                                    <input name="ratio2" value="2" type="radio" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="margin-left: 55px;">74%</p>
+                                </div>
+                                <div id="radio3" style="padding: 10px 10px 10px 25px; display: none;">
+                                    <input name="ratio2" value="3" type="radio" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="margin-left: 55px;">84%</p>
+                                </div>
+                                <div id="radio4" style="padding: 10px 10px 10px 25px; display: none;">
+                                    <input name="ratio2" value="4" type="radio" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="margin-left: 55px;">94%</p>
+                                </div>
+                                <div style="margin-left: 470px;">
+                                    <div>
+                                        <input id="Button1" onclick="onclickAnswer(this);" type="button" class="btn btn-primary" value="Submit" style="width: 100px; margin-right: 25px; display: none" />
+                                    </div>
+                                    <br />
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent">
+                        <a href="#">
+                            <img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center> <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);" > Hide Transcript</button></center>
+
+                        <div class="transcript" style="">
+                            <p>
+                                Please take a moment to answer a question. Please select the best answer and click submit to continue
+                            </p>
+
+
+                            
+                        </div>
+                    </div>
+                    <div id="slide12aref" style="display: none" class="slide12aref">
+                        <b>No References:</b><br />
+                        <br />
+
+
+
+                    </div>
+
+                </div>
+				
+				
+				     <div id="slide20" style="display: none;">
+                    <!-- <div class="topic-bar">
+                        <div id="topic-title">Title</div>
+                    </div>-->
+                    <!--Body -->
+                    <div style="height: 550px; width: 100%; margin: 0px auto; border: 2px solid rgba(127, 145, 145, 0.12); border-radius: 10px; background-color: rgba(255, 255, 255, 0.2);">
+                        <div class="playBody">
+                            <div data-class="fadeInDown" class="breakout" style="display: none; text-align: center; height: 95px;"
+                                id="s20img1">
+                                <p class="" style="font-size: 20px; width: 450px; position: relative; text-align: left">
+                                    End of Module!
+                                </p>
+                                <p class="fadeInDown" id="s20img2" style="display: none; text-align: left">
+                                    Please close the window and attempt the post-test in order to complete the course.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+            
+			
+			
+			
+			 </div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			</div>
+        </div>
+  
+    <div id="footer" style="width: 1024px; margin: 0 auto;">
+        <div class="container" style="">
+            <table style="width: 100%">
+                <tr>
+                    <td>
+                        <img src="../common/img/takeda.png" style="float: left; width: 105px; margin-top: 3px; margin-right: 10px; margin-left: -25px;" />
+                    </td>
+                    <td>
+                        <img onmouseover="HideToolTip(this)" data-toggle="tooltip" title="Play / Pause" class="effect"
+                            id="toggelbutton" class="effect" src="../common/img/playBtn.png" style="float: left; margin-top: -10px;"
+                            onclick="play()" />
+                    </td>
+                    <td>
+                        <div style="float: left;">
+                            <input id="progress-bar" type="text" data-slider="true" data-slider-highlight="true">
+                            <div class="slider-control">
+                                <span id="slideCount">Slide 0 of 00</span> <span style="float: right;"><span id="timeduration">0:00</span> / <span id="slideduration">0:00</span></span>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <img onmouseover="HideToolTip(this)" data-toggle="tooltip" data-placement="left"
+                            title="Previous Slide " class="effect" src="../common/img/prevBtn.png" style="margin-top: -10px;"
+                            onclick="Prev()" />
+                    </td>
+                    <td>
+                        <img onmouseover="HideToolTip(this)" data-toggle="tooltip" title="Next Slide" class="effect"
+                            src="../common/img/nxtBtn.png" style="margin-top: -10px;" onclick="Next()" />
+                    </td>
+                    <td>
+                        <img onclick="ShowHelp();" id="showHelp" src="../common/img/smallicon2.png" style="margin-top: -10px; margin-left: 35px;" />
+                    </td>
+                    <td>
+                        <a href="pdf/Transcript_Module_05_ver_1.00.pdf" target="_blank">
+                            <img onmouseover="HideToolTip(this)" data-toggle="tooltip" title="Print" class="effect"
+                                src="../common/img/smallicon3.png" style="margin-top: -10px;" /></a>
+                    </td>
+                </tr>
+            </table>
+            <!--  <img class="effect" src="img/pauseBtn.png" style="float: left; margin-top: -10px;" onclick="pause()" />-->
+        </div>
+    </div>
+    <div class="modal fade" id="AnswerModal" data-backdrop="static" tabindex="-1" role="dialog"
+        aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" onclick="onclickAnswerContinue()" class="btn btn-primary">
+                        Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $('img').tooltip({ trigger: "focus" });
+
+    </script>
+
+</body>
+</html>

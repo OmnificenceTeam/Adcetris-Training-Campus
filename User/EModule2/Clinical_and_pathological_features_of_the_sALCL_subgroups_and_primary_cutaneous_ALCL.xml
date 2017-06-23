@@ -1,0 +1,286 @@
+﻿<xml version='2.0'>
+
+  <module totalduration="23:18">
+
+
+     <slide id="slide1" name=" Systemic Anaplastic Large Cell Lymphoma (sALCL)" title="" refid="slide1ref" duration="00:05">
+      <audio src='audio/10sec.mp3'></audio>
+      <element time='00' id='s1img1' type='image'></element>
+    </slide>
+	
+	 <slide id="slide1a" name="Learning objectives" title="Learning objectives" refid="slide1aref" duration="01:00">
+      <audio src='audio/Frame 1a (Intro frame).mp3'></audio>
+      <element time='00' id='bimg1' type='image'></element>
+      <element time='44' id='bimg2' type='image'></element>
+      <element time='33' id='bimg3' type='image'></element>
+      <element time='46' id='bimg4' type='image'></element>
+    
+
+    </slide>
+    
+    <slide id="slide2" name="sALCL: Introduction" title="sALCL: Introduction" refid="slide2ref" duration="01:44">
+      <audio src='audio/Frame 1.mp3'></audio>
+      <element time='00' id='bimg1' type='image'></element>
+      <element time='50' id='bimg2' type='image'></element>
+      <element time='69' id='bimg3' type='image'></element>
+      <element time='83' id='bimg4' type='image'></element>
+      <element time='90' id='bimg5' type='image'></element>
+      <element time='93' id='bimg6' type='image'></element>
+      <element time='99' id='bimg7' type='image'></element>
+    </slide>
+    
+    
+    <slide id="slide3" name=" Frequency of T-cell lymphoma subtypes: From the international PTCL study" title="Frequency of T-cell lymphoma subtypes: From the international PTCL study" refid="slide3ref" duration="01:15">
+      <audio src='audio/FRAME 2.mp3'></audio>
+      <element time='00' id='img8' type='image'></element>
+      <element time='00' id='bimg9' type='image'></element>
+
+    </slide>
+    
+
+  <slide id="slide4" name=" sALCL: Clinical and biological features" title="sALCL: Clinical and biological features" refid="slide4ref" duration="01:58">
+      <audio src='audio/FRAME 3.mp3'></audio>
+      <element time='00' id='bimg10' type='image'></element>
+     
+      <element time='04.5' id='bimg11' type='image'></element>
+     
+      <element time='14.5' id='bimg12' type='image'></element>
+     
+      <element time='25' id='bimg13' type='image'></element>
+      <element time='37' id='bimg14' type='image'></element>
+     
+      <element time='44' id='bimg15' type='image'></element>
+     
+    </slide>
+  
+
+
+<slide id="slide5" name=" sALCL: Incidence and epidemiology" title="sALCL: Incidence and epidemiology" refid="slide5ref" duration="01:48">
+      <audio src='audio/FRAME 4.mp3'></audio>
+      <element time='00' id='bimg16' type='image'></element>
+     
+      <element time='03' id='bimg17' type='image'></element>
+     
+      <element time='35' id='bimg18' type='image'></element>
+    
+      <element time='44' id='bimg19' type='image'></element>
+    
+      <element time='52' id='bimg20' type='image'></element>
+    
+      <element time='71' id='bimg21' type='image'></element>
+     
+      <element time='81' id='table1' type='image'></element>
+    </slide>
+
+  
+<slide id="slide6" name=" sALCL: Demographics, aetiology and potential risk factors" title="sALCL: Demographics, aetiology and potential risk factors" refid="slide6ref" duration="01:28">
+      <audio src='audio/FRAME 5.mp3'></audio>
+      <element time='05' id='bimg22' type='image'></element>
+      
+      <element time='13' id='bimg23' type='image'></element>
+     
+      <element time='28' id='bimg24' type='image'></element>
+
+      <element time='33' id='bimg25' type='image'></element>
+     
+      <element time='41' id='bimg26' type='image'></element>
+     
+      <element time='62' id='bimg27' type='image'></element>
+      <element time='68' id='bimga' type='image'></element>
+
+    </slide>
+    <slide id="slide6a" name="Knowledge check" title="Knowledge check" refid="slide6aref" duration="00:06">
+      <audio src='audio/FRAME 6.mp3'></audio>
+      <element time='00' id='s6atxt1' type='image'></element>
+      <element time='00.5' id='radio1' type='image'></element>
+      <element time='01' id='radio2' type='image'></element>
+      <element time='01.5' id='radio3' type='image'></element>
+      <element time='02' id='radio4' type='image'></element>
+      <element time='02.5' id='radio5' type='image'></element>
+      <element time='03' id='s6aimag9' type='image'></element>
+      <element time='05' id='txt20' type='question'></element>
+    </slide>
+  
+<slide id="slide7" name=" sALCL: Clinical presentation and symptoms" title="sALCL: Clinical presentation and symptoms" refid="slide7ref" duration="02:09">
+      <audio src='audio/FRAME 7.mp3'></audio>
+      <element time='01' id='bimg29' type='image'></element>
+      
+      <element time='07' id='bimg30' type='image'></element>
+     
+      <element time='87' id='bimg31' type='image'></element>
+     
+      <element time='95' id='bimg32' type='image'></element>
+     
+      <element time='102' id='bimg33' type='image'></element>
+      <element time='110' id='bimg34' type='image'></element>
+     
+    </slide>
+
+  
+
+<slide id="slide8" name=" sALCL: Diagnostic tests and procedures" title="sALCL: Diagnostic tests and procedures" refid="slide8ref" duration="01:47">
+      <audio src='audio/FRAME 8.mp3'></audio>
+      <element time='00' id='bimg35' type='image'></element>
+     
+      <element time='06' id='bimg36' type='image'></element>
+     
+      <element time='24' id='bimg37' type='image'></element>
+     
+      <element time='25' id='bimg38' type='image'></element>
+     
+      <element time='27' id='bimg39' type='image'></element>
+      
+      <element time='31' id='bimg40' type='image'></element>
+      
+      <element time='36' id='bimg41' type='image'></element>
+     
+      <element time='56' id='bimg42' type='image'></element>
+
+      <element time='74' id='bimg43' type='image'></element>
+     
+    </slide>
+
+
+    <slide id="slide9" name=" sALCL: Diagnostic immunophenotypic and molecular characteristics" title="sALCL: Diagnostic immunophenotypic and molecular characteristics" refid="slide9ref" duration="01:37">
+      <audio src='audio/FRAME 9.mp3'></audio>
+      <element time='00' id='bimg44' type='image'></element>
+      
+      <element time='35' id='bimg45' type='image'></element>
+     
+      <element time='36' id='bimg46' type='image'></element>
+     
+      <element time='38' id='bimg47' type='image'></element>
+    
+      <element time='60' id='bimg48' type='image'></element>
+    
+      <element time='63' id='bimg49' type='image'></element>
+    </slide>
+
+    <slide id="slide10" name="Clinical and pathological features of the sALCL subgroups and primary cutaneous ALCL" title="Clinical and pathological features of the sALCL subgroups and primary cutaneous ALCL" refid="slide10ref" duration="00:58">
+      <audio src='audio/FRAME 10.mp3'></audio>
+      <element time='00' id='table1' type='image'></element>
+      <element time='00' id='text1' type='image'></element>
+
+      
+      
+    </slide>
+
+    <slide id="slide11" name="sALCL: Staging and prognostic tools" title=" sALCL: Staging and prognostic tools" refid="slide11ref" duration="01:00">
+      <audio src='audio/FRAME 17.mp3'></audio>
+      <element time='00' id='bimg1' type='image'></element>
+      
+      <element time='17' id='bimg2' type='image'></element>
+    
+      <element time='40' id='bimg3' type='image'></element>
+    
+      <element time='51' id='bimg4' type='image'></element>
+     
+      <element time='52' id='table1' type='image'></element>
+      <element time='53' id='text6' type='image'></element>
+     
+ 
+    </slide>
+  
+    
+  
+     <slide id="slide12" name="sALCL: Survival by subgroup" title="sALCL: Survival by subgroup" refid="slide12ref" duration="01:20">
+      <audio src='audio/FRAME 18.mp3'></audio>
+      <element time='00' id='bimg69' type='image'></element>
+      <element time='08' id='bimg70' type='image'></element>
+      <element time='19' id='bimg71' type='image'></element>
+      <element time='27' id='bimg72' type='image'></element>
+      <element time='36' id='bimg73' type='image'></element>
+       <element time='45' id='bimg74' type='image'></element>
+       <element time='54' id='bimgb' type='image'></element>
+    </slide>
+    
+    
+    <slide id="slide12a" name="Knowledge check" title="Knowledge check" refid="slide6aref" duration="00:06">
+      <audio src='audio/FRAME 19.mp3'></audio>
+      <element time='00' id='s12atxt1' type='image'></element>
+      <element time='00.5' id='radio1' type='image'></element>
+      <element time='01' id='radio2' type='image'></element>
+      <element time='01.5' id='radio3' type='image'></element>
+      <element time='02' id='radio4' type='image'></element>
+      <element time='03' id='radio5' type='image'></element>
+      <element time='5.5' id='s12aimag9' type='image'></element>
+      <element time='06' id='txt20' type='question'></element>
+    </slide>
+
+    <slide id="slide13" name="sALCL: Treatment overview" title="sALCL: Treatment overview" refid="slide13ref" duration="01:18">
+      <audio src='audio/FRAME 20.mp3'></audio>
+      <element time='00' id='bimg75' type='image'></element>
+  
+      <element time='08' id='bimg76' type='image'></element>
+      <element time='18' id='bimg77' type='image'></element>
+      <element time='32' id='bimg78' type='image'></element>
+      <element time='37' id='bimg79' type='image'></element>
+      <element time='43' id='bimg80' type='image'></element>
+      <element time='49' id='bimg81' type='image'></element>
+      
+    </slide>
+    
+    
+    <slide id="slide14" name="sALCL: Induction therapy" title="sALCL: Induction therapy" refid="slide14ref" duration="00:49">
+      <audio src='audio/FRAME 21.mp3'></audio>
+      <element time='20' id='table1' type='image'></element>
+      <element time='00' id='text1' type='image'></element>
+      <element time='21' id='text2' type='image'></element>
+      <element time='21' id='text3' type='image'></element>
+      
+      
+    </slide>
+    
+     <slide id="slide15" name="sALCL: Follow-up and additional therapy" title="sALCL: Follow-up and additional therapy" refid="slide15ref" duration="01:33">
+      <audio src='audio/FRAME 22.mp3'></audio>
+      <element time='17' id='table1' type='image'></element>
+       <element time='07' id='bimg1' type='image'></element>
+    
+      <element time='55' id='bimg2' type='image'></element>
+      <element time='58' id='table2' type='image'></element>
+       <element time='59' id='text3' type='image'></element>  
+    </slide>
+
+    <slide id="slide15a" name="sALCL: Current treatment paradigm" title="sALCL: Current treatment paradigm" refid="slide15aref" duration="00:24">
+      <audio src='audio/FRAME 23.mp3'></audio>
+      <element time='01' id='s15aimg1' type='image'></element>
+      <element time='10' id='s15abimg1' type='image'></element>
+      <element time='12' id='s15atable1' type='image'></element>
+      <element time='13' id='s15atext1' type='image'></element>
+
+    </slide>
+
+    <slide id="slide15b" name="sALCL: Treatment of relapse or recurrence" title="sALCL: Treatment of relapse or recurrence" refid="slide15bref" duration="00:32">
+      <audio src='audio/FRAME 24.mp3'></audio>
+      <element time='01' id='s15bimg1' type='image'></element>
+      <element time='03' id='s15btxt1' type='image'></element>
+    </slide>
+    
+    <slide id="slide16" name="Treatment regimens suggested by NCCN" title="Treatment regimens suggested by NCCN" refid="slide16ref" duration="01:16">
+      <audio src='audio/FRAME 25.mp3'></audio>
+      <element time='00' id='table1' type='image'></element>
+      <element time='05' id='text1' type='image'></element>
+      <element time='07' id='text2' type='image'></element>
+       
+    </slide>
+    
+    <slide id="slide17" name="Knowledge check" title="Knowledge check" refid="slide17ref" duration="00:06">
+      <audio src='audio/FRAME 19.mp3'></audio>
+      <element time='00' id='text1' type='image'></element>
+      <element time='00.5' id='radio1' type='image'></element>
+      <element time='01' id='radio2' type='image'></element>
+      <element time='01.5' id='radio3' type='image'></element>
+      <element time='02' id='radio4' type='image'></element>
+      <element time='02.5' id='button1' type='image'></element>
+      <element time='04' id='button2' type='image'></element>
+       <element time='07' id='txt20' type='question'></element>
+    </slide>
+  
+     <slide id="slide18" name="End" title="" refid="slide18ref" duration="00:07">
+      <audio src='audio/last Frame.mp3'></audio>
+      <element time='00' id='s18img1' type='image'></element>
+       <element time='00' id='s18img2' type='image'></element>
+    </slide>
+
+</module>
+</xml>

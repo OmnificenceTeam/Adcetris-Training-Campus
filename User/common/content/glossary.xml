@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<glossary>
+   <content name="ABVD" content="Adriamycine, bleomycin, vinblastine, and darcarbazine"/>
+ <content name="ADC" content="Antibody drug conjugate"/>
+ <content name="AE" content="Adverse event"/>
+ <content name="AITL" content="Angioimmunoblastic T-cell lymphoma"/>
+ <content name="ALCL" content="Anaplastic Large Cell Lymphoma; a form of lymphoma characterized by loss of structural differentiation of lymphocytes, sinusoidal growth, and immunoreactivity with CD30"/>
+ <content name="ALK" content="Anaplastic Lymphoma Kinase"/>
+ <content name="Allogeneic" content="Used in transplantation biology. It pertains to different gene constitutions within the same species; antigenically distinct."/>
+ <content name="Anaplasia" content="Loss of structural differentiation, especially as seen in most, but not all, malignant neoplasms."/>
+ <content name="ASCT" content="Autologous stem cell transplant"/>
+ <content name="Aspiration" content="Removal, by suction, of a gas, fluid, or tissue from a body cavity or organ from unusual accumulations, or from a container; the inspiratory sucking into the airways of fluid or any foreign material, especially gastric contents or food; a surgical technique for cataract, requiring a small corneal incision, severance of the lens capsule, fragmentation of the lens material, and removal with a needle."/>
+ <content name="ATLL" content="Adult T-cell leukaemia/lymphoma"/>
+ <content name="Autologous" content="Referring to transfer of an organ or other tissue from one location to another in the same person; or to blood or blood components that the donor has previously donated and receives at a later time, usually perioperatively."/>
+ <content name="BEACOPP" content="Bleomycin, etoposide, doxorubicin, cyclophosphamide, vincristine, procarbazine, and prednisone"/>
+ <content name="Bimodal" content="Denoting a frequency curve characterized by two peaks"/>
+ <content name="CD" content="Cluster of differentiation; Cell membrane molecules that are used to classify leukocytes into subsets. CD molecules are defined or classified by the reference monoclonal antibodies to which they bind. There are many clusters of differentiation; many cells express more than one CD marker. A phenotypic characterization of a cell of hematopoietic origin may be made by examining the pattern of CD markers expressed at any given time. The physiologic function has been identified for many, but not all, known CDs. There are four general types"/>
+ <content name="Chimeric" content="Composed of parts that are of different origin and are seemingly incompatible."/>
+ <content name="CHL" content="Classical Hodgkin's lymphoma"/>
+ <content name="Clusterin" content="A glycoprotein, which is expressed in a wide variety of tissues and found in all human fluids; implicated in physiologic processes such as sperm maturation, lipid transportation, complement inhibition, tissue remodeling, membrane recycling, cell-cell and cell-substratum interactions, stabilization of stressed proteins in a folding-competent state and promotion or inhibition of apoptosis. "/>
+ <content name="CMT" content="Combined modality treatment"/>
+ <content name="Cohort" content="Component of the population born during a particular period and identified by period of birth so that its characteristics can be ascertained as it enters successive time and age periods; any designated group followed or traced over a period, as in an epidemiologic cohort study."/>
+ <content name="CR" content="Complete remission"/>
+ <content name="CT" content="Computerised tomography"/>
+ <content name="Cytokine" content="Any of numerous hormonelike, low-molecular-weight proteins, secreted by various cell types, which regulate the intensity and duration of immune response and mediate cell-to-cell communication"/>
+ <content name="DHAP" content="Dexamethasone, high-dose ara-C, cisplatin"/>
+ <content name="Disseminated/multifocal" content="Widely scattered throughout an organ, tissue, or the body"/>
+ <content name="EBV" content="Epstein Barr virus"/>
+ <content name="EMA" content="Epithelial membrane antigen"/>
+ <content name="Epstein Barr virus" content="a herpesvirus in the genus Lymphocryptovirus that causes infectious mononucleosis and is also found in cell cultures of Burkitt lymphoma; associated with nasopharyngeal carcinoma"/>
+ <content name="ESHAP" content="Etoposide, methyl prednisolone, high-dose cytarabine, cisplatin"/>
+ <content name="ESMO" content="European Society for Medical Oncology"/>
+ <content name="ESR" content="The rate of settling of red blood cells in anticoagulated blood; increased rates are often associated with anemia or inflammatory states."/>
+ <content name="EU" content="European Union"/>
+ <content name="FFRT" content="freedom from treatment failure"/>
+ <content name="GC" content="Germinal centre; area in a lymph node or other tissue such as liver (in infection with hepatitis C virus) and synovium (in patients with rheumatoid arthritis) in which there is a rapid clonal expansion of antigen-specific B cells."/>
+ <content name="Gy" content="Gray - The SI unit of absorbed dose of ionizing radiation, equivalent to 1 J/kg of tissue; 1 Gy = 100 rad."/>
+ <content name="HDT" content="High-dose therapy"/>
+ <content name="Hematopoiesis" content="  The formation of new blood cells"/>
+ <content name="Heterogeneous" content="Comprising elements with various and dissimilar properties."/>
+ <content name="HIV" content="Human Immunodefeciency Virus"/>
+ <content name="HL" content="Hodgkin's Lymphoma; a disease marked by chronic enlargement of the lymph nodes, often local at the onset and later generalized, together with enlargement of the spleen and often of the liver, no pronounced leukocytosis, and commonly anemia and continuous or remittent (Pel-Ebstein) fever; considered to be a malignant neoplasm of lymphoid cells of uncertain origin (Reed-Sternberg cells), associated with inflammatory infiltration of lymphocytes and eosinophilic leukocytes and fibrosis"/>
+ <content name="ICE" content="Ifosphamide, carboplatin, etoposide"/>
+ <content name="IF-RT" content="Involved-field radiotherapy"/>
+ <content name="IGEV" content="Ifosphamide, gemcitabine, vinorelbine, dexamethasone"/>
+ <content name="Immunohistochemistry" content="Demonstration of specific antigens in tissues by the use of markers that are either fluorescent dyes or enzymes such as horseradish peroxidase."/>
+ <content name="Immunophenotyping" content="A process used to identify cells, based on the types of antigens or markers on the surface of the cell. This process is used to diagnose specific types of leukemia and lymphoma by comparing the cancer cells to normal cells of the immune system."/>
+ <content name="IPI" content="International Prognostic Index"/>
+ <content name="IPS" content="International Prognostic Score"/>
+ <content name="IRF" content="Independent reviewer facility"/>
+ <content name="LD" content="Lymphocyte depleted"/>
+ <content name="LDH" content="Name for a number of enzymes, including"/>
+ <content name="LP" content="Lymphocyte Predominant"/>
+ <content name="LR" content="Lymphocyte rich"/>
+ <content name="Lymphadenopathy" content="Any disease process affecting a lymph node or lymph nodes;the appearance of enlarged lymph nodes found on a radiologic examination of any kind Bimodal"/>
+ <content name="Lymphocyte" content="A white blood cell formed in bone marrow and distributed throughout the body in lymphatic tissue (e.g., lymph nodes, spleen, thymus, tonsils, Peyer patches), where it undergoes proliferation. In normal adults, lymphocytes make up 22-28% of the total number of leukocytes in the circulating blood."/>
+ <content name="MC" content="Mixed cellularity"/>
+ <content name="Mean" content="A statistical measurement of central tendency or average of a set of values, usually assumed to be the arithmetic mean unless otherwise specified"/>
+ <content name="Median" content="The middle value in a set of measurements; like the mean, a measure of central tendency."/>
+ <content name="Mediastinal" content="Relating to the mediastinum"/>
+ <content name="Microtubule" content="A hollow, cylindric cytoplasmic element, 25 nm in diameter and of variable length, that occurs widely in the cytoskeleton, cilia, and flagella of cells; microtubules play a role in the maintenance of cell shape and increase in number during mitosis and meiosis, in which they are related to movement of the chromosomes by the nuclear spindle."/>
+ <content name="MMAE" content="Monomethyl auristatin E"/>
+ <content name="NCCN" content="National Comprehensive Cancer Network"/>
+ <content name="Neuralgia" content="Pain of a severe, throbbing, or stabbing character in the course or distribution of a nerve"/>
+ <content name="Neuropathy" content="A classic term for any disorder affecting any segment of the nervous system; in contemporary usage, a disease involving the cranial nerves or the peripheral or autonomic nervous system"/>
+ <content name="NHL" content="non-Hodgkin’s lymphoma"/>
+ <content name="NK" content="Natural Killer cell; large granular lymphocytes that do not express markers of either T or B cell lineage. These cells do possess Fc receptors for IgG and can kill target cells using antibody-dependent cell-mediated cytotoxicity. NK cells can also use perforin to kill cells in the absence of antibody. Killing occurs without previous sensitization"/>
+ <content name="NLPHL" content="Nodular lymphocyte-predominant Hodgkin lymphoma "/>
+ <content name="NPM" content="Nucleophosmin; The NPM gene provides instructions for making a protein called nucleophosmin, which is found in a small region inside the nucleus of the cell called the nucleolus. Nucleophosmin shuttles back and forth between the nucleus and the cytoplasm. It is considered to play a part in many cellular functions, including processes involved in protein formation, DNA replication, and the progression of the cell through the cell cycle"/>
+ <content name="NS" content="Nodular sclerosis"/>
+ <content name="Objective response" content=" A measurable response"/>
+ <content name="OR" content="Objective response"/>
+ <content name="ORR" content="Objective response rate"/>
+ <content name="OS" content="Overall survival"/>
+ <content name="Paraesthesia" content="A spontaneous abnormal usually nonpainful sensation (e.g., burning, pricking); may be due to lesions of both the central and peripheral nervous systems"/>
+ <content name="Paranuclear" content="Outside, but near the nucleus."/>
+ <content name="Pathogenesis" content="The pathologic, physiologic, or biochemical mechanism resulting in the development of a disease or morbid process."/>
+ <content name="PD" content="Progressive disease"/>
+ <content name="Pegylated" content="Substance with chemically attached glycol moieties."/>
+ <content name="PET-CT scan" content="creation of tomographic images revealing certain biochemical properties of tissue by computer analysis of positrons emitted when radioactively tagged substances are incorporated into the tissue. Radiotracers used in PET are analogues of physiologic or pharmaceutical agents into which positron-emitting isotopes with short half-lives (2-110 minutes) have been incorporated. Radioisotopes are produced artificially by bombarding stable isotopes with a proton beam generated by a cyclotron. The uptake and metabolism of these positron emitters mimic, at least in part, those of the radiostable natural substances to which they are analogous. Concentrated in particular organs or tissues and incorporated into metabolic processes, they can reflect biochemical function or dysfunction."/>
+ <content name="PFS" content="Progression-free survival"/>
+ <content name="Phenotype" content="The observable characteristics, at the physical, morphologic, or biochemical level, of an individual, as determined by the genotype and environment."/>
+ <content name="PIT" content="Prognosis in T-cell lymphoma"/>
+ <content name="Pleomorphic" content="Occurring in more than one form"/>
+ <content name="PML" content="Progressive multifocal leukoencephalopathy"/>
+ <content name="Polyneuropathy" content="A disease process involving a number of peripheral nerves (literal sense); A nontraumatic generalized disorder of peripheral nerves, affecting the distal fibers most severely, with proximal shading (e.g., the feet are affected sooner or more severely than the hands), and typically symmetrically; most often affects motor and sensory fibers almost equally, but can involve either one, either solely or very disproportionately; classified as axon degenerating (axonal), or demyelinating; many causes, particularly metabolic and toxic; familial or sporadic."/>
+ <content name="PR" content="Partial remission"/>
+ <content name="Protease" content="Descriptive term for proteolytic enzymes, both endopeptidases and exopeptidases; enzymes that hydrolyze (break) polypeptide chains."/>
+ <content name="Pruritus" content="Itching"/>
+ <content name="PTCL" content="Peripheral T-cell lymphoma"/>
+ <content name="Pulmonary" content="Relating to the lungs, to the pulmonary artery, or to the aperture leading from the right ventricle into the pulmonary artery"/>
+ <content name="Refractory" content="Resistant to treatment, as of a disease"/>
+ <content name="Relapse" content="Return of the manifestations of a disease after an interval of improvement."/>
+ <content name="Remission" content="Abatement or lessening in severity of the symptoms of a disease; The period during which such abatement occurs."/>
+ <content name="RS" content="Reed-Sternberg Cells - large transformed lymphocytes, probably B cell in origin, generally regarded as pathognomonic of Hodgkin disease; a typical cell has a pale-staining acidophilic cytoplasm and one or two large nuclei showing marginal clumping of chromatin and unusually conspicuous deeply acidophilic nucleoli; binucleate Reed-Sternberg cell frequently shows a mirror-image form"/>
+ <content name="Sclerosis" content="A pathological condition in which a tissue has become hard and which is produced by overgrowth of fibrous tissue and other changes (as in arteriosclerosis) or by increase in interstitial tissue and other changes."/>
+ <content name="SCT" content="Stem cell transplantation"/>
+ <content name="SD" content="Stable disease"/>
+ <content name="SmPC" content="Summary of Product Characteristics"/>
+ <content name="Stem cell" content="any precursor cell; a cell with daughter cells that may differentiate into other cell types; a cell capable of maintaining its own number while exporting progeny to one or more cell lineages."/>
+ <content name="Subdiaphragmatic" content="Below the diaphragm"/>
+ <content name="Supradiaphragmatic" content="Above the diaphragm"/>
+ <content name="Tubulin" content="A protein subunit of microtubules; it is a dimer composed of two globular polypeptides, α-tubulin and β-tubulin"/>
+ <content name="WHO" content="World Health Organisation"/>
+
+</glossary>

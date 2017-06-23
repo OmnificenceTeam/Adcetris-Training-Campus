@@ -1,0 +1,1866 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    <!-- Website Design By: www.happyworm.com -->
+    <title>E Module</title>
+
+    <!-- fonticon -->
+    <link href="../common/css/font-awesome.css" rel="stylesheet" />
+
+    <!-- textillate -->
+    <link href="../common/css/animate.css" rel="stylesheet">
+    <link href="../common/css/style.css" rel="stylesheet">
+    <link href="../common/css/table.css" rel="stylesheet">
+    <link href="../common/css/bluetable.css" rel="stylesheet">
+
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="../common/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../common/css/bootstrap-theme.min.css">
+    <link href="../common/css/sticky-footer.css" rel="stylesheet">
+
+    <!-- slide bar -->
+    <link href="../common/css/mbExtruder.css" media="all" rel="stylesheet" type="text/css">
+
+    <!-- custom styles -->
+    <link href="../common/css/common.css" media="all" rel="stylesheet" type="text/css">
+
+    <!-- jquery Slider -->
+    <link href="../common/css/simple-slider.css" rel="stylesheet" type="text/css" />
+    <link href="../common/css/simple-slider-volume.css" rel="stylesheet" type="text/css" />
+
+
+    <!-- tooltip -->
+    <link href="../common/css/tipsy.css" rel="stylesheet" type="text/css" />
+
+    <!-- image efect -->
+    <link rel="stylesheet" href="../common/css/hoverEx.css" />
+
+
+    <!-- jquery dropdown -->
+    <link type="text/css" rel="stylesheet" href="../common/css/jquery.dropdown.css" />
+
+    <!-- scripts-->
+    <!-- Latest compiled and minified JavaScript -->
+    <script type="text/javascript" src="../common/js/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="../common/js/jquery-ui.js"></script>
+    <script type="text/javascript" src="../common/js/jquery.dropdown.js"></script>
+
+
+    <!-- simple slider -->
+    <script src="../common/js/simple-slider.js"></script>
+
+    <!-- bootstrap -->
+    <script src="../common/js/bootstrap.min.js"></script>
+
+    <!-- slide bar -->
+    <script type="text/javascript" src="../common/js/jquery.hoverIntent.min.js"></script>
+    <script type="text/javascript" src="../common/js/jquery.mb.flipText.js"></script>
+    <script type="text/javascript" src="../common/js/mbExtruder.js"></script>
+
+    <!-- textillate -->
+    <script src="../common/js/jquery.fittext.js"></script>
+    <script src="../common/js/jquery.lettering.js"></script>
+    <script src="../common/js/jquery.textillate.js"></script>
+
+    <!-- tooltip -->
+    <script src="../common/js/jquery.tipsy.js"></script>
+
+    <!-- course player -->
+    <script src="../common/js/player/CoursePlayer.js"></script>
+     <script src="../common/js/player/TrackerService.js"></script>
+    <script src="../common/js/custom.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $("#extruderLeft2").buildMbExtruder({
+                position: "left",
+                width: 200,
+                positionFixed: false,
+                top: 125,
+                extruderOpacity: .8,
+                onExtOpen: function () { },
+                onExtContentLoad: function () { },
+                onExtClose: function () { }
+            });
+        });
+
+        function PlayEvents() {
+        }
+        PlayEvents.prototype.onAudioFailed = function () {
+            alert("Failed to load audio.");
+        }
+
+        var coursePlayer = null;
+
+        function Init() {
+            coursePlayer = new CoursePlayer("moduleAudio", new PlayEvents());
+            coursePlayer.initialize("Brentuximab Vedotin for Relapsed or Refractory Hodgkin Lymphoma.xml");
+            coursePlayer.play();
+        }
+
+        function Next() {
+            if (disableAll)
+                return;
+            if (coursePlayer.nextSlide())
+                coursePlayer.play();
+        }
+        function Prev() {
+            if (disableAll)
+                return;
+            if (coursePlayer.prevSlide())
+                coursePlayer.play();
+        }
+
+        function play() {
+            if (disableAll)
+                return;
+
+            if (!coursePlayer.getPlayerStatus()) {
+                document.getElementById("toggelbutton").src = "../common/img/pauseBtn.png";
+                coursePlayer.play();
+            }
+            else {
+
+                document.getElementById("toggelbutton").src = "../common/img/playBtn.png";
+                coursePlayer.pause();
+            }
+        }
+
+
+
+
+        //]]>
+    </script>
+
+</head>
+<body style="overflow-x: hidden; font-family: Verdana" onload="createAttempt();">
+
+    <div id="wrap" style="width: 1024px;">
+        <div class="" style="height: 90px;">
+            <div class="header-top"></div>
+            <div class="header-body">
+                <img src="../common/img/logo.png" class="logo" />
+                <div class="header-help">
+                    <div style="float: right">
+                        <img class="effect" onmouseover="HideToolTip(this)" onclick="onclickPlaylistImg()" data-toggle="tooltip" data-placement="left" title="Playlist" style="float: left; opacity: 0.7; width: 36px; margin-top: 14px; margin-right: 8px;"
+                            src="../common/img/content.png" />
+                        <img class="effect" onmouseover="HideToolTip(this)" data-horizontal-offset="-10" data-dropdown="#dropdown-6" data-toggle="tooltip" data-placement="bottom" title="Reference" style="float: left;" src="../common/img/smallicon1.png" />
+                        <img class="effect" onmouseover="HideToolTip(this)" onclick="onclickGlossaryImg()" data-toggle="tooltip" data-placement="customTooltip" title="Glossary" style="float: left; margin-right: 40px;" src="../common/img/smallicon4.png" />
+                        <img class="headerleftbg" src="../common/img/headerCorBg.png" />
+                    </div>
+                </div>
+                <h4 id="slideTitle" class="module-title" style="margin-top: -5%; margin-left: 25%; max-width: 50%;"></h4>
+                <div id="dropdown-6" class="dropdown dropdown-tip dropdown-anchor-right has-icons">
+                    <div class="dropdown-panel">
+                    </div>
+                </div>
+            </div>
+            <audio id="moduleAudio"></audio>
+
+        </div>
+
+        <div style="position: relative; height: 615px;">
+            <!--<div id="extruderLeft2" class="a {title:'Slides\'s', url:'parts/extruderLeft.html'}">
+                <div class="playlist" style="height: 615px;">
+                    <div class="playlist-header"></div>
+                    <div id="playlist" class="playlist-item">
+                        <div class="list-items">title <span>0:00</span></div>
+                    </div>
+                    <div class="playlist-footer">
+                        <p>Total Duration : <span id="totalDuration">00:00</span></p>
+                    </div>
+                </div>
+
+            </div>-->
+            <div class="slidePlayer">
+
+                <div id="PlayListDiv" style="display: none;">
+                    <div class="coursecontent" style="height: 600px; width: 100%;">
+                        <div class="playlist-header">
+                            <button type="button" class="header-close" onclick="onclickClosePlaylist()" style="float: right;">Close</button>
+                        </div>
+                        <div id="playlist" class="playlist-item  style-5">
+                            <div class="list-items">title <span>0:00</span></div>
+                        </div>
+                        <div class="playlist-footer">
+                            <p>Total Duration : <span id="totalDuration">00:00</span></p>
+                        </div>
+                    </div>
+                </div>
+                <div id="GlossaryDiv" style="display: none;">
+                    <div class="coursecontent" style="height: 600px; width: 100%;">
+                        <div class="playlist-header">
+                            <button type="button" class="header-close" onclick="onclickCloseglossary()" style="float: right;">Close</button>
+                        </div>
+                        <div id="Div2" class="playlist-item  style-5">
+                            <div id="GlossaryTitle" class="GlossaryTitle style-5">
+                                
+                            </div> 
+                             <div id="GlossaryData" class="GlossaryData style-5">
+                               
+                            </div>
+                        </div>
+                        <div class="playlist-footer">
+                            
+                        </div>
+                    </div>
+                </div>
+				
+				<div id="slide0" style="display: none;">
+				
+                    <!-- <div class="topic-bar">
+                        <div id="topic-title">Title</div>
+                    </div>-->
+                    <!--Body -->
+                    <div style="height: 550px;width: 100%;float: left;border: 2px solid rgba(127, 145, 145, 0.12);border-radius: 10px;background-color: rgba(255, 255, 255, 0.2);">
+                        <div class="playBody">
+                            <div data-class="fadeInDown"  style="display: none;text-align:center;margin:0px auto;" id="s0abimg1">
+                                <p class="breakout" style="width:720px; font-size:20px;position: relative;left: 95px;">
+                                  Brentuximab Vedotin for Relapsed or Refractory Hodgkin Lymphoma</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Transcript -->
+                    <!--<div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none;
+                        position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#">
+                            <img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center>
+                            <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                                Hide Transcript</button></center>
+                        <div class="transcript">
+                           
+                        </div>
+                    </div>
+                    <div id="slide0aref" style="display: none;" class="slide0aref">
+                        <b>References:</b><br />
+                        <br />
+                       
+                    </div>-->
+                </div>
+
+                
+
+
+                <div id="slide1" style="display: none;">
+           
+
+                    <div class="slidecontent" style="">
+                        <div class="playBody">
+
+                                <div id="bimg1" style="display:none;padding-left:20px;">
+                                <img data-class="fadeInDown"  src="../common/img/bullet01.png" style=" width: 12px;
+height: 12px;
+float: left;
+margin: 10px;
+margin-top: 36px;" />
+                                <p data-class="fadeInDown" style=" padding-top: 30px" >This module is a part of an e-learning program strictly for internal training purposes only</p>
+                                 </div>
+                                <div id="bimg2" style="display:none;padding-left:20px;">
+                                <img data-class="fadeInDown"  src="../common/img/bullet01.png" style=" width: 12px; height: 12px; float: left; margin: 10px; margin-top: 5px;" />
+                                <p data-class="fadeInDown" style="" >At the end of this module you should: </p>
+                            </div><br />
+                                <div id="bimg3" style="display:none;padding-left:40px;">
+                                <img data-class="fadeInDown"  src="../common/img/bullet01.png" style=" width: 12px; height: 12px; float: left; margin: 10px;margin-bottom: 30px;" />
+                                <p data-class="fadeInDown" style="" >Be acclimatized with the pivotal phase II trial of brentuximab vedotin in individuals with relapsed or refractory Hodgkin’s Lymphoma</p>
+                                <br />
+                                    </div>
+                                <div id="bimg4" style="display:none;padding-left:40px;">
+                                <img data-class="fadeInDown"  src="../common/img/bullet01.png" style=" width: 12px; height: 12px; float: left; margin: 10px;" />
+                                <p data-class="fadeInDown" style="" >Understand the mechanism of action of brentuximab vedotin and its role in management of relapsed or refractory Hodgkin’s Lymphoma</p>
+                                <br />
+                                    </div>
+                                <div id="bimg5" style="display:none;padding-left:40px;">
+                                <img data-class="fadeInDown"  src="../common/img/bullet01.png" style=" width: 12px; height: 12px; float: left; margin: 10px;" />
+                                <p data-class="fadeInRightBig" style=" padding-left: 30px;" >Be aware of the key components of the trial including the materials and methods, results and conclusions</p>
+                            </div>
+
+                        </div>
+                   </div>
+
+
+                   
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none; position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#"><img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center> <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);" > Hide Transcript</button></center>
+                        <div class="transcript" style="">
+                            <p>
+                                This module is a part of an e-learning program which focuses on the different aspects of brentuximab vedotin, pivotal clinical trials with brentuximab vedotin, role and approval for use in certain patient populations which include patients with relapsed or refractory Hodgkin’s Lymphoma and patients with relapsed or refractory systemic anaplastic large-cell Lymphoma. The material presented as part of this e-learning program is strictly for internal training purposes only.
+                            </p>
+                            <p>
+                                This module will help you understand the mechanism of action of brentuximab vedotin and its role in management of relapsed or refractory Hodgkin’s Lymphoma.
+                            </p>
+                            <p>
+                                At the end of this module you should be acclimatized with the pivotal phase II trial of brentuximab vedotin in individuals with relapsed or refractory Hodgkin’s Lymphoma.
+                            </p>
+                            <p>
+                                You should be aware of the key components of the trial including the materials and methods, results and conclusions.
+                            </p>
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--slide 2 starting-->
+                <div id="slide2" style="display: none;">
+                    <!--Body -->
+                    <!--<div class="topic-bar">
+                        <div id="topic-title">Introduction</div>
+                     </div>-->
+                    <div class="slidecontent" style="">
+                        <div style="display: inline-block;text-align: center;width: 100%;">
+                        <div id="image1" style="display: none; padding-left: 3px;">
+                            <img data-class="fadeInDown" src="img/s2img1.png" style="width: 343px; height: 348px;" />
+                        </div>
+                        <div id="image2" style="display: none; padding-left: 3px;">
+                            <img data-class="fadeInDown" src="img/5.png" style="padding-top:50px;" />
+                        </div>
+                        <p data-class="fadeInDown" style="font-size:12px;display: none;padding-top:10px;width: 100%;text-align: center;display: none;"id="bimg2">Adapted from Relapsed /refractory Hodgkin lymphoma. ADCETRIS: innovative CD30-targeted therapy. Sales Aid. Takeda</p>
+                        </div>
+
+                        <div id="bimg1" style="display: none; padding-left: 20px; margin-top: 25px;top: 50px;">
+                            <img data-class="fadeInDown" align="left" src="../common/img/bullet01.png" style="width: 12px; height: 12px; margin: 6px;" />
+                            <p data-class="fadeInDown" style="padding-left: 28px;">No standard of care currently available for patients who experience relapse or progressive disease after autologous stem-cell transplantation or multi-drug chemotherapy </p>
+
+                        </div>
+                        <!--<div  style="display: none; padding-left: 20px;top: 65px;">
+                            <img data-class="fadeInDown" align="left" src="../common/img/bullet01.png" style="width: 12px; height: 12px; margin: 6px;" />
+                            <p data-class="fadeInDown" style="padding-left: 28px;">Very poor prognosis if relapse occurs < 1 year following ASCT, with a median post-progression survival of 0.98 years </p>
+
+                        </div>-->
+
+                    </div>
+                    <!--Transcript -->
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none; position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#"><img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center> <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);" > Hide Transcript</button></center>
+
+                        <div class="transcript" style="">
+                            </br><p>The standard of care for patients with relapsed or refractory Hodgkin’s Lymphoma (HL) is salvage chemotherapy followed by autologous stem-cell transplantation (ASCT) which can induce long term remissions in approximately 50% of patients.<sup>1</sup></p>
+                            <p>For patients who experience relapse or progressive HL within 1 year after ASCT, the prognosis is exceedingly poor, with a median post-progression survival of 0.98 years.<sup>2</sup></p>
+                            <p>The population of patients who relapse after ASCT or chemotherapy and are ineligible for ASCT has no currently available standard of care and represents an urgent unmet medical need.<sup>1</sup></p>
+                            <p>Brentuximab vedotin is a novel CD-30 targeted antibody drug conjugate which is indicated in such patients.<sup>3</sup></p>
+
+                        </div>
+                    </div>
+                    <div id="slide2ref" style="display: none;" class="slide2ref">
+                        <b>References:</b><br />
+                        <br />
+                        1. Younes A, Gopal AK, Smith SE, Ansell SM, Rosenblatt JD, et al,. Results of a pivotal phase II study of brentuximab vedotin for patients with relapsed or refractory Hodgkin's Lymphoma. J Clin Oncol. 2012 Jun 20;30(18):2183-9.<br />
+                        <br />
+                        2. Arai S, Fanale M, DeVos S, Engert A, Illidge T et al. Defining a Hodgkin's Lymphoma population for novel therapeutics after relapse from autologous hematopoietic cell transplant. Leuk Lymphoma. 2013;54(11):2531-3.
+                        <br />
+                        <br />
+                        3. ADCETRIS®. Summary of Product Characteristics. 25 October 2012. Available at European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB /document_library/EPAR_-_Product_Information /human/002455/WC500135055.pdf. Accessed on 17 January 2014.<br />
+                        <br />
+                        4. Ajay K Gopal, Robert Chen, Scott E Smith, Stephen M Ansell, Joseph D Rosenblatt, et al,. Three-year follow-up data and characterization of long-term remissions from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory hodgkin Lymphoma. Poster, Abstract No. 4382, American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+
+                    </div>
+
+
+                </div>
+
+                <!--slide 2 ending-->
+                <!--slide03 starting-->
+                <div id="slide3" style="display: none;">
+                    <!--Body -->
+                    <!--<div class="topic-bar">
+                        <div id="topic-title">Pivotal Phase II Trial in Relapsed or Refractory Hodgkin's Lymphoma post ASCT</div>
+                    </div>-->
+                    <div class="slidecontent" style="">
+                        <div id="bimg1" style="display: none; padding-left: 20px;">
+                            <center><p data-class="fadeInRight"  style="width: 50%;font-size:15px; float: left; padding-left: 5px;padding-top:40px; min-width: 98%; max-width: 50%; text-align: center; "><b>A Phase II Trial of brentuximab vedotin in patients with relapsed or refractory Hodgkin’s Lymphoma post ASCT
+</b></p></center>
+                            </div>
+                        <div id="bimg2"  style="display: none;text-align: center;">
+                            <img data-class="fadeInDown" src="img/slide3.png" style="height: 312px;  margin: 10px; padding-top: 30px;" />
+                            <!--<img data-class="fadeInDown" src="img/slide2flow2.png" style="width: 200px; height: 312px;  margin: 10px; padding-top: 30px;" />
+                            <img data-class="fadeInDown" src="img/slide2flow3.png" style="width: 130px; height: 312px;  margin: 10px; padding-top: 30px;" />-->
+                        </div>
+
+
+
+                    </div>
+                    <!--Transcript -->
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none; position: absolute; right: 0; margin-top: 184px;" style="display: none; position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#"><img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center> <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);" > Hide Transcript</button></center>
+
+                        <div class="transcript" style="">
+                            <p>A phase II trial with brentuximab vedotin was conducted with patients who had relapsed or refractory HL and had undergone prior autologous stem cell transplantation (ASCT).<sup>1</sup></p>
+                            <p>102 individuals who were 12 years or older were included in the study and brentuximab vedotin was administered at 1.8 mg/kg intravenously over 30 minutes every 21 days for up to 16 cycles.<sup>1</sup></p>
+                            <p>The patients Hodgkin’s Lymphoma was reassessed at 2, 4, 7, 10, 13, and 16 cycles by an independent reviewer facility (IRF).<sup>1</sup></p>
+                            <p>The patients were then followed-up every 12 weeks.<sup>1</sup></p>
+                        </div>
+                    </div>
+                    <div id="slide3ref" style="display: none;" class="slide3ref">
+                        <b>References:</b><br />
+                        <br />
+                        1. Younes A, Gopal AK, Smith SE, Ansell SM, Rosenblatt JD, et al,. Results of a pivotal phase II study of brentuximab vedotin for patients with relapsed or refractory Hodgkin's Lymphoma. J Clin Oncol. 2012 Jun 20;30(18):2183-9.<br />
+                        <br />
+                        2. Arai S, Fanale M, DeVos S, Engert A, Illidge T et al. Defining a Hodgkin's Lymphoma population for novel therapeutics after relapse from autologous hematopoietic cell transplant. Leuk Lymphoma. 2013;54(11):2531-3.
+                        <br />
+                        <br />
+                        3. ADCETRIS®. Summary of Product Characteristics. 25 October 2012. Available at European Medicines Agency Web site http://www.ema.europa.eu/docs /en_GB/document_library/EPAR_-_Product_Information /human/002455/WC500135055.pdf. Accessed on 17 January 2014.<br />
+                        <br />
+                        4. Ajay K Gopal, Robert Chen, Scott E Smith, Stephen M Ansell, Joseph D Rosenblatt, et al,. Three-year follow-up data and characterization of long-term remissions from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory hodgkin Lymphoma. Poster, Abstract No. 4382, American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+
+                    </div>
+
+
+                </div>
+                <!--slide03 ending-->
+                <!--slide 4 starting-->
+                <div id="slide4" style="display: none;">
+                    <!--<div class="topic-bar">
+                        <div id="topic-title">Brentuximab vedotin studied in a heavily pre-treated population</div>
+                    </div>-->
+                    <!--Body -->
+                    <div class="slidecontent" style="">
+                        <div class="playBody">
+                            <div id="text1" style="padding-left: 20px; display:none;">
+                                <center><p data-class="fadeInRight"  style="width: 50%; float: left;padding-top:20px;font-size:15px; padding-left: 5px; min-width: 101%; max-width: 50%; text-align: center; "><b>Demographics and Baseline Characteristics</b></p></center>
+                            </div>
+                            <div style="text-align:center; padding-top: 20px; display: none;" id="table1">
+                                <table class="leftbluetable tblslide4" border="0" style="width: 550px; height: 50px; margin: 0 auto;">
+                                    <tr>
+                                        <td style="background-color: #330099; color: white; font-size: large;"></td>
+                                        <td style="background-color: #330099; color: white; font-size: large; width: 110px;text-align:center;">N=102</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td >Median age, years (range)</td>
+                                        <td style="text-align:center;">31 (15-77)</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Gender</td>
+                                        <td style="text-align:center;">48 M / 54 F</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>ECOG performance status</td>
+                                        <td style="text-align:center;"></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td style="padding-left: 40px;">0</td>
+                                        <td style="text-align:center;">42 (41%)</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td style="padding-left: 40px;">1</td>
+                                        <td style="text-align:center;">60 (59%)</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Prior chemotherapy regimens; Median (range)</td>
+                                        <td style="text-align:center;">3.5 (1-13)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Refractory to frontline therapy</td>
+                                        <td style="text-align:center;">72 (71%)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Refractory to most recent treatment</td>
+                                        <td style="text-align:center;">43 (42%)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Prior radiation</td>
+                                        <td style="text-align:center;">67 (66%)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Prior ASCT</td>
+                                        <td style="text-align:center;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-left: 40px;">1</td>
+                                        <td style="text-align:center;">91 (89%)</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td style="padding-left: 40px;">2</td>
+                                        <td style="text-align:center;">11 (11%)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Time from ASCT to first post-transplant relapse; Median (range)</td>
+                                        <td style="text-align:center;">6.7 mo (0-131)</td>
+                                    </tr>
+
+                                </table>
+                                <br />
+                                
+                            </div>
+
+
+                            <div id="bimg1" style="padding-left: 20px; display: none;">
+                               <center> <img data-class="fadeInRight" src="img/s2.png" style="width: 70%;  margin: 0 auto; margin: 1px; padding-top: 57px;" /></center>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none; position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#"><img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center> <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);" > Hide Transcript</button></center>
+
+                        <div class="transcript" style="">
+                            <br />
+                            <p>The median age of the patients with HL who entered this Phase II trial was 31 years.<sup>1</sup></p>
+                            <p>Brentuximab vedotin was studied in a heavily pre-treated population.</p>
+                            <p>Overall, patients in the study had 3.5 median chemotherapy regimens. 71% of patients were refractory to frontline therapy. Median time from autologous stem cell transplantation to first relapse was 6.7 months.<sup>1</sup></p>
+
+                        </div>
+                    </div>
+                    <div id="slide4ref" style="display: none" class="slide4ref">
+                        <b>References:</b><br />
+                        <br />
+                        1. Younes A, Gopal AK, Smith SE, Ansell SM, Rosenblatt JD, et al,. Results of a pivotal phase II study of brentuximab vedotin for patients with relapsed or refractory Hodgkin's Lymphoma. J Clin Oncol. 2012 Jun 20;30(18):2183-9.<br />
+                        <br />
+                        2. Arai S, Fanale M, DeVos S, Engert A, Illidge T et al. Defining a Hodgkin's Lymphoma population for novel therapeutics after relapse from autologous hematopoietic cell transplant. Leuk Lymphoma. 2013;54(11):2531-3.
+                        <br />
+                        <br />
+                        3. ADCETRIS®. Summary of Product Characteristics. 25 October 2012. Available at European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB /document_library/EPAR_-_Product_Information /human/002455/WC500135055.pdf. Accessed on 17 January 2014.<br />
+                        <br />
+                        4. Ajay K Gopal, Robert Chen, Scott E Smith, Stephen M Ansell, Joseph D Rosenblatt, et al,. Three-year follow-up data and characterization of long-term remissions from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory Hodgkin's Lymphoma. Poster, Abstract No. 4382, American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+
+                    </div>
+
+                </div>
+                <!--slide 4 ending-->
+                <!--slide 5 starting-->
+                <div id="slide5" style="display: none;">
+                    <!--<div class="topic-bar">
+                        <div id="topic-title">Efficacy of brentuximab vedotin</div>
+                    </div>
+                 <!--Body -->
+                    <div class="slidecontent" style="">
+                        <div class="playBody">
+                            <div id="s5text1" style="padding-left: 20px; display:none;">
+                                <center><p data-class="fadeInRight" style="padding-top:10px;font-size:18px;" ><b>Efficacy Assessment</b></p></center>
+                            </div>
+
+                            <div id="">
+                                <div id="s5HDtable1">
+                                <center><table class="leftbluetable" border="0" style="display: none;width: 556px;height: 233px;" id="s5table1">
+                                    <tr >
+                                        <td style="background-color:#330099;color:white;font-size:large;"></td>
+                                        <td  style="background-color:#330099;color:white; font-size:large;">IRF(N=102)</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Objective response rate, % (95% CI)</td>
+                                        <td>75 (65, 83)</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td style="padding-left:40px;">Complete remission,%</td>
+                                        <td>34 (25, 44)</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td style="padding-left:40px;">Partial remission,%</td>
+                                        <td>40</td>
+                                        </tr>
+
+                                    <tr>
+                                        <td>Stable disease,%</td>
+                                        <td>22</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Progressive disease,%</td>
+                                        <td>3</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Not evaluable,%</td>
+                                        <td>1</td>
+                                    </tr>
+                                    
+                                </table>
+                                </center></div>
+                               
+                                    <div style="width: 100%;
+display: inline-block;
+/* margin: 0 auto; */
+text-align: center;">
+                                <img data-class="fadeInDown" id="s5Img1" src="img/slide5img1.png" style="display: none;box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.33); width: 414px; height: 221px; margin: 30px;" /></div>
+                                <div id="s5text2" style="display: none; padding-left: 20px; margin-top: 25px; top: 50px;">
+                            
+                            <p data-class="fadeInDown" style="margin-top: 20px; text-align: center;">CR: Complete Remission
+PR: Partial Remission <br />
+SD: Stable Disease
+</p>
+
+                        </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!--Transcript -->
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none; position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#"><img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center> <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);" > Hide Transcript</button></center>
+
+                        <div class="transcript" style="">
+                            <br />
+                            <p>In this trial 75% patients had an objective response by independent review facility. This included 34% patients with complete remission and 40% with partial remission.<sup>1</sup></p>
+                            <p>In addition to this, 22% of patients had stable disease. Assessment of response by the study investigators supported the independent review facility efficacy analysis.<sup>1</sup></p>
+                            <p>The overall disease control rate, which is the percentage of patients who achieved complete remission, partial remission or had no progression of the disease, was 96%.<sup>1</sup></p>
+                        </div>
+                    </div>
+                    <div id="slide5ref" style="display: none" class="slide5ref">
+
+                        <b>References:</b><br />
+                        <br />
+                        1. Younes A, Gopal AK, Smith SE, Ansell SM, Rosenblatt JD, et al,. Results of a pivotal phase II study of brentuximab vedotin for patients with relapsed or refractory Hodgkin's Lymphoma. J Clin Oncol. 2012 Jun 20;30(18):2183-9.<br />
+                        <br />
+                        2. Arai S, Fanale M, DeVos S, Engert A, Illidge T et al. Defining a Hodgkin's Lymphoma population for novel therapeutics after relapse from autologous hematopoietic cell transplant. Leuk Lymphoma. 2013;54(11):2531-3.
+                        <br />
+                        <br />
+                        3. ADCETRIS®. Summary of Product Characteristics. 25 October 2012. Available at European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB /document_library/EPAR_-_Product_Information /human/002455/WC500135055.pdf. Accessed on 17 January 2014.<br />
+                        <br />
+                        4. Ajay K Gopal, Robert Chen, Scott E Smith, Stephen M Ansell, Joseph D Rosenblatt, et al,. Three-year follow-up data and characterization of long-term remissions from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory hodgkin Lymphoma. Poster, Abstract No. 4382, American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+
+
+
+                    </div>
+
+                </div>
+                <!--slide 5 ending-->
+                <!--slide 6 starting-->
+                <div id="slide6" style="display: none;">
+                    <!-- <div class="topic-bar">
+                        <div id="topic-title">Tumour size reduction with Brentuximab Vedotin</div>
+                    </div>-->
+                    <!--Body -->
+                    <div class="slidecontent" style="">
+                        <div class="playBody">
+
+                            <div id="text1" style="padding-left: 20px;display:none;">
+                                <center><p data-class="fadeInRight" style="padding-top:30px;font-size:17px;"><b>Tumor size reduction in 94% patients</b></p></center>
+                            </div>
+
+                            <div id="bimg1" style="padding-left: 20px;display:none;text-align: center;width: 100%;">
+                                <img data-class="fadeInRight" src="img/6.png"/>
+                            </div>
+
+
+
+                        </div>
+
+                    </div>
+
+                    <!--Transcript -->
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none; position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#"><img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center> <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);" > Hide Transcript</button></center>
+
+                        <div class="transcript">
+
+                            <p>In this phase II trial tumour size reductions were observed in 94% of the patients. Four patients were not included in the analysis; three had no measurable lesions per independent review facility, and one had no post-baseline scans.<sup>1</sup></p>
+                        </div>
+
+                    </div>
+                    <div id="slide6ref" style="display: none;" class="slide6ref">
+
+                        <b>References:</b><br />
+                        <br />
+                        1. Younes A, Gopal AK, Smith SE, Ansell SM, Rosenblatt JD, et al,. Results of a pivotal phase II study of brentuximab vedotin for patients with relapsed or refractory Hodgkin's Lymphoma. J Clin Oncol. 2012 Jun 20;30(18):2183-9.<br />
+                        <br />
+                        2. Arai S, Fanale M, DeVos S, Engert A, Illidge T et al. Defining a Hodgkin's Lymphoma population for novel therapeutics after relapse from autologous hematopoietic cell transplant. Leuk Lymphoma. 2013;54(11):2531-3.
+                        <br />
+                        <br />
+                        3. ADCETRIS®. Summary of Product Characteristics. 25 October 2012. Available at European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB /document_library/EPAR_-_Product_Information ''''''/human/002455/WC500135055.pdf. Accessed on 17 January 2014.<br />
+                        <br />
+                        4. Ajay K Gopal, Robert Chen, Scott E Smith, Stephen M Ansell, Joseph D Rosenblatt, et al,. Three-year follow-up data and characterization of long-term remissions from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory Hodgkin's Lymphoma. Poster, Abstract No. 4382, American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+
+
+                    </div>
+                </div>
+                <!--slide 6 ending-->
+                <div id="slide6a" style="display: none;">
+                    <!-- <div class="topic-bar">
+                        <div id="topic-title">Knowledge Check</div>
+                    </div>-->
+                    <!--Body -->
+                    <div class="slidecontent" style="">
+                        <div class="playBody">
+                            <div style="padding-left: 20px">
+                                <br />
+                                <p data-class="fadeInDown" style="display: none;" id="s6atxt1">
+                                    The objective response rate observed in the trial was
+                                </p>
+                                <br />
+                                <input type="hidden" id="Answer" value="1" qid="1" />
+                                <input type="hidden" id="Percentage" value="50" />
+                                <div id="radio1" style="padding: 10px 25px 10px 10px; display: none;">
+                                    <input name="ratio1" value="1" type="radio" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="padding-left: 55px;">75%</p>
+                                </div>
+                                <div id="radio2" style="padding: 10px 25px 10px 10px; display: none;">
+                                    <input name="ratio1" value="2" type="radio" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="padding-left: 55px;">
+                                       94%</p>
+                                </div>
+                                <div id="radio3" style="padding: 10px 25px 10px 10px; display: none;">
+                                    <input name="ratio1" value="3" type="radio" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="padding-left: 55px;">
+                                        40%</p>
+                                </div>
+                                <div id="radio4" style="padding: 10px 25px 10px 10px; display: none;">
+                                    <input name="ratio1" value="4" type="radio" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="padding-left: 55px;">
+                                        35%</p>
+                                </div>
+                               
+                                <div style="margin-left:470px;">
+                                    <div>
+                                        <input id="s6aimag9" onclick="onclickAnswer(this);" type="button" class="btn btn-primary"  value="Submit"
+                                            style="width: 100px; margin-right: 25px; display: none" />
+                                    </div>
+                                    <br />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Transcript -->
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none;
+                        position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#">
+                            <img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center>
+                            <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                                Hide Transcript</button></center>
+                        <div class="transcript">
+                            <br />
+                           Please take a moment to answer a question. Please select the best answer and click submit to continue
+                        </div>
+                    </div>
+                    <div id="slide6aref" style="display: none;" class="slide6aref">
+                        <b>References:</b><br />
+                        <br />
+                        Results of a Pivotal Phase II Study of Brentuximab Vedotin for Patients With Relapsed
+                        or Refractory Hodgkin’s Lymphoma. Younes et al. Journal Of Clinical Oncology. June
+                        2012.
+                    </div>
+                </div>
+                <!--slide 7 starting-->
+                <div id="slide7" style="display: none;">
+                    <!--<div class="topic-bar">
+                        <div id="topic-title">Duration of response with Brentuximab Vedotin</div>
+                    </div>-->
+                    <div class="slidecontent" style="">
+                        <div class="playBody">
+
+                            <br />
+                            <div id="text1" style="padding-left: 20px; display:none;">
+                                <center><p data-class="fadeRight" style="padding-top:10px;font-size:17px;"><b>Duration of response</b></p></center>
+
+                            </div>
+                            <div id="text2" style="padding-left: 10px; display:none;">
+
+                                <center><p data-class="fadeInRight" style="padding-top:15px;font-size:15px;">Median (range) cycles of treatment: 9 (1–16)</p></center>
+                            </div>
+
+                            <div>
+                                <center><table class="leftbluetable" border="0" style="display: none;width: 589px;height: 341px;" id="table1">
+                                    <tr >
+                                        <td style="background-color:#330099;color:white;font-size:large;"></td>
+                                        <td  style="background-color:#330099;color:white; font-size:large; text-align: left;">IRF (N=102)</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Median time to OR (range)</td>
+                                        <td>5.7 wks (5.1 - 56)</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td style="font-weight: bold;" >Median duration of OR (95% CI)</td>
+                                        <td style="font-weight: bold;" >6.7 mo (3.6, 14)</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Median time to CR (range)</td>
+                                        <td>12 wks (5.1 - 56)</td>
+                                        </tr>
+
+                                    <tr>
+                                        <td style="font-weight: bold;">Median duration of CR (95% CI)</td>
+                                        <td style="font-weight: bold;" >20.5 mo (10.8, ––)</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Estimated 12-mo OS rate (95% CI)</td>
+                                        <td>89% (83, 95)</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Median PFS (95% CI)</td>
+                                        <td>5.6 mo (5.0, 9.0)</td>
+                                    </tr>
+                                    
+                                </table>
+                                </center>
+                            </div>
+
+
+
+
+
+
+                        </div>
+                    </div>
+                    <!--Transcript -->
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none; position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#"><img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center> <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);" > Hide Transcript</button></center>
+                        <div class="transcript">
+                            <br />
+                            <p>Among the 75% of patients who achieved an objective response to brentuximab vedotin, median duration of response was 6.7 months.<sup>1</sup></p>
+                            <p>The median duration of response among the 34% of patients who achieved complete remission was much longer at 20.5 months.<sup>1</sup></p>
+
+                        </div>
+                    </div>
+                    <div id="slide7ref" style="display: none;" class="slide7ref">
+
+                        <b>References:</b><br />
+                        <br />
+                        1. Younes A, Gopal AK, Smith SE, Ansell SM, Rosenblatt JD, et al,. Results of a pivotal phase II study of brentuximab vedotin for patients with relapsed or refractory Hodgkin's Lymphoma. J Clin Oncol. 2012 Jun 20;30(18):2183-9.<br />
+                        <br />
+                        2. Arai S, Fanale M, DeVos S, Engert A, Illidge T et al. Defining a Hodgkin's Lymphoma population for novel therapeutics after relapse from autologous hematopoietic cell transplant. Leuk Lymphoma. 2013;54(11):2531-3.
+                        <br />
+                        <br />
+                        3. ADCETRIS®. Summary of Product Characteristics. 25 October 2012. Available at European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB /document_library/EPAR_-_Product_Information /human/002455/WC500135055.pdf. Accessed on 17 January 2014.<br />
+                        <br />
+                        4. Ajay K Gopal, Robert Chen, Scott E Smith, Stephen M Ansell, Joseph D Rosenblatt, et al,. Three-year follow-up data and characterization of long-term remissions from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory Hodgkin's Lymphoma. Poster, Abstract No. 4382, American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+                         
+
+                    </div>
+                </div>
+                <!--slide 7 ending-->
+                <!--slide 8 starting-->
+                <div id="slide8" style="display: none;">
+                    <!--<div class="topic-bar">
+                        <div id="topic-title">Progression free survival with brentuximab vedotin:Notably longer with complete remission</div>
+                    </div>-->
+                    <div class="slidecontent" style="">
+                        <div class="playBody">
+                            <div id="text1" style="padding-left: 20px;display:none;">
+                                <center><p data-class="fadeRight" style="padding-top:20px;font-size:17px;" ><b>PFS by best response: Notably longerwith complete remission</b></p></center>
+                            </div>
+
+                            <div id="bimg1" style="padding-left: 20px;text-align: center;width: 100%;display:none;">
+                                <img data-class="fadeInRight" src="img/4.png"/>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <!--Transcript -->
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none; position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#"><img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center> <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);" > Hide Transcript</button></center>
+
+                        <div class="transcript">
+                            <br />
+                            <p>Progression-free survival (PFS) defined as the time from entry onto the study until lymphoma progression or death as a result of any cause was assessed according to patients’ best response to brentuximab vedotin.<sup>1</sup></p>
+                            <p>Median PFS in patients who achieved complete remission was 21.7 months. This was notably longer than the PFS observed in patients who did not achieve complete remission. PFS in those with partial remission was 5.1 months and 3.5 months in those with stable disease.<sup>1</sup></p>
+
+
+                        </div>
+                    </div>
+                    <div id="slide8ref" style="display: none" class="slide8ref">
+
+                        <b>References:</b><br />
+                        <br />
+                        1. Younes A, Gopal AK, Smith SE, Ansell SM, Rosenblatt JD, et al,. Results of a pivotal phase II study of brentuximab vedotin for patients with relapsed or refractory Hodgkin's Lymphoma. J Clin Oncol. 2012 Jun 20;30(18):2183-9.<br />
+                        <br />
+                        2. Arai S, Fanale M, DeVos S, Engert A, Illidge T et al. Defining a Hodgkin's Lymphoma population for novel therapeutics after relapse from autologous hematopoietic cell transplant. Leuk Lymphoma. 2013;54(11):2531-3.
+                        <br />
+                        <br />
+                        3. ADCETRIS®. Summary of Product Characteristics. 25 October 2012. Available at European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB /document_library/EPAR_-_Product_Information /human/002455/WC500135055.pdf. Accessed on 17 January 2014.<br />
+                        <br />
+                        4. Ajay K Gopal, Robert Chen, Scott E Smith, Stephen M Ansell, Joseph D Rosenblatt, et al,. Three-year follow-up data and characterization of long-term remissions from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory Hodgkin's Lymphoma. Poster, Abstract No. 4382, American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+
+
+
+                    </div>
+                </div>
+                <!--slide 8 ending-->
+                <!--slide 9 starting-->
+                <div id="slide9" style="display: none;">
+                    <!--<div class="topic-bar">
+                        <div id="topic-title">Progression free survival with brentuximab vedotin vs. last prior systemic therapy</div>
+                    </div>-->
+                    <div class="slidecontent" style="">
+                        <div class="playBody">
+                            <div id="bimg1" style="padding-left: 20px;display: inline-block;width: 100%;text-align: center; display:none;">
+                                <p data-class="fadeInRight" style="padding-top:20px;font-size:17px;"><b>PFS with brentuximab vedotin vs. last prior systemic therapy</b></p>
+                            </div>
+                            <div id="bimg1" style="padding-left: 25px;text-align: center;width: 100%; display:none;">
+                                <img data-class="fadeInRight" src="img/7.png">
+                            </div>
+                            <div id="bimg2" style="display: none; padding-left: 20px;margin-top:10px;float: left;margin-top: 17px; ">
+                                <img data-class="fadeInRight" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;margin-top: 4px;" />
+                                <p data-class="fadeInRight">Progression-free survival was significantly prolonged with brentuximab vedotin compared with the prior systemic therapy (P < .001)</p>
+                            </div>
+                            <div id="bimg3" style="display: none; padding-left: 20px;">
+                                <img data-class="fadeInRight" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;margin-top: 4px;" />
+                                <p data-class="fadeInRight">60% decrease in the risk of death or progression with brentuximab vedotin</p>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                    <!--Transcript -->
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none; position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#"><img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center> <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);" > Hide Transcript</button></center>
+
+                        <div class="transcript">
+                            </br><p>Fifty-seven of the 102 patients had received systemic therapy at the time of relapse after autologous stem cell transplantation, and before receiving brentuximab vedotin.<sup>1</sup></p>
+
+                            <p>A pre-planned analysis was conducted in this patient subgroup to compare progression-free survival after the most recent prior systemic therapy to that with brentuximab vedotin.<sup>1</sup></p>
+                            <p>The median progression-free survival with the most recent prior systemic therapy was 4.1 months by investigator assessment. When these patients subsequently received brentuximab vedotin, the median progression-free survival was 7.8 months by investigator assessment.<sup>1</sup></p>
+                            <p>Progression-free survival was significantly prolonged with brentuximab vedotin compared with the prior systemic therapy (P < .001).</p>
+                            <p>Correlated survival analysis indicated that brentuximab vedotin was associated with a 60% decrease in the risk of death or progression.<sup>1</sup></p>
+                        </div>
+                    </div>
+                    <div id="slide9ref" style="display: none" class="slide9ref">
+
+                        <b>References:</b><br />
+                        <br />
+                        1. Younes A, Gopal AK, Smith SE, Ansell SM, Rosenblatt JD, et al,. Results of a pivotal phase II study of brentuximab vedotin for patients with relapsed or refractory Hodgkin's Lymphoma. J Clin Oncol. 2012 Jun 20;30(18):2183-9.<br />
+                        <br />
+                        2. Arai S, Fanale M, DeVos S, Engert A, Illidge T et al. Defining a Hodgkin's Lymphoma population for novel therapeutics after relapse from autologous hematopoietic cell transplant. Leuk Lymphoma. 2013;54(11):2531-3.
+                        <br />
+                        <br />
+                        3. ADCETRIS®. Summary of Product Characteristics. 25 October 2012. Available at European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB /document_library/EPAR_-_Product_Information /human/002455/WC500135055.pdf. Accessed on 17 January 2014.<br />
+                        <br />
+                        4. Ajay K Gopal, Robert Chen, Scott E Smith, Stephen M Ansell, Joseph D Rosenblatt, et al,. Three-year follow-up data and characterization of long-term remissions from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory Hodgkin's Lymphoma. Poster, Abstract No. 4382, American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+
+
+
+                    </div>
+                </div>
+
+
+                <div id="slide10" style="display: none;">
+                    <!--  <div class="topic-bar">
+                    <div id="topic-title">Progression free survival in patients with complete response by subsequent transplant</div>
+                </div>-->
+
+                    <div class="slidecontent" style="">
+                        <div id="bimg11" style="display: none; padding-left: 20px; padding-top: 30px;">
+                            <img data-class="fadeInRight" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;" />
+
+                            <p data-class="fadeInRight" style="padding-left: 34px;">Median PFS of patients with CR and subsequent allogeneic stem cell transplantation was similar to those with CR but did not received an allogeneic stem cell transplantation</p>
+
+                        </div>
+
+                        <div id="bimg12" style="display: none; padding-left: 20px;">
+                            <center><p data-class="fadeRight" style="padding-top:30px;font-size:17px;" ><b>PFS in patients with CR by subsequent transplant</b></p></center>
+
+                        </div>
+                        <div>
+                            <center><table class="leftbluetable" border="0" style="display: none;margin-top: 26px;width: 535px;height: 154px;" id="table2">
+                                    <tr >
+                                        <td style="background-color:#330099;color:white;font-size:medium;text-align:left;">Patients achieving CR</td>
+                                        <td  style="background-color:#330099;color:white; font-size:medium;text-align:center;">N</td>
+                                        <td  style="background-color:#330099;color:white; font-size:medium;">Median PFS, months</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border-right: none;">Allogeneic transplant</td>
+                                        <td style="border-right: none;text-align:center;">5</td>
+                                        <td  style="text-align:center;" >21.1</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border: none;">No transplant</td>
+                                        <td style="border: none;text-align:center;" >30</td>
+                                        <td  style="text-align:center;" >21.7</td>
+                                    </tr>
+                                    </table>
+                                    </center>
+                        </div>
+
+
+                    </div>
+
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none; position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#"><img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center> <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);" > Hide Transcript</button></center>
+
+                        <div class="transcript" style="">
+                            <p>At the time of analysis, eight patients who responded to brentuximab vedotin (five patients with complete remission and three patients with partial remission per IRF) had received allogeneic stem cell transplantation immediately after brentuximab vedotin and before any evidence of tumour progression.<sup>1</sup></p>
+                            <p>The median progression-free survival in patients with CR, who did not receive subsequent allogeneic stem cell transplantation (SCT) was comparable to those who underwent an allogeneic SCT.<sup>1</sup></p>
+                            <p>The median progression-free survival was 21.1 months in the five patients in complete remission who underwent subsequent allogeneic SCT while the median PFS in the 30 patients who achieved complete remission but who did not receive allogeneic SCT was 21.7 months.<sup>1</sup></p>
+
+                        </div>
+                    </div>
+                    <div id="slide10ref" style="display: none" class="slide10ref">
+                        <b>References:</b><br />
+                        <br />
+                        1. Younes A, Gopal AK, Smith SE, Ansell SM, Rosenblatt JD, et al,. Results of a pivotal phase II study of brentuximab vedotin for patients with relapsed or refractory Hodgkin's Lymphoma. J Clin Oncol. 2012 Jun 20;30(18):2183-9.<br />
+                        <br />
+                        2. Arai S, Fanale M, DeVos S, Engert A, Illidge T et al. Defining a Hodgkin's Lymphoma population for novel therapeutics after relapse from autologous hematopoietic cell transplant. Leuk Lymphoma. 2013;54(11):2531-3.
+                        <br />
+                        <br />
+                        3. ADCETRIS®. Summary of Product Characteristics. 25 October 2012. Available at European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB /document_library/EPAR_-_Product_Information/ human/002455/WC500135055.pdf. Accessed on 17 January 2014.<br />
+                        <br />
+                        4. Ajay K Gopal, Robert Chen, Scott E Smith, Stephen M Ansell, Joseph D Rosenblatt, et al,. Three-year follow-up data and characterization of long-term remissions from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory Hodgkin's Lymphoma. Poster, Abstract No. 4382, American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+
+
+
+                    </div>
+                </div>
+
+                <div id="slide10a" style="display: none;">
+                    <!-- <div class="topic-bar">
+                        <div id="topic-title">Knowledge Check</div>
+                    </div>-->
+                    <!--Body -->
+                    <div class="slidecontent" style="">
+                        <div class="playBody">
+                            <div style="padding-left: 20px">
+                                <br />
+                                <p data-class="fadeInDown" style="display: none;" id="s10atxt1">
+                                   Which of the following is true about the median progression free survival observed in this trial</p>
+                                <br />
+                                <input type="hidden" id="Answer" value="3" qid="2" />
+                                <input type="hidden" id="Percentage" value="25" />
+                                <div id="radio1" style="padding: 10px 25px 10px 10px; display: none;">
+                                    <input name="ratio1" value="1" type="radio" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="padding-left: 55px;">
+                                        Median PFS in patients who achieved complete remission was 21.1 months</p>
+                                </div>
+                                <div id="radio2" style="padding: 10px 25px 10px 10px; display: none;">
+                                    <input name="ratio1" value="2" type="radio" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="padding-left: 55px;">
+                                        Median PFS in patients in complete remission who underwent subsequent allogeneic SCT was 21.7 months</p>
+                                </div>
+                                <div id="radio3" style="padding: 10px 25px 10px 10px; display: none;">
+                                    <input name="ratio1" value="3" type="radio" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="padding-left: 55px;">The median PFS associated with treatment with brentuximab was longer than median PFS associated with the most recent prior systemic therapy</p>
+                                </div>
+                                <div id="radio4" style="padding: 10px 25px 10px 10px; display: none;">
+                                    <input name="ratio1" value="4" type="radio" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="padding-left: 55px;">
+                                        All of the above</p>
+                                </div>
+                                
+                                <div style="margin-left:470px;">
+                                    <div>
+                                        <input id="s10aimag9" onclick="onclickAnswer(this);" type="button" class="btn btn-primary" value="Submit"
+                                            style="width: 100px; margin-right: 25px; display: none" />
+                                    </div>
+                                    <br />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Transcript -->
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none;
+                        position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#">
+                            <img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center>
+                            <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                                Hide Transcript</button></center>
+                        <div class="transcript">
+                            <br />
+                            Please take a moment to answer a question. Please select the best answer and click submit to continue</div>
+                    </div>
+                    <div id="slide10aref" style="display: none;" class="slide10aref">
+                        <b>References:</b><br />
+                        <br />
+                        Results of a Pivotal Phase II Study of Brentuximab Vedotin for Patients With Relapsed
+                        or Refractory Hodgkin’s Lymphoma. Younes et al. Journal Of Clinical Oncology. June
+                        2012.
+                    </div>
+                </div>
+
+
+
+                <div id="slide11" style="display: none;">
+                    <!--  <div class="topic-bar">
+                    <div id="topic-title">Overall Survival</div>
+                </div>-->
+
+                    <div class="slidecontent" style="">
+                        <div id="bimg0" style="display:none;padding-left: 20px;display:none;text-align: center;width: 100%;">
+                            <img data-class="fadeInRight" src="img/3.png" style="padding-top:20px;margin-bottom: 20px;" />
+                        </div>
+
+                        <div id="bimg1" style="display: none; padding-left: 20px; margin-top: 25px; display:none; position: relative;">
+                            <img data-class="fadeInDown" align="left" src="../common/img/bullet01.png" style="width: 12px; height: 12px; margin: 10px;margin-top: 4px;" />
+                            <p data-class="fadeInDown" style="padding-left: 32px;">Median duration of overall survival was 40.5 months</p>
+
+                        </div>
+                        <div id="bimg2" style="display: none; padding-left: 20px; position: relative;">
+                            <img data-class="fadeInDown" align="left" src="../common/img/bullet01.png" style="width: 12px; height: 12px; margin: 10px;margin-top: 4px;" />
+                            <p data-class="fadeInDown">14 patients remain in remission per independent reviewer assessment</p>
+
+                        </div>
+                        <div id="bimg3" style="display: none; padding-left: 20px;position: relative;">
+                            <img data-class="fadeInDown" align="left" src="../common/img/bullet01.png" style="width: 12px; height: 12px; margin: 10px;margin-top: 4px;" />
+                            <p data-class="fadeInDown" style="padding-left: 32px;">5 of the 14 received consolidative allogeneic stem cell transplantation</p>
+
+                        </div>
+                        <div id="bimg4" style="display: none; padding-left: 20px; position: relative;">
+                            <img data-class="fadeInDown" align="left" src="../common/img/bullet01.png" style="width: 12px; height: 12px; margin: 10px;margin-top: 4px;" />
+                            <p data-class="fadeInDown">9 of the 14 had no additional treatment following brentuximab vedotin</p>
+
+                        </div>
+                       
+                        
+                       
+                    
+
+
+                    </div>
+
+
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none; position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#"><img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center> <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);" > Hide Transcript</button></center>
+
+                        <div class="transcript" style="">
+                            <p>After a 3-year extended follow-up, the median duration of overall survival was 40.5 months. Independent reviewers assessed that 14 patients remain in remission in the same duration of time.<sup>4</sup></p>
+
+                            <p>Of the 14 patients in remission 5 received consolidative allogeneic stem cell transplantation following brentuximab vedotin and 9 remain in remission with no additional treatment following brentuximab vedotin.</p>
+
+
+
+                        </div>
+                    </div>
+                    <div id="slide11ref" style="display: none" class="slide11ref">
+                        <b>References:</b><br />
+                        <br />
+                        1. Younes A, Gopal AK, Smith SE, Ansell SM, Rosenblatt JD, et al,. Results of a pivotal phase II study of brentuximab vedotin for patients with relapsed or refractory Hodgkin's Lymphoma. J Clin Oncol. 2012 Jun 20;30(18):2183-9.<br />
+                        <br />
+                        2. Arai S, Fanale M, DeVos S, Engert A, Illidge T et al. Defining a Hodgkin's Lymphoma population for novel therapeutics after relapse from autologous hematopoietic cell transplant. Leuk Lymphoma. 2013;54(11):2531-3.
+                        <br />
+                        <br />
+                        3. ADCETRIS®. Summary of Product Characteristics. 25 October 2012. Available at European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB /document_library/EPAR_-_Product_Information/ human/002455/WC500135055.pdf. Accessed on 17 January 2014.<br />
+                        <br />
+                        4. Ajay K Gopal, Robert Chen, Scott E Smith, Stephen M Ansell, Joseph D Rosenblatt, et al,. Three-year follow-up data and characterization of long-term remissions from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory Hodgkin's Lymphoma. Poster, Abstract No. 4382, American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+
+
+                    </div>
+                </div>
+
+
+
+
+                <div id="slide12" style="display: none;">
+                    <!--  <div class="topic-bar">
+                    <div id="topic-title">Safety and tolerability:Peripheral neuropathy,the most common treatment related adverse event</div>
+                </div>-->
+
+                    <div class="slidecontent" style="">
+                        <div id="bimg1" style="display: none;padding-left: 20px;padding-top:10px;">
+                            <center><p data-class="fadeInRight" ><b>The Safety and tolerability profile</b></p></center>
+
+                        </div>
+                        <div id="bimg2" style="display: none;padding-left: 10px">
+
+                            <center><p data-class="fadeInRight">Treatment-related AEs occurring in ≥20% of patients</p></center>
+                        </div>
+
+                        <div>
+                            <center><table class="leftbluetable" border="0" style="display: none;width: 600px;height: 280px;" id="table1">
+                                    <tr >
+                                        <td style="background-color:#330099;color:white;font-size:large;text-align:left">Preferred Term</td>
+                                        <td  style="background-color:#330099;color:white; font-size:large;text-align:left">All Grades</td>
+                                         <td style="background-color:#330099;color:white;font-size:large;text-align:left">Grade 3</td>
+                                        <td  style="background-color:#330099;color:white; font-size:large;text-align:left">Grade 4</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td  style="text-align:left">Peripheral sensory neuropathy</td>
+                                        <td  style="text-align:center">47%</td>
+                                        <td  style="text-align:center">9%</td>
+                                        <td  style="text-align:center">-</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td style="text-align:left">Fatigue</td>
+                                        <td  style="text-align:center">46%</td>
+                                         <td  style="text-align:center">2%</td>
+                                        <td  style="text-align:center">-</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td style="text-align:left">Nausea </td>
+                                        <td  style="text-align:center">42</td>
+                                         <td  style="text-align:center">-</td>
+                                        <td  style="text-align:center">-</td>
+                                        </tr>
+
+                                    <tr>
+                                        <td style="text-align:left">Upper respiratory tract infection</td>
+                                        <td  style="text-align:center">37</td>
+                                         <td  style="text-align:center">-</td>
+                                        <td  style="text-align:center">-</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td style="text-align:left">Diarrhoea</td>
+                                        <td  style="text-align:center">36%</td>
+                                         <td  style="text-align:center">1%</td>
+                                        <td  style="text-align:center">-</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td style="text-align:left">Pyrexia</td>
+                                        <td  style="text-align:center">29%</td>
+                                         <td  style="text-align:center">2%</td>
+                                        <td  style="text-align:center">-</td>
+                                    </tr>
+                                <tr>
+                                        <td style="text-align:left">Neutropenia</td>
+                                        <td  style="text-align:center">22%</td>
+                                         <td  style="text-align:center">14%</td>
+                                        <td  style="text-align:center">6%</td>
+                                    </tr>
+                                     <tr>
+                                        <td style="text-align:left">Vomiting</td>
+                                        <td  style="text-align:center">22%</td>
+                                         <td  style="text-align:center">-</td>
+                                        <td  style="text-align:center">-</td>
+                                    </tr>
+                                <tr>
+                                        <td style="text-align:left">Cough</td>
+                                        <td  style="text-align:center">21%</td>
+                                         <td  style="text-align:center">-</td>
+                                        <td  style="text-align:center">-</td>
+                                    </tr>
+                                    
+                                </table>
+                                </center>
+                        </div>
+
+                        <div id="bimg3" style="display: none; padding-left: 20px;margin-top: 20px;">
+                            <img data-class="fadeInRight" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;margin-top:4px;" />
+                            <p data-class="fadeInRight" style="padding-left: 34px">Peripheral sensory neuropathy was the most common treatment related adverse event </p>
+
+                        </div>
+                        <div id="bimg4" style="display: none; padding-left: 20px;">
+                            <img data-class="fadeInRight" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;margin-top:4px;" />
+                            <p data-class="fadeInRight" style="padding-left: 34px">Dose delay due to adverse event in 47% patients </p>
+
+                        </div>
+                        <div id="bimg5" style="display: none; padding-left: 20px;">
+                            <img data-class="fadeInRight" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;margin-top:4px;" />
+                            <p data-class="fadeInRight" style="padding-left: 34px">Dose reduction due to adverse event in 11 patients</p>
+
+                        </div>
+                    </div>
+
+
+
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none; position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#"><img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center> <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);" > Hide Transcript</button></center>
+
+                        <div class="transcript" style="">
+                            <p>The most common treatment-related any-grade adverse events were peripheral sensory neuropathy, fatigue, nausea, upper respiratory tract infection, diarrhoea, pyrexia, neutropenia, vomiting, and cough.<sup>4</sup></p>
+                            <p>Based on data from 2-year follow-up a total of 55% of patients experienced a grade 3 or higher adverse event.<sup>1</sup></p>
+                            <p>Doses of brentuximab vedotin were delayed due to AEs in 47% of patients. Doses of brentuximab vedotin were prospectively reduced from 1.8 to 1.2mg/kg in 11 patients, primarily due to peripheral neuropathy.<sup>1</sup></p>
+
+
+                        </div>
+                    </div>
+                    <div id="slide12ref" style="display: none" class="slide12ref">
+                        <b>References:</b><br />
+                        <br />
+                        1. Younes A, Gopal AK, Smith SE, Ansell SM, Rosenblatt JD, et al,. Results of a pivotal phase II study of brentuximab vedotin for patients with relapsed or refractory Hodgkin's Lymphoma. J Clin Oncol. 2012 Jun 20;30(18):2183-9.<br />
+                        <br />
+                        2. Arai S, Fanale M, DeVos S, Engert A, Illidge T et al. Defining a Hodgkin's Lymphoma population for novel therapeutics after relapse from autologous hematopoietic cell transplant. Leuk Lymphoma. 2013;54(11):2531-3.
+                        <br />
+                        <br />
+                        3. ADCETRIS®. Summary of Product Characteristics. 25 October 2012. Available at European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB /document_library/EPAR_-_Product_Information /human/002455/WC500135055.pdf. Accessed on 17 January 2014.<br />
+                        <br />
+                        4. Ajay K Gopal, Robert Chen, Scott E Smith, Stephen M Ansell, Joseph D Rosenblatt, et al,. Three-year follow-up data and characterization of long-term remissions from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory hodgkin Lymphoma. Poster, Abstract No. 4382, American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+                <div id="slide13" style="display: none;">
+                    <!--  <div class="topic-bar">
+                    <div id="topic-title">Peripheral neuropathy:Largely reversible and manageable with dose modification</div>
+                </div>-->
+
+                    <div class="slidecontent" style="">
+
+                        <div id="bimg0" style="display:none;padding-left: 20px;">
+                            <center><img data-class="fadeInRight" src="img/slide12img2.png" style="margin: 21px;" /></center>
+                        </div>
+
+                        <div id="bimg1" style="display: none; padding-left: 20px; margin-top: 25px; position: relative;">
+                            <img data-class="fadeInDown" align="left" src="../common/img/bullet01.png" style="width: 12px; height: 12px; margin: 10px;margin-top: 4px;" />
+                            <p data-class="fadeInDown" style="padding-left: 32px;">80% had some improvement or resolution after completion or discontinuation or modification of treatment</p>
+
+                        </div>
+                        <div id="bimg2"style="display: none; padding-left: 20px; position: relative;">
+                            <img data-class="fadeInDown" align="left" src="../common/img/bullet01.png" style="width: 12px; height: 12px; margin: 10px;margin-top: 4px;" />
+                            <p data-class="fadeInDown">50% patients had complete resolution</p>
+
+                        </div>
+                        <div id="bimg3" style="display: none; padding-left: 20px;position: relative;">
+                            <img data-class="fadeInDown" align="left" src="../common/img/bullet01.png" style="width: 12px; height: 12px; margin: 10px;margin-top: 4px;" />
+                            <p data-class="fadeInDown" style="padding-left: 32px;">Median time to improvement or resolution was 13.2 weeks</p>
+
+                        </div>
+                       
+                      
+
+                    </div>
+
+
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none; position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#"><img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center> <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);" > Hide Transcript</button></center>
+
+                        <div class="transcript" style="">
+                            <p>Peripheral neuropathy was largely reversible and manageable with dose modification.</p>
+                            <p>9% of the events of peripheral neuropathy were of grade 3 severity and there were no grade 4 events.<sup>4</sup></p>
+                            <p>A majority of the patients (80%) had some improvement or resolution of peripheral neuropathy after treatment was completed or discontinued or the dose modified.<sup>1</sup></p>
+                            <p>Complete resolution of peripheral neuropathy was observed in 50% of patients and the median time to improvement or resolution was 13.2 weeks.<sup>1</sup></p>
+                        </div>
+                    </div>
+                    <div id="slide13ref" style="display: none" class="slide13ref">
+                        <b>References:</b><br />
+                        <br />
+                        1. Younes A, Gopal AK, Smith SE, Ansell SM, Rosenblatt JD, et al,. Results of a pivotal phase II study of brentuximab vedotin for patients with relapsed or refractory Hodgkin's Lymphoma. J Clin Oncol. 2012 Jun 20;30(18):2183-9.<br />
+                        <br />
+                        2. Arai S, Fanale M, DeVos S, Engert A, Illidge T et al. Defining a Hodgkin's Lymphoma population for novel therapeutics after relapse from autologous hematopoietic cell transplant. Leuk Lymphoma. 2013;54(11):2531-3.
+                        <br />
+                        <br />
+                        3. ADCETRIS®. Summary of Product Characteristics. 25 October 2012. Available at European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB /document_library/EPAR_-_Product_Information/ human/002455/WC500135055.pdf. Accessed on 17 January 2014.<br />
+                        <br />
+                        4. Ajay K Gopal, Robert Chen, Scott E Smith, Stephen M Ansell, Joseph D Rosenblatt, et al,. Three-year follow-up data and characterization of long-term remissions from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory Hodgkin's Lymphoma. Poster, Abstract No. 4382, American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+
+
+
+                    </div>
+                </div>
+
+
+
+
+
+                <div id="slide14" style="display: none;">
+                    <!--  <div class="topic-bar">
+                    <div id="topic-title">Duration of treatment with brentuximab vedotin</div>
+                </div>-->
+
+                    <div class="slidecontent" style="">
+                        <div id="bimg0" style="display: none;padding-left: 20px;">
+                            <center><p data-class="fadeInRight" style="padding-top:5px;" ><b>Duration of treatment and number of cycles</b></p></center>
+
+                        </div>
+                        <div id="bimg1" style="display: none;">
+                            <img data-class="fadeInRight" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin-left: 48px;margin-top: 4px;" />
+
+                            <p data-class="fadeInRight" style="padding-left: 70px;">Overall, patients received a median of 9 cycles (range, 1-16)</p>
+                        </div>
+                        <div id="bimg2" style="display: none;">
+                            <img data-class="fadeInRight" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left;margin-left: 48px;margin-top: 4px;" />
+
+                            <p data-class="fadeInRight" style="padding-left: 70px;">Patients who achieved an objective response received more cycles of therapy</p>
+
+                        </div>
+                        <div id="bimg3" style="display: none;padding-left: 20px;text-align: center;width: 100%;">
+                            <img data-class="fadeInRight" src="img/1.png" />
+                        </div>
+                        <div id="bimg4" style="display: none;padding-left: 10px">
+
+                            <center><p data-class="fadeInRight" style="">Gopal et al. Poster, Abstract No. 4382, American Society of Hematology, December, 2013, New Orleans, LA, USA.</p></center>
+                        </div>
+                        <div id="bimg5" style="display: none;padding-left: 20px;text-align: center;">
+                            <img data-class="fadeInRight" src="img/2.png" style="height:170px;margin-top:5px;" />
+                        </div>
+
+                    </div>
+
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none; position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#"><img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center> <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);" > Hide Transcript</button></center>
+
+                        <div class="transcript" style="">
+                            <p>Patients received a median of 9 cycles of treatment with brentuximab vedotin.<sup>1</sup></p>
+                            <p>The number of cycles of treatment with brentuximab vedotin was highest in patients who achieved a complete response.<sup>4</sup></p>
+                            <p>The recommended duration of treatment with brentuximab vedotin is a minimum of 8 cycles and up to a maximum of 16 cycles administered every 3 weeks.<sup>3</sup></p>
+
+                        </div>
+                    </div>
+                    <div id="slide14ref" style="display: none" class="slide14ref">
+                        <b>References:</b><br />
+                        <br />
+                        1. Younes A, Gopal AK, Smith SE, Ansell SM, Rosenblatt JD, et al,. Results of a pivotal phase II study of brentuximab vedotin for patients with relapsed or refractory Hodgkin's Lymphoma. J Clin Oncol. 2012 Jun 20;30(18):2183-9.<br />
+                        <br />
+                        2. Arai S, Fanale M, DeVos S, Engert A, Illidge T et al. Defining a Hodgkin's Lymphoma population for novel therapeutics after relapse from autologous hematopoietic cell transplant. Leuk Lymphoma. 2013;54(11):2531-3.
+                        <br />
+                        <br />
+                        3. ADCETRIS®. Summary of Product Characteristics. 25 October 2012. Available at European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB/ document_library/EPAR_-_Product_Information/ human/002455/WC500135055.pdf. Accessed on 17 January 2014.<br />
+                        <br />
+                        4. Ajay K Gopal, Robert Chen, Scott E Smith, Stephen M Ansell, Joseph D Rosenblatt, et al,. Three-year follow-up data and characterization of long-term remissions from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory Hodgkin's Lymphoma. Poster, Abstract No. 4382, American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+
+
+
+                    </div>
+
+                </div>
+
+
+                <div id="slide15" style="display: none;">
+                    <!--  <div class="topic-bar">
+                    <div id="topic-title">Efficacy of brentuximab vedotin in patients without prior autologous SCT</div>
+                </div>-->
+
+                    <div class="slidecontent" style="font-size:14px;">
+                        <div id="s15Hdn1" style="font-size:14px;">
+                       <div id="s15bimg1" style="display: none; padding-left: 20px; padding-top: 30px;">
+                            <p data-class="fadeInRight" style="font-size: 100%"><b>Hodgkin’s Lymphoma</b></p>
+                        </div>
+                        <div id="s15bimg2" style="display: none; padding-left: 20px">
+
+                            <p data-class="fadeInRight" style="">ADCETRIS is indicated for the treatment of adult patients with relapsed or refractory CD30+ Hodgkin’s Lymphoma:</p>
+                        </div>
+                        <div id="s15bimg3" style="display: none; padding-left: 20px;">
+                            <img data-class="fadeInRight" src="../common/img/bullet01.png" style="width: 12px;  float: left; margin: 12px; margin-left: 48px;" />
+
+                            <p data-class="fadeInRight" style="padding-left: 70px;  padding-top: 7px;">Following autologous stem cell transplant (ASCT) or</p>
+                        </div>
+                        <div id="s15bimg4" style="display: none; padding-left: 20px;">
+                            <img data-class="fadeInRight" src="../common/img/bullet01.png" style="width: 12px; float: left; margin: 12px; margin-left: 48px;" />
+
+                            <p data-class="fadeInRight" style="padding-left: 70px;  padding-top: 7px;">Following at least two prior therapies when ASCT or multi-agent chemotherpy is not a treatment option</p>
+                        </div>
+                       
+
+                        </div>
+                         <div id="s15bimg5" style="display:none;padding-left: 20px;">
+                            <center><p data-class="fadeInRight" style="" ><b>Brentuximab vedotin: Efficacy in R/R HL without prior ASCT</b></p></center>
+                        </div>
+                        <div id="s15bimg6" style="display:none;padding-left: 10px">
+
+                            <center><p data-class="fadeInRight" style="">Brentuximab vedotin Phase I and NPP studies: patients without prior ASCT (n=41)</p></center>
+                        </div>
+
+                        <div id="s15bimg7" style="display:none;padding-left: 20px;">
+                            <img data-class="fadeInRight" src="img/13.png" style="width: 277px; height: 274px; float: left; margin: 0px 0px 135px 0px;" />
+                           <!--<p style="float: left;
+width: 277px;
+text-align: left; position: absolute;
+margin-top: 315px;font-size: 11px; "> HL, Hodgkin’s Lymphoma; R/R, relapsed/refractory; ASCT, autologous stem cell transplant; NPP, named patient programme; ORR, objective response rate; CR, complete response</p>-->
+
+                        </div>
+                        <div id="s15bimg8" style="display: none; padding-right: 20px;padding-top:20px;">
+                            <img data-class="fadeInRight" src="../common/img/bullet01.png" style="margin-bottom: 50px; width: 12px; height: 12px; float: left; margin: 10px; margin-top:7px; margin-bottom: 35px;" />
+                            <p data-class="fadeInRight" style="padding-left: 70px; ">Data were collected from patients with R/R HL who had not received an ASCT:</p>
+                        </div><br />
+                        <div id="s15bimg9" style="display: none; padding-right: 20px;">
+                            <img data-class="fadeInRight" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;margin-top:7px; margin-bottom: 45px; margin-left: 35px;" />
+
+                            <p data-class="fadeInRight" style="padding-left: 70px;">15 patients in phase 1 dose escalation and clinical pharmacology studies</p>
+                        </div><br />
+                        <div id="s15bimg10" style="display: none; padding-right: 20px;">
+                            <img data-class="fadeInRight" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px;margin-top:7px; margin-bottom: 20px; margin-left: 35px;" />
+
+                            <p data-class="fadeInRight" style="padding-left: 70px; ">26 patients in a NPP</p>
+                        </div>
+                        <br />
+                        <div id="s15bimg11" style="display: none; padding-right: 20px;">
+                            <img data-class="fadeInRight" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 10px; margin-top:7px; " />
+
+                            <p data-class="fadeInRight" style=" ">Dose: 1.8 mg/kg of brentuximab vedotin every 3 weeks</p>
+                        </div>
+                        <div id="s15bimg12" style="display: none; padding-right: 20px;">
+                            <img data-class="fadeInRight" src="../common/img/bullet01.png" style=" width: 12px; height: 12px; float: left; margin: 10px;margin-top:7px; margin-bottom: 50px;" />
+
+                            <p data-class="fadeInRight" style="padding-left: 70px; ">Clinically meaningful responses were achieved: ORR 54% and CR rate of 22% </p>
+                        </div>
+
+                    </div>
+
+
+
+
+
+
+
+
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none; position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#"><img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center> <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);" > Hide Transcript</button></center>
+
+                        <div class="transcript" style="">
+                            <p>The patients in this study underwent autologous SCT and the results supported the approval of brentuximab vedotin for treatment of adult patients with relapsed or refractory CD30+ Hodgkin’s Lymphoma following ASCT or following at least two prior therapies when ASCT or multi-agent chemotherapy is not a treatment option.<sup>3</sup></p>
+                            <p>However, clinically meaningful responses were observed in phase 1 studies and in named patient programme even with patients without prior ASCT.<sup>3</sup></p>
+                            <p>Data from patients without prior ASCT  and with relapsed or refractory Hodgkin’s Lymphoma who were treated with 1.8 mg/kg of brentuximab vedotin every 3 weeks demonstrated an overall response rate of 54% and a complete response of 22%.<sup>3</sup></p>
+                        </div>
+                    </div>
+                    <div id="slide15ref" style="display: none" class="slide15ref">
+                        <b>References:</b><br />
+                        <br />
+                        1. Younes A, Gopal AK, Smith SE, Ansell SM, Rosenblatt JD, et al,. Results of a pivotal phase II study of brentuximab vedotin for patients with relapsed or refractory Hodgkin's Lymphoma. J Clin Oncol. 2012 Jun 20;30(18):2183-9.<br />
+                        <br />
+                        2. Arai S, Fanale M, DeVos S, Engert A, Illidge T et al. Defining a Hodgkin's Lymphoma population for novel therapeutics after relapse from autologous hematopoietic cell transplant. Leuk Lymphoma. 2013;54(11):2531-3.
+                        <br />
+                        <br />
+                        3. ADCETRIS®. Summary of Product Characteristics. 25 October 2012. Available at European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB /document_library/EPAR_-_Product_Information /human/002455/WC500135055.pdf. Accessed on 17 January 2014.<br />
+                        <br />
+                        4. Ajay K Gopal, Robert Chen, Scott E Smith, Stephen M Ansell, Joseph D Rosenblatt, et al,. Three-year follow-up data and characterization of long-term remissions from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory hodgkin Lymphoma. Poster, Abstract No. 4382, American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+
+
+
+                    </div>
+                </div>
+
+                <div id="slide15a" style="display: none;">
+                    <!-- <div class="topic-bar">
+                        <div id="topic-title">Knowledge Check</div>
+                    </div>-->
+                    <!--Body -->
+                    <div class="slidecontent" style="">
+                        <div class="playBody">
+                            <div style="padding-left: 20px">
+                                <br />
+                                <p data-class="fadeInDown" style="display: none;" id="s15atxt1">
+                                    The number of cycles of treatment with brentuximab vedotin was highest in patients who achieved a</p>
+                                <br />
+                                <input type="hidden" id="Answer" value="2" qid="3" />
+                                <input type="hidden" id="Percentage" value="25" />
+                                <div id="radio1" style="padding: 10px 25px 10px 10px; display: none;">
+                                    <input name="ratio1" value="1" type="radio" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="padding-left: 55px;">
+                                        PR</p>
+                                </div>
+                                <div id="radio2" style="padding: 10px 25px 10px 10px; display: none;">
+                                    <input name="ratio1" value="2" type="radio" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="padding-left: 55px;">CR</p>
+                                </div>
+                                <div id="radio3" style="padding: 10px 25px 10px 10px; display: none;">
+                                    <input name="ratio1" value="3" type="radio" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="padding-left: 55px;">
+                                        SD</p>
+                                </div>
+                                <div id="radio4" style="padding: 10px 25px 10px 10px; display: none;">
+                                    <input name="ratio1" value="4" type="radio" style="width: 2em; height: 1.5em; float: left;" />
+                                    <p data-class="fadeInRight" style="padding-left: 55px;">
+                                        PD</p>
+                                </div>
+                                
+                                <div style="margin-left:470px;">
+                                    <div>
+                                        <input id="s15aimag9" onclick="onclickAnswer(this);" type="button"  class="btn btn-primary" value="Submit"
+                                            style="width: 100px; margin-right: 25px; display: none" />
+                                    </div>
+                                    <br />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Transcript -->
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none;
+                        position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#">
+                            <img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center>
+                            <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);">
+                                Hide Transcript</button></center>
+                        <div class="transcript">
+                            <br />
+                            Please take a moment to answer a question. Please select the best answer and click submit to continue</div>
+                    </div>
+                    <div id="slide15aref" style="display: none;" class="slide15aref">
+                        <b>References:</b><br />
+                        <br />
+                        Results of a Pivotal Phase II Study of Brentuximab Vedotin for Patients With Relapsed
+                        or Refractory Hodgkin’s Lymphoma. Younes et al. Journal Of Clinical Oncology. June
+                        2012.
+                    </div>
+                </div>
+
+
+
+                <div id="slide16" style="display: none;">
+                    <!--  <div class="topic-bar">
+                    <div id="topic-title">Summary</div>
+                </div>-->
+
+
+                   <div class="slidecontent" style="font-size:14px;">
+                     
+                        <div class="playBody">
+                             <div id="bimg111" style="padding-left: 20px; display:none;">
+                                <p data-class="fadeInRight" style=""><b>Brentuximab vedotin clinical profile in patients with relapsed/refractory HL</b></p>
+                            </div>
+                            <div id="bimg22"  style="padding-left: 20px; display:none;">
+
+                                <p data-class="fadeInRight" style=""><b>In relapsed/refractory HL patients post-ASCT</b></p>
+                            </div>
+                            <div id="bimg33"  style="display: none; padding-left: 40px">
+                                <img data-class="fadeInRight" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 4px;margin-right: 10px;" />
+                                <p data-class="fadeInRight" style="">75% of patients attained objective responses (ORR)</p>
+                            </div>
+                            <div id="bimg44" style="display: none; padding-left: 40px">
+                                <img data-class="fadeInRight" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 4px;margin-right: 10px;" />
+                                <p data-class="fadeInRight" style="">34% of patients achieved a complete remission (CR)</p>
+                            </div>
+                            <div id="bimg55" style="display: none; padding-left: 40px">
+                                <img data-class="fadeInRight" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 4px;margin-right: 10px;" />
+                                <p data-class="fadeInRight" style="">Complete remission patients achieved a 21.7 month median PFS</p>
+                            </div>
+                            <div id="bimg6" style="display: none; padding-left: 40px">
+                                <img data-class="fadeInRight" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 4px;margin-right: 10px;" />
+                                <p data-class="fadeInRight" style="">Median overall survival at three years  is 40.5 months</p>
+                            </div>
+                            <div id="bimg7" style="display: none; padding-left: 40px">
+                                <img data-class="fadeInRight" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 4px;margin-bottom: 35px;;margin-right: 10px;" />
+                                <p data-class="fadeInRight" style="">Adverse events profile was manageable with peripheral neuropathy most common AE, generally reversible and manageable through dose modification</p>
+                            </div>
+                           
+
+
+                             <div id="bimg8" style="display: none;padding-left: 20px">
+
+                                <p data-class="fadeInRight" style=""><b>In relapsed/refractory HL patients without prior-ASCT</b></p>
+                            </div>
+                            <div id="bimg9" style="display: none; padding-left: 40px">
+                                <img data-class="fadeInRight" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 4px;margin-right: 10px;margin-bottom: 11px;" />
+                                <p data-class="fadeInRight" style="">Significant response rates were observed in this patient group as well:54% ORR, 22% CR </p>
+                            </div>
+                            <div id="bimg10" style="display: none;padding-left: 20px;">
+                                <center><p data-class="fadeInRight" style="" ><b>Brentuximab vedotin: Approval and dosing</b></p></center>
+                            </div>
+                            <div id="bimg11" style="padding-left: 20px">
+
+                                <p data-class="fadeInRight" style="display: none;font-size: 80%;"><b>Indications</b></p>
+                            </div>
+                            <div id="bimg12" style="display: none;padding-left: 20px">
+
+                                <p data-class="fadeInRight" style=""><b>Brentuximab vedotin was approved by FDA (Aug 2011) and EMA (Oct  2012) for:</b></p>
+                            </div>
+                            <div id="bimg13" style="display: none; padding-left: 40px;">
+                                <img data-class="fadeInRight" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 4px;margin-right: 10px;margin-bottom: 10px;" />
+
+                                <p data-class="fadeInRight" style="">The treatment of adult patients with relapsed or refractory CD30+ Hodgkin’s Lymphoma (HL):</p>
+                            </div>
+                            <div id="bimg14" style="display: none; padding-left: 60px;">
+                                <img data-class="fadeInRight" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 4px; margin-left: 40px;margin-right: 10px;" />
+
+                                <p data-class="fadeInRight" style="">
+                                    Following autologous stem cell transplant (ASCT) or</p>
+                            </div>
+                            <div id="bimg15" style="display: none; padding-left: 60px;">
+                                <img data-class="fadeInRight" src="../common/img/bullet01.png" style="width: 12px; margin-bottom:20px; height: 12px; float: left; margin: 4px; margin-left: 40px; margin-bottom: 20px;margin-right: 10px;" />
+
+                                <p data-class="fadeInRight" style="">Following at least two prior therapies when ASCT or multi-agent chemotherapy is not a treatment option</p>
+                            </div>
+                            <div id="bimg16" style="display: none; padding-left: 40px;">
+                                <img data-class="fadeInRight" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 4px;margin-right: 10px;margin-bottom: 10px;" />
+
+                                <p data-class="fadeInRight" style="">The treatment of adult patients with relapsed or refractory systemic anaplastic large cell Lymphoma  </p>
+                            </div>
+                            <div id="bimg17" style="display: none;padding-left: 20px">
+
+                                <p data-class="fadeInRight" style=""><b>Dosing and Administration</b></p>
+                            </div>
+                            <div id="bimg18" style="display: none; padding-left: 40px">
+                                <img data-class="fadeInRight" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 4px;margin-right: 10px;margin-bottom: 10px;" />
+                                <p data-class="fadeInRight" style="">The recommended dose is 1.8 mg/kg administered as an intravenous infusion over 30 minutes every 3 weeks </p>
+                            </div>
+                            <div id="bimg19" style="display: none; padding-left: 40px">
+                                <img data-class="fadeInRight" src="../common/img/bullet01.png" style="width: 12px; height: 12px; float: left; margin: 4px;margin-right: 10px;margin-bottom: 10px;" />
+                                <p data-class="fadeInRight" style="">Patients should receive a minimum of 8 cycles and up to a maximum of 16 cycles (approximately 1 year)</p>
+                            </div>
+
+                            </div>
+
+
+                        </div>
+
+                    <div onclick="onclickShowTranscription(this);" id="stickyContent" style="display: none; position: absolute; right: 0; margin-top: 184px;">
+                        <a href="#"><img src="../common/img/showTrans.png" /></a>
+                    </div>
+                    <div id="transcript-hide" style="display: none;">
+                        <center> <button type="button" class="hidebutton" onclick="onclickHideTranscription(this);" > Hide Transcript</button></center>
+
+                        <div class="transcript" style="">
+                            <p>In the phase II clinical trial 75% of the patients attained objective responses and 34% achieved complete remission.</p>
+                            <p>The progression free survival in patients with complete remission was longer than in all other patients and was 21.7 months.</p>
+                            <p>The median overall survival for all patients at 3 years follow-up was 40.5 months.</p>
+                            <p>The adverse event profile was manageable and the most common adverse event was peripheral neuropathy which was generally reversible and manageable with dose modification.</p>
+                            <p>Significant clinical response was also observed in patients without prior ASCT as evident from 54% overall response rate and 22% complete response.<sup>3</sup></p>
+                            <p>Brentuximab vedotin is approved for the treatment of adult patients with relapsed or refractory CD30+ Hodgkin’s Lymphoma following autologous stem cell transplant or following at least two prior therapies when ASCT or multi-agent chemotherapy is not a treatment option, and for the treatment of adult patients with relapsed or refractory systemic anaplastic large cell Lymphoma (sALCL).<sup>3</sup></p>
+                            <p>Brentuximab vedotin for treatment of adults with relapsed or refractory sALCL will be discussed in detail in a separate module in the curriculum.</p>
+                            <p>A minimum of 8 cycles and up to a maximum of 16 cycles of 1.8 mg/kg administered as an intravenous infusion over 30 minutes every 3 weeks is recommended.<sup>3</sup></p>
+                        </div>
+                    </div>
+                    <div id="slide16ref" style="display: none;width:130px;" class="slide16ref">
+                        <b>References:</b><br />
+                        <br />
+                        1. Younes A, Gopal AK, Smith SE, Ansell SM, Rosenblatt JD, et al,. Results of a pivotal phase II study of brentuximab vedotin for patients with relapsed or refractory Hodgkin's Lymphoma. J Clin Oncol. 2012 Jun 20;30(18):2183-9.<br />
+                        <br />
+                        2. Arai S, Fanale M, DeVos S, Engert A, Illidge T et al. Defining a Hodgkin's Lymphoma population for novel therapeutics after relapse from autologous hematopoietic cell transplant. Leuk Lymphoma. 2013;54(11):2531-3.
+                        <br />
+                        <br />
+                        3. ADCETRIS®. Summary of Product Characteristics. 25 October 2012. Available at European Medicines Agency Web site http://www.ema.europa.eu/docs/en_GB /document_library/EPAR_-_Product_Information /human/002455/WC500135055.pdf. Accessed on 17 January 2014.<br />
+                        <br />
+                        4. Ajay K Gopal, Robert Chen, Scott E Smith, Stephen M Ansell, Joseph D Rosenblatt, et al,. Three-year follow-up data and characterization of long-term remissions from an ongoing phase 2 study of brentuximab vedotin in patients with relapsed or refractory hodgkin Lymphoma. Poster, Abstract No. 4382, American Society of Hematology, December, 2013, New Orleans, LA, USA.<br />
+
+
+
+                    </div>
+
+                </div>
+
+
+              <div id="slide17" style="display: none;">
+				
+                    <!-- <div class="topic-bar">
+                        <div id="topic-title">Title</div>
+                    </div>-->
+                    <!--Body -->
+
+                    <div style="height: 550px;width: 100%;margin:0px auto; border: 2px solid rgba(127, 145, 145, 0.12);border-radius: 10px;background-color: rgba(255, 255, 255, 0.2);">
+                        <div class="playBody">
+                            <div data-class="fadeInDown" class="breakout" style="display: none;text-align:center;height:95px;"  id="s17img1">
+                                <p class="" style="font-size: 20px;width:450px;position:relative;text-align:left">
+                                    End of Module!
+                                </p>
+								<p class="fadeInDown" id="s17img2" style="display: none;text-align:left"> Please close the window and attempt the post-test in order to complete the course.</p>	
+							    
+                            </div>
+                        </div>
+                    </div>
+			</div>
+
+
+
+
+
+        </div>
+
+
+    </div>
+
+        </div>
+    <div id="footer" style="width: 1024px; margin: 0 auto;">
+            <div class="container" style="">
+        <table style="width: 100%">
+            <tr>
+                <td>
+                    <img src="../common/img/takeda.png" style="float: left; width: 105px; margin-top: 3px; margin-right: 10px; margin-left: -25px;" />
+                </td>
+                <td>
+                    <img onmouseover="HideToolTip(this)" data-toggle="tooltip" title="Play / Pause" class="effect" id="toggelbutton" class="effect" src="../common/img/playBtn.png" style="float: left; margin-top: -10px;" onclick="play()" />
+                </td>
+                <td>
+                    <div style="float: left;">
+                        <input id="progress-bar" type="text" data-slider="true" data-slider-highlight="true">
+                        <div class="slider-control"><span id="slideCount">Frame 0 of 00</span> <span style="float: right;"><span id="timeduration">0:00</span> / <span id="slideduration">0:00</span></span> </div>
+                    </div>
+                </td>
+                <td>
+                    <img onmouseover="HideToolTip(this)" data-toggle="tooltip" data-placement="left" title="Previous Slide " class="effect" src="../common/img/prevBtn.png" style="margin-top: -10px;" onclick="Prev()" />
+                </td>
+                <td>
+                    <img onmouseover="HideToolTip(this)" id="NxtImg" data-toggle="tooltip" title="Next Slide" class="effect" src="../common/img/nxtBtn.png" style="margin-top: -10px;" onclick="Next()" />
+                </td>
+                <td>
+                    <img onclick="ShowHelp(); " id="showHelp" src="../common/img/smallicon2.png" style="margin-top: -10px; margin-left: 35px;" />
+                </td>
+                <td><a href="pdf/Transcript.pdf" target="_blank">
+                    <img onmouseover="HideToolTip(this)" data-toggle="tooltip" title="Print" class="effect" src="../common/img/smallicon3.png" style="margin-top: -10px;" /></a>
+                </td>
+            </tr>
+
+        </table>
+       
+            <!--  <img class="effect" src="../common/img/pauseBtn.png" style="float: left; margin-top: -10px;" onclick="pause()" />-->
+        </div>
+    </div>
+
+     <div class="modal fade" id="AnswerModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+      </div>
+      <div class="modal-footer">
+        <button type="button"  onclick="onclickAnswerContinue()" class="btn btn-primary">Continue</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <script>
+        $('img').tooltip({ trigger: "focus" });
+
+    </script>
+
+
+
+
+</body>
+
+</html>

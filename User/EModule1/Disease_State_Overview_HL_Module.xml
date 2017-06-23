@@ -1,0 +1,359 @@
+﻿<xml version='2.0'>
+  <module totalduration="35:00">
+    
+    <slide id="slide0" name="Title" title="" refid="slide0aref" duration="00:03">
+      <audio src='audio/frame1.mp3'></audio>
+      <element time='00' id='s0abimg1' type='image'></element>
+    </slide>
+	
+	<slide id="slide1a" name="Learning objectives" title="Learning objectives" refid="slide1aref" duration="00:51">
+      <audio src='audio/Introduction frame.mp3'></audio>
+      <element time='00' id='bimg1' type='image'></element>
+      <element time='40' id='bimg2' type='image'></element>
+      <element time='31' id='bimg3' type='image'></element>
+      <element time='42' id='bimg4' type='image'></element>
+    
+
+    </slide>
+    
+    <slide id="slide1" name="HL: Disease description" title="HL: Disease description" refid="slide1ref" duration="00:59">
+      <audio src='audio/Disease_State_Overview_HL_Module.mp3'></audio>
+      <element time='00' id='img1' type='image'></element>
+      <element time='04' id='text0' type='image'></element>
+      <element time='14' id='bimg2' type='image'></element>
+      <element time='23' id='bimg3' type='image'></element>
+      <element time='40' id='bimg4' type='image'></element>
+      <element time='45' id='bimg5' type='image'></element>
+      <element time='50' id='bimg6' type='image'></element>
+      </slide>
+    
+    <slide id="slide2" name="HL: Morphological characteristics" title="HL: Morphological characteristics" refid="slide2ref" duration="00:55">
+      <audio src='audio/HL_morphological_characteristics.mp3'></audio>
+      
+      <element time='00' id='bimg1' type='image'></element>
+      <element time='11' id='bimg2' type='image'></element>
+      <element time='23' id='txt9' type='image'></element>
+      <element time='23' id='img2' type='image'></element>
+      <element time='30' id='img3' type='image'></element>
+      <element time='30' id='txt8' type='image'></element>      
+
+    </slide>
+    
+    <slide id="slide3" name="HL: CHL" title="HL: CHL" refid="slide3ref" duration="00:19">
+      <audio src='audio/HL_CHL.mp3'></audio>
+      <element time='00' id='img5' type='image'></element>
+     
+      <element time='03' id='imag1' type='image'></element>
+      <element time='05' id='imag2' type='image'></element>
+      <element time='07' id='imag3' type='image'></element>
+      <element time='10' id='imag4' type='image'></element>
+      
+      <element time='03' id='tex1' type='image'></element>
+      <element time='05' id='tex2' type='image'></element>
+      <element time='07' id='tex3' type='image'></element>
+      <element time='10' id='tex4' type='image'></element>
+    </slide>
+
+    <slide id="slide4" name="HL: Epidemiology" title="HL: Epidemiology" refid="slide4ref" duration="01:07">
+      <audio src='audio/HL_epidemiology.mp3'></audio>
+      <element time='00' id='txt10' type='image'></element>
+      <element time='00' id='bimg1' type='image'></element>
+      <element time='19' id='bimg2' type='image'></element>
+      <element time='19' id='txt11' type='image'></element>
+      <element time='04' id='text1' type='image'></element>
+      <element time='04' id='text2' type='image'></element>
+      <element time='03' id='image1' type='image'></element>
+      <element time='44' id='txt12' type='image'></element>
+      <element time='54' id='txt13' type='image'></element>
+    </slide>
+    <slide id="slide5" name="Knowledge check" title="Knowledge check" refid="slide5ref" duration="00:05">
+      <audio src='audio/Knowledge_Check.mp3'></audio>
+      <element time='00.5' id='txt16' type='image'></element>
+      <element time='01.5' id='radio1' type='image'></element>
+      <element time='02.5' id='radio2' type='image'></element>
+      <element time='02.5' id='radio3' type='image'></element>
+      <element time='03.5' id='radio4' type='image'></element>
+      <element time='04' id='button5' type='image'></element>
+      <element time='05.5' id='txt20' type='question'></element>
+    </slide>
+    <slide id="slide6" name="HL: Survival rates" title="HL: Survival rates" refid="slide6ref" duration="01:00">
+      <audio src='audio/HL_survival_rates.mp3'></audio>
+      <element time='07' id='img6' type='image'></element>
+      <element time='00' id='bimg8' type='image'></element>
+      <element time='16' id='bimg9' type='image'></element>
+      <element time='00' id='txt21' type='image'></element>
+      <element time='16' id='txt22' type='image'></element>
+      <element time='07' id='image1' type='image'></element>
+    </slide>
+    <slide id="slide7" name="HL: Predisposing factors" title="HL: Predisposing factors" refid="slide7ref" duration="01:14">
+      <audio src='audio/FRAME 8.mp3'></audio>
+      <element time='11' id='bimg8' type='image'></element>
+      <element time='19' id='bimg9' type='image'></element>
+      <element time='24' id='bimg10' type='image'></element>
+      <element time='38' id='bimg11' type='image'></element>
+      
+      <element time='00' id='txt24' type='image'></element>
+      <element time='11' id='txt25' type='image'></element>
+      <element time='19' id='txt26' type='image'></element>
+      <element time='24' id='txt27' type='image'></element>
+      <element time='38' id='txt28' type='image'></element>
+    </slide>
+
+    <slide id="slide8" name="HL: Clinical presentation (1)" title="HL: Clinical presentation (1)" refid="slide8ref" duration="00:41">
+      <audio src='audio/HL_clinical_presentation_(1).mp3'></audio>
+      <element time='00' id='bimg8' type='image'></element>
+      <element time='05' id='bimg9' type='image'></element>
+      
+      <element time='00' id='txt29' type='image'></element>
+      <element time='05' id='txt30' type='image'></element>
+      <element time='14' id='img7'  type='image'></element>
+    </slide>
+
+    <slide id="slide10" name="HL: Clinical presentation (2)" title="HL: Clinical presentation (2)"  refid="slide10ref" duration="01:11">
+      <audio src='audio/HL_clinical_presentation_(2).mp3'></audio>
+      <element time='07' id='bimg8' type='image'></element>
+      <element time='17' id='bimg9' type='image'></element>
+      <element time='33' id='bimg10' type='image'></element>
+      
+      <element time='00' id='tex5' type='image'></element>
+      <element time='07' id='tex6' type='image'></element>
+      <element time='17' id='tex7' type='image'></element>
+      <element time='33' id='tex8' type='image'></element>
+      <element time='50' id='tex9' type='image'></element>
+      <element time='10' id='imag11' type='image'></element>
+      <element time='17' id='imag12' type='image'></element>
+      <element time='35' id='imag13' type='image'></element>
+    </slide>
+
+    <slide id="slide11" name="HL: Staging" title ="HL: Staging" refid="slide11ref" duration="01:48">
+      <audio src='audio/HL_staging.mp3'></audio>
+      <element time='00' id='bimg8' type='image'></element>
+      <element time='00' id='S11P1' type='image'></element>
+      <element time='00' id='S11TBL1' type='image'></element>
+      <element time='06' id='S11P2' type='image'></element>
+    </slide>
+
+    <slide id="slide12" name="HL: Work up and diagnosis " title="HL: Work up and diagnosis" refid="slide12ref" duration="01:09">
+      <audio src='audio/FRAME 12.mp3'></audio>
+      <element time='00' id='bimg8' type='image'></element>
+      <element time='00' id='S12P1' type='image'></element>
+      <element time='00' id='S12TBL1' type='image'></element>
+      <element time='00' id='S12P2' type='image'></element>
+      <element time='00' id='S12P3' type='image'></element>
+    </slide>
+
+    <slide id="slide13" name="HL: Prognosis and survival" title="HL: Prognosis and survival" refid="slide13ref" duration="00:56">
+      <audio src='audio/HL_prognosis_and_survival.mp3'></audio>
+      <element time='00' id='bimg8' type='image'></element>
+      <element time='00' id='S13P1' type='image'></element>
+      <element time='05' id='txt2' type='image'></element>
+      <element time='05' id='txt3' type='image'></element>
+      <element time='04' id='image1' type='image'></element>
+    </slide>
+    <slide id="slide14" name="HL: Prognosis (early disease)" title="HL: Prognosis (early disease)" refid="slide14ref" duration="00:24">
+      <audio src='audio/HL_prognosis_(early disease).mp3'></audio>
+      <element time='07' id='bimg8' type='image'></element>
+      
+      <element time='00' id='S14P1' type='image'></element>
+      <element time='07' id='S14P2' type='image'></element>
+      <element time='09' id='S14TBL1' type='image'></element>
+      <element time='09' id='S14P3' type='image'></element>
+      <element time='09' id='S14P4' type='image'></element>
+      <element time='09' id='S14HR1' type='image'></element>
+      <element time='09' id='S14P5' type='image'></element>
+      <element time='09' id='S14P6' type='image'></element>
+      <element time='09' id='S14P7' type='image'></element>
+    </slide>
+
+    <slide id="slide15" name="HL: Prognosis (advanced disease)" title="HL: Prognosis (advanced disease)" refid="slide15ref" duration="00:41">
+      <audio src='audio/FRAME 14.mp3'></audio>
+      <element time='00' id='bimg1' type='image'></element>
+      <element time='00' id='image2' type='image'></element>
+
+      <element time='31' id='image2' type='hidden'></element>
+      <element time='22' id='text1' type='image'></element>
+      
+      <element time='32' id='S15P2' type='image'></element>
+      <element time='35' id='bimg2' type='image'></element>
+      <element time='36' id='bimg3' type='image'></element>
+      <element time='37' id='bimg4' type='image'></element>
+      <element time='38' id='bimg5' type='image'></element>
+      <element time='39' id='bimg6' type='image'></element>
+      <element time='39' id='bimg7' type='image'></element>
+      <element time='39' id='bimg8' type='image'></element>
+      <element time='0' id='P1'    type='image'></element>
+     
+      
+    </slide>
+
+    <slide id="slide16" name="HL: Elderly patients " title="HL: Elderly patients " refid="slide16ref" duration="00:29">
+      <audio src='audio/HL_elderly_patients.mp3'></audio>
+      <element time='13' id='bimg8' type='image'></element>
+      <element time='17' id='bimg9' type='image'></element>
+      <element time='23' id='bimg10' type='image'></element>
+      <element time='26' id='bimg11' type='image'></element>
+      
+      <element time='00' id='S16P1' type='image'></element>
+      <element time='13' id='S16P2' type='image'></element>
+      <element time='17' id='S16P3' type='image'></element>
+      <element time='23' id='S16P4' type='image'></element>
+      <element time='26' id='S16P5' type='image'></element>
+      <element time='00' id='image1' type='image'></element>
+    </slide>
+
+    <slide id="slide17" name="Knowledge check" title="Knowledge check" refid="slide17ref" duration="00:06">
+      <audio src='audio/Knowledge_CheckESMO.mp3'></audio>
+      <element time='00' id='S17P1' type='image'></element>
+      <element time='01' id='radio1' type='image'></element>
+      <element time='02.5' id='radio2' type='image'></element>
+      <element time='03' id='radio3' type='image'></element>  
+      <element time='03.5' id='radio4' type='image'></element>
+      <element time='05' id='Button1' type='image'></element>
+      <element time='06.5' id='txt20' type='question'></element>
+    </slide>
+
+    <slide id="slide18" name="HL: Treatment" title="HL: Treatment" refid="slide18ref" duration="00:24">
+      <audio src='audio/HL_treatment.mp3'></audio>
+      <element time='00' id='bimg8' type='image'></element>
+      <element time='09' id='bimg9' type='image'></element>
+      
+      
+      <element time='00' id='S18P1' type='image'></element>
+      <element time='09' id='S18P2' type='image'></element>
+      <element time='09' id='S18TBL1' type='image'></element>
+      
+      
+    </slide>
+   
+    <slide id="slide19" name="HL: Early stage treatment (1)" title="HL: Early stage treatment (1)" refid="slide19ref" duration="02:03">
+      <audio src='audio/FRAME 20.mp3'></audio>
+      <element time='00' id='bimg8' type='image'></element>
+      <element time='04' id='bimg9' type='image'></element>
+      <element time='15' id='bimg10' type='image'></element>
+      <element time='33' id='bimg11' type='image'></element>
+      <element time='55' id='bimg12' type='image'></element>
+      <element time='71' id='bimg13' type='image'></element>
+      <element time='88' id='bimg14' type='image'></element>
+      <element time='33' id='S19P4' type='image'></element>
+      <element time='55' id='S19P5' type='image'></element>
+      <element time='71' id='S19P6' type='image'></element>
+      <element time='88' id='S19P7' type='image'></element>
+     
+      <element time='90' id='S19P10' type='image'></element>
+      <element time='90' id='table1' type='image'></element>
+    <element time='91' id='table2' type='image'></element>
+    </slide>
+
+    <slide id="slide20" name="HL: Intermediate stage treatment per ESMO guidelines" title="HL: Intermediate stage treatment per ESMO guidelines" refid="slide20ref" duration="01:03">
+      <audio src='audio/FRAME 21.mp3'></audio>
+      <element time='00' id='bimg7' type='image'></element>
+      <element time='12' id='bimg8' type='image'></element>
+      <element time='13' id='bimg9' type='image'></element>
+      <element time='20' id='bimg10' type='image'></element>
+      
+      <element time='12' id='tex39' type='image'></element>
+      <element time='13' id='tex40' type='image'></element>
+      <element time='20' id='tex41' type='image'></element>
+      <element time='35' id='tex42' type='image'></element>
+      <element time='35' id='tex43' type='image'></element>
+      <element time='35' id='tex44' type='image'></element>
+      <element time='35' id='tex45' type='image'></element>
+      <element time='35' id='text1' type='image'></element>
+      <element time='35' id='tex46' type='image'></element>
+      <element time='35' id='image1' type='image'></element>
+
+    </slide>
+	
+	<slide id="slide20a" name="HL: Intermediate stage treatment per NCCN guidelines" title="HL: Intermediate stage treatment per NCCN guidelines" refid="slide20ref" duration="00:52">
+      <audio src='audio/FRAME 21 (2).mp3'></audio>
+      <element time='01' id='image1' type='image'></element>
+      
+     
+
+    </slide>
+
+    <slide id="slide21" name="HL: Advanced stage treatment " title="HL: Advanced stage treatment" refid="slide21ref" duration="02:11">
+      <audio src='audio/HL_advanced_stage_treatment.mp3'></audio>    
+      <element time='00' id='tex31' type='image'></element>
+      <element time='00' id='tex32' type='image'></element>
+      <element time='15' id='tex33' type='image'></element>
+      <element time='21' id='tex34' type='image'></element>
+      <element time='49' id='tex35' type='image'></element>
+      <element time='54' id='tex36' type='image'></element>
+      <element time='60' id='tex37' type='image'></element>
+      <element time='64' id='tex38' type='image'></element>
+     
+    </slide>
+
+    <slide id="slide22" name="HL: Relapsed/Refractory disease treatment per ESMO guidelines" title="HL: Relapsed/Refractory disease treatment per ESMO guidelines" refid="slide22ref" duration="01:19">
+      <audio src='audio/Frame31.mp3'></audio>
+
+
+      <element time='11.5' id='bimg8' type='image'></element>
+      
+      <element time='20' id='bimg10' type='image'></element>
+      <element time='25' id='bimg11' type='image'></element>
+      <element time='30' id='bimg12' type='image'></element>
+      <element time='53.5' id='bimg13' type='image'></element>
+      <element time='63.5' id='bimg14' type='image'></element>
+      <element time='69.5' id='bimg15' type='image'></element>
+  
+
+
+    </slide>
+
+    <slide id="slide23" name="HL: Relapsed/Refractory disease treatment per NCCN guidelines" title="HL: Relapsed/Refractory disease treatment per NCCN guidelines" refid="slide23ref" duration="00:47">
+      <audio src='audio/HL_relapsedrefractory_treatment(1).mp3'></audio>
+      <element time='22' id='bimg8' type='image'></element>
+      <element time='23' id='bimg9' type='image'></element>
+      <element time='24' id='bimg10' type='image'></element>
+      <element time='26' id='bimg11' type='image'></element>
+      <element time='28' id='bimg12' type='image'></element>
+      <element time='31' id='bimg13' type='image'></element>
+      <element time='36' id='bimg14' type='image'></element>
+      <element time='39' id='bimg15' type='image'></element>
+      <element time='01' id='tex17' type='image'></element>
+      <element time='02' id='tex18' type='image'></element>
+      <element time='08' id='tex19' type='image'></element>
+      <element time='22' id='tex20' type='image'></element>
+      <element time='23' id='tex21' type='image'></element>
+      <element time='24' id='tex22' type='image'></element>
+      <element time='25' id='tex23' type='image'></element>
+      <element time='26' id='tex24' type='image'></element>
+      <element time='26' id='tex25' type='image'></element>
+      <element time='28' id='tex47' type='image'></element>
+      <element time='20' id='imag25' type='image'></element>
+      <element time='21' id='imag26' type='image'></element>
+      <element time='22' id='imag27' type='image'></element>
+      <element time='27' id='imag28' type='image'></element>
+      <element time='28' id='imag35' type='image'></element>
+    </slide>
+
+    <slide id="slide24" name="HL: Management steps as per NCCN guidelines" title="HL: Management steps as per NCCN guidelines" refid="slide24ref" duration="01:12">
+      <audio src='audio/Frame 34.mp3'></audio>
+      <element time='00' id='imag24' type='image'></element>
+      <element time='00' id='tex15' type='image'></element>
+      <element time='00' id='tex16' type='image'></element>
+      <element time='00' id='tex17' type='image'></element>
+
+    </slide>
+
+    <slide id="slide25" name="Knowledge check ESMO" title="Knowledge check" refid="slide25ref" duration="00:06">
+      <audio src='audio/Knowledge_CheckESMO.mp3'></audio>
+      <element time='01' id='tex10' type='image'></element>
+      <element time='02' id='radio1' type='image'></element>
+      <element time='02' id='radio2' type='image'></element>
+      <element time='03' id='radio3' type='image'></element>
+      <element time='04' id='radio4' type='image'></element>
+      <element time='05' id='imag22' type='image'></element>
+      <element time='07' id='txt20' type='question'></element>
+    </slide>
+	
+	<slide id="slide26" name="End" title="" refid="slide26ref" duration="00:06">
+      <audio src='audio/Frame 25 (End of the Module).mp3'></audio>
+      <element time='00' id='s26img1' type='image'></element>
+      <element time='00' id='s26img2' type='image'></element>
+    </slide>
+
+</module>
+</xml>
